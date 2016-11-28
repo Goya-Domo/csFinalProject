@@ -22,5 +22,10 @@ namespace csFinalProject
                 return false;
             }
         }
+
+        public static bool isValidPassword()
+        {
+            return false;
+        }
     }
 }
