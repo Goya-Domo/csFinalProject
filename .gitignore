@@ -1,3 +1,4 @@
-*
-**/**
-!/csFinalProject
+**/obj/**
+**/bin/**
+*.sln
+.vs/**
