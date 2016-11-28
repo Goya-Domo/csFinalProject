@@ -10,6 +10,7 @@ namespace csFinalProject
     class Validator
     {
         private static Regex uNameRegex = new Regex(@"^[a-zA-Z\d][\w\d]{2}([\w\d]+)");
+        private static Regex passwordRegex = new Regex(@"password");
         public static bool isValidUsername(string uName)
         {
             if (uNameRegex.IsMatch(uName))
