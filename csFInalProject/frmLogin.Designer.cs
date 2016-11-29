@@ -59,6 +59,7 @@
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(273, 24);
             this.txtUsername.TabIndex = 1;
+            this.toolTip1.SetToolTip(this.txtUsername, "Enter your username");
             // 
             // label2
             // 
@@ -80,6 +81,7 @@
             this.txtPassword.PasswordChar = '●';
             this.txtPassword.Size = new System.Drawing.Size(274, 24);
             this.txtPassword.TabIndex = 3;
+            this.toolTip1.SetToolTip(this.txtPassword, "Enter you password");
             // 
             // btnLogin
             // 
@@ -91,6 +93,7 @@
             this.btnLogin.Size = new System.Drawing.Size(165, 40);
             this.btnLogin.TabIndex = 4;
             this.btnLogin.Text = "Login";
+            this.toolTip1.SetToolTip(this.btnLogin, "Log in with the username and password");
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
@@ -103,6 +106,7 @@
             this.btnExit.Size = new System.Drawing.Size(78, 30);
             this.btnExit.TabIndex = 5;
             this.btnExit.Text = "Exit";
+            this.toolTip1.SetToolTip(this.btnExit, "Close the application");
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnCancel_Click);
             // 
@@ -115,6 +119,7 @@
             this.btnRegister.Size = new System.Drawing.Size(166, 30);
             this.btnRegister.TabIndex = 6;
             this.btnRegister.Text = "Register";
+            this.toolTip1.SetToolTip(this.btnRegister, "Create new patient");
             this.btnRegister.UseVisualStyleBackColor = true;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
