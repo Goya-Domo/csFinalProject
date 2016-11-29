@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="77a58e7cbb944ad9bc43b9c10c98e4b4" Name="Diagram1">
+        <EntityTypeShape EntityType="pchrModel.ALLERGY_TBL" Width="1.5" PointX="3" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="pchrModel.CONDITION" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="pchrModel.IMMUNIZATION_TBL" Width="1.5" PointX="3" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="pchrModel.MED_PROC_TBL" Width="1.5" PointX="3" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="pchrModel.MEDICATION_TBL" Width="1.5" PointX="3" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="pchrModel.PATIENT_TBL" Width="1.5" PointX="0.75" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="pchrModel.PER_DETAILS_TBL" Width="1.5" PointX="3" PointY="17.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="pchrModel.PRIMARY_CARE_TBL" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="pchrModel.TEST_TBL" Width="1.5" PointX="3" PointY="20.375" IsExpanded="true" />
+        <AssociationConnector Association="pchrModel.FK_ALLERGY_TBL_PATIENT_TBL" ManuallyRouted="false" />
+        <AssociationConnector Association="pchrModel.FK_CONDITION_PATIENT_TBL" ManuallyRouted="false" />
+        <AssociationConnector Association="pchrModel.FK_IMMUNIZATION_TBL_PATIENT_TBL" ManuallyRouted="false" />
+        <AssociationConnector Association="pchrModel.FK_MED_PROC_TBL_PATIENT_TBL" ManuallyRouted="false" />
+        <AssociationConnector Association="pchrModel.FK_MEDICATION_TBL_PATIENT_TBL" ManuallyRouted="false" />
+        <AssociationConnector Association="pchrModel.FK_PER_DETAILS_TBL_PATIENT_TBL" ManuallyRouted="false" />
+        <AssociationConnector Association="pchrModel.FK_TEST_TBL_PATIENT_TBL" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

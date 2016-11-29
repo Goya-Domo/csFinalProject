@@ -27,5 +27,17 @@ namespace csFinalProject
             Form regForm = new frmRegistration();
             regForm.ShowDialog();
         }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            if (Validator.isValidUsername(txtUsername.Text))
+            {
+
+            }
+            else
+            {
+                MessageBox.Show("Username invalid", "Invalid", MessageBoxButtons.OK);
+            }
+        }
     }
 }

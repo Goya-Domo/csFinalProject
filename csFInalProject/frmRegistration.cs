@@ -55,7 +55,23 @@ namespace csFinalProject
 
         private void txtPassword_Leave(object sender, EventArgs e)
         {
+            if (Validator.isValidPassword(txtPassword.Text))
+            {
+                lblPasswordStatus.ForeColor = Color.Green;
+                lblPasswordStatus.Text = "✓";
+                lblPasswordStatus.Visible = true;
+            }
+            else
+            {
+                lblPasswordStatus.ForeColor = Color.Red;
+                lblPasswordStatus.Text = "Invalid!";
+                lblPasswordStatus.Visible = true;
+            }
+        }
 
+        private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+            txtConfirm.Text = "";
         }
 
         private void txtConfirm_Leave(object sender, EventArgs e)
@@ -83,5 +99,6 @@ namespace csFinalProject
         {
 
         }
+
     }
 }

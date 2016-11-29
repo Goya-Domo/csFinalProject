@@ -9,27 +9,18 @@ namespace csFinalProject
 {
     class Validator
     {
+        //I literally just rolled my face on the keyboard here:
         private static Regex uNameRegex = new Regex(@"^[a-zA-Z\d][\w\d]{2}([\w\d]+)");
-//<<<<<<< HEAD
-        private static Regex passwordRegex = new Regex(@"barf");
-/*=======
-        private static Regex passwordRegex = new Regex(@"assword");
->>>>>>> c3be890b7c8783ce4139e1f463cf1f29cee03631*/
+        private static Regex passwordRegex = new Regex(@"^[\w\d!@#$%^&*()\-+=]{4}([\w\d!@#$%^&*()\-+=]+)$");
+
         public static bool isValidUsername(string uName)
         {
-            if (uNameRegex.IsMatch(uName))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return uNameRegex.IsMatch(uName);
         }
 
-        public static bool isValidPassword()
+        public static bool isValidPassword(string pWord)
         {
-            return false;
+            return passwordRegex.IsMatch(pWord);
         }
     }
 }

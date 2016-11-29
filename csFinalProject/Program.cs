@@ -17,7 +17,7 @@ namespace csFinalProject
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Changed the start up form for testing purposes
-            Application.Run(new frmPersonalDetails());
+            Application.Run(new frmLogin());
         }
     }
 }
