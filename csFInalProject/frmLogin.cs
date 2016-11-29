@@ -39,5 +39,11 @@ namespace csFinalProject
                 MessageBox.Show("Username invalid", "Invalid", MessageBoxButtons.OK);
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form form = new frmPersonalDetails();
+            form.Show();
+        }
     }
 }

@@ -63,7 +63,7 @@
             // 
             // grpLoginDetails
             // 
-            this.grpLoginDetails.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.grpLoginDetails.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grpLoginDetails.Controls.Add(this.lblConfirmStatus);
             this.grpLoginDetails.Controls.Add(this.lblPasswordStatus);
@@ -192,8 +192,8 @@
             // 
             // grpPersonalDetails
             // 
-            this.grpPersonalDetails.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.grpPersonalDetails.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grpPersonalDetails.Controls.Add(this.rdoFemale);
             this.grpPersonalDetails.Controls.Add(this.rdoMale);

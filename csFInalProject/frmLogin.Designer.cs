@@ -37,6 +37,7 @@
             this.btnExit = new System.Windows.Forms.Button();
             this.btnRegister = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -56,7 +57,7 @@
             this.txtUsername.Location = new System.Drawing.Point(113, 14);
             this.txtUsername.Margin = new System.Windows.Forms.Padding(4);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(163, 24);
+            this.txtUsername.Size = new System.Drawing.Size(273, 24);
             this.txtUsername.TabIndex = 1;
             // 
             // label2
@@ -77,7 +78,7 @@
             this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '●';
-            this.txtPassword.Size = new System.Drawing.Size(164, 24);
+            this.txtPassword.Size = new System.Drawing.Size(274, 24);
             this.txtPassword.TabIndex = 3;
             // 
             // btnLogin
@@ -85,7 +86,7 @@
             this.btnLogin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnLogin.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Location = new System.Drawing.Point(112, 83);
+            this.btnLogin.Location = new System.Drawing.Point(222, 83);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(165, 40);
             this.btnLogin.TabIndex = 4;
@@ -109,7 +110,7 @@
             // 
             this.btnRegister.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRegister.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnRegister.Location = new System.Drawing.Point(112, 129);
+            this.btnRegister.Location = new System.Drawing.Point(222, 129);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(166, 30);
             this.btnRegister.TabIndex = 6;
@@ -117,13 +118,24 @@
             this.btnRegister.UseVisualStyleBackColor = true;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(96, 83);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(120, 76);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "temp Personal Details Form";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // frmLogin
             // 
             this.AcceptButton = this.btnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnExit;
-            this.ClientSize = new System.Drawing.Size(289, 171);
+            this.ClientSize = new System.Drawing.Size(399, 171);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnLogin);
@@ -152,6 +164,7 @@
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnRegister;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Button button1;
     }
 }
 
