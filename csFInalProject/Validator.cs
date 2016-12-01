@@ -22,5 +22,5 @@ namespace csFinalProject
         {
             return passwordRegex.IsMatch(pWord);
         }
-    }
+    } 
 }
