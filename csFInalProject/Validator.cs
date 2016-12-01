@@ -11,7 +11,7 @@ namespace csFinalProject
     {
         //I literally just rolled my face on the keyboard here:
         private static Regex uNameRegex = new Regex(@"^[a-zA-Z\d][\w\d]{2}([\w\d]+)");
-        private static Regex passwordRegex = new Regex(@"^[\w\d!@#$%^&*()\-+=]{4}([\w\d!@#$%^&*()\-+=]+)$");
+        private static Regex passwordRegex = new Regex(@"^[\w\d!@#$%^&*()\-+=]{5}([\w\d!@#$%^&*()\-+=]+)$");
 
         public static bool isValidUsername(string uName)
         {
