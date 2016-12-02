@@ -38,6 +38,7 @@
             this.btnRegister = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.button1 = new System.Windows.Forms.Button();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.SuspendLayout();
             // 
             // label1
@@ -54,12 +55,15 @@
             // 
             this.txtUsername.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.helpProvider1.SetHelpString(this.txtUsername, "Usernames can contain numbers, letters, and underscores\nand must not start with a" +
+        "n underscore");
             this.txtUsername.Location = new System.Drawing.Point(113, 14);
             this.txtUsername.Margin = new System.Windows.Forms.Padding(4);
             this.txtUsername.Name = "txtUsername";
+            this.helpProvider1.SetShowHelp(this.txtUsername, true);
             this.txtUsername.Size = new System.Drawing.Size(273, 24);
             this.txtUsername.TabIndex = 1;
-            this.toolTip1.SetToolTip(this.txtUsername, "Enter your username");
+            this.toolTip1.SetToolTip(this.txtUsername, "Enter your username (F1 for details)");
             // 
             // label2
             // 
@@ -75,13 +79,15 @@
             // 
             this.txtPassword.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.helpProvider1.SetHelpString(this.txtPassword, "Passwords: \n - Must be at least 6 characters long\n - Can contain any combination of letters, numbers, or special characters\n - Specials allowed: ! @ # $ % ^ & * ( )");
             this.txtPassword.Location = new System.Drawing.Point(112, 51);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '●';
+            this.helpProvider1.SetShowHelp(this.txtPassword, true);
             this.txtPassword.Size = new System.Drawing.Size(274, 24);
             this.txtPassword.TabIndex = 3;
-            this.toolTip1.SetToolTip(this.txtPassword, "Enter you password");
+            this.toolTip1.SetToolTip(this.txtPassword, "Enter you password (F1 for details)");
             // 
             // btnLogin
             // 
@@ -170,6 +176,7 @@
         private System.Windows.Forms.Button btnRegister;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }
 

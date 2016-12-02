@@ -32,11 +32,13 @@ namespace csFinalProject
         {
             if (Validator.isValidUsername(txtUsername.Text))
             {
-
+                //TODO validate password
             }
             else
             {
-                MessageBox.Show("Username invalid", "Invalid", MessageBoxButtons.OK);
+                MessageBox.Show("Username invalid. Re-enter your username, \nor click \"Register\" if you do not have one.\nPress F1 for more information.", "Invalid", MessageBoxButtons.OK);
+                txtUsername.Text = "";
+                txtUsername.Focus();
             }
         }
 
@@ -45,5 +47,6 @@ namespace csFinalProject
             Form form = new frmPersonalDetails();
             form.Show();
         }
+    
     }
 }
