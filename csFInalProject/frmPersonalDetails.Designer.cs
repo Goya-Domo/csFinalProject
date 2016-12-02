@@ -365,6 +365,7 @@
             this.lblPersonalMedicalDetailsCancel.TabIndex = 25;
             this.lblPersonalMedicalDetailsCancel.TabStop = true;
             this.lblPersonalMedicalDetailsCancel.Text = "Cancel";
+            this.lblPersonalMedicalDetailsCancel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblPersonalMedicalDetailsCancel_LinkClicked);
             // 
             // lblPersonalMedicalDetailsEdit
             // 
@@ -375,6 +376,7 @@
             this.lblPersonalMedicalDetailsEdit.TabIndex = 23;
             this.lblPersonalMedicalDetailsEdit.TabStop = true;
             this.lblPersonalMedicalDetailsEdit.Text = "Edit";
+            this.lblPersonalMedicalDetailsEdit.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblPersonalMedicalDetailsEdit_LinkClicked);
             // 
             // txtHeight
             // 
@@ -520,6 +522,7 @@
             this.lblAllergyDetailsCancel.TabIndex = 23;
             this.lblAllergyDetailsCancel.TabStop = true;
             this.lblAllergyDetailsCancel.Text = "Cancel";
+            this.lblAllergyDetailsCancel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblAllergyDetailsCancel_LinkClicked);
             // 
             // lblAllergyDetailsSave
             // 
@@ -550,6 +553,7 @@
             this.lblAllergyDetailsEdit.TabIndex = 21;
             this.lblAllergyDetailsEdit.TabStop = true;
             this.lblAllergyDetailsEdit.Text = "Edit";
+            this.lblAllergyDetailsEdit.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblAllergyDetailsEdit_LinkClicked);
             // 
             // lblAllergiesAdd
             // 

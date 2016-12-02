@@ -31,7 +31,7 @@ namespace csFinalProject
             if (!Validator.isValidUsername(txtUsername.Text))
             {
                 lblUsernameStatus.ForeColor = Color.Red;
-                lblUsernameStatus.Text = "Invalid!";
+                lblUsernameStatus.Text = "Invalid";
                 lblUsernameStatus.Visible = true;
             }
             else
@@ -64,7 +64,7 @@ namespace csFinalProject
             else
             {
                 lblPasswordStatus.ForeColor = Color.Red;
-                lblPasswordStatus.Text = "Invalid!";
+                lblPasswordStatus.Text = "Invalid";
                 lblPasswordStatus.Visible = true;
             }
         }
@@ -84,9 +84,19 @@ namespace csFinalProject
             }
             else
             {
-                lblConfirmStatus.ForeColor = Color.Green;
-                lblConfirmStatus.Text = "✓";
-                lblConfirmStatus.Visible = true;
+                if (Validator.isValidPassword(txtPassword.Text)
+                    && Validator.isValidUsername(txtUsername.Text))
+                {
+                    lblConfirmStatus.ForeColor = Color.Green;
+                    lblConfirmStatus.Text = "✓";
+                    lblConfirmStatus.Visible = true;
+                }
+                else
+                {
+                    lblConfirmStatus.ForeColor = Color.Red;
+                    lblConfirmStatus.Text = "Invalid";
+                    lblConfirmStatus.Visible = true;
+                }
             }
         }
 

@@ -45,7 +45,9 @@ namespace csFinalProject
                 txtOldPassword.Focus();
             }
         }
-
+        //
+        //Tab 1:
+        //
         //Edit Personal Details
         private void lblEditPersonalDetails_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -93,6 +95,34 @@ namespace csFinalProject
         {
             DisableAllControls(grpPrimaryCare);
         }
+        //
+        //Tab 2:
+        //
+        //Edit Personal Medical Details
+        private void lblPersonalMedicalDetailsEdit_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            EnableAllControls(grpPersonalMedicalDetails);
+        }
+
+        //Cancel Personal Medical Details
+        private void lblPersonalMedicalDetailsCancel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            DisableAllControls(grpPersonalMedicalDetails);
+        }
+
+        //Edit Allergy Details
+        private void lblAllergyDetailsEdit_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            EnableAllControls(grpAllergyDetails);
+        }
+
+        //Cancel Allergy Details
+        private void lblAllergyDetailsCancel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            DisableAllControls(grpAllergyDetails);
+        }
+        //
+        //End Tab 2
 
         //Enable and Disable Controls in a given Group Box:
         private void EnableAllControls(GroupBox inGroup)
