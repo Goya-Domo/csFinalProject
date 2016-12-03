@@ -121,6 +121,66 @@ namespace csFinalProject
         {
             DisableAllControls(grpAllergyDetails);
         }
+
+        //Edit Immunisation Details
+        private void lblImmunisationEdit_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            EnableAllControls(grpImmunisationDetails);
+        }
+
+        //Cancel Immunisation Details
+        private void lblImmunisationCancel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            DisableAllControls(grpImmunisationDetails);
+        }
+
+        //Edit Perscribed Medication Details
+        private void lblPerscribedEdit_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            EnableAllControls(grpPerscribedMedicationDetails);
+        }
+
+        //Cancel Perscribed Medication Details
+        private void lblPerscribedCancel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            DisableAllControls(grpPerscribedMedicationDetails);
+        }
+
+        //Edit Test Result Details
+        private void lblTestResultEdit_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            EnableAllControls(grpTestResultDetails);
+        }
+
+        //Cancel Test Result Details
+        private void lblTestResultCancel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            DisableAllControls(grpTestResultDetails);
+        }
+
+        //Edit Medical Condition Details
+        private void lblMedicalConditionEdit_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            EnableAllControls(grpMedicalConditionDetails);
+        }
+
+        //Cancel Medical Condition Details
+        private void lblMedicalConditionCancel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            DisableAllControls(grpMedicalConditionDetails);
+        }
+
+        //Edit Medical Procedure Details
+        private void lblMedicalProceduresEdit_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            EnableAllControls(grpMedicalProcedureDetails);
+        }
+
+        //Cancel Medical Procedure Details
+        private void lblMedicalProceduresCancel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            DisableAllControls(grpMedicalProcedureDetails);
+        }
         //
         //End Tab 2
 
