@@ -175,12 +175,91 @@
             this.lblUsername = new System.Windows.Forms.Label();
             this.lblProfilePic = new System.Windows.Forms.LinkLabel();
             this.tabTabControl = new System.Windows.Forms.TabControl();
+            this.lblImmunisationRemoveSelected = new System.Windows.Forms.LinkLabel();
+            this.lblImmunisationCancel = new System.Windows.Forms.LinkLabel();
+            this.lblImmunisationSave = new System.Windows.Forms.LinkLabel();
+            this.lstImmunisationList = new System.Windows.Forms.ListBox();
+            this.lblImmunisationEdit = new System.Windows.Forms.LinkLabel();
+            this.lblImmunisationAdd = new System.Windows.Forms.LinkLabel();
+            this.txtImmunisationNote = new System.Windows.Forms.TextBox();
+            this.lblImmunisationList = new System.Windows.Forms.Label();
+            this.lblImmunisationNote = new System.Windows.Forms.Label();
+            this.lblImmunisationDate = new System.Windows.Forms.Label();
+            this.dtpImmunisationDate = new System.Windows.Forms.DateTimePicker();
+            this.txtImmunisation = new System.Windows.Forms.TextBox();
+            this.lblImmunisation = new System.Windows.Forms.Label();
+            this.grpPerscribedMedicationDetails = new System.Windows.Forms.GroupBox();
+            this.grpTestResultDetails = new System.Windows.Forms.GroupBox();
+            this.grpMedicalConditionDetails = new System.Windows.Forms.GroupBox();
+            this.grpMedicalProcedureDetails = new System.Windows.Forms.GroupBox();
+            this.lblPerscribedMedication = new System.Windows.Forms.Label();
+            this.txtPerscribedMedication = new System.Windows.Forms.TextBox();
+            this.dtpDatePerscribed = new System.Windows.Forms.DateTimePicker();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.lblDatePerscribed = new System.Windows.Forms.Label();
+            this.lblPerscribedChronic = new System.Windows.Forms.Label();
+            this.chkPerscribedChronic = new System.Windows.Forms.CheckBox();
+            this.lblPerscribedNotes = new System.Windows.Forms.Label();
+            this.txtPerscribedNotes = new System.Windows.Forms.TextBox();
+            this.txtTestResultNotes = new System.Windows.Forms.TextBox();
+            this.lblTestResultNotes = new System.Windows.Forms.Label();
+            this.lblTestResultResult = new System.Windows.Forms.Label();
+            this.lblTestResultDate = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.txtTestResultTest = new System.Windows.Forms.TextBox();
+            this.lblTestResultTest = new System.Windows.Forms.Label();
+            this.txtTestResultResult = new System.Windows.Forms.TextBox();
+            this.lblPerscribedMedicationAdd = new System.Windows.Forms.LinkLabel();
+            this.lblTestResultAdd = new System.Windows.Forms.LinkLabel();
+            this.lblMedicalConditionAdd = new System.Windows.Forms.LinkLabel();
+            this.txtMedicalConditionNotes = new System.Windows.Forms.TextBox();
+            this.lblMedicalConditionCondition = new System.Windows.Forms.Label();
+            this.lblMedicalConditionNotes = new System.Windows.Forms.Label();
+            this.txtMedicalConditionCondition = new System.Windows.Forms.TextBox();
+            this.dtpMedicalConditionOnset = new System.Windows.Forms.DateTimePicker();
+            this.lblMedicalConditionOnset = new System.Windows.Forms.Label();
+            this.rdoMedicalConditionAcute = new System.Windows.Forms.RadioButton();
+            this.rdoMedicalConditionChronic = new System.Windows.Forms.RadioButton();
+            this.lblMedicalProcedureAdd = new System.Windows.Forms.LinkLabel();
+            this.lblMedicalProcedureProcedure = new System.Windows.Forms.Label();
+            this.lblMedicalProcedurePerformedBy = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtMedicalProcedureProcedure = new System.Windows.Forms.TextBox();
+            this.txtMedicalProcedurePerformedBy = new System.Windows.Forms.TextBox();
+            this.dtpMedicalProcedureDate = new System.Windows.Forms.DateTimePicker();
+            this.lblMedicalProcedureDate = new System.Windows.Forms.Label();
+            this.lblPerscribedMedicationList = new System.Windows.Forms.Label();
+            this.lstPerscribedMedicationList = new System.Windows.Forms.ListBox();
+            this.lblPerscribedSelected = new System.Windows.Forms.LinkLabel();
+            this.lblPerscribedCancel = new System.Windows.Forms.LinkLabel();
+            this.lblPerscribedSave = new System.Windows.Forms.LinkLabel();
+            this.lblPerscribedEdit = new System.Windows.Forms.LinkLabel();
+            this.lblTestResultCancel = new System.Windows.Forms.LinkLabel();
+            this.lblTestResultRemoveSelected = new System.Windows.Forms.LinkLabel();
+            this.lstTestResultList = new System.Windows.Forms.ListBox();
+            this.lblTestResultSave = new System.Windows.Forms.LinkLabel();
+            this.lblTestResultList = new System.Windows.Forms.Label();
+            this.lblTestResultEdit = new System.Windows.Forms.LinkLabel();
+            this.lblMedicalConditionCancel = new System.Windows.Forms.LinkLabel();
+            this.lblMedicalConditionsRemoveSelected = new System.Windows.Forms.LinkLabel();
+            this.lstMedicalConditionList = new System.Windows.Forms.ListBox();
+            this.lblMedicalConditionSave = new System.Windows.Forms.LinkLabel();
+            this.lblMedicalConditionList = new System.Windows.Forms.Label();
+            this.lblMedicalConditionEdit = new System.Windows.Forms.LinkLabel();
+            this.lblMedicalProceduresCancel = new System.Windows.Forms.LinkLabel();
+            this.lblMedicalProceduresRemoveSelected = new System.Windows.Forms.LinkLabel();
+            this.lstMedicalProceduresList = new System.Windows.Forms.ListBox();
+            this.lblMedicalProceduresSave = new System.Windows.Forms.LinkLabel();
+            this.lblMedicalProceduresList = new System.Windows.Forms.Label();
+            this.lblMedicalProceduresEdit = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.picProfilePicture)).BeginInit();
             this.tabEPHR.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picUnderConstructionEMPHR)).BeginInit();
             this.tabCPHR.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picUnderConstructionCPHR)).BeginInit();
             this.tabMedicalDetails.SuspendLayout();
+            this.grpImmunisationDetails.SuspendLayout();
             this.grpPersonalMedicalDetails.SuspendLayout();
             this.grpAllergyDetails.SuspendLayout();
             this.tabPersonalDetails.SuspendLayout();
@@ -191,6 +270,10 @@
             this.grpLogin.SuspendLayout();
             this.grpChangePassword.SuspendLayout();
             this.tabTabControl.SuspendLayout();
+            this.grpPerscribedMedicationDetails.SuspendLayout();
+            this.grpTestResultDetails.SuspendLayout();
+            this.grpMedicalConditionDetails.SuspendLayout();
+            this.grpMedicalProcedureDetails.SuspendLayout();
             this.SuspendLayout();
             // 
             // picProfilePicture
@@ -285,6 +368,10 @@
             // 
             // tabMedicalDetails
             // 
+            this.tabMedicalDetails.Controls.Add(this.grpMedicalProcedureDetails);
+            this.tabMedicalDetails.Controls.Add(this.grpMedicalConditionDetails);
+            this.tabMedicalDetails.Controls.Add(this.grpTestResultDetails);
+            this.tabMedicalDetails.Controls.Add(this.grpPerscribedMedicationDetails);
             this.tabMedicalDetails.Controls.Add(this.grpImmunisationDetails);
             this.tabMedicalDetails.Controls.Add(this.grpPersonalMedicalDetails);
             this.tabMedicalDetails.Controls.Add(this.grpAllergyDetails);
@@ -298,6 +385,19 @@
             // 
             // grpImmunisationDetails
             // 
+            this.grpImmunisationDetails.Controls.Add(this.lblImmunisationRemoveSelected);
+            this.grpImmunisationDetails.Controls.Add(this.lblImmunisationCancel);
+            this.grpImmunisationDetails.Controls.Add(this.lblImmunisation);
+            this.grpImmunisationDetails.Controls.Add(this.lblImmunisationSave);
+            this.grpImmunisationDetails.Controls.Add(this.txtImmunisation);
+            this.grpImmunisationDetails.Controls.Add(this.lstImmunisationList);
+            this.grpImmunisationDetails.Controls.Add(this.dtpImmunisationDate);
+            this.grpImmunisationDetails.Controls.Add(this.lblImmunisationEdit);
+            this.grpImmunisationDetails.Controls.Add(this.lblImmunisationDate);
+            this.grpImmunisationDetails.Controls.Add(this.lblImmunisationAdd);
+            this.grpImmunisationDetails.Controls.Add(this.lblImmunisationNote);
+            this.grpImmunisationDetails.Controls.Add(this.txtImmunisationNote);
+            this.grpImmunisationDetails.Controls.Add(this.lblImmunisationList);
             this.grpImmunisationDetails.Location = new System.Drawing.Point(589, 7);
             this.grpImmunisationDetails.Name = "grpImmunisationDetails";
             this.grpImmunisationDetails.Size = new System.Drawing.Size(377, 228);
@@ -1685,6 +1785,789 @@
             this.tabTabControl.Size = new System.Drawing.Size(981, 635);
             this.tabTabControl.TabIndex = 0;
             // 
+            // lblImmunisationRemoveSelected
+            // 
+            this.lblImmunisationRemoveSelected.AutoSize = true;
+            this.lblImmunisationRemoveSelected.Enabled = false;
+            this.lblImmunisationRemoveSelected.Location = new System.Drawing.Point(279, 20);
+            this.lblImmunisationRemoveSelected.Name = "lblImmunisationRemoveSelected";
+            this.lblImmunisationRemoveSelected.Size = new System.Drawing.Size(92, 13);
+            this.lblImmunisationRemoveSelected.TabIndex = 37;
+            this.lblImmunisationRemoveSelected.TabStop = true;
+            this.lblImmunisationRemoveSelected.Text = "Remove Selected";
+            // 
+            // lblImmunisationCancel
+            // 
+            this.lblImmunisationCancel.AutoSize = true;
+            this.lblImmunisationCancel.Enabled = false;
+            this.lblImmunisationCancel.Location = new System.Drawing.Point(331, 204);
+            this.lblImmunisationCancel.Name = "lblImmunisationCancel";
+            this.lblImmunisationCancel.Size = new System.Drawing.Size(40, 13);
+            this.lblImmunisationCancel.TabIndex = 36;
+            this.lblImmunisationCancel.TabStop = true;
+            this.lblImmunisationCancel.Text = "Cancel";
+            // 
+            // lblImmunisationSave
+            // 
+            this.lblImmunisationSave.AutoSize = true;
+            this.lblImmunisationSave.Enabled = false;
+            this.lblImmunisationSave.Location = new System.Drawing.Point(293, 204);
+            this.lblImmunisationSave.Name = "lblImmunisationSave";
+            this.lblImmunisationSave.Size = new System.Drawing.Size(32, 13);
+            this.lblImmunisationSave.TabIndex = 34;
+            this.lblImmunisationSave.TabStop = true;
+            this.lblImmunisationSave.Text = "Save";
+            // 
+            // lstImmunisationList
+            // 
+            this.lstImmunisationList.Enabled = false;
+            this.lstImmunisationList.FormattingEnabled = true;
+            this.lstImmunisationList.Location = new System.Drawing.Point(205, 36);
+            this.lstImmunisationList.Name = "lstImmunisationList";
+            this.lstImmunisationList.Size = new System.Drawing.Size(166, 160);
+            this.lstImmunisationList.TabIndex = 35;
+            // 
+            // lblImmunisationEdit
+            // 
+            this.lblImmunisationEdit.AutoSize = true;
+            this.lblImmunisationEdit.Location = new System.Drawing.Point(262, 204);
+            this.lblImmunisationEdit.Name = "lblImmunisationEdit";
+            this.lblImmunisationEdit.Size = new System.Drawing.Size(25, 13);
+            this.lblImmunisationEdit.TabIndex = 32;
+            this.lblImmunisationEdit.TabStop = true;
+            this.lblImmunisationEdit.Text = "Edit";
+            // 
+            // lblImmunisationAdd
+            // 
+            this.lblImmunisationAdd.AutoSize = true;
+            this.lblImmunisationAdd.Enabled = false;
+            this.lblImmunisationAdd.Location = new System.Drawing.Point(163, 204);
+            this.lblImmunisationAdd.Name = "lblImmunisationAdd";
+            this.lblImmunisationAdd.Size = new System.Drawing.Size(26, 13);
+            this.lblImmunisationAdd.TabIndex = 33;
+            this.lblImmunisationAdd.TabStop = true;
+            this.lblImmunisationAdd.Text = "Add";
+            // 
+            // txtImmunisationNote
+            // 
+            this.txtImmunisationNote.Enabled = false;
+            this.txtImmunisationNote.Location = new System.Drawing.Point(72, 68);
+            this.txtImmunisationNote.Multiline = true;
+            this.txtImmunisationNote.Name = "txtImmunisationNote";
+            this.txtImmunisationNote.Size = new System.Drawing.Size(117, 128);
+            this.txtImmunisationNote.TabIndex = 31;
+            // 
+            // lblImmunisationList
+            // 
+            this.lblImmunisationList.AutoSize = true;
+            this.lblImmunisationList.Location = new System.Drawing.Point(202, 20);
+            this.lblImmunisationList.Name = "lblImmunisationList";
+            this.lblImmunisationList.Size = new System.Drawing.Size(49, 13);
+            this.lblImmunisationList.TabIndex = 30;
+            this.lblImmunisationList.Text = "Allergies:";
+            // 
+            // lblImmunisationNote
+            // 
+            this.lblImmunisationNote.AutoSize = true;
+            this.lblImmunisationNote.Location = new System.Drawing.Point(5, 68);
+            this.lblImmunisationNote.Name = "lblImmunisationNote";
+            this.lblImmunisationNote.Size = new System.Drawing.Size(33, 13);
+            this.lblImmunisationNote.TabIndex = 29;
+            this.lblImmunisationNote.Text = "Note:";
+            // 
+            // lblImmunisationDate
+            // 
+            this.lblImmunisationDate.AutoSize = true;
+            this.lblImmunisationDate.Location = new System.Drawing.Point(6, 46);
+            this.lblImmunisationDate.Name = "lblImmunisationDate";
+            this.lblImmunisationDate.Size = new System.Drawing.Size(33, 13);
+            this.lblImmunisationDate.TabIndex = 28;
+            this.lblImmunisationDate.Text = "Date:";
+            // 
+            // dtpImmunisationDate
+            // 
+            this.dtpImmunisationDate.Enabled = false;
+            this.dtpImmunisationDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpImmunisationDate.Location = new System.Drawing.Point(72, 43);
+            this.dtpImmunisationDate.Name = "dtpImmunisationDate";
+            this.dtpImmunisationDate.Size = new System.Drawing.Size(117, 20);
+            this.dtpImmunisationDate.TabIndex = 27;
+            // 
+            // txtImmunisation
+            // 
+            this.txtImmunisation.Enabled = false;
+            this.txtImmunisation.Location = new System.Drawing.Point(83, 17);
+            this.txtImmunisation.Name = "txtImmunisation";
+            this.txtImmunisation.Size = new System.Drawing.Size(106, 20);
+            this.txtImmunisation.TabIndex = 26;
+            // 
+            // lblImmunisation
+            // 
+            this.lblImmunisation.AutoSize = true;
+            this.lblImmunisation.Location = new System.Drawing.Point(6, 20);
+            this.lblImmunisation.Name = "lblImmunisation";
+            this.lblImmunisation.Size = new System.Drawing.Size(71, 13);
+            this.lblImmunisation.TabIndex = 25;
+            this.lblImmunisation.Text = "Immunisation:";
+            // 
+            // grpPerscribedMedicationDetails
+            // 
+            this.grpPerscribedMedicationDetails.Controls.Add(this.lblPerscribedCancel);
+            this.grpPerscribedMedicationDetails.Controls.Add(this.lblPerscribedSelected);
+            this.grpPerscribedMedicationDetails.Controls.Add(this.lstPerscribedMedicationList);
+            this.grpPerscribedMedicationDetails.Controls.Add(this.lblPerscribedSave);
+            this.grpPerscribedMedicationDetails.Controls.Add(this.lblPerscribedMedicationList);
+            this.grpPerscribedMedicationDetails.Controls.Add(this.lblPerscribedEdit);
+            this.grpPerscribedMedicationDetails.Controls.Add(this.lblPerscribedMedicationAdd);
+            this.grpPerscribedMedicationDetails.Controls.Add(this.txtPerscribedNotes);
+            this.grpPerscribedMedicationDetails.Controls.Add(this.lblPerscribedNotes);
+            this.grpPerscribedMedicationDetails.Controls.Add(this.chkPerscribedChronic);
+            this.grpPerscribedMedicationDetails.Controls.Add(this.lblPerscribedChronic);
+            this.grpPerscribedMedicationDetails.Controls.Add(this.lblDatePerscribed);
+            this.grpPerscribedMedicationDetails.Controls.Add(this.dtpDatePerscribed);
+            this.grpPerscribedMedicationDetails.Controls.Add(this.txtPerscribedMedication);
+            this.grpPerscribedMedicationDetails.Controls.Add(this.lblPerscribedMedication);
+            this.grpPerscribedMedicationDetails.Location = new System.Drawing.Point(8, 241);
+            this.grpPerscribedMedicationDetails.Name = "grpPerscribedMedicationDetails";
+            this.grpPerscribedMedicationDetails.Size = new System.Drawing.Size(233, 359);
+            this.grpPerscribedMedicationDetails.TabIndex = 23;
+            this.grpPerscribedMedicationDetails.TabStop = false;
+            this.grpPerscribedMedicationDetails.Text = "Perscribed Medication Details";
+            // 
+            // grpTestResultDetails
+            // 
+            this.grpTestResultDetails.Controls.Add(this.lblTestResultCancel);
+            this.grpTestResultDetails.Controls.Add(this.lblTestResultAdd);
+            this.grpTestResultDetails.Controls.Add(this.lblTestResultRemoveSelected);
+            this.grpTestResultDetails.Controls.Add(this.txtTestResultResult);
+            this.grpTestResultDetails.Controls.Add(this.lstTestResultList);
+            this.grpTestResultDetails.Controls.Add(this.txtTestResultNotes);
+            this.grpTestResultDetails.Controls.Add(this.lblTestResultSave);
+            this.grpTestResultDetails.Controls.Add(this.lblTestResultTest);
+            this.grpTestResultDetails.Controls.Add(this.lblTestResultList);
+            this.grpTestResultDetails.Controls.Add(this.lblTestResultEdit);
+            this.grpTestResultDetails.Controls.Add(this.lblTestResultNotes);
+            this.grpTestResultDetails.Controls.Add(this.txtTestResultTest);
+            this.grpTestResultDetails.Controls.Add(this.dateTimePicker1);
+            this.grpTestResultDetails.Controls.Add(this.lblTestResultResult);
+            this.grpTestResultDetails.Controls.Add(this.lblTestResultDate);
+            this.grpTestResultDetails.Location = new System.Drawing.Point(247, 241);
+            this.grpTestResultDetails.Name = "grpTestResultDetails";
+            this.grpTestResultDetails.Size = new System.Drawing.Size(234, 359);
+            this.grpTestResultDetails.TabIndex = 24;
+            this.grpTestResultDetails.TabStop = false;
+            this.grpTestResultDetails.Text = "Test Result Details";
+            // 
+            // grpMedicalConditionDetails
+            // 
+            this.grpMedicalConditionDetails.Controls.Add(this.lblMedicalConditionCancel);
+            this.grpMedicalConditionDetails.Controls.Add(this.rdoMedicalConditionChronic);
+            this.grpMedicalConditionDetails.Controls.Add(this.lblMedicalConditionsRemoveSelected);
+            this.grpMedicalConditionDetails.Controls.Add(this.rdoMedicalConditionAcute);
+            this.grpMedicalConditionDetails.Controls.Add(this.lstMedicalConditionList);
+            this.grpMedicalConditionDetails.Controls.Add(this.lblMedicalConditionAdd);
+            this.grpMedicalConditionDetails.Controls.Add(this.lblMedicalConditionSave);
+            this.grpMedicalConditionDetails.Controls.Add(this.lblMedicalConditionCondition);
+            this.grpMedicalConditionDetails.Controls.Add(this.lblMedicalConditionList);
+            this.grpMedicalConditionDetails.Controls.Add(this.lblMedicalConditionEdit);
+            this.grpMedicalConditionDetails.Controls.Add(this.lblMedicalConditionOnset);
+            this.grpMedicalConditionDetails.Controls.Add(this.txtMedicalConditionNotes);
+            this.grpMedicalConditionDetails.Controls.Add(this.dtpMedicalConditionOnset);
+            this.grpMedicalConditionDetails.Controls.Add(this.lblMedicalConditionNotes);
+            this.grpMedicalConditionDetails.Controls.Add(this.txtMedicalConditionCondition);
+            this.grpMedicalConditionDetails.Location = new System.Drawing.Point(487, 241);
+            this.grpMedicalConditionDetails.Name = "grpMedicalConditionDetails";
+            this.grpMedicalConditionDetails.Size = new System.Drawing.Size(236, 359);
+            this.grpMedicalConditionDetails.TabIndex = 25;
+            this.grpMedicalConditionDetails.TabStop = false;
+            this.grpMedicalConditionDetails.Text = "Medical Condition Details";
+            // 
+            // grpMedicalProcedureDetails
+            // 
+            this.grpMedicalProcedureDetails.Controls.Add(this.lblMedicalProceduresCancel);
+            this.grpMedicalProcedureDetails.Controls.Add(this.dtpMedicalProcedureDate);
+            this.grpMedicalProcedureDetails.Controls.Add(this.lblMedicalProceduresRemoveSelected);
+            this.grpMedicalProcedureDetails.Controls.Add(this.txtMedicalProcedurePerformedBy);
+            this.grpMedicalProcedureDetails.Controls.Add(this.lstMedicalProceduresList);
+            this.grpMedicalProcedureDetails.Controls.Add(this.lblMedicalProcedureProcedure);
+            this.grpMedicalProcedureDetails.Controls.Add(this.lblMedicalProceduresSave);
+            this.grpMedicalProcedureDetails.Controls.Add(this.lblMedicalProcedureDate);
+            this.grpMedicalProcedureDetails.Controls.Add(this.lblMedicalProceduresList);
+            this.grpMedicalProcedureDetails.Controls.Add(this.lblMedicalProceduresEdit);
+            this.grpMedicalProcedureDetails.Controls.Add(this.txtMedicalProcedureProcedure);
+            this.grpMedicalProcedureDetails.Controls.Add(this.lblMedicalProcedureAdd);
+            this.grpMedicalProcedureDetails.Controls.Add(this.label3);
+            this.grpMedicalProcedureDetails.Controls.Add(this.lblMedicalProcedurePerformedBy);
+            this.grpMedicalProcedureDetails.Controls.Add(this.textBox1);
+            this.grpMedicalProcedureDetails.Location = new System.Drawing.Point(729, 241);
+            this.grpMedicalProcedureDetails.Name = "grpMedicalProcedureDetails";
+            this.grpMedicalProcedureDetails.Size = new System.Drawing.Size(237, 359);
+            this.grpMedicalProcedureDetails.TabIndex = 26;
+            this.grpMedicalProcedureDetails.TabStop = false;
+            this.grpMedicalProcedureDetails.Text = "Medical Procedure Details";
+            // 
+            // lblPerscribedMedication
+            // 
+            this.lblPerscribedMedication.AutoSize = true;
+            this.lblPerscribedMedication.Location = new System.Drawing.Point(7, 23);
+            this.lblPerscribedMedication.Name = "lblPerscribedMedication";
+            this.lblPerscribedMedication.Size = new System.Drawing.Size(62, 13);
+            this.lblPerscribedMedication.TabIndex = 0;
+            this.lblPerscribedMedication.Text = "Medication:";
+            // 
+            // txtPerscribedMedication
+            // 
+            this.txtPerscribedMedication.Location = new System.Drawing.Point(76, 20);
+            this.txtPerscribedMedication.Name = "txtPerscribedMedication";
+            this.txtPerscribedMedication.Size = new System.Drawing.Size(149, 20);
+            this.txtPerscribedMedication.TabIndex = 1;
+            // 
+            // dtpDatePerscribed
+            // 
+            this.dtpDatePerscribed.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDatePerscribed.Location = new System.Drawing.Point(76, 47);
+            this.dtpDatePerscribed.Name = "dtpDatePerscribed";
+            this.dtpDatePerscribed.Size = new System.Drawing.Size(149, 20);
+            this.dtpDatePerscribed.TabIndex = 2;
+            // 
+            // imageList1
+            // 
+            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            // 
+            // lblDatePerscribed
+            // 
+            this.lblDatePerscribed.AutoSize = true;
+            this.lblDatePerscribed.Location = new System.Drawing.Point(7, 49);
+            this.lblDatePerscribed.Name = "lblDatePerscribed";
+            this.lblDatePerscribed.Size = new System.Drawing.Size(60, 13);
+            this.lblDatePerscribed.TabIndex = 3;
+            this.lblDatePerscribed.Text = "Perscribed:";
+            // 
+            // lblPerscribedChronic
+            // 
+            this.lblPerscribedChronic.AutoSize = true;
+            this.lblPerscribedChronic.Location = new System.Drawing.Point(7, 74);
+            this.lblPerscribedChronic.Name = "lblPerscribedChronic";
+            this.lblPerscribedChronic.Size = new System.Drawing.Size(46, 13);
+            this.lblPerscribedChronic.TabIndex = 4;
+            this.lblPerscribedChronic.Text = "Chronic:";
+            // 
+            // chkPerscribedChronic
+            // 
+            this.chkPerscribedChronic.AutoSize = true;
+            this.chkPerscribedChronic.Location = new System.Drawing.Point(76, 74);
+            this.chkPerscribedChronic.Name = "chkPerscribedChronic";
+            this.chkPerscribedChronic.Size = new System.Drawing.Size(15, 14);
+            this.chkPerscribedChronic.TabIndex = 5;
+            this.chkPerscribedChronic.UseVisualStyleBackColor = true;
+            // 
+            // lblPerscribedNotes
+            // 
+            this.lblPerscribedNotes.AutoSize = true;
+            this.lblPerscribedNotes.Location = new System.Drawing.Point(7, 105);
+            this.lblPerscribedNotes.Name = "lblPerscribedNotes";
+            this.lblPerscribedNotes.Size = new System.Drawing.Size(38, 13);
+            this.lblPerscribedNotes.TabIndex = 6;
+            this.lblPerscribedNotes.Text = "Notes:";
+            // 
+            // txtPerscribedNotes
+            // 
+            this.txtPerscribedNotes.Location = new System.Drawing.Point(76, 105);
+            this.txtPerscribedNotes.Multiline = true;
+            this.txtPerscribedNotes.Name = "txtPerscribedNotes";
+            this.txtPerscribedNotes.Size = new System.Drawing.Size(149, 63);
+            this.txtPerscribedNotes.TabIndex = 7;
+            // 
+            // txtTestResultNotes
+            // 
+            this.txtTestResultNotes.Location = new System.Drawing.Point(75, 105);
+            this.txtTestResultNotes.Multiline = true;
+            this.txtTestResultNotes.Name = "txtTestResultNotes";
+            this.txtTestResultNotes.Size = new System.Drawing.Size(149, 63);
+            this.txtTestResultNotes.TabIndex = 15;
+            // 
+            // lblTestResultNotes
+            // 
+            this.lblTestResultNotes.AutoSize = true;
+            this.lblTestResultNotes.Location = new System.Drawing.Point(6, 105);
+            this.lblTestResultNotes.Name = "lblTestResultNotes";
+            this.lblTestResultNotes.Size = new System.Drawing.Size(38, 13);
+            this.lblTestResultNotes.TabIndex = 14;
+            this.lblTestResultNotes.Text = "Notes:";
+            // 
+            // lblTestResultResult
+            // 
+            this.lblTestResultResult.AutoSize = true;
+            this.lblTestResultResult.Location = new System.Drawing.Point(6, 77);
+            this.lblTestResultResult.Name = "lblTestResultResult";
+            this.lblTestResultResult.Size = new System.Drawing.Size(40, 13);
+            this.lblTestResultResult.TabIndex = 12;
+            this.lblTestResultResult.Text = "Result:";
+            // 
+            // lblTestResultDate
+            // 
+            this.lblTestResultDate.AutoSize = true;
+            this.lblTestResultDate.Location = new System.Drawing.Point(6, 49);
+            this.lblTestResultDate.Name = "lblTestResultDate";
+            this.lblTestResultDate.Size = new System.Drawing.Size(33, 13);
+            this.lblTestResultDate.TabIndex = 11;
+            this.lblTestResultDate.Text = "Date:";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(75, 47);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(149, 20);
+            this.dateTimePicker1.TabIndex = 10;
+            // 
+            // txtTestResultTest
+            // 
+            this.txtTestResultTest.Location = new System.Drawing.Point(75, 20);
+            this.txtTestResultTest.Name = "txtTestResultTest";
+            this.txtTestResultTest.Size = new System.Drawing.Size(149, 20);
+            this.txtTestResultTest.TabIndex = 9;
+            // 
+            // lblTestResultTest
+            // 
+            this.lblTestResultTest.AutoSize = true;
+            this.lblTestResultTest.Location = new System.Drawing.Point(6, 23);
+            this.lblTestResultTest.Name = "lblTestResultTest";
+            this.lblTestResultTest.Size = new System.Drawing.Size(31, 13);
+            this.lblTestResultTest.TabIndex = 8;
+            this.lblTestResultTest.Text = "Test:";
+            // 
+            // txtTestResultResult
+            // 
+            this.txtTestResultResult.Location = new System.Drawing.Point(75, 74);
+            this.txtTestResultResult.Name = "txtTestResultResult";
+            this.txtTestResultResult.Size = new System.Drawing.Size(149, 20);
+            this.txtTestResultResult.TabIndex = 16;
+            // 
+            // lblPerscribedMedicationAdd
+            // 
+            this.lblPerscribedMedicationAdd.AutoSize = true;
+            this.lblPerscribedMedicationAdd.Enabled = false;
+            this.lblPerscribedMedicationAdd.Location = new System.Drawing.Point(197, 174);
+            this.lblPerscribedMedicationAdd.Name = "lblPerscribedMedicationAdd";
+            this.lblPerscribedMedicationAdd.Size = new System.Drawing.Size(26, 13);
+            this.lblPerscribedMedicationAdd.TabIndex = 25;
+            this.lblPerscribedMedicationAdd.TabStop = true;
+            this.lblPerscribedMedicationAdd.Text = "Add";
+            // 
+            // lblTestResultAdd
+            // 
+            this.lblTestResultAdd.AutoSize = true;
+            this.lblTestResultAdd.Enabled = false;
+            this.lblTestResultAdd.Location = new System.Drawing.Point(198, 174);
+            this.lblTestResultAdd.Name = "lblTestResultAdd";
+            this.lblTestResultAdd.Size = new System.Drawing.Size(26, 13);
+            this.lblTestResultAdd.TabIndex = 26;
+            this.lblTestResultAdd.TabStop = true;
+            this.lblTestResultAdd.Text = "Add";
+            // 
+            // lblMedicalConditionAdd
+            // 
+            this.lblMedicalConditionAdd.AutoSize = true;
+            this.lblMedicalConditionAdd.Enabled = false;
+            this.lblMedicalConditionAdd.Location = new System.Drawing.Point(199, 173);
+            this.lblMedicalConditionAdd.Name = "lblMedicalConditionAdd";
+            this.lblMedicalConditionAdd.Size = new System.Drawing.Size(26, 13);
+            this.lblMedicalConditionAdd.TabIndex = 35;
+            this.lblMedicalConditionAdd.TabStop = true;
+            this.lblMedicalConditionAdd.Text = "Add";
+            // 
+            // txtMedicalConditionNotes
+            // 
+            this.txtMedicalConditionNotes.Location = new System.Drawing.Point(76, 104);
+            this.txtMedicalConditionNotes.Multiline = true;
+            this.txtMedicalConditionNotes.Name = "txtMedicalConditionNotes";
+            this.txtMedicalConditionNotes.Size = new System.Drawing.Size(149, 63);
+            this.txtMedicalConditionNotes.TabIndex = 33;
+            // 
+            // lblMedicalConditionCondition
+            // 
+            this.lblMedicalConditionCondition.AutoSize = true;
+            this.lblMedicalConditionCondition.Location = new System.Drawing.Point(7, 22);
+            this.lblMedicalConditionCondition.Name = "lblMedicalConditionCondition";
+            this.lblMedicalConditionCondition.Size = new System.Drawing.Size(54, 13);
+            this.lblMedicalConditionCondition.TabIndex = 27;
+            this.lblMedicalConditionCondition.Text = "Condition:";
+            // 
+            // lblMedicalConditionNotes
+            // 
+            this.lblMedicalConditionNotes.AutoSize = true;
+            this.lblMedicalConditionNotes.Location = new System.Drawing.Point(7, 104);
+            this.lblMedicalConditionNotes.Name = "lblMedicalConditionNotes";
+            this.lblMedicalConditionNotes.Size = new System.Drawing.Size(38, 13);
+            this.lblMedicalConditionNotes.TabIndex = 32;
+            this.lblMedicalConditionNotes.Text = "Notes:";
+            // 
+            // txtMedicalConditionCondition
+            // 
+            this.txtMedicalConditionCondition.Location = new System.Drawing.Point(76, 19);
+            this.txtMedicalConditionCondition.Name = "txtMedicalConditionCondition";
+            this.txtMedicalConditionCondition.Size = new System.Drawing.Size(149, 20);
+            this.txtMedicalConditionCondition.TabIndex = 28;
+            // 
+            // dtpMedicalConditionOnset
+            // 
+            this.dtpMedicalConditionOnset.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpMedicalConditionOnset.Location = new System.Drawing.Point(76, 46);
+            this.dtpMedicalConditionOnset.Name = "dtpMedicalConditionOnset";
+            this.dtpMedicalConditionOnset.Size = new System.Drawing.Size(149, 20);
+            this.dtpMedicalConditionOnset.TabIndex = 29;
+            // 
+            // lblMedicalConditionOnset
+            // 
+            this.lblMedicalConditionOnset.AutoSize = true;
+            this.lblMedicalConditionOnset.Location = new System.Drawing.Point(7, 48);
+            this.lblMedicalConditionOnset.Name = "lblMedicalConditionOnset";
+            this.lblMedicalConditionOnset.Size = new System.Drawing.Size(38, 13);
+            this.lblMedicalConditionOnset.TabIndex = 30;
+            this.lblMedicalConditionOnset.Text = "Onset:";
+            // 
+            // rdoMedicalConditionAcute
+            // 
+            this.rdoMedicalConditionAcute.AutoSize = true;
+            this.rdoMedicalConditionAcute.Location = new System.Drawing.Point(76, 72);
+            this.rdoMedicalConditionAcute.Name = "rdoMedicalConditionAcute";
+            this.rdoMedicalConditionAcute.Size = new System.Drawing.Size(53, 17);
+            this.rdoMedicalConditionAcute.TabIndex = 36;
+            this.rdoMedicalConditionAcute.TabStop = true;
+            this.rdoMedicalConditionAcute.Text = "Acute";
+            this.rdoMedicalConditionAcute.UseVisualStyleBackColor = true;
+            // 
+            // rdoMedicalConditionChronic
+            // 
+            this.rdoMedicalConditionChronic.AutoSize = true;
+            this.rdoMedicalConditionChronic.Location = new System.Drawing.Point(135, 73);
+            this.rdoMedicalConditionChronic.Name = "rdoMedicalConditionChronic";
+            this.rdoMedicalConditionChronic.Size = new System.Drawing.Size(61, 17);
+            this.rdoMedicalConditionChronic.TabIndex = 37;
+            this.rdoMedicalConditionChronic.TabStop = true;
+            this.rdoMedicalConditionChronic.Text = "Chronic";
+            this.rdoMedicalConditionChronic.UseVisualStyleBackColor = true;
+            // 
+            // lblMedicalProcedureAdd
+            // 
+            this.lblMedicalProcedureAdd.AutoSize = true;
+            this.lblMedicalProcedureAdd.Enabled = false;
+            this.lblMedicalProcedureAdd.Location = new System.Drawing.Point(198, 174);
+            this.lblMedicalProcedureAdd.Name = "lblMedicalProcedureAdd";
+            this.lblMedicalProcedureAdd.Size = new System.Drawing.Size(26, 13);
+            this.lblMedicalProcedureAdd.TabIndex = 44;
+            this.lblMedicalProcedureAdd.TabStop = true;
+            this.lblMedicalProcedureAdd.Text = "Add";
+            // 
+            // lblMedicalProcedureProcedure
+            // 
+            this.lblMedicalProcedureProcedure.AutoSize = true;
+            this.lblMedicalProcedureProcedure.Location = new System.Drawing.Point(6, 23);
+            this.lblMedicalProcedureProcedure.Name = "lblMedicalProcedureProcedure";
+            this.lblMedicalProcedureProcedure.Size = new System.Drawing.Size(59, 13);
+            this.lblMedicalProcedureProcedure.TabIndex = 38;
+            this.lblMedicalProcedureProcedure.Text = "Procedure:";
+            // 
+            // lblMedicalProcedurePerformedBy
+            // 
+            this.lblMedicalProcedurePerformedBy.AutoSize = true;
+            this.lblMedicalProcedurePerformedBy.Location = new System.Drawing.Point(6, 49);
+            this.lblMedicalProcedurePerformedBy.Name = "lblMedicalProcedurePerformedBy";
+            this.lblMedicalProcedurePerformedBy.Size = new System.Drawing.Size(73, 13);
+            this.lblMedicalProcedurePerformedBy.TabIndex = 41;
+            this.lblMedicalProcedurePerformedBy.Text = "Performed By:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(75, 72);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(149, 63);
+            this.textBox1.TabIndex = 43;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 72);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(38, 13);
+            this.label3.TabIndex = 42;
+            this.label3.Text = "Notes:";
+            // 
+            // txtMedicalProcedureProcedure
+            // 
+            this.txtMedicalProcedureProcedure.Location = new System.Drawing.Point(75, 20);
+            this.txtMedicalProcedureProcedure.Name = "txtMedicalProcedureProcedure";
+            this.txtMedicalProcedureProcedure.Size = new System.Drawing.Size(149, 20);
+            this.txtMedicalProcedureProcedure.TabIndex = 39;
+            // 
+            // txtMedicalProcedurePerformedBy
+            // 
+            this.txtMedicalProcedurePerformedBy.Location = new System.Drawing.Point(85, 46);
+            this.txtMedicalProcedurePerformedBy.Name = "txtMedicalProcedurePerformedBy";
+            this.txtMedicalProcedurePerformedBy.Size = new System.Drawing.Size(139, 20);
+            this.txtMedicalProcedurePerformedBy.TabIndex = 47;
+            // 
+            // dtpMedicalProcedureDate
+            // 
+            this.dtpMedicalProcedureDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpMedicalProcedureDate.Location = new System.Drawing.Point(75, 147);
+            this.dtpMedicalProcedureDate.Name = "dtpMedicalProcedureDate";
+            this.dtpMedicalProcedureDate.Size = new System.Drawing.Size(149, 20);
+            this.dtpMedicalProcedureDate.TabIndex = 27;
+            // 
+            // lblMedicalProcedureDate
+            // 
+            this.lblMedicalProcedureDate.AutoSize = true;
+            this.lblMedicalProcedureDate.Location = new System.Drawing.Point(6, 149);
+            this.lblMedicalProcedureDate.Name = "lblMedicalProcedureDate";
+            this.lblMedicalProcedureDate.Size = new System.Drawing.Size(33, 13);
+            this.lblMedicalProcedureDate.TabIndex = 28;
+            this.lblMedicalProcedureDate.Text = "Date:";
+            // 
+            // lblPerscribedMedicationList
+            // 
+            this.lblPerscribedMedicationList.AutoSize = true;
+            this.lblPerscribedMedicationList.Location = new System.Drawing.Point(7, 194);
+            this.lblPerscribedMedicationList.Name = "lblPerscribedMedicationList";
+            this.lblPerscribedMedicationList.Size = new System.Drawing.Size(62, 13);
+            this.lblPerscribedMedicationList.TabIndex = 26;
+            this.lblPerscribedMedicationList.Text = "Medication:";
+            // 
+            // lstPerscribedMedicationList
+            // 
+            this.lstPerscribedMedicationList.FormattingEnabled = true;
+            this.lstPerscribedMedicationList.Location = new System.Drawing.Point(10, 210);
+            this.lstPerscribedMedicationList.Name = "lstPerscribedMedicationList";
+            this.lstPerscribedMedicationList.Size = new System.Drawing.Size(213, 121);
+            this.lstPerscribedMedicationList.TabIndex = 27;
+            // 
+            // lblPerscribedSelected
+            // 
+            this.lblPerscribedSelected.AutoSize = true;
+            this.lblPerscribedSelected.Enabled = false;
+            this.lblPerscribedSelected.Location = new System.Drawing.Point(131, 194);
+            this.lblPerscribedSelected.Name = "lblPerscribedSelected";
+            this.lblPerscribedSelected.Size = new System.Drawing.Size(92, 13);
+            this.lblPerscribedSelected.TabIndex = 25;
+            this.lblPerscribedSelected.TabStop = true;
+            this.lblPerscribedSelected.Text = "Remove Selected";
+            // 
+            // lblPerscribedCancel
+            // 
+            this.lblPerscribedCancel.AutoSize = true;
+            this.lblPerscribedCancel.Enabled = false;
+            this.lblPerscribedCancel.Location = new System.Drawing.Point(183, 338);
+            this.lblPerscribedCancel.Name = "lblPerscribedCancel";
+            this.lblPerscribedCancel.Size = new System.Drawing.Size(40, 13);
+            this.lblPerscribedCancel.TabIndex = 27;
+            this.lblPerscribedCancel.TabStop = true;
+            this.lblPerscribedCancel.Text = "Cancel";
+            // 
+            // lblPerscribedSave
+            // 
+            this.lblPerscribedSave.AutoSize = true;
+            this.lblPerscribedSave.Enabled = false;
+            this.lblPerscribedSave.Location = new System.Drawing.Point(145, 338);
+            this.lblPerscribedSave.Name = "lblPerscribedSave";
+            this.lblPerscribedSave.Size = new System.Drawing.Size(32, 13);
+            this.lblPerscribedSave.TabIndex = 26;
+            this.lblPerscribedSave.TabStop = true;
+            this.lblPerscribedSave.Text = "Save";
+            // 
+            // lblPerscribedEdit
+            // 
+            this.lblPerscribedEdit.AutoSize = true;
+            this.lblPerscribedEdit.Location = new System.Drawing.Point(114, 338);
+            this.lblPerscribedEdit.Name = "lblPerscribedEdit";
+            this.lblPerscribedEdit.Size = new System.Drawing.Size(25, 13);
+            this.lblPerscribedEdit.TabIndex = 25;
+            this.lblPerscribedEdit.TabStop = true;
+            this.lblPerscribedEdit.Text = "Edit";
+            // 
+            // lblTestResultCancel
+            // 
+            this.lblTestResultCancel.AutoSize = true;
+            this.lblTestResultCancel.Enabled = false;
+            this.lblTestResultCancel.Location = new System.Drawing.Point(182, 338);
+            this.lblTestResultCancel.Name = "lblTestResultCancel";
+            this.lblTestResultCancel.Size = new System.Drawing.Size(40, 13);
+            this.lblTestResultCancel.TabIndex = 32;
+            this.lblTestResultCancel.TabStop = true;
+            this.lblTestResultCancel.Text = "Cancel";
+            // 
+            // lblTestResultRemoveSelected
+            // 
+            this.lblTestResultRemoveSelected.AutoSize = true;
+            this.lblTestResultRemoveSelected.Enabled = false;
+            this.lblTestResultRemoveSelected.Location = new System.Drawing.Point(130, 194);
+            this.lblTestResultRemoveSelected.Name = "lblTestResultRemoveSelected";
+            this.lblTestResultRemoveSelected.Size = new System.Drawing.Size(92, 13);
+            this.lblTestResultRemoveSelected.TabIndex = 28;
+            this.lblTestResultRemoveSelected.TabStop = true;
+            this.lblTestResultRemoveSelected.Text = "Remove Selected";
+            // 
+            // lstTestResultList
+            // 
+            this.lstTestResultList.FormattingEnabled = true;
+            this.lstTestResultList.Location = new System.Drawing.Point(9, 210);
+            this.lstTestResultList.Name = "lstTestResultList";
+            this.lstTestResultList.Size = new System.Drawing.Size(213, 121);
+            this.lstTestResultList.TabIndex = 33;
+            // 
+            // lblTestResultSave
+            // 
+            this.lblTestResultSave.AutoSize = true;
+            this.lblTestResultSave.Enabled = false;
+            this.lblTestResultSave.Location = new System.Drawing.Point(144, 338);
+            this.lblTestResultSave.Name = "lblTestResultSave";
+            this.lblTestResultSave.Size = new System.Drawing.Size(32, 13);
+            this.lblTestResultSave.TabIndex = 30;
+            this.lblTestResultSave.TabStop = true;
+            this.lblTestResultSave.Text = "Save";
+            // 
+            // lblTestResultList
+            // 
+            this.lblTestResultList.AutoSize = true;
+            this.lblTestResultList.Location = new System.Drawing.Point(6, 194);
+            this.lblTestResultList.Name = "lblTestResultList";
+            this.lblTestResultList.Size = new System.Drawing.Size(64, 13);
+            this.lblTestResultList.TabIndex = 31;
+            this.lblTestResultList.Text = "Test Result:";
+            // 
+            // lblTestResultEdit
+            // 
+            this.lblTestResultEdit.AutoSize = true;
+            this.lblTestResultEdit.Location = new System.Drawing.Point(113, 338);
+            this.lblTestResultEdit.Name = "lblTestResultEdit";
+            this.lblTestResultEdit.Size = new System.Drawing.Size(25, 13);
+            this.lblTestResultEdit.TabIndex = 29;
+            this.lblTestResultEdit.TabStop = true;
+            this.lblTestResultEdit.Text = "Edit";
+            // 
+            // lblMedicalConditionCancel
+            // 
+            this.lblMedicalConditionCancel.AutoSize = true;
+            this.lblMedicalConditionCancel.Enabled = false;
+            this.lblMedicalConditionCancel.Location = new System.Drawing.Point(183, 338);
+            this.lblMedicalConditionCancel.Name = "lblMedicalConditionCancel";
+            this.lblMedicalConditionCancel.Size = new System.Drawing.Size(40, 13);
+            this.lblMedicalConditionCancel.TabIndex = 38;
+            this.lblMedicalConditionCancel.TabStop = true;
+            this.lblMedicalConditionCancel.Text = "Cancel";
+            // 
+            // lblMedicalConditionsRemoveSelected
+            // 
+            this.lblMedicalConditionsRemoveSelected.AutoSize = true;
+            this.lblMedicalConditionsRemoveSelected.Enabled = false;
+            this.lblMedicalConditionsRemoveSelected.Location = new System.Drawing.Point(131, 194);
+            this.lblMedicalConditionsRemoveSelected.Name = "lblMedicalConditionsRemoveSelected";
+            this.lblMedicalConditionsRemoveSelected.Size = new System.Drawing.Size(92, 13);
+            this.lblMedicalConditionsRemoveSelected.TabIndex = 34;
+            this.lblMedicalConditionsRemoveSelected.TabStop = true;
+            this.lblMedicalConditionsRemoveSelected.Text = "Remove Selected";
+            // 
+            // lstMedicalConditionList
+            // 
+            this.lstMedicalConditionList.FormattingEnabled = true;
+            this.lstMedicalConditionList.Location = new System.Drawing.Point(10, 210);
+            this.lstMedicalConditionList.Name = "lstMedicalConditionList";
+            this.lstMedicalConditionList.Size = new System.Drawing.Size(213, 121);
+            this.lstMedicalConditionList.TabIndex = 39;
+            // 
+            // lblMedicalConditionSave
+            // 
+            this.lblMedicalConditionSave.AutoSize = true;
+            this.lblMedicalConditionSave.Enabled = false;
+            this.lblMedicalConditionSave.Location = new System.Drawing.Point(145, 338);
+            this.lblMedicalConditionSave.Name = "lblMedicalConditionSave";
+            this.lblMedicalConditionSave.Size = new System.Drawing.Size(32, 13);
+            this.lblMedicalConditionSave.TabIndex = 36;
+            this.lblMedicalConditionSave.TabStop = true;
+            this.lblMedicalConditionSave.Text = "Save";
+            // 
+            // lblMedicalConditionList
+            // 
+            this.lblMedicalConditionList.AutoSize = true;
+            this.lblMedicalConditionList.Location = new System.Drawing.Point(7, 194);
+            this.lblMedicalConditionList.Name = "lblMedicalConditionList";
+            this.lblMedicalConditionList.Size = new System.Drawing.Size(99, 13);
+            this.lblMedicalConditionList.TabIndex = 37;
+            this.lblMedicalConditionList.Text = "Medical Conditions:";
+            // 
+            // lblMedicalConditionEdit
+            // 
+            this.lblMedicalConditionEdit.AutoSize = true;
+            this.lblMedicalConditionEdit.Location = new System.Drawing.Point(114, 338);
+            this.lblMedicalConditionEdit.Name = "lblMedicalConditionEdit";
+            this.lblMedicalConditionEdit.Size = new System.Drawing.Size(25, 13);
+            this.lblMedicalConditionEdit.TabIndex = 35;
+            this.lblMedicalConditionEdit.TabStop = true;
+            this.lblMedicalConditionEdit.Text = "Edit";
+            // 
+            // lblMedicalProceduresCancel
+            // 
+            this.lblMedicalProceduresCancel.AutoSize = true;
+            this.lblMedicalProceduresCancel.Enabled = false;
+            this.lblMedicalProceduresCancel.Location = new System.Drawing.Point(182, 338);
+            this.lblMedicalProceduresCancel.Name = "lblMedicalProceduresCancel";
+            this.lblMedicalProceduresCancel.Size = new System.Drawing.Size(40, 13);
+            this.lblMedicalProceduresCancel.TabIndex = 44;
+            this.lblMedicalProceduresCancel.TabStop = true;
+            this.lblMedicalProceduresCancel.Text = "Cancel";
+            // 
+            // lblMedicalProceduresRemoveSelected
+            // 
+            this.lblMedicalProceduresRemoveSelected.AutoSize = true;
+            this.lblMedicalProceduresRemoveSelected.Enabled = false;
+            this.lblMedicalProceduresRemoveSelected.Location = new System.Drawing.Point(130, 194);
+            this.lblMedicalProceduresRemoveSelected.Name = "lblMedicalProceduresRemoveSelected";
+            this.lblMedicalProceduresRemoveSelected.Size = new System.Drawing.Size(92, 13);
+            this.lblMedicalProceduresRemoveSelected.TabIndex = 40;
+            this.lblMedicalProceduresRemoveSelected.TabStop = true;
+            this.lblMedicalProceduresRemoveSelected.Text = "Remove Selected";
+            // 
+            // lstMedicalProceduresList
+            // 
+            this.lstMedicalProceduresList.FormattingEnabled = true;
+            this.lstMedicalProceduresList.Location = new System.Drawing.Point(9, 210);
+            this.lstMedicalProceduresList.Name = "lstMedicalProceduresList";
+            this.lstMedicalProceduresList.Size = new System.Drawing.Size(213, 121);
+            this.lstMedicalProceduresList.TabIndex = 45;
+            // 
+            // lblMedicalProceduresSave
+            // 
+            this.lblMedicalProceduresSave.AutoSize = true;
+            this.lblMedicalProceduresSave.Enabled = false;
+            this.lblMedicalProceduresSave.Location = new System.Drawing.Point(144, 338);
+            this.lblMedicalProceduresSave.Name = "lblMedicalProceduresSave";
+            this.lblMedicalProceduresSave.Size = new System.Drawing.Size(32, 13);
+            this.lblMedicalProceduresSave.TabIndex = 42;
+            this.lblMedicalProceduresSave.TabStop = true;
+            this.lblMedicalProceduresSave.Text = "Save";
+            // 
+            // lblMedicalProceduresList
+            // 
+            this.lblMedicalProceduresList.AutoSize = true;
+            this.lblMedicalProceduresList.Location = new System.Drawing.Point(6, 194);
+            this.lblMedicalProceduresList.Name = "lblMedicalProceduresList";
+            this.lblMedicalProceduresList.Size = new System.Drawing.Size(104, 13);
+            this.lblMedicalProceduresList.TabIndex = 43;
+            this.lblMedicalProceduresList.Text = "Medical Procedures:";
+            // 
+            // lblMedicalProceduresEdit
+            // 
+            this.lblMedicalProceduresEdit.AutoSize = true;
+            this.lblMedicalProceduresEdit.Location = new System.Drawing.Point(113, 338);
+            this.lblMedicalProceduresEdit.Name = "lblMedicalProceduresEdit";
+            this.lblMedicalProceduresEdit.Size = new System.Drawing.Size(25, 13);
+            this.lblMedicalProceduresEdit.TabIndex = 41;
+            this.lblMedicalProceduresEdit.TabStop = true;
+            this.lblMedicalProceduresEdit.Text = "Edit";
+            // 
             // frmPersonalDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1700,6 +2583,8 @@
             this.tabCPHR.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picUnderConstructionCPHR)).EndInit();
             this.tabMedicalDetails.ResumeLayout(false);
+            this.grpImmunisationDetails.ResumeLayout(false);
+            this.grpImmunisationDetails.PerformLayout();
             this.grpPersonalMedicalDetails.ResumeLayout(false);
             this.grpPersonalMedicalDetails.PerformLayout();
             this.grpAllergyDetails.ResumeLayout(false);
@@ -1719,6 +2604,14 @@
             this.grpChangePassword.ResumeLayout(false);
             this.grpChangePassword.PerformLayout();
             this.tabTabControl.ResumeLayout(false);
+            this.grpPerscribedMedicationDetails.ResumeLayout(false);
+            this.grpPerscribedMedicationDetails.PerformLayout();
+            this.grpTestResultDetails.ResumeLayout(false);
+            this.grpTestResultDetails.PerformLayout();
+            this.grpMedicalConditionDetails.ResumeLayout(false);
+            this.grpMedicalConditionDetails.PerformLayout();
+            this.grpMedicalProcedureDetails.ResumeLayout(false);
+            this.grpMedicalProcedureDetails.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1870,5 +2763,83 @@
         private System.Windows.Forms.LinkLabel lblProfilePic;
         private System.Windows.Forms.PictureBox picProfilePicture;
         private System.Windows.Forms.TabControl tabTabControl;
+        private System.Windows.Forms.GroupBox grpMedicalProcedureDetails;
+        private System.Windows.Forms.GroupBox grpMedicalConditionDetails;
+        private System.Windows.Forms.GroupBox grpTestResultDetails;
+        private System.Windows.Forms.GroupBox grpPerscribedMedicationDetails;
+        private System.Windows.Forms.Label lblPerscribedChronic;
+        private System.Windows.Forms.Label lblDatePerscribed;
+        private System.Windows.Forms.DateTimePicker dtpDatePerscribed;
+        private System.Windows.Forms.TextBox txtPerscribedMedication;
+        private System.Windows.Forms.Label lblPerscribedMedication;
+        private System.Windows.Forms.LinkLabel lblImmunisationRemoveSelected;
+        private System.Windows.Forms.LinkLabel lblImmunisationCancel;
+        private System.Windows.Forms.Label lblImmunisation;
+        private System.Windows.Forms.LinkLabel lblImmunisationSave;
+        private System.Windows.Forms.TextBox txtImmunisation;
+        private System.Windows.Forms.ListBox lstImmunisationList;
+        private System.Windows.Forms.DateTimePicker dtpImmunisationDate;
+        private System.Windows.Forms.LinkLabel lblImmunisationEdit;
+        private System.Windows.Forms.Label lblImmunisationDate;
+        private System.Windows.Forms.LinkLabel lblImmunisationAdd;
+        private System.Windows.Forms.Label lblImmunisationNote;
+        private System.Windows.Forms.TextBox txtImmunisationNote;
+        private System.Windows.Forms.Label lblImmunisationList;
+        private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.LinkLabel lblMedicalProceduresCancel;
+        private System.Windows.Forms.DateTimePicker dtpMedicalProcedureDate;
+        private System.Windows.Forms.LinkLabel lblMedicalProceduresRemoveSelected;
+        private System.Windows.Forms.TextBox txtMedicalProcedurePerformedBy;
+        private System.Windows.Forms.ListBox lstMedicalProceduresList;
+        private System.Windows.Forms.Label lblMedicalProcedureProcedure;
+        private System.Windows.Forms.LinkLabel lblMedicalProceduresSave;
+        private System.Windows.Forms.Label lblMedicalProcedureDate;
+        private System.Windows.Forms.Label lblMedicalProceduresList;
+        private System.Windows.Forms.LinkLabel lblMedicalProceduresEdit;
+        private System.Windows.Forms.TextBox txtMedicalProcedureProcedure;
+        private System.Windows.Forms.LinkLabel lblMedicalProcedureAdd;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblMedicalProcedurePerformedBy;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.LinkLabel lblMedicalConditionCancel;
+        private System.Windows.Forms.RadioButton rdoMedicalConditionChronic;
+        private System.Windows.Forms.LinkLabel lblMedicalConditionsRemoveSelected;
+        private System.Windows.Forms.RadioButton rdoMedicalConditionAcute;
+        private System.Windows.Forms.ListBox lstMedicalConditionList;
+        private System.Windows.Forms.LinkLabel lblMedicalConditionAdd;
+        private System.Windows.Forms.LinkLabel lblMedicalConditionSave;
+        private System.Windows.Forms.Label lblMedicalConditionCondition;
+        private System.Windows.Forms.Label lblMedicalConditionList;
+        private System.Windows.Forms.LinkLabel lblMedicalConditionEdit;
+        private System.Windows.Forms.Label lblMedicalConditionOnset;
+        private System.Windows.Forms.TextBox txtMedicalConditionNotes;
+        private System.Windows.Forms.DateTimePicker dtpMedicalConditionOnset;
+        private System.Windows.Forms.Label lblMedicalConditionNotes;
+        private System.Windows.Forms.TextBox txtMedicalConditionCondition;
+        private System.Windows.Forms.LinkLabel lblTestResultCancel;
+        private System.Windows.Forms.LinkLabel lblTestResultAdd;
+        private System.Windows.Forms.LinkLabel lblTestResultRemoveSelected;
+        private System.Windows.Forms.TextBox txtTestResultResult;
+        private System.Windows.Forms.ListBox lstTestResultList;
+        private System.Windows.Forms.TextBox txtTestResultNotes;
+        private System.Windows.Forms.LinkLabel lblTestResultSave;
+        private System.Windows.Forms.Label lblTestResultTest;
+        private System.Windows.Forms.Label lblTestResultList;
+        private System.Windows.Forms.LinkLabel lblTestResultEdit;
+        private System.Windows.Forms.Label lblTestResultNotes;
+        private System.Windows.Forms.TextBox txtTestResultTest;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label lblTestResultResult;
+        private System.Windows.Forms.Label lblTestResultDate;
+        private System.Windows.Forms.LinkLabel lblPerscribedCancel;
+        private System.Windows.Forms.LinkLabel lblPerscribedSelected;
+        private System.Windows.Forms.ListBox lstPerscribedMedicationList;
+        private System.Windows.Forms.LinkLabel lblPerscribedSave;
+        private System.Windows.Forms.Label lblPerscribedMedicationList;
+        private System.Windows.Forms.LinkLabel lblPerscribedEdit;
+        private System.Windows.Forms.LinkLabel lblPerscribedMedicationAdd;
+        private System.Windows.Forms.TextBox txtPerscribedNotes;
+        private System.Windows.Forms.Label lblPerscribedNotes;
+        private System.Windows.Forms.CheckBox chkPerscribedChronic;
     }
 }
