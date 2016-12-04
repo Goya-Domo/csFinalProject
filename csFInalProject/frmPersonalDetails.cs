@@ -214,20 +214,22 @@ namespace csFinalProject
             //Testing
             MessageBox.Show(User.P_ID);
 
+            string cmd = "SELECT PATIENT_TBL.PATIENT_ID "
+                       + "FROM PATIENT_TBL "
+                       + "JOIN UserList "
+                       + "ON UserList.PATIENT_ID = PATIENT_TBL.PATIENT_ID "
+                       + "WHERE PATIENT_TBL.PATIENT_ID = " + User.P_ID;
+
             //Fill the password group box
-            SqlCommand fillPersonalDetails = new SqlCommand();
-            string cmd = "Select PATIENT_TBL.PATIENT_ID "
-                       + "From PATIENT_TBL "
-                       + "Join UserList "
-                       + "On UserList.PATIENT_ID = PATIENT_TBL.PATIENT_ID "
-                       + "Where PATIENT_TBL.PATIENT_ID = " + User.P_ID;
+            SqlDataReader reader = cmd.ExecuteReader
+
             fillPersonalDetails.Connection = connection;
             fillPersonalDetails.CommandText = cmd;
 
             connection.Open();
             try
             {
-                txtIdentityNumber.Text = fillPersonalDetails.ExecuteNonQuery().ToString();
+                txtIdentityNumber.Text = ExecuteReader(fillPersonalDetails).ToString();
             }
             catch (Exception ex)
             {
