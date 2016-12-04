@@ -166,13 +166,14 @@ namespace csFinalProject
                 SqlConnection connection = pchrDB.getConnection();
                 connection.Open();
                 SqlCommand fillAllergyDetails = new SqlCommand();
-                string cmd = "DELETE  "
+                string cmdd = "DELETE  "
                     + "FROM ALLERGY_TBL "
-                    + "WHERE ALLERGY_TBL.ALLERGY_ID = " + allergen
-                    + " AND ALLERGY_TBL.PATIENT_ID = " + User.P_ID;
+                    + "WHERE ALLERGY_TBL.ALLERGY_ID = " + "@allergen"
+                    + " AND ALLERGY_TBL.PATIENT_ID = " + User.PATIENT_ID;
 
+                fillAllergyDetails.Parameters.AddWithValue("@allergen", allergen);
                 fillAllergyDetails.Connection = connection;
-                fillAllergyDetails.CommandText = cmd;
+                fillAllergyDetails.CommandText = cmdd;
 
                 try
                 {
@@ -185,6 +186,37 @@ namespace csFinalProject
                 }
                 connection.Close();
             }
+            lstAllergies.Items.Clear();
+            //
+            //Fill the Allergy Details group boxs
+            SqlCommand reFillAllergyDetails = new SqlCommand();
+            SqlConnection con = pchrDB.getConnection();
+            con.Open();
+            string cmd = "SELECT ALLERGY_ID "
+                + "FROM ALLERGY_TBL "
+                + "WHERE ALLERGY_TBL.PATIENT_ID = " + User.PATIENT_ID;
+
+            reFillAllergyDetails.Connection = con;
+            reFillAllergyDetails.CommandText = cmd;
+
+            reader = reFillAllergyDetails.ExecuteReader(CommandBehavior.Default);
+            try
+            {
+                lstAllergies.ClearSelected();
+                while (reader.Read())
+                {                 
+                    lstAllergies.Items.Add(reader["ALLERGY_ID"].ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error in Allergy Details");
+            }
+            finally
+            {
+                reader.Close();
+            }
+            DisableAllControls(grpAllergyDetails);
         }
 
         //Edit Allergy Details
@@ -685,7 +717,7 @@ namespace csFinalProject
                         else
                         {
                             chkOrganDonor.Checked = false;
-                        } 
+                        }
                     }
                     else
                     {
@@ -820,10 +852,26 @@ namespace csFinalProject
                 MessageBox.Show(ex.Message, "Error in Perscribed Medication Details");
             }
 
+
+
+            fillMedicalConditionDetails();
+            fillMedicalProcedureDetails();
+
+
+
+
+            //Close the connection
+            connection.Close();
+        }
+
+        private void fillMedicalConditionDetails()
+        {
             //
             //Fill the Medical Condition Details group boxs
             SqlCommand fillMedicalConditionDetails = new SqlCommand();
-            cmd = "SELECT CONDITION_ID "
+            SqlConnection connection = pchrDB.getConnection();
+            connection.Open();
+            string cmd = "SELECT CONDITION_ID "
                 + "FROM CONDITION "
                 + "WHERE CONDITION.PATIENT_ID = " + User.PATIENT_ID;
 
@@ -843,11 +891,17 @@ namespace csFinalProject
             {
                 MessageBox.Show(ex.Message, "Error in Medical Condition Details");
             }
+        }
 
+        private void fillMedicalProcedureDetails()
+        {
             //
             //Fill the Medical Procedure Details group boxs
+            SqlConnection connection = pchrDB.getConnection();
+            connection.Open();
             SqlCommand fillMedicalProcedureDetails = new SqlCommand();
-            cmd = "SELECT PROCEDURE_ID "
+
+            string cmd = "SELECT PROCEDURE_ID "
                 + "FROM MED_PROC_TBL "
                 + "WHERE MED_PROC_TBL.PATIENT_ID = " + User.PATIENT_ID;
 
@@ -867,13 +921,6 @@ namespace csFinalProject
             {
                 MessageBox.Show(ex.Message, "Error in Medical Procedure Details");
             }
-
-
-
-
-            //Close the connection
-            connection.Close();
         }
-
     }
 }
