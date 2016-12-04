@@ -51,7 +51,7 @@ namespace csFinalProject
                 MessageBox.Show("Please select your gender");
                 return;
             }
-
+       
             if (Validator.IsValidUsername(txtUsername.Text))
             {
                 if (Validator.IsValidPassword(txtPassword.Text)
@@ -79,7 +79,16 @@ namespace csFinalProject
                     addPCommand.Parameters.AddWithValue("@LNAME", txtLastName.Text);
                     addPCommand.Parameters.AddWithValue("@FNAME", txtFirstName.Text);
                     addPCommand.Parameters.AddWithValue("@DOB", dob);
-                    addPCommand.Parameters.AddWithValue("@TITLE", (byte)cboTitle.SelectedIndex);
+                    //Couldnt get the fill to work with a null type here so I
+                    //Have sentinel value of 255 to catch a null
+                    if (cboTitle.SelectedIndex != -1)
+                    {
+                        addPCommand.Parameters.AddWithValue("@TITLE", (byte)cboTitle.SelectedIndex);
+                    }
+                    else
+                    {
+                        addPCommand.Parameters.AddWithValue("@TITLE", 255);
+                    }                
                     addPCommand.Parameters.AddWithValue("@MID_I", txtInitials.Text);
                     addPCommand.Parameters.AddWithValue("@ISMALE", isMale);
                     addPCommand.Connection = connection;
