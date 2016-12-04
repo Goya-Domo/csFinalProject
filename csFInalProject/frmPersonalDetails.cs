@@ -121,7 +121,7 @@ namespace csFinalProject
 
         private void lstAllergies_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(lstAllergies.SelectedIndex >= 0)
+            if (lstAllergies.SelectedIndex >= 0)
             {
                 //
                 //Fill the Allergy Details controls from the list box
@@ -153,7 +153,7 @@ namespace csFinalProject
                     MessageBox.Show(ex.Message, "Error in Allergy Details");
                 }
                 connection.Close();
-            }          
+            }
         }
 
         //Edit Allergy Details
@@ -170,7 +170,7 @@ namespace csFinalProject
 
         private void lstImmunisationList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(lstImmunisationList.SelectedIndex >= 0)
+            if (lstImmunisationList.SelectedIndex >= 0)
             {
                 //
                 //Fill the Immunisation Details controls from the list box
@@ -202,7 +202,7 @@ namespace csFinalProject
                     MessageBox.Show(ex.Message, "Error in Immunisation Details");
                 }
                 connection.Close();
-            }            
+            }
         }
         //Edit Immunisation Details
         private void lblImmunisationEdit_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -252,7 +252,7 @@ namespace csFinalProject
                     MessageBox.Show(ex.Message, "Error in Perscribed Medication Details");
                 }
                 connection.Close();
-            }            
+            }
         }
 
         //Edit Perscribed Medication Details
@@ -301,7 +301,7 @@ namespace csFinalProject
                     MessageBox.Show(ex.Message, "Error in Perscribed Medication Details");
                 }
                 connection.Close();
-            }          
+            }
         }
 
         //Edit Test Result Details
@@ -318,7 +318,7 @@ namespace csFinalProject
 
         private void lstMedicalConditionList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(lstMedicalConditionList.SelectedIndex >= 0)
+            if (lstMedicalConditionList.SelectedIndex >= 0)
             {
                 //
                 //Fill the Medical Condition Details controls
@@ -358,7 +358,7 @@ namespace csFinalProject
                     MessageBox.Show(ex.Message, "Error in Medical Condition Details");
                 }
                 connection.Close();
-            }           
+            }
         }
 
         //Edit Medical Condition Details
@@ -408,7 +408,7 @@ namespace csFinalProject
                     MessageBox.Show(ex.Message, "Error in Medical Procedure Details");
                 }
                 connection.Close();
-            }           
+            }
         }
 
         //Edit Medical Procedure Details
@@ -510,13 +510,13 @@ namespace csFinalProject
                         bool isMale;
                         isMale = reader.GetBoolean(reader.GetOrdinal("GENDER_ISMALE"));
                         rdoMale.Checked = isMale;
-                        rdoFemale.Checked = isMale;
+                        rdoFemale.Checked = !isMale;
                     }
                     else
                     {
                         rdoMale.Checked = false;
                         rdoFemale.Checked = false;
-                    } 
+                    }
 
 
                     //Used sentinel value from the registration form here
@@ -549,34 +549,34 @@ namespace csFinalProject
                 reader.Close();
             }
 
-//////////////////////////////////////////////////////////////////////////////////////
-//Fill the Emergency Contact Details
-//No such fields in the database??????????
-//
-/*SqlCommand fillEmergencyContactDetails = new SqlCommand();
-cmd = "Select THE STUFF"
+            //////////////////////////////////////////////////////////////////////////////////////
+            //Fill the Emergency Contact Details
+            //No such fields in the database??????????
+            //
+            /*SqlCommand fillEmergencyContactDetails = new SqlCommand();
+            cmd = "Select THE STUFF"
 
-fillEmergencyContactDetails.Connection = connection;
-fillEmergencyContactDetails.CommandText = cmd;
+            fillEmergencyContactDetails.Connection = connection;
+            fillEmergencyContactDetails.CommandText = cmd;
 
-try
-{
-    SqlDataReader reader = fillPersonalDetails.ExecuteReader(CommandBehavior.Default);
-    if (reader.Read())
-    {
-        //Fill the stuff
-    }
-    reader.Close();
-}
-catch (Exception ex)
-{
-    MessageBox.Show(ex.Message, "Error in Emergency Contact Details");
-}*/
-////////////////////////////////////////////////////////////////////////////////////
+            try
+            {
+                SqlDataReader reader = fillPersonalDetails.ExecuteReader(CommandBehavior.Default);
+                if (reader.Read())
+                {
+                    //Fill the stuff
+                }
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error in Emergency Contact Details");
+            }*/
+            ////////////////////////////////////////////////////////////////////////////////////
 
-//
-//Fill the Primary Care Provider Details group boxs
-SqlCommand fillPrimaryDetails = new SqlCommand();
+            //
+            //Fill the Primary Care Provider Details group boxs
+            SqlCommand fillPrimaryDetails = new SqlCommand();
             cmd = "SELECT * "
                 + "FROM PRIMARY_CARE_TBL "
                 + "WHERE PRIMARY_CARE_TBL.PRIMARY_ID = " + User.P_ID;
@@ -625,7 +625,7 @@ SqlCommand fillPrimaryDetails = new SqlCommand();
             fillPersonalMedicalDetails.Connection = connection;
             fillPersonalMedicalDetails.CommandText = cmd;
 
-                reader = fillPersonalMedicalDetails.ExecuteReader(CommandBehavior.Default);
+            reader = fillPersonalMedicalDetails.ExecuteReader(CommandBehavior.Default);
             try
             {
                 if (reader.Read())
@@ -645,7 +645,7 @@ SqlCommand fillPrimaryDetails = new SqlCommand();
                         }
                     }
                     cboBloodGroup.SelectedIndex = index;
-                    if ((bool)reader["ORGAN_DONOR"] == true)
+                    if (reader.GetBoolean(reader.GetOrdinal("ORGAN_DONOR")))
                     {
                         chkOrganDonor.Checked = true;
                     }
@@ -655,13 +655,13 @@ SqlCommand fillPrimaryDetails = new SqlCommand();
                     }
 
 
-                    if (reader.IsDBNull(pchrDB.HIV_STATUS_COL_NUM))
+                    if (reader.IsDBNull(reader.GetOrdinal("HIV_STATUS")))
                     {
                         rdoHIVUnknown.Checked = true;
                     }
                     else
                     {
-                        bool hivStatus = reader.GetBoolean(pchrDB.HIV_STATUS_COL_NUM);
+                        bool hivStatus = reader.GetBoolean(reader.GetOrdinal("HIV_STATUS"));
                         rdoHIVPositive.Checked = hivStatus;
                         rdoHIVNegative.Checked = !hivStatus;
                     }
@@ -690,7 +690,7 @@ SqlCommand fillPrimaryDetails = new SqlCommand();
             fillAllergyDetails.Connection = connection;
             fillAllergyDetails.CommandText = cmd;
 
-                reader = fillAllergyDetails.ExecuteReader(CommandBehavior.Default);
+            reader = fillAllergyDetails.ExecuteReader(CommandBehavior.Default);
             try
             {
                 while (reader.Read())
