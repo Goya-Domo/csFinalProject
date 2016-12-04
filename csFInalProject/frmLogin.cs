@@ -17,6 +17,8 @@ namespace csFinalProject
         {
             InitializeComponent();
             this.DialogResult = DialogResult.None;
+            txtUsername.Text = "smithjohn";
+            txtPassword.Text = "password";
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -65,6 +67,7 @@ namespace csFinalProject
                     else
                     {
                         MessageBox.Show("Password incorrect! Try again");
+                        this.DialogResult = DialogResult.None;
                         txtPassword.Text = "";
                         txtPassword.Focus();
                     }
@@ -72,6 +75,8 @@ namespace csFinalProject
                 }
                 else
                 {
+                    MessageBox.Show("Username not found. Check your username or click Register if you don't have one");
+                    this.DialogResult = DialogResult.None;
                     reader.Close();
                     connection.Close();
                 }
@@ -83,6 +88,7 @@ namespace csFinalProject
             else
             {
                 MessageBox.Show("Username invalid. Re-enter your username, \nor click \"Register\" if you do not have one.\nPress F1 for more information.", "Invalid", MessageBoxButtons.OK);
+                this.DialogResult = DialogResult.None;
                 txtUsername.Text = "";
                 txtUsername.Focus();
             }

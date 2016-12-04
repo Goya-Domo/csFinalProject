@@ -500,7 +500,6 @@ namespace csFinalProject
         {
             foreach (Control control in inGroup.Controls)
             {
-                MessageBox.Show(control.GetType().ToString());
                 if (control.Text != "Edit" && !(control is ListBox))
                     control.Enabled = false;
             }
