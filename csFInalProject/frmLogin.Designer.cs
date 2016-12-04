@@ -79,7 +79,9 @@
             // 
             this.txtPassword.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.helpProvider1.SetHelpString(this.txtPassword, "Passwords: \n - Must be at least 6 characters long\n - Can contain any combination of letters, numbers, or special characters\n - Specials allowed: ! @ # $ % ^ & * ( )");
+            this.helpProvider1.SetHelpString(this.txtPassword, "Passwords: \n - Must be at least 6 characters long\n - Can contain any combination " +
+        "of letters, numbers, or special characters\n - Specials allowed: ! @ # $ % ^ & * " +
+        "( )");
             this.txtPassword.Location = new System.Drawing.Point(112, 51);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtPassword.Name = "txtPassword";
@@ -110,7 +112,7 @@
             this.btnExit.Location = new System.Drawing.Point(12, 129);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(78, 30);
-            this.btnExit.TabIndex = 5;
+            this.btnExit.TabIndex = 6;
             this.btnExit.Text = "Exit";
             this.toolTip1.SetToolTip(this.btnExit, "Close the application");
             this.btnExit.UseVisualStyleBackColor = true;
@@ -123,7 +125,7 @@
             this.btnRegister.Location = new System.Drawing.Point(222, 129);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(166, 30);
-            this.btnRegister.TabIndex = 6;
+            this.btnRegister.TabIndex = 5;
             this.btnRegister.Text = "Register";
             this.toolTip1.SetToolTip(this.btnRegister, "Create new patient");
             this.btnRegister.UseVisualStyleBackColor = true;

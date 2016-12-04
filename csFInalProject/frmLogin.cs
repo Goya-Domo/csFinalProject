@@ -55,7 +55,7 @@ namespace csFinalProject
                     
                     if (passIn.Equals(savedPass))
                     {
-                        User.P_ID = reader["PATIENT_ID"].ToString();
+                        User.PATIENT_ID = reader["PATIENT_ID"].ToString();
                         reader.Close();
                         connection.Close();
 
