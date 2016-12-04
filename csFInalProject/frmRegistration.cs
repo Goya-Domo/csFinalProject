@@ -13,9 +13,19 @@ namespace csFinalProject
 {
     public partial class frmRegistration : Form
     {
+        string PID;
+
         public frmRegistration()
         {
             InitializeComponent();
+        }
+        
+        private void frmRegistration_Load(object sender, EventArgs e)
+        {
+            Random rand = new Random();
+            int num = rand.Next();
+            PID = num.ToString();
+            txtIdNumber.Text = PID;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -25,33 +35,7 @@ namespace csFinalProject
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            bool regSuccess = true;
-            bool autoID = false;
-
-            if (txtIdNumber.Text.Equals("") 
-                || !Validator.IsValidId(txtIdNumber.Text))
-                {
-                    switch (MessageBox.Show("Identity Number is invalid. Would you like a new one made for yoU?", "Invalid ID Number", MessageBoxButtons.YesNoCancel))
-                    {
-                        case DialogResult.Yes:
-                            Random rand = new Random();
-                            int num = rand.Next();
-                            txtIdNumber.Text = num.ToString();
-                            autoID = true;              
-                            break;
-
-                        case DialogResult.No:
-                            txtIdNumber.Text = "";
-                            autoID = false;
-                            break;
-
-                        case DialogResult.Cancel:
-                            txtIdNumber.Focus();
-                            autoID = false;
-                            return;
-                    }
-                }
-            
+            bool regSuccess = true;            
 
             if (txtLastName.Text.Equals("") || txtFirstName.Text.Equals(""))
             {
@@ -77,18 +61,27 @@ namespace csFinalProject
                     string lastName = txtLastName.Text;
                     string firstName = txtFirstName.Text;
                     string idNumber = txtIdNumber.Text;
+
+                    bool isMale = rdoMale.Checked ? true : false;
+
                     DateTime dob = dtpDoB.Value.Date;
 
                     SqlConnection connection = pchrDB.getConnection();
 
                     SqlCommand addPCommand = new SqlCommand();
                     string PCommand = "INSERT PATIENT_TBL "
-                        + "(PATIENT_ID, LAST_NAME, FIRST_NAME, DATE_Of_BIRTH)"
-                        + "VALUES (@PID, @LNAME, @FNAME, @DOB)";
-                    addPCommand.Parameters.AddWithValue("@PID", txtIdNumber.Text);
+                        + "(PATIENT_ID, LAST_NAME, FIRST_NAME, DATE_Of_BIRTH, TITLE, MID_INITIAL)"
+                        + "VALUES (@PID, @LNAME, @FNAME, @DOB, @TITLE, @MID_I)"
+                        + "INSERT PER_DETAILS_TBL "
+                        + "(PATIENT_ID, GENDER_ISMALE) VALUES (@PID, @ISMALE)";
+
+                    addPCommand.Parameters.AddWithValue("@PID", PID);
                     addPCommand.Parameters.AddWithValue("@LNAME", txtLastName.Text);
                     addPCommand.Parameters.AddWithValue("@FNAME", txtFirstName.Text);
                     addPCommand.Parameters.AddWithValue("@DOB", dob);
+                    addPCommand.Parameters.AddWithValue("@TITLE", (byte)cboTitle.SelectedIndex);
+                    addPCommand.Parameters.AddWithValue("@MID_I", txtInitials.Text);
+                    addPCommand.Parameters.AddWithValue("@ISMALE", isMale);
                     addPCommand.Connection = connection;
                     addPCommand.CommandText = PCommand;
 
@@ -139,10 +132,6 @@ namespace csFinalProject
             if (regSuccess)
             {
                 MessageBox.Show("Registration Success!");
-
-                if (autoID)
-                    MessageBox.Show("Your Identity Number is: " + txtIdNumber.Text, "ID Number");
-
                 Close();
             }
         }
@@ -230,6 +219,5 @@ namespace csFinalProject
         {
 
         }
-
     }
 }
