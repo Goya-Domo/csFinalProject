@@ -474,6 +474,7 @@
             this.lstMedicalProceduresList.Name = "lstMedicalProceduresList";
             this.lstMedicalProceduresList.Size = new System.Drawing.Size(213, 121);
             this.lstMedicalProceduresList.TabIndex = 45;
+            this.lstMedicalProceduresList.SelectedIndexChanged += new System.EventHandler(this.lstMedicalProceduresList_SelectedIndexChanged);
             // 
             // lblMedicalProcedureProcedure
             // 
@@ -653,6 +654,7 @@
             this.lstMedicalConditionList.Name = "lstMedicalConditionList";
             this.lstMedicalConditionList.Size = new System.Drawing.Size(213, 121);
             this.lstMedicalConditionList.TabIndex = 39;
+            this.lstMedicalConditionList.SelectedIndexChanged += new System.EventHandler(this.lstMedicalConditionList_SelectedIndexChanged);
             // 
             // lblMedicalConditionAdd
             // 
@@ -826,6 +828,7 @@
             this.lstTestResultList.Name = "lstTestResultList";
             this.lstTestResultList.Size = new System.Drawing.Size(213, 121);
             this.lstTestResultList.TabIndex = 33;
+            this.lstTestResultList.SelectedIndexChanged += new System.EventHandler(this.lstTestResultList_SelectedIndexChanged);
             // 
             // txtTestResultNotes
             // 
@@ -979,6 +982,7 @@
             this.lstPerscribedMedicationList.Name = "lstPerscribedMedicationList";
             this.lstPerscribedMedicationList.Size = new System.Drawing.Size(213, 121);
             this.lstPerscribedMedicationList.TabIndex = 27;
+            this.lstPerscribedMedicationList.SelectedIndexChanged += new System.EventHandler(this.lstPerscribedMedicationList_SelectedIndexChanged);
             // 
             // lblPerscribedSave
             // 
@@ -1175,7 +1179,6 @@
             // 
             // lstImmunisationList
             // 
-            this.lstImmunisationList.Enabled = false;
             this.lstImmunisationList.FormattingEnabled = true;
             this.lstImmunisationList.Location = new System.Drawing.Point(205, 36);
             this.lstImmunisationList.Name = "lstImmunisationList";
@@ -1515,7 +1518,6 @@
             // 
             // lstAllergies
             // 
-            this.lstAllergies.Enabled = false;
             this.lstAllergies.FormattingEnabled = true;
             this.lstAllergies.Location = new System.Drawing.Point(214, 35);
             this.lstAllergies.Name = "lstAllergies";
