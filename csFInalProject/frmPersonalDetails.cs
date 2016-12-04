@@ -204,7 +204,7 @@ namespace csFinalProject
             {
                 lstAllergies.ClearSelected();
                 while (reader.Read())
-                {                 
+                {
                     lstAllergies.Items.Add(reader["ALLERGY_ID"].ToString());
                 }
             }
@@ -515,15 +515,32 @@ namespace csFinalProject
             // TODO: This line of code loads data into the 'pchrDataSet.ALLERGY_TBL' table. You can move, or remove it, as needed.
             this.aLLERGY_TBLTableAdapter.Fill(this.pchrDataSet.ALLERGY_TBL);
 
-            //Create and open connection
-            SqlConnection connection = pchrDB.getConnection();
-            connection.Open();
-
             //
             //Tab 1
+            fillUserName();
+            fillPrimaryDetails();
+            //
+            //End tab 1
+
+            //
+            //tab 2
+            fillPersonalDetails();
+            fillPersonalMedicalDetails();
+            fillVaxDetails();
+            fillMedicationDetails();
+            fillTestResultDetails();
+            fillMedicalConditionDetails();
+            fillMedicalProcedureDetails();
+            //
+            //End tab 2
+        }
+        private void fillUserName()
+        {
             //
             //Fill the Username field text box
             SqlCommand fillUserName = new SqlCommand();
+            SqlConnection connection = pchrDB.getConnection();
+            connection.Open();
             string cmd = "SELECT UserList.UserName "
                         + "FROM UserList "
                         + "WHERE UserList.PATIENT_ID = " + User.PATIENT_ID;
@@ -548,11 +565,17 @@ namespace csFinalProject
             {
                 reader.Close();
             }
+            connection.Close();
+        }
 
+        private void fillPersonalDetails()
+        {
             //
             //Fill the Personal Details and Contact Details group boxs
             SqlCommand fillPersonalDetails = new SqlCommand();
-            cmd = "SELECT PER_DETAILS_TBL.GENDER_ISMALE, PATIENT_TBL.* "
+            SqlConnection connection = pchrDB.getConnection();
+            connection.Open();
+            string cmd = "SELECT PER_DETAILS_TBL.GENDER_ISMALE, PATIENT_TBL.* "
                 + "FROM PATIENT_TBL "
                 + "JOIN PER_DETAILS_TBL "
                 + "ON PATIENT_TBL.PATIENT_ID = PER_DETAILS_TBL.PATIENT_ID "
@@ -611,7 +634,11 @@ namespace csFinalProject
             {
                 reader.Close();
             }
+            connection.Close();
+        }
 
+        private void fillEmergencyContactDetails()
+        {
             //////////////////////////////////////////////////////////////////////////////////////
             //Fill the Emergency Contact Details
             //No such fields in the database??????????
@@ -636,11 +663,16 @@ namespace csFinalProject
                 MessageBox.Show(ex.Message, "Error in Emergency Contact Details");
             }*/
             ////////////////////////////////////////////////////////////////////////////////////
+        }
 
+        private void fillPrimaryDetails()
+        {
             //
             //Fill the Primary Care Provider Details group boxs
             SqlCommand fillPrimaryDetails = new SqlCommand();
-            cmd = "SELECT * "
+            SqlConnection connection = pchrDB.getConnection();
+            connection.Open();
+            string cmd = "SELECT * "
                 + "FROM PRIMARY_CARE_TBL "
                 + "WHERE PRIMARY_CARE_TBL.PRIMARY_ID = " + User.PATIENT_ID;
 
@@ -671,17 +703,17 @@ namespace csFinalProject
             {
                 reader.Close();
             }
+            connection.Close();
+        }
 
-            //
-            //End tab 1
-
-            //
-            //tab 2
-
+        private void fillPersonalMedicalDetails()
+        {
             //
             //Fill the Personal Medical Details group boxs
             SqlCommand fillPersonalMedicalDetails = new SqlCommand();
-            cmd = "SELECT * "
+            SqlConnection connection = pchrDB.getConnection();
+            connection.Open();
+            string cmd = "SELECT * "
                 + "FROM PER_DETAILS_TBL "
                 + "WHERE PER_DETAILS_TBL.PATIENT_ID = " + User.PATIENT_ID;
 
@@ -749,11 +781,18 @@ namespace csFinalProject
             {
                 reader.Close();
             }
+            connection.Close();
+        }
 
+        private void fillAllergyDetails()
+        {
             //
             //Fill the Allergy Details group boxs
             SqlCommand fillAllergyDetails = new SqlCommand();
-            cmd = "SELECT ALLERGY_ID "
+            SqlConnection connection = pchrDB.getConnection();
+            connection.Open();
+
+            string cmd = "SELECT ALLERGY_ID "
                 + "FROM ALLERGY_TBL "
                 + "WHERE ALLERGY_TBL.PATIENT_ID = " + User.PATIENT_ID;
 
@@ -776,11 +815,17 @@ namespace csFinalProject
             {
                 reader.Close();
             }
+            connection.Close();
+        }
 
+        private void fillVaxDetails()
+        {
             //
             //Fill the Immunization Details group boxs
             SqlCommand fillVaxDetails = new SqlCommand();
-            cmd = "SELECT IMMUNIZATION_ID "
+            SqlConnection connection = pchrDB.getConnection();
+            connection.Open();
+            string cmd = "SELECT IMMUNIZATION_ID "
                 + "FROM IMMUNIZATION_TBL "
                 + "WHERE IMMUNIZATION_TBL.PATIENT_ID = " + User.PATIENT_ID;
 
@@ -803,11 +848,18 @@ namespace csFinalProject
             {
                 reader.Close();
             }
+            connection.Close();
+        }
 
+        private void fillMedicationDetails()
+        {
             //
             //Fill the Perscribed Medication Details group boxs
             SqlCommand fillMedicationDetails = new SqlCommand();
-            cmd = "SELECT MED_ID "
+            SqlConnection connection = pchrDB.getConnection();
+            connection.Open();
+
+            string cmd = "SELECT MED_ID "
                 + "FROM MEDICATION_TBL "
                 + "WHERE MEDICATION_TBL.PATIENT_ID = " + User.PATIENT_ID;
 
@@ -821,17 +873,26 @@ namespace csFinalProject
                 {
                     lstPerscribedMedicationList.Items.Add(reader["MED_ID"].ToString());
                 }
-                reader.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error in Perscribed Medication Details");
             }
+            finally
+            {
+                reader.Close();
+            }
+            connection.Close();
+        }
 
+        private void fillTestResultDetails()
+        {
             //
             //Fill the Test Result Details group boxs
             SqlCommand fillTestResultDetails = new SqlCommand();
-            cmd = "SELECT TEST_ID "
+            SqlConnection connection = pchrDB.getConnection();
+            connection.Open();
+            string cmd = "SELECT TEST_ID "
                 + "FROM TEST_TBL "
                 + "WHERE TEST_TBL.PATIENT_ID = " + User.PATIENT_ID;
 
@@ -845,22 +906,15 @@ namespace csFinalProject
                 {
                     lstTestResultList.Items.Add(reader["TEST_ID"].ToString());
                 }
-                reader.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error in Perscribed Medication Details");
             }
-
-
-
-            fillMedicalConditionDetails();
-            fillMedicalProcedureDetails();
-
-
-
-
-            //Close the connection
+            finally
+            {
+                reader.Close();
+            }
             connection.Close();
         }
 
@@ -891,6 +945,7 @@ namespace csFinalProject
             {
                 MessageBox.Show(ex.Message, "Error in Medical Condition Details");
             }
+            connection.Close();
         }
 
         private void fillMedicalProcedureDetails()
@@ -921,6 +976,7 @@ namespace csFinalProject
             {
                 MessageBox.Show(ex.Message, "Error in Medical Procedure Details");
             }
+            connection.Close();
         }
     }
 }
