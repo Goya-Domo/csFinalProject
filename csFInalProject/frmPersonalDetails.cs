@@ -212,7 +212,7 @@ namespace csFinalProject
             SqlConnection connection = pchrDB.getConnection();
 
             //Testing
-            MessageBox.Show(User.P_ID);
+           // MessageBox.Show(User.P_ID);
 
             //Fill the password group box
             SqlCommand fillPersonalDetails = new SqlCommand();
@@ -221,13 +221,27 @@ namespace csFinalProject
                        + "Join UserList "
                        + "On UserList.PATIENT_ID = PATIENT_TBL.PATIENT_ID "
                        + "Where PATIENT_TBL.PATIENT_ID = " + User.P_ID;
+
+            cmd = "SELECT PATIENT_TBL.PATIENT_ID, UserList.UserName "
+                + "FROM PATIENT_TBL "
+                + "JOIN UserList "
+                + "ON UserList.PATIENT_ID = PATIENT_TBL.PATIENT_ID "
+                + "WHERE PATIENT_TBL.PATIENT_ID = " + User.P_ID;
+
             fillPersonalDetails.Connection = connection;
             fillPersonalDetails.CommandText = cmd;
 
             connection.Open();
             try
             {
-                txtIdentityNumber.Text = fillPersonalDetails.ExecuteNonQuery().ToString();
+                SqlDataReader reader = fillPersonalDetails.ExecuteReader(CommandBehavior.CloseConnection);
+                if (reader.Read())
+                {
+                    txtUserName.Text = reader["UserName"].ToString();
+                    txtIdentityNumber.Text = reader["PATIENT_ID"].ToString();                    
+                }
+
+                reader.Close();
             }
             catch (Exception ex)
             {
