@@ -188,35 +188,7 @@ namespace csFinalProject
                 connection.Close();
             }
             lstAllergies.Items.Clear();
-            //
-            //Fill the Allergy Details group boxs
-            SqlCommand reFillAllergyDetails = new SqlCommand();
-            SqlConnection con = pchrDB.getConnection();
-            con.Open();
-            string cmd = "SELECT ALLERGY_ID "
-                + "FROM ALLERGY_TBL "
-                + "WHERE ALLERGY_TBL.PATIENT_ID = " + User.PATIENT_ID;
-
-            reFillAllergyDetails.Connection = con;
-            reFillAllergyDetails.CommandText = cmd;
-
-            reader = reFillAllergyDetails.ExecuteReader(CommandBehavior.Default);
-            try
-            {
-                lstAllergies.ClearSelected();
-                while (reader.Read())
-                {
-                    lstAllergies.Items.Add(reader["ALLERGY_ID"].ToString());
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error in Allergy Details");
-            }
-            finally
-            {
-                reader.Close();
-            }
+            fillAllergyDetails();
             DisableAllControls(grpAllergyDetails);
         }
 
@@ -232,42 +204,12 @@ namespace csFinalProject
             DisableAllControls(grpAllergyDetails);
         }
 
+        //Fills the Immunisation Details Controls with the data in the database
         private void lstImmunisationList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (lstImmunisationList.SelectedIndex >= 0)
-            {
-                //
-                //Fill the Immunisation Details controls from the list box
-                string vax = lstImmunisationList.Text;
-                SqlConnection connection = pchrDB.getConnection();
-                connection.Open();
-                SqlCommand fillVaxDetails = new SqlCommand();
-                string cmd = "SELECT * "
-                    + "FROM IMMUNIZATION_TBL "
-                    + "WHERE IMMUNIZATION_TBL.IMMUNIZATION_ID = " + vax
-                    + " AND IMMUNIZATION_TBL.PATIENT_ID = " + User.PATIENT_ID;
-
-                fillVaxDetails.Connection = connection;
-                fillVaxDetails.CommandText = cmd;
-
-                try
-                {
-                    SqlDataReader reader = fillVaxDetails.ExecuteReader(CommandBehavior.Default);
-                    while (reader.Read())
-                    {
-                        txtImmunisation.Text = reader["IMMUNIZATION"].ToString();
-                        dtpImmunisationDate.Value = (DateTime)reader["DATE"];
-                        txtImmunisationNote.Text = reader["NOTE"].ToString();
-                    }
-                    reader.Close();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "Error in Immunisation Details");
-                }
-                connection.Close();
-            }
+            populateVaxDetailsControls();
         }
+
         //Edit Immunisation Details
         private void lblImmunisationEdit_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -280,43 +222,10 @@ namespace csFinalProject
             DisableAllControls(grpImmunisationDetails);
         }
 
-
+        //Fills the Perscribed Medication Controls with the data in the database
         private void lstPerscribedMedicationList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (lstPerscribedMedicationList.SelectedIndex >= 0)
-            {
-                //
-                //Fill the Perscribed Medication Details controls
-                string med = lstPerscribedMedicationList.Text;
-                SqlConnection connection = pchrDB.getConnection();
-                connection.Open();
-                SqlCommand fillMedicationDetails = new SqlCommand();
-                string cmd = "SELECT * "
-                    + "FROM MEDICATION_TBL "
-                    + "WHERE MEDICATION_TBL.MED_ID = " + med
-                    + " AND MEDICATION_TBL.PATIENT_ID = " + User.PATIENT_ID;
-
-                fillMedicationDetails.Connection = connection;
-                fillMedicationDetails.CommandText = cmd;
-
-                try
-                {
-                    SqlDataReader reader = fillMedicationDetails.ExecuteReader(CommandBehavior.Default);
-                    while (reader.Read())
-                    {
-                        txtPerscribedMedication.Text = reader["MEDICATION"].ToString();
-                        dtpDatePerscribed.Value = (DateTime)reader["DATE"];
-                        chkPerscribedChronic.Checked = (bool)reader["CHRONIC"];
-                        txtPerscribedNotes.Text = reader["NOTE"].ToString();
-                    }
-                    reader.Close();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "Error in Perscribed Medication Details");
-                }
-                connection.Close();
-            }
+            populateMedicationDetailsControls();
         }
 
         //Edit Perscribed Medication Details
@@ -330,42 +239,11 @@ namespace csFinalProject
         {
             DisableAllControls(grpPerscribedMedicationDetails);
         }
+
+        //Fills the Test Result Controls with the data in the database
         private void lstTestResultList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (lstTestResultList.SelectedIndex >= 0)
-            {
-                //
-                //Fill the Test Result Details controls
-                string test = lstTestResultList.Text;
-                SqlConnection connection = pchrDB.getConnection();
-                connection.Open();
-                SqlCommand fillTestResultDetails = new SqlCommand();
-                string cmd = "SELECT * "
-                    + "FROM TEST_TBL "
-                    + "WHERE TEST_TBL.TEST_ID = " + test
-                    + " AND TEST_TBL.PATIENT_ID = " + User.PATIENT_ID;
-
-                fillTestResultDetails.Connection = connection;
-                fillTestResultDetails.CommandText = cmd;
-
-                try
-                {
-                    SqlDataReader reader = fillTestResultDetails.ExecuteReader(CommandBehavior.Default);
-                    while (reader.Read())
-                    {
-                        txtTestResultTest.Text = reader["TEST"].ToString();
-                        dtpTestResultDate.Value = (DateTime)reader["DATE"];
-                        txtTestResultResult.Text = reader["RESULT"].ToString();
-                        txtTestResultNotes.Text = reader["NOTE"].ToString();
-                    }
-                    reader.Close();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "Error in Perscribed Medication Details");
-                }
-                connection.Close();
-            }
+            populateTestResultControls();
         }
 
         //Edit Test Result Details
@@ -380,49 +258,10 @@ namespace csFinalProject
             DisableAllControls(grpTestResultDetails);
         }
 
+        //Fills the Medical Condition Controls with the data in the database
         private void lstMedicalConditionList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (lstMedicalConditionList.SelectedIndex >= 0)
-            {
-                //
-                //Fill the Medical Condition Details controls
-                string condition = lstMedicalConditionList.Text;
-                SqlConnection connection = pchrDB.getConnection();
-                connection.Open();
-                SqlCommand fillMedicalConditionDetails = new SqlCommand();
-                string cmd = "SELECT * "
-                    + "FROM CONDITION "
-                    + "WHERE CONDITION.CONDITION_ID = " + condition
-                    + " AND CONDITION.PATIENT_ID = " + User.PATIENT_ID;
-
-                fillMedicalConditionDetails.Connection = connection;
-                fillMedicalConditionDetails.CommandText = cmd;
-
-                try
-                {
-                    SqlDataReader reader = fillMedicalConditionDetails.ExecuteReader(CommandBehavior.Default);
-                    while (reader.Read())
-                    {
-                        txtMedicalConditionCondition.Text = reader["CONDITION"].ToString();
-                        dtpMedicalConditionOnset.Value = (DateTime)reader["ONSET_DATE"];
-                        if ((bool)reader["Acute"])
-                        {
-                            rdoMedicalConditionAcute.Checked = true;
-                        }
-                        else
-                        {
-                            rdoMedicalConditionChronic.Checked = true;
-                        }
-                        txtMedicalConditionNotes.Text = reader["NOTE"].ToString();
-                    }
-                    reader.Close();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "Error in Medical Condition Details");
-                }
-                connection.Close();
-            }
+            populateMedicalConditionControls();
         }
 
         //Edit Medical Condition Details
@@ -437,42 +276,10 @@ namespace csFinalProject
             DisableAllControls(grpMedicalConditionDetails);
         }
 
+        //Fills the Medical Procedure Controls with the data in the database
         private void lstMedicalProceduresList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (lstMedicalProceduresList.SelectedIndex >= 0)
-            {
-                //
-                //Fill the Medical Procedure Details controls
-                string procedure = lstMedicalProceduresList.Text;
-                SqlConnection connection = pchrDB.getConnection();
-                connection.Open();
-                SqlCommand fillMedicalProcedureDetails = new SqlCommand();
-                string cmd = "SELECT * "
-                    + "FROM MED_PROC_TBL "
-                    + "WHERE MED_PROC_TBL.PROCEDURE_ID = " + procedure
-                    + " AND MED_PROC_TBL.PATIENT_ID = " + User.PATIENT_ID;
-
-                fillMedicalProcedureDetails.Connection = connection;
-                fillMedicalProcedureDetails.CommandText = cmd;
-
-                try
-                {
-                    SqlDataReader reader = fillMedicalProcedureDetails.ExecuteReader(CommandBehavior.Default);
-                    while (reader.Read())
-                    {
-                        txtMedicalProcedureProcedure.Text = reader["MED_PROCEDURE"].ToString();
-                        txtMedicalProcedurePerformedBy.Text = reader["DOCTOR"].ToString();
-                        txtMedicalProcedureNotes.Text = reader["NOTE"].ToString();
-                        dtpMedicalProcedureDate.Value = (DateTime)reader["DATE"];
-                    }
-                    reader.Close();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "Error in Medical Procedure Details");
-                }
-                connection.Close();
-            }
+            populateMedicalProcedureControls();
         }
 
         //Edit Medical Procedure Details
@@ -518,14 +325,15 @@ namespace csFinalProject
             //
             //Tab 1
             fillUserName();
+            fillPersonalDetails();
+            fillPersonalMedicalDetails();
             fillPrimaryDetails();
             //
             //End tab 1
 
             //
             //tab 2
-            fillPersonalDetails();
-            fillPersonalMedicalDetails();
+            fillAllergyDetails();
             fillVaxDetails();
             fillMedicationDetails();
             fillTestResultDetails();
@@ -817,6 +625,38 @@ namespace csFinalProject
             }
             connection.Close();
         }
+        private void populateAllergyDetailsControls()
+        {
+            //
+            //Fill the Allergy Details group boxs
+            SqlCommand reFillAllergyDetails = new SqlCommand();
+            SqlConnection con = pchrDB.getConnection();
+            con.Open();
+            string cmd = "SELECT ALLERGY_ID "
+                + "FROM ALLERGY_TBL "
+                + "WHERE ALLERGY_TBL.PATIENT_ID = " + User.PATIENT_ID;
+
+            reFillAllergyDetails.Connection = con;
+            reFillAllergyDetails.CommandText = cmd;
+
+            reader = reFillAllergyDetails.ExecuteReader(CommandBehavior.Default);
+            try
+            {
+                lstAllergies.ClearSelected();
+                while (reader.Read())
+                {
+                    lstAllergies.Items.Add(reader["ALLERGY_ID"].ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error in Allergy Details");
+            }
+            finally
+            {
+                reader.Close();
+            }
+        }
 
         private void fillVaxDetails()
         {
@@ -849,6 +689,42 @@ namespace csFinalProject
                 reader.Close();
             }
             connection.Close();
+        }
+        private void populateVaxDetailsControls()
+        {
+            if (lstImmunisationList.SelectedIndex >= 0)
+            {
+                //
+                //Fill the Immunisation Details controls from the list box
+                string vax = lstImmunisationList.Text;
+                SqlConnection connection = pchrDB.getConnection();
+                connection.Open();
+                SqlCommand fillVaxDetails = new SqlCommand();
+                string cmd = "SELECT * "
+                    + "FROM IMMUNIZATION_TBL "
+                    + "WHERE IMMUNIZATION_TBL.IMMUNIZATION_ID = " + vax
+                    + " AND IMMUNIZATION_TBL.PATIENT_ID = " + User.PATIENT_ID;
+
+                fillVaxDetails.Connection = connection;
+                fillVaxDetails.CommandText = cmd;
+
+                try
+                {
+                    SqlDataReader reader = fillVaxDetails.ExecuteReader(CommandBehavior.Default);
+                    while (reader.Read())
+                    {
+                        txtImmunisation.Text = reader["IMMUNIZATION"].ToString();
+                        dtpImmunisationDate.Value = (DateTime)reader["DATE"];
+                        txtImmunisationNote.Text = reader["NOTE"].ToString();
+                    }
+                    reader.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error in Immunisation Details");
+                }
+                connection.Close();
+            }
         }
 
         private void fillMedicationDetails()
@@ -884,6 +760,43 @@ namespace csFinalProject
             }
             connection.Close();
         }
+        private void populateMedicationDetailsControls()
+        {
+            if (lstPerscribedMedicationList.SelectedIndex >= 0)
+            {
+                //
+                //Fill the Perscribed Medication Details controls
+                string med = lstPerscribedMedicationList.Text;
+                SqlConnection connection = pchrDB.getConnection();
+                connection.Open();
+                SqlCommand fillMedicationDetails = new SqlCommand();
+                string cmd = "SELECT * "
+                    + "FROM MEDICATION_TBL "
+                    + "WHERE MEDICATION_TBL.MED_ID = " + med
+                    + " AND MEDICATION_TBL.PATIENT_ID = " + User.PATIENT_ID;
+
+                fillMedicationDetails.Connection = connection;
+                fillMedicationDetails.CommandText = cmd;
+
+                try
+                {
+                    SqlDataReader reader = fillMedicationDetails.ExecuteReader(CommandBehavior.Default);
+                    while (reader.Read())
+                    {
+                        txtPerscribedMedication.Text = reader["MEDICATION"].ToString();
+                        dtpDatePerscribed.Value = (DateTime)reader["DATE"];
+                        chkPerscribedChronic.Checked = (bool)reader["CHRONIC"];
+                        txtPerscribedNotes.Text = reader["NOTE"].ToString();
+                    }
+                    reader.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error in Perscribed Medication Details");
+                }
+                connection.Close();
+            }
+        }
 
         private void fillTestResultDetails()
         {
@@ -917,6 +830,43 @@ namespace csFinalProject
             }
             connection.Close();
         }
+        private void populateTestResultControls()
+        {
+            if (lstTestResultList.SelectedIndex >= 0)
+            {
+                //
+                //Fill the Test Result Details controls
+                string test = lstTestResultList.Text;
+                SqlConnection connection = pchrDB.getConnection();
+                connection.Open();
+                SqlCommand fillTestResultDetails = new SqlCommand();
+                string cmd = "SELECT * "
+                    + "FROM TEST_TBL "
+                    + "WHERE TEST_TBL.TEST_ID = " + test
+                    + " AND TEST_TBL.PATIENT_ID = " + User.PATIENT_ID;
+
+                fillTestResultDetails.Connection = connection;
+                fillTestResultDetails.CommandText = cmd;
+
+                try
+                {
+                    SqlDataReader reader = fillTestResultDetails.ExecuteReader(CommandBehavior.Default);
+                    while (reader.Read())
+                    {
+                        txtTestResultTest.Text = reader["TEST"].ToString();
+                        dtpTestResultDate.Value = (DateTime)reader["DATE"];
+                        txtTestResultResult.Text = reader["RESULT"].ToString();
+                        txtTestResultNotes.Text = reader["NOTE"].ToString();
+                    }
+                    reader.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error in Perscribed Medication Details");
+                }
+                connection.Close();
+            }
+        }
 
         private void fillMedicalConditionDetails()
         {
@@ -946,6 +896,50 @@ namespace csFinalProject
                 MessageBox.Show(ex.Message, "Error in Medical Condition Details");
             }
             connection.Close();
+        }
+        private void populateMedicalConditionControls()
+        {
+            if (lstMedicalConditionList.SelectedIndex >= 0)
+            {
+                //
+                //Fill the Medical Condition Details controls
+                string condition = lstMedicalConditionList.Text;
+                SqlConnection connection = pchrDB.getConnection();
+                connection.Open();
+                SqlCommand fillMedicalConditionDetails = new SqlCommand();
+                string cmd = "SELECT * "
+                    + "FROM CONDITION "
+                    + "WHERE CONDITION.CONDITION_ID = " + condition
+                    + " AND CONDITION.PATIENT_ID = " + User.PATIENT_ID;
+
+                fillMedicalConditionDetails.Connection = connection;
+                fillMedicalConditionDetails.CommandText = cmd;
+
+                try
+                {
+                    SqlDataReader reader = fillMedicalConditionDetails.ExecuteReader(CommandBehavior.Default);
+                    while (reader.Read())
+                    {
+                        txtMedicalConditionCondition.Text = reader["CONDITION"].ToString();
+                        dtpMedicalConditionOnset.Value = (DateTime)reader["ONSET_DATE"];
+                        if ((bool)reader["Acute"])
+                        {
+                            rdoMedicalConditionAcute.Checked = true;
+                        }
+                        else
+                        {
+                            rdoMedicalConditionChronic.Checked = true;
+                        }
+                        txtMedicalConditionNotes.Text = reader["NOTE"].ToString();
+                    }
+                    reader.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error in Medical Condition Details");
+                }
+                connection.Close();
+            }
         }
 
         private void fillMedicalProcedureDetails()
@@ -977,6 +971,43 @@ namespace csFinalProject
                 MessageBox.Show(ex.Message, "Error in Medical Procedure Details");
             }
             connection.Close();
+        }
+        private void populateMedicalProcedureControls()
+        {
+            if (lstMedicalProceduresList.SelectedIndex >= 0)
+            {
+                //
+                //Fill the Medical Procedure Details controls
+                string procedure = lstMedicalProceduresList.Text;
+                SqlConnection connection = pchrDB.getConnection();
+                connection.Open();
+                SqlCommand fillMedicalProcedureDetails = new SqlCommand();
+                string cmd = "SELECT * "
+                    + "FROM MED_PROC_TBL "
+                    + "WHERE MED_PROC_TBL.PROCEDURE_ID = " + procedure
+                    + " AND MED_PROC_TBL.PATIENT_ID = " + User.PATIENT_ID;
+
+                fillMedicalProcedureDetails.Connection = connection;
+                fillMedicalProcedureDetails.CommandText = cmd;
+
+                try
+                {
+                    SqlDataReader reader = fillMedicalProcedureDetails.ExecuteReader(CommandBehavior.Default);
+                    while (reader.Read())
+                    {
+                        txtMedicalProcedureProcedure.Text = reader["MED_PROCEDURE"].ToString();
+                        txtMedicalProcedurePerformedBy.Text = reader["DOCTOR"].ToString();
+                        txtMedicalProcedureNotes.Text = reader["NOTE"].ToString();
+                        dtpMedicalProcedureDate.Value = (DateTime)reader["DATE"];
+                    }
+                    reader.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error in Medical Procedure Details");
+                }
+                connection.Close();
+            }
         }
     }
 }
