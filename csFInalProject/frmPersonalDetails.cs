@@ -155,6 +155,37 @@ namespace csFinalProject
                 connection.Close();
             }
         }
+        //Remove Selected Allergy
+        private void lblAllergyDetailsRemoveSelected_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            if (lstAllergies.SelectedIndex >= 0)
+            {
+                //
+                //Delete the allergy entry from the database
+                string allergen = lstAllergies.Text;
+                SqlConnection connection = pchrDB.getConnection();
+                connection.Open();
+                SqlCommand fillAllergyDetails = new SqlCommand();
+                string cmd = "DELETE  "
+                    + "FROM ALLERGY_TBL "
+                    + "WHERE ALLERGY_TBL.ALLERGY_ID = " + allergen
+                    + " AND ALLERGY_TBL.PATIENT_ID = " + User.P_ID;
+
+                fillAllergyDetails.Connection = connection;
+                fillAllergyDetails.CommandText = cmd;
+
+                try
+                {
+                    //SqlDataReader reader = fillAllergyDetails.ExecuteReader(CommandBehavior.Default);
+                    fillAllergyDetails.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error in Allergy Details");
+                }
+                connection.Close();
+            }
+        }
 
         //Edit Allergy Details
         private void lblAllergyDetailsEdit_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -833,21 +864,9 @@ namespace csFinalProject
 
 
 
-
-
-
-
-
-
-
-
-
-
-
             //Close the connection
             connection.Close();
         }
-
 
     }
 }

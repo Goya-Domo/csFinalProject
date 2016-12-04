@@ -267,6 +267,9 @@
             this.aLLERGY_TBLTableAdapter = new csFinalProject.pchrDataSetTableAdapters.ALLERGY_TBLTableAdapter();
             this.pATIENT_TBLTableAdapter = new csFinalProject.pchrDataSetTableAdapters.PATIENT_TBLTableAdapter();
             this.pER_DETAILS_TBLTableAdapter = new csFinalProject.pchrDataSetTableAdapters.PER_DETAILS_TBLTableAdapter();
+            this.ALLERGEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ONSET_DATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NOTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.picProfilePicture)).BeginInit();
             this.tabEPHR.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picUnderConstructionEMPHR)).BeginInit();
@@ -1492,6 +1495,7 @@
             this.lblAllergyDetailsRemoveSelected.TabIndex = 24;
             this.lblAllergyDetailsRemoveSelected.TabStop = true;
             this.lblAllergyDetailsRemoveSelected.Text = "Remove Selected";
+            this.lblAllergyDetailsRemoveSelected.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblAllergyDetailsRemoveSelected_LinkClicked);
             // 
             // lblAllergyDetailsCancel
             // 
@@ -2692,8 +2696,11 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.pATIENTIDDataGridViewTextBoxColumn,
             this.LAST_NAME,
-            this.FIRST_NAME});
-            this.dataGridView1.DataSource = this.pERDETAILSTBLBindingSource;
+            this.FIRST_NAME,
+            this.ALLERGEN,
+            this.ONSET_DATE,
+            this.NOTE});
+            this.dataGridView1.DataSource = this.aLLERGYTBLBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(7, 3);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(961, 597);
@@ -2754,6 +2761,24 @@
             // pER_DETAILS_TBLTableAdapter
             // 
             this.pER_DETAILS_TBLTableAdapter.ClearBeforeFill = true;
+            // 
+            // ALLERGEN
+            // 
+            this.ALLERGEN.DataPropertyName = "ALLERGEN";
+            this.ALLERGEN.HeaderText = "ALLERGEN";
+            this.ALLERGEN.Name = "ALLERGEN";
+            // 
+            // ONSET_DATE
+            // 
+            this.ONSET_DATE.DataPropertyName = "ONSET_DATE";
+            this.ONSET_DATE.HeaderText = "ONSET_DATE";
+            this.ONSET_DATE.Name = "ONSET_DATE";
+            // 
+            // NOTE
+            // 
+            this.NOTE.DataPropertyName = "NOTE";
+            this.NOTE.HeaderText = "NOTE";
+            this.NOTE.Name = "NOTE";
             // 
             // frmPersonalDetails
             // 
@@ -3049,5 +3074,8 @@
         private pchrDataSetTableAdapters.PER_DETAILS_TBLTableAdapter pER_DETAILS_TBLTableAdapter;
         private System.Windows.Forms.Label lblLbs;
         private System.Windows.Forms.Label lblInches;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ALLERGEN;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ONSET_DATE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NOTE;
     }
 }
