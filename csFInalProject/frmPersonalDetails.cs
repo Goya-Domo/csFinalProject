@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace csFinalProject
 {
@@ -198,6 +199,44 @@ namespace csFinalProject
             {
                 if (control.Text != "Edit")
                     control.Enabled = false;
+            }
+        }
+
+        private void frmPersonalDetails_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'pchrDataSet.PATIENT_TBL' table. You can move, or remove it, as needed.
+            this.pATIENT_TBLTableAdapter.Fill(this.pchrDataSet.PATIENT_TBL);
+            // TODO: This line of code loads data into the 'pchrDataSet.ALLERGY_TBL' table. You can move, or remove it, as needed.
+            this.aLLERGY_TBLTableAdapter.Fill(this.pchrDataSet.ALLERGY_TBL);
+
+            SqlConnection connection = pchrDB.getConnection();
+
+            //Testing
+            MessageBox.Show(User.P_ID);
+
+            //Fill the password group box
+            SqlCommand fillPersonalDetails = new SqlCommand();
+            string cmd = "Select PATIENT_TBL.PATIENT_ID "
+                       + "From PATIENT_TBL "
+                       + "Join UserList "
+                       + "On UserList.PATIENT_ID = PATIENT_TBL.PATIENT_ID "
+                       + "Where PATIENT_TBL.PATIENT_ID = " + User.P_ID;
+            fillPersonalDetails.Connection = connection;
+            fillPersonalDetails.CommandText = cmd;
+
+            connection.Open();
+            try
+            {
+                txtIdentityNumber.Text = fillPersonalDetails.ExecuteNonQuery().ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                //regSuccess = false;
+            }
+            finally
+            {
+                connection.Close();
             }
         }
     }
