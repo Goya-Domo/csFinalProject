@@ -16,7 +16,7 @@ namespace csFinalProject
         public frmLogin()
         {
             InitializeComponent();
-            this.DialogResult = DialogResult.No;
+            this.DialogResult = DialogResult.None;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -28,6 +28,7 @@ namespace csFinalProject
         {
             Form regForm = new frmRegistration();
             regForm.ShowDialog();
+            this.DialogResult = DialogResult.None;
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
