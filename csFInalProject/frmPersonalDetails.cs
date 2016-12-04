@@ -169,7 +169,7 @@ namespace csFinalProject
                 string cmd = "DELETE  "
                     + "FROM ALLERGY_TBL "
                     + "WHERE ALLERGY_TBL.ALLERGY_ID = " + allergen
-                    + " AND ALLERGY_TBL.PATIENT_ID = " + User.P_ID;
+                    + " AND ALLERGY_TBL.PATIENT_ID = " + User.PATIENT_ID;
 
                 fillAllergyDetails.Connection = connection;
                 fillAllergyDetails.CommandText = cmd;
@@ -468,7 +468,6 @@ namespace csFinalProject
         {
             foreach (Control control in inGroup.Controls)
             {
-                MessageBox.Show(control.GetType().ToString());
                 if (control.Text != "Edit" && !(control is ListBox))
                     control.Enabled = false;
             }
