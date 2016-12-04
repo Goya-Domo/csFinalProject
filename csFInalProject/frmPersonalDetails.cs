@@ -132,7 +132,7 @@ namespace csFinalProject
                 string cmd = "SELECT * "
                     + "FROM ALLERGY_TBL "
                     + "WHERE ALLERGY_TBL.ALLERGY_ID = " + allergen
-                    + " AND ALLERGY_TBL.PATIENT_ID = " + User.P_ID;
+                    + " AND ALLERGY_TBL.PATIENT_ID = " + User.PATIENT_ID;
 
                 fillAllergyDetails.Connection = connection;
                 fillAllergyDetails.CommandText = cmd;
@@ -181,7 +181,7 @@ namespace csFinalProject
                 string cmd = "SELECT * "
                     + "FROM IMMUNIZATION_TBL "
                     + "WHERE IMMUNIZATION_TBL.IMMUNIZATION_ID = " + vax
-                    + " AND IMMUNIZATION_TBL.PATIENT_ID = " + User.P_ID;
+                    + " AND IMMUNIZATION_TBL.PATIENT_ID = " + User.PATIENT_ID;
 
                 fillVaxDetails.Connection = connection;
                 fillVaxDetails.CommandText = cmd;
@@ -230,7 +230,7 @@ namespace csFinalProject
                 string cmd = "SELECT * "
                     + "FROM MEDICATION_TBL "
                     + "WHERE MEDICATION_TBL.MED_ID = " + med
-                    + " AND MEDICATION_TBL.PATIENT_ID = " + User.P_ID;
+                    + " AND MEDICATION_TBL.PATIENT_ID = " + User.PATIENT_ID;
 
                 fillMedicationDetails.Connection = connection;
                 fillMedicationDetails.CommandText = cmd;
@@ -279,7 +279,7 @@ namespace csFinalProject
                 string cmd = "SELECT * "
                     + "FROM TEST_TBL "
                     + "WHERE TEST_TBL.TEST_ID = " + test
-                    + " AND TEST_TBL.PATIENT_ID = " + User.P_ID;
+                    + " AND TEST_TBL.PATIENT_ID = " + User.PATIENT_ID;
 
                 fillTestResultDetails.Connection = connection;
                 fillTestResultDetails.CommandText = cmd;
@@ -329,7 +329,7 @@ namespace csFinalProject
                 string cmd = "SELECT * "
                     + "FROM CONDITION "
                     + "WHERE CONDITION.CONDITION_ID = " + condition
-                    + " AND CONDITION.PATIENT_ID = " + User.P_ID;
+                    + " AND CONDITION.PATIENT_ID = " + User.PATIENT_ID;
 
                 fillMedicalConditionDetails.Connection = connection;
                 fillMedicalConditionDetails.CommandText = cmd;
@@ -386,7 +386,7 @@ namespace csFinalProject
                 string cmd = "SELECT * "
                     + "FROM MED_PROC_TBL "
                     + "WHERE MED_PROC_TBL.PROCEDURE_ID = " + procedure
-                    + " AND MED_PROC_TBL.PATIENT_ID = " + User.P_ID;
+                    + " AND MED_PROC_TBL.PATIENT_ID = " + User.PATIENT_ID;
 
                 fillMedicalProcedureDetails.Connection = connection;
                 fillMedicalProcedureDetails.CommandText = cmd;
@@ -463,7 +463,7 @@ namespace csFinalProject
             SqlCommand fillUserName = new SqlCommand();
             string cmd = "SELECT UserList.UserName "
                         + "FROM UserList "
-                        + "WHERE UserList.PATIENT_ID = " + User.P_ID;
+                        + "WHERE UserList.PATIENT_ID = " + User.PATIENT_ID;
             fillUserName.Connection = connection;
             fillUserName.CommandText = cmd;
 
@@ -493,7 +493,7 @@ namespace csFinalProject
                 + "FROM PATIENT_TBL "
                 + "JOIN PER_DETAILS_TBL "
                 + "ON PATIENT_TBL.PATIENT_ID = PER_DETAILS_TBL.PATIENT_ID "
-                + "WHERE PATIENT_TBL.PATIENT_ID = " + User.P_ID;
+                + "WHERE PATIENT_TBL.PATIENT_ID = " + User.PATIENT_ID;
 
             fillPersonalDetails.Connection = connection;
             fillPersonalDetails.CommandText = cmd;
@@ -579,7 +579,7 @@ namespace csFinalProject
             SqlCommand fillPrimaryDetails = new SqlCommand();
             cmd = "SELECT * "
                 + "FROM PRIMARY_CARE_TBL "
-                + "WHERE PRIMARY_CARE_TBL.PRIMARY_ID = " + User.P_ID;
+                + "WHERE PRIMARY_CARE_TBL.PRIMARY_ID = " + User.PATIENT_ID;
 
             fillPrimaryDetails.Connection = connection;
             fillPrimaryDetails.CommandText = cmd;
@@ -620,7 +620,7 @@ namespace csFinalProject
             SqlCommand fillPersonalMedicalDetails = new SqlCommand();
             cmd = "SELECT * "
                 + "FROM PER_DETAILS_TBL "
-                + "WHERE PER_DETAILS_TBL.PATIENT_ID = " + User.P_ID;
+                + "WHERE PER_DETAILS_TBL.PATIENT_ID = " + User.PATIENT_ID;
 
             fillPersonalMedicalDetails.Connection = connection;
             fillPersonalMedicalDetails.CommandText = cmd;
@@ -645,9 +645,16 @@ namespace csFinalProject
                         }
                     }
                     cboBloodGroup.SelectedIndex = index;
-                    if (reader.GetBoolean(reader.GetOrdinal("ORGAN_DONOR")))
+                    if (!reader.IsDBNull(reader.GetOrdinal("ORGAN_DONOR")))
                     {
-                        chkOrganDonor.Checked = true;
+                        if (reader.GetBoolean(reader.GetOrdinal("ORGAN_DONOR")))
+                        {
+                            chkOrganDonor.Checked = true;
+                        }
+                        else
+                        {
+                            chkOrganDonor.Checked = false;
+                        } 
                     }
                     else
                     {
@@ -685,7 +692,7 @@ namespace csFinalProject
             SqlCommand fillAllergyDetails = new SqlCommand();
             cmd = "SELECT ALLERGY_ID "
                 + "FROM ALLERGY_TBL "
-                + "WHERE ALLERGY_TBL.PATIENT_ID = " + User.P_ID;
+                + "WHERE ALLERGY_TBL.PATIENT_ID = " + User.PATIENT_ID;
 
             fillAllergyDetails.Connection = connection;
             fillAllergyDetails.CommandText = cmd;
@@ -712,7 +719,7 @@ namespace csFinalProject
             SqlCommand fillVaxDetails = new SqlCommand();
             cmd = "SELECT IMMUNIZATION_ID "
                 + "FROM IMMUNIZATION_TBL "
-                + "WHERE IMMUNIZATION_TBL.PATIENT_ID = " + User.P_ID;
+                + "WHERE IMMUNIZATION_TBL.PATIENT_ID = " + User.PATIENT_ID;
 
             fillVaxDetails.Connection = connection;
             fillVaxDetails.CommandText = cmd;
@@ -739,7 +746,7 @@ namespace csFinalProject
             SqlCommand fillMedicationDetails = new SqlCommand();
             cmd = "SELECT MED_ID "
                 + "FROM MEDICATION_TBL "
-                + "WHERE MEDICATION_TBL.PATIENT_ID = " + User.P_ID;
+                + "WHERE MEDICATION_TBL.PATIENT_ID = " + User.PATIENT_ID;
 
             fillMedicationDetails.Connection = connection;
             fillMedicationDetails.CommandText = cmd;
@@ -763,7 +770,7 @@ namespace csFinalProject
             SqlCommand fillTestResultDetails = new SqlCommand();
             cmd = "SELECT TEST_ID "
                 + "FROM TEST_TBL "
-                + "WHERE TEST_TBL.PATIENT_ID = " + User.P_ID;
+                + "WHERE TEST_TBL.PATIENT_ID = " + User.PATIENT_ID;
 
             fillTestResultDetails.Connection = connection;
             fillTestResultDetails.CommandText = cmd;
@@ -787,7 +794,7 @@ namespace csFinalProject
             SqlCommand fillMedicalConditionDetails = new SqlCommand();
             cmd = "SELECT CONDITION_ID "
                 + "FROM CONDITION "
-                + "WHERE CONDITION.PATIENT_ID = " + User.P_ID;
+                + "WHERE CONDITION.PATIENT_ID = " + User.PATIENT_ID;
 
             fillMedicalConditionDetails.Connection = connection;
             fillMedicalConditionDetails.CommandText = cmd;
@@ -811,7 +818,7 @@ namespace csFinalProject
             SqlCommand fillMedicalProcedureDetails = new SqlCommand();
             cmd = "SELECT PROCEDURE_ID "
                 + "FROM MED_PROC_TBL "
-                + "WHERE MED_PROC_TBL.PATIENT_ID = " + User.P_ID;
+                + "WHERE MED_PROC_TBL.PATIENT_ID = " + User.PATIENT_ID;
 
             fillMedicalProcedureDetails.Connection = connection;
             fillMedicalProcedureDetails.CommandText = cmd;
