@@ -13,14 +13,32 @@ namespace csFinalProject
         private static Regex uNameRegex = new Regex(@"^[a-zA-Z\d][\w\d]{2}([\w\d]+)");
         private static Regex passwordRegex = new Regex(@"^[\w\d!@#$%^&*()\-+=]{5}([\w\d!@#$%^&*()\-+=]+)$");
 
-        public static bool isValidUsername(string uName)
+        public static bool IsValidUsername(string uName)
         {
-            return uNameRegex.IsMatch(uName);
+            return uNameRegex.IsMatch(uName) && uName.Length <= 32;
         }
 
-        public static bool isValidPassword(string pWord)
+        public static bool IsValidPassword(string pWord)
         {
-            return passwordRegex.IsMatch(pWord);
+            return passwordRegex.IsMatch(pWord) && pWord.Length <= 32;
+        }
+
+        public static bool IsValidId(int id)
+        { return IsValidId(id.ToString()); }
+
+        public static bool IsValidId(string id)
+        {
+            bool valid = true;
+            for (int ndx = 0; ndx < id.Length; ndx++)
+            {
+                if (!char.IsDigit(id[ndx]))
+                {
+                    valid = false;
+                    break;
+                }
+            }
+
+            return valid;
         }
     } 
 }

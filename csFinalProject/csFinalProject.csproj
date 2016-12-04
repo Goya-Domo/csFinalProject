@@ -79,6 +79,10 @@
     <Compile Include="frmRegistration.Designer.cs">
       <DependentUpon>frmRegistration.cs</DependentUpon>
     </Compile>
+    <Compile Include="User.cs" />
+    <Compile Include="pchrDataSet.cs">
+      <DependentUpon>pchrDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="pchrDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

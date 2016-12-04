@@ -20,10 +20,10 @@ namespace csFinalProject
         //Change Password
         private void lblChangePassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            if (Validator.isValidPassword(txtOldPassword.Text))
+            if (Validator.IsValidPassword(txtOldPassword.Text))
             {
                 //TODO Authenticate Old Password
-                if (Validator.isValidPassword(txtNewPassword.Text))
+                if (Validator.IsValidPassword(txtNewPassword.Text))
                 {
                     //TODO Set new password
                 }

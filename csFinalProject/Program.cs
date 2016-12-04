@@ -8,6 +8,7 @@ namespace csFinalProject
 {
     static class Program
     {
+        static Form personalDetailsForm;
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -16,7 +17,21 @@ namespace csFinalProject
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmLogin());
+            frmLogin fLogin = new frmLogin();
+            if (fLogin.ShowDialog() == DialogResult.OK)
+            {
+                Application.Run(new frmPersonalDetails());
+            }
+            else
+            {
+                Application.Exit();
+            }
+        }
+
+        public static void showPersonalDetailsForm()
+        {
+            personalDetailsForm = new frmPersonalDetails();
+            personalDetailsForm.Show();
         }
     }
 }

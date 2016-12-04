@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace csFinalProject
 {
@@ -15,6 +16,7 @@ namespace csFinalProject
         public frmLogin()
         {
             InitializeComponent();
+            this.DialogResult = DialogResult.No;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -30,9 +32,52 @@ namespace csFinalProject
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (Validator.isValidUsername(txtUsername.Text))
+            if (Validator.IsValidUsername(txtUsername.Text))
             {
-                //TODO validate password
+                SqlConnection connection = pchrDB.getConnection();
+                SqlCommand retCommand = new SqlCommand();
+                SqlCommand authCommand = new SqlCommand();
+                string command = "SELECT PassHash, PATIENT_ID "
+                    + "FROM UserList "
+                    + "WHERE UserName = @uName";
+                authCommand.Parameters.AddWithValue("@uName", txtUsername.Text);
+                authCommand.CommandText = command;
+                authCommand.Connection = connection;
+
+                connection.Open();
+                SqlDataReader reader =
+                    authCommand.ExecuteReader(CommandBehavior.CloseConnection);
+                if (reader.Read())
+                {
+                    string passIn = pchrDB.getHashString(txtPassword.Text);
+                    string savedPass = reader["PassHash"].ToString();
+                    
+                    if (passIn.Equals(savedPass))
+                    {
+                        User.P_ID = reader["PATIENT_ID"].ToString();
+                        reader.Close();
+                        connection.Close();
+
+                        this.DialogResult = DialogResult.OK;
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Password incorrect! Try again");
+                        txtPassword.Text = "";
+                        txtPassword.Focus();
+                    }
+
+                }
+                else
+                {
+                    reader.Close();
+                    connection.Close();
+                }
+
+                authCommand.Connection = connection;
+                if (connection.State == ConnectionState.Open)  
+                    connection.Close();
             }
             else
             {
