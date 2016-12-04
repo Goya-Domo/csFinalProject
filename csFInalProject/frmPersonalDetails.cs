@@ -14,6 +14,7 @@ namespace csFinalProject
 {
     public partial class frmPersonalDetails : Form
     {
+        private SqlDataReader reader;
         public frmPersonalDetails()
         {
             InitializeComponent();
@@ -300,26 +301,29 @@ namespace csFinalProject
             fillUserName.Connection = connection;
             fillUserName.CommandText = cmd;
 
+            reader = fillUserName.ExecuteReader(CommandBehavior.Default);
             try
             {
-                SqlDataReader reader = fillUserName.ExecuteReader(CommandBehavior.Default);
                 if (reader.Read())
                 {
                     txtUserName.Text = reader["UserName"].ToString();
                 }
 
-                reader.Close();
             }
             catch (Exception ex)
             {
                 //Login Details message
                 MessageBox.Show(ex.Message, "Error in the login details");
             }
+            finally
+            {
+                reader.Close();
+            }
 
             //
             //Fill the Personal Details and Contact Details group boxs
             SqlCommand fillPersonalDetails = new SqlCommand();
-            cmd = "SELECT PATIENT_TBL.*, PER_DETAILS_TBL.GENDER_ISMALE "
+            cmd = "SELECT PER_DETAILS_TBL.GENDER_ISMALE, PATIENT_TBL.* "
                 + "FROM PATIENT_TBL "
                 + "JOIN PER_DETAILS_TBL "
                 + "ON PATIENT_TBL.PATIENT_ID = PER_DETAILS_TBL.PATIENT_ID "
@@ -328,26 +332,35 @@ namespace csFinalProject
             fillPersonalDetails.Connection = connection;
             fillPersonalDetails.CommandText = cmd;
 
+            reader = fillPersonalDetails.ExecuteReader(CommandBehavior.Default);
             try
             {
-                SqlDataReader reader = fillPersonalDetails.ExecuteReader(CommandBehavior.Default);
                 if (reader.Read())
                 {
                     txtIdentityNumber.Text = reader["PATIENT_ID"].ToString();
-                    if ((bool)reader["GENDER_ISMALE"])
+
+                    if (!reader.IsDBNull(reader.GetOrdinal("GENDER_ISMALE")))
                     {
-                        rdoMale.Checked = true;
+                        bool isMale;
+                        isMale = reader.GetBoolean(reader.GetOrdinal("GENDER_ISMALE"));
+                        rdoMale.Checked = isMale;
+                        rdoFemale.Checked = isMale;
                     }
                     else
                     {
-                        rdoFemale.Checked = true;
-                    }
+                        rdoMale.Checked = false;
+                        rdoFemale.Checked = false;
+                    } 
+
+
                     //Used sentinel value from the registration form here
-                    int titleColumn = 11;
-                    if (reader.GetByte(titleColumn) != 255)
+                    if (!reader.IsDBNull(reader.GetOrdinal("TITLE")))
                     {
-                        cboTitle.SelectedIndex = reader.GetByte(titleColumn);
+                        int titleIndex = reader.GetByte(reader.GetOrdinal("TITLE"));
+                        if (titleIndex != 255)
+                            cboTitle.SelectedIndex = titleIndex;
                     }
+
                     txtInitials.Text = reader["MID_INITIAL"].ToString();
                     txtLastName.Text = reader["LAST_NAME"].ToString();
                     txtFirstName.Text = reader["FIRST_NAME"].ToString();
@@ -358,43 +371,46 @@ namespace csFinalProject
                     txtHomePhone.Text = reader["PHONE_HOME"].ToString();
                     txtMobilePhone.Text = reader["PHONE_MOBILE"].ToString();
                     //txtFax.Text = reader["PHONE_FAX"].ToString();
-                    //txtEmail.Text = reader["EMAIL"].ToString();
+                    //txtEmail.Text = reader["EMAIL"].ToString();            
                 }
-                reader.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error in Personal Details");
             }
-
-            //////////////////////////////////////////////////////////////////////////////////////
-            //Fill the Emergency Contact Details
-            //No such fields in the database??????????
-            //
-            /*SqlCommand fillEmergencyContactDetails = new SqlCommand();
-            cmd = "Select THE STUFF"
-
-            fillEmergencyContactDetails.Connection = connection;
-            fillEmergencyContactDetails.CommandText = cmd;
-
-            try
+            finally
             {
-                SqlDataReader reader = fillPersonalDetails.ExecuteReader(CommandBehavior.Default);
-                if (reader.Read())
-                {
-                    //Fill the stuff
-                }
                 reader.Close();
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error in Emergency Contact Details");
-            }*/
-            ////////////////////////////////////////////////////////////////////////////////////
 
-            //
-            //Fill the Primary Care Provider Details group boxs
-            SqlCommand fillPrimaryDetails = new SqlCommand();
+//////////////////////////////////////////////////////////////////////////////////////
+//Fill the Emergency Contact Details
+//No such fields in the database??????????
+//
+/*SqlCommand fillEmergencyContactDetails = new SqlCommand();
+cmd = "Select THE STUFF"
+
+fillEmergencyContactDetails.Connection = connection;
+fillEmergencyContactDetails.CommandText = cmd;
+
+try
+{
+    SqlDataReader reader = fillPersonalDetails.ExecuteReader(CommandBehavior.Default);
+    if (reader.Read())
+    {
+        //Fill the stuff
+    }
+    reader.Close();
+}
+catch (Exception ex)
+{
+    MessageBox.Show(ex.Message, "Error in Emergency Contact Details");
+}*/
+////////////////////////////////////////////////////////////////////////////////////
+
+//
+//Fill the Primary Care Provider Details group boxs
+SqlCommand fillPrimaryDetails = new SqlCommand();
             cmd = "SELECT * "
                 + "FROM PRIMARY_CARE_TBL "
                 + "WHERE PRIMARY_CARE_TBL.PRIMARY_ID = " + User.P_ID;
@@ -402,9 +418,9 @@ namespace csFinalProject
             fillPrimaryDetails.Connection = connection;
             fillPrimaryDetails.CommandText = cmd;
 
+            reader = fillPrimaryDetails.ExecuteReader(CommandBehavior.Default);
             try
             {
-                SqlDataReader reader = fillPrimaryDetails.ExecuteReader(CommandBehavior.Default);
                 if (reader.Read())
                 {
                     string firstName = reader["NAME_FIRST"].ToString();
@@ -417,11 +433,14 @@ namespace csFinalProject
                     //txtPrimaryHomePhone.Text = "NO SUCH FIELD IN DATABASE";
                     txtPrimaryMobilePhone.Text = reader["PHONE_MOBILE"].ToString();
                 }
-                reader.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error in Primary Care Provider Details");
+            }
+            finally
+            {
+                reader.Close();
             }
 
             //
@@ -440,9 +459,9 @@ namespace csFinalProject
             fillPersonalMedicalDetails.Connection = connection;
             fillPersonalMedicalDetails.CommandText = cmd;
 
+                reader = fillPersonalMedicalDetails.ExecuteReader(CommandBehavior.Default);
             try
             {
-                SqlDataReader reader = fillPersonalMedicalDetails.ExecuteReader(CommandBehavior.Default);
                 if (reader.Read())
                 {
                     //TODO
@@ -469,32 +488,30 @@ namespace csFinalProject
                         chkOrganDonor.Checked = false;
                     }
 
-                    //Hate to use magic numbers but 3 is the hiv column in the database...
-                    //Need to check for null because null is the unkown radio button
-                    if (reader.IsDBNull(3))
+
+                    if (reader.IsDBNull(pchrDB.HIV_STATUS_COL_NUM))
                     {
                         rdoHIVUnknown.Checked = true;
                     }
                     else
                     {
-                        if ((bool)reader["HIV_STATUS"] == true)
-                        {
-                            rdoHIVPositive.Checked = true;
-                        }
-                        else
-                        {
-                            rdoHIVNegative.Checked = true;
-                        }
+                        bool hivStatus = reader.GetBoolean(pchrDB.HIV_STATUS_COL_NUM);
+                        rdoHIVPositive.Checked = hivStatus;
+                        rdoHIVNegative.Checked = !hivStatus;
                     }
+
                     txtHeight.Text = reader["HEIGHT_INCHES"].ToString();
                     txtWeight.Text = reader["WEIGHT_LBS"].ToString();
 
                 }
-                reader.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error in Personal Medical Details");
+            }
+            finally
+            {
+                reader.Close();
             }
 
             //
@@ -507,18 +524,21 @@ namespace csFinalProject
             fillAllergyDetails.Connection = connection;
             fillAllergyDetails.CommandText = cmd;
 
+                reader = fillAllergyDetails.ExecuteReader(CommandBehavior.Default);
             try
             {
-                SqlDataReader reader = fillAllergyDetails.ExecuteReader(CommandBehavior.Default);
                 while (reader.Read())
                 {
                     lstAllergies.Items.Add(reader["ALLERGY_ID"].ToString());
                 }
-                reader.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error in Allergy Details");
+            }
+            finally
+            {
+                reader.Close();
             }
 
             //
@@ -531,18 +551,21 @@ namespace csFinalProject
             fillVaxDetails.Connection = connection;
             fillVaxDetails.CommandText = cmd;
 
+            reader = fillVaxDetails.ExecuteReader(CommandBehavior.Default);
             try
             {
-                SqlDataReader reader = fillVaxDetails.ExecuteReader(CommandBehavior.Default);
                 while (reader.Read())
                 {
                     lstImmunisationList.Items.Add(reader["IMMUNIZATION_ID"].ToString());
                 }
-                reader.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error in Immunisation Details");
+            }
+            finally
+            {
+                reader.Close();
             }
 
             //Close the connection

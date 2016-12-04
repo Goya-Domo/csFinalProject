@@ -10,6 +10,17 @@ namespace csFinalProject
 {
     class pchrDB
     {
+        //TIL all constants are accessed as if they were static, since the value is the same for all instances
+        // "static const" gives compiler error
+        //Column number of GENDER_ISMALE in PER_DETAILS_TBL for use with SqlDataReader.GetBoolean(GENDER_COL_NUM)
+        public const byte GENDER_COL_NUM = 6;
+
+        //Column number of TITLE in PATIENT_TBL
+        public const byte TITLE_COL_NUM = 11;
+
+        //Column number of HIV_STATUS in PER_DETAILS_TBL
+        public const byte HIV_STATUS_COL_NUM = 3;
+
         public static SqlConnection getConnection()
         {
             SqlConnection conn = new SqlConnection(Properties.Settings.Default.pchrdbConnectionString);
