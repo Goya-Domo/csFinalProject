@@ -1181,6 +1181,7 @@
             this.lstImmunisationList.Name = "lstImmunisationList";
             this.lstImmunisationList.Size = new System.Drawing.Size(166, 160);
             this.lstImmunisationList.TabIndex = 35;
+            this.lstImmunisationList.SelectedIndexChanged += new System.EventHandler(this.lstImmunisationList_SelectedIndexChanged);
             // 
             // dtpImmunisationDate
             // 
@@ -1247,9 +1248,9 @@
             this.lblImmunisationList.AutoSize = true;
             this.lblImmunisationList.Location = new System.Drawing.Point(202, 20);
             this.lblImmunisationList.Name = "lblImmunisationList";
-            this.lblImmunisationList.Size = new System.Drawing.Size(49, 13);
+            this.lblImmunisationList.Size = new System.Drawing.Size(42, 13);
             this.lblImmunisationList.TabIndex = 30;
-            this.lblImmunisationList.Text = "Allergies:";
+            this.lblImmunisationList.Text = "Vax ID:";
             // 
             // grpPersonalMedicalDetails
             // 

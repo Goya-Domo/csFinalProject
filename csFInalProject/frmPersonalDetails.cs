@@ -125,7 +125,6 @@ namespace csFinalProject
             string allergen = lstAllergies.Text;
             SqlConnection connection = pchrDB.getConnection();
             connection.Open();
-            MessageBox.Show(lstAllergies.Text);
             SqlCommand fillAllergyDetails = new SqlCommand();
             string cmd = "SELECT * "
                 + "FROM ALLERGY_TBL "
@@ -142,8 +141,7 @@ namespace csFinalProject
                 {
                     txtAllergicTo.Text = reader["ALLERGEN"].ToString();
                     dtpOnset.Value = (DateTime)reader["ONSET_DATE"];
-                    txtAllergyNote.Text = reader["NOTE"].ToString();
-                    //lstAllergies.Items.Add(reader["ALLERGEN"].ToString());
+                    txtAllergyNote.Text = reader["NOTE"].ToString();              
                 }
                 reader.Close();
             }
@@ -166,6 +164,39 @@ namespace csFinalProject
             DisableAllControls(grpAllergyDetails);
         }
 
+        private void lstImmunisationList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //
+            //Fill the Immunisation Details controls from the list box
+            string vax = lstImmunisationList.Text;
+            SqlConnection connection = pchrDB.getConnection();
+            connection.Open();         
+            SqlCommand fillVaxDetails = new SqlCommand();
+            string cmd = "SELECT * "
+                + "FROM IMMUNIZATION_TBL "
+                + "WHERE IMMUNIZATION_TBL.IMMUNIZATION_ID = " + vax
+                + " AND IMMUNIZATION_TBL.PATIENT_ID = " + User.P_ID;
+
+            fillVaxDetails.Connection = connection;
+            fillVaxDetails.CommandText = cmd;
+
+            try
+            {
+                SqlDataReader reader = fillVaxDetails.ExecuteReader(CommandBehavior.Default);
+                while (reader.Read())
+                {
+                    txtImmunisation.Text = reader["IMMUNIZATION"].ToString();
+                    dtpImmunisationDate.Value = (DateTime)reader["DATE"];
+                    txtImmunisationNote.Text = reader["NOTE"].ToString();            
+                }
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error in Immunisation Details");
+            }
+            connection.Close();
+        }
         //Edit Immunisation Details
         private void lblImmunisationEdit_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -469,7 +500,7 @@ namespace csFinalProject
             //
             //Fill the Allergy Details group boxs
             SqlCommand fillAllergyDetails = new SqlCommand();
-            cmd = "SELECT * "
+            cmd = "SELECT ALLERGY_ID "
                 + "FROM ALLERGY_TBL "
                 + "WHERE ALLERGY_TBL.PATIENT_ID = " + User.P_ID;
 
@@ -490,7 +521,29 @@ namespace csFinalProject
                 MessageBox.Show(ex.Message, "Error in Allergy Details");
             }
 
+            //
+            //Fill the Immunization Details group boxs
+            SqlCommand fillVaxDetails = new SqlCommand();
+            cmd = "SELECT IMMUNIZATION_ID "
+                + "FROM IMMUNIZATION_TBL "
+                + "WHERE IMMUNIZATION_TBL.PATIENT_ID = " + User.P_ID;
 
+            fillVaxDetails.Connection = connection;
+            fillVaxDetails.CommandText = cmd;
+
+            try
+            {
+                SqlDataReader reader = fillVaxDetails.ExecuteReader(CommandBehavior.Default);
+                while (reader.Read())
+                {
+                    lstImmunisationList.Items.Add(reader["IMMUNIZATION_ID"].ToString());
+                }
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error in Immunisation Details");
+            }
 
             //Close the connection
             connection.Close();
