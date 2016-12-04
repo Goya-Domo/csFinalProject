@@ -50,7 +50,7 @@
             this.txtLastName = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtInitials = new System.Windows.Forms.TextBox();
-            this.lblInitials = new System.Windows.Forms.Label();
+            this.lblInitial = new System.Windows.Forms.Label();
             this.cboTitle = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtIdNumber = new System.Windows.Forms.TextBox();
@@ -205,7 +205,7 @@
             this.grpPersonalDetails.Controls.Add(this.txtLastName);
             this.grpPersonalDetails.Controls.Add(this.label5);
             this.grpPersonalDetails.Controls.Add(this.txtInitials);
-            this.grpPersonalDetails.Controls.Add(this.lblInitials);
+            this.grpPersonalDetails.Controls.Add(this.lblInitial);
             this.grpPersonalDetails.Controls.Add(this.cboTitle);
             this.grpPersonalDetails.Controls.Add(this.label3);
             this.grpPersonalDetails.Controls.Add(this.txtIdNumber);
@@ -301,19 +301,19 @@
             // 
             // txtInitials
             // 
-            this.txtInitials.Location = new System.Drawing.Point(336, 55);
+            this.txtInitials.Location = new System.Drawing.Point(364, 55);
             this.txtInitials.Name = "txtInitials";
-            this.txtInitials.Size = new System.Drawing.Size(110, 22);
+            this.txtInitials.Size = new System.Drawing.Size(82, 22);
             this.txtInitials.TabIndex = 5;
             // 
-            // lblInitials
+            // lblInitial
             // 
-            this.lblInitials.AutoSize = true;
-            this.lblInitials.Location = new System.Drawing.Point(285, 58);
-            this.lblInitials.Name = "lblInitials";
-            this.lblInitials.Size = new System.Drawing.Size(45, 16);
-            this.lblInitials.TabIndex = 4;
-            this.lblInitials.Text = "Initials";
+            this.lblInitial.AutoSize = true;
+            this.lblInitial.Location = new System.Drawing.Point(276, 58);
+            this.lblInitial.Name = "lblInitial";
+            this.lblInitial.Size = new System.Drawing.Size(82, 16);
+            this.lblInitial.TabIndex = 4;
+            this.lblInitial.Text = "Middle Initial";
             // 
             // cboTitle
             // 
@@ -343,6 +343,7 @@
             // 
             this.txtIdNumber.Location = new System.Drawing.Point(122, 25);
             this.txtIdNumber.Name = "txtIdNumber";
+            this.txtIdNumber.ReadOnly = true;
             this.txtIdNumber.Size = new System.Drawing.Size(324, 22);
             this.txtIdNumber.TabIndex = 1;
             // 
@@ -422,7 +423,7 @@
         private System.Windows.Forms.TextBox txtLastName;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtInitials;
-        private System.Windows.Forms.Label lblInitials;
+        private System.Windows.Forms.Label lblInitial;
         private System.Windows.Forms.ComboBox cboTitle;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtIdNumber;
