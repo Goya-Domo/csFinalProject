@@ -396,6 +396,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmRegistration";
             this.Text = "New User Registration";
+            this.Load += new System.EventHandler(this.frmRegistration_Load);
             this.grpLoginDetails.ResumeLayout(false);
             this.grpLoginDetails.PerformLayout();
             this.grpPersonalDetails.ResumeLayout(false);
