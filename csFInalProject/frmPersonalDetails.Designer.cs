@@ -119,6 +119,8 @@
             this.txtImmunisationNote = new System.Windows.Forms.TextBox();
             this.lblImmunisationList = new System.Windows.Forms.Label();
             this.grpPersonalMedicalDetails = new System.Windows.Forms.GroupBox();
+            this.lblLbs = new System.Windows.Forms.Label();
+            this.lblInches = new System.Windows.Forms.Label();
             this.lblWeight = new System.Windows.Forms.Label();
             this.lblHeight = new System.Windows.Forms.Label();
             this.txtWeight = new System.Windows.Forms.TextBox();
@@ -141,7 +143,7 @@
             this.lstAllergies = new System.Windows.Forms.ListBox();
             this.lblAllergyDetailsEdit = new System.Windows.Forms.LinkLabel();
             this.lblAllergiesAdd = new System.Windows.Forms.LinkLabel();
-            this.txtNote = new System.Windows.Forms.TextBox();
+            this.txtAllergyNote = new System.Windows.Forms.TextBox();
             this.lblAllergies = new System.Windows.Forms.Label();
             this.lblNote = new System.Windows.Forms.Label();
             this.lblOnset = new System.Windows.Forms.Label();
@@ -169,10 +171,10 @@
             this.txtPrimaryCity = new System.Windows.Forms.TextBox();
             this.lblPrimaryHomePhone = new System.Windows.Forms.Label();
             this.lblPrimaryWorkPhone = new System.Windows.Forms.Label();
-            this.txtPrimarySuburb = new System.Windows.Forms.TextBox();
+            this.txtPrimaryState = new System.Windows.Forms.TextBox();
             this.txtPrimaryMobilePhone = new System.Windows.Forms.TextBox();
             this.txtPrimaryWorkPhone = new System.Windows.Forms.TextBox();
-            this.lblPrimarySuburb = new System.Windows.Forms.Label();
+            this.lblPrimaryState = new System.Windows.Forms.Label();
             this.txtPrimaryAddress = new System.Windows.Forms.TextBox();
             this.lblPrimaryMobilePhone = new System.Windows.Forms.Label();
             this.grpEmergencyContactDetails = new System.Windows.Forms.GroupBox();
@@ -219,8 +221,8 @@
             this.txtHomePhone = new System.Windows.Forms.TextBox();
             this.lblCity = new System.Windows.Forms.Label();
             this.txtCity = new System.Windows.Forms.TextBox();
-            this.txtSuburb = new System.Windows.Forms.TextBox();
-            this.lblSuburb = new System.Windows.Forms.Label();
+            this.txtState = new System.Windows.Forms.TextBox();
+            this.lblState = new System.Windows.Forms.Label();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.lblAddress = new System.Windows.Forms.Label();
             this.grpPersonalDetails = new System.Windows.Forms.GroupBox();
@@ -252,17 +254,19 @@
             this.lblUsername = new System.Windows.Forms.Label();
             this.lblProfilePic = new System.Windows.Forms.LinkLabel();
             this.tabTabControl = new System.Windows.Forms.TabControl();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.tabTest = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.pchrDataSet = new csFinalProject.pchrDataSet();
-            this.aLLERGYTBLBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.aLLERGY_TBLTableAdapter = new csFinalProject.pchrDataSetTableAdapters.ALLERGY_TBLTableAdapter();
-            this.pATIENTTBLBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pATIENT_TBLTableAdapter = new csFinalProject.pchrDataSetTableAdapters.PATIENT_TBLTableAdapter();
             this.pATIENTIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LAST_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FIRST_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pERDETAILSTBLBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pchrDataSet = new csFinalProject.pchrDataSet();
+            this.pATIENTTBLBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.aLLERGYTBLBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.aLLERGY_TBLTableAdapter = new csFinalProject.pchrDataSetTableAdapters.ALLERGY_TBLTableAdapter();
+            this.pATIENT_TBLTableAdapter = new csFinalProject.pchrDataSetTableAdapters.PATIENT_TBLTableAdapter();
+            this.pER_DETAILS_TBLTableAdapter = new csFinalProject.pchrDataSetTableAdapters.PER_DETAILS_TBLTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.picProfilePicture)).BeginInit();
             this.tabEPHR.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picUnderConstructionEMPHR)).BeginInit();
@@ -286,9 +290,10 @@
             this.tabTabControl.SuspendLayout();
             this.tabTest.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pERDETAILSTBLBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pchrDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aLLERGYTBLBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pATIENTTBLBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aLLERGYTBLBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // picProfilePicture
@@ -1248,6 +1253,8 @@
             // 
             // grpPersonalMedicalDetails
             // 
+            this.grpPersonalMedicalDetails.Controls.Add(this.lblLbs);
+            this.grpPersonalMedicalDetails.Controls.Add(this.lblInches);
             this.grpPersonalMedicalDetails.Controls.Add(this.lblWeight);
             this.grpPersonalMedicalDetails.Controls.Add(this.lblHeight);
             this.grpPersonalMedicalDetails.Controls.Add(this.txtWeight);
@@ -1269,6 +1276,24 @@
             this.grpPersonalMedicalDetails.TabIndex = 0;
             this.grpPersonalMedicalDetails.TabStop = false;
             this.grpPersonalMedicalDetails.Text = "Personal Medical Details";
+            // 
+            // lblLbs
+            // 
+            this.lblLbs.AutoSize = true;
+            this.lblLbs.Location = new System.Drawing.Point(131, 181);
+            this.lblLbs.Name = "lblLbs";
+            this.lblLbs.Size = new System.Drawing.Size(23, 13);
+            this.lblLbs.TabIndex = 27;
+            this.lblLbs.Text = "lbs.";
+            // 
+            // lblInches
+            // 
+            this.lblInches.AutoSize = true;
+            this.lblInches.Location = new System.Drawing.Point(131, 156);
+            this.lblInches.Name = "lblInches";
+            this.lblInches.Size = new System.Drawing.Size(18, 13);
+            this.lblInches.TabIndex = 26;
+            this.lblInches.Text = "in.";
             // 
             // lblWeight
             // 
@@ -1293,7 +1318,7 @@
             this.txtWeight.Enabled = false;
             this.txtWeight.Location = new System.Drawing.Point(54, 178);
             this.txtWeight.Name = "txtWeight";
-            this.txtWeight.Size = new System.Drawing.Size(87, 20);
+            this.txtWeight.Size = new System.Drawing.Size(71, 20);
             this.txtWeight.TabIndex = 9;
             // 
             // lblPersonalMedicalDetailsCancel
@@ -1324,7 +1349,7 @@
             this.txtHeight.Enabled = false;
             this.txtHeight.Location = new System.Drawing.Point(54, 152);
             this.txtHeight.Name = "txtHeight";
-            this.txtHeight.Size = new System.Drawing.Size(87, 20);
+            this.txtHeight.Size = new System.Drawing.Size(71, 20);
             this.txtHeight.TabIndex = 8;
             // 
             // lblPersonalMedicalDetailsSave
@@ -1404,8 +1429,19 @@
             // 
             // cboBloodGroup
             // 
+            this.cboBloodGroup.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboBloodGroup.Enabled = false;
             this.cboBloodGroup.FormattingEnabled = true;
+            this.cboBloodGroup.Items.AddRange(new object[] {
+            "",
+            "O+",
+            "O-",
+            "A+",
+            "A-",
+            "B+",
+            "B-",
+            "AB+",
+            "AB-"});
             this.cboBloodGroup.Location = new System.Drawing.Point(79, 17);
             this.cboBloodGroup.Name = "cboBloodGroup";
             this.cboBloodGroup.Size = new System.Drawing.Size(87, 21);
@@ -1428,7 +1464,7 @@
             this.grpAllergyDetails.Controls.Add(this.lstAllergies);
             this.grpAllergyDetails.Controls.Add(this.lblAllergyDetailsEdit);
             this.grpAllergyDetails.Controls.Add(this.lblAllergiesAdd);
-            this.grpAllergyDetails.Controls.Add(this.txtNote);
+            this.grpAllergyDetails.Controls.Add(this.txtAllergyNote);
             this.grpAllergyDetails.Controls.Add(this.lblAllergies);
             this.grpAllergyDetails.Controls.Add(this.lblNote);
             this.grpAllergyDetails.Controls.Add(this.lblOnset);
@@ -1484,6 +1520,7 @@
             this.lstAllergies.Name = "lstAllergies";
             this.lstAllergies.Size = new System.Drawing.Size(176, 160);
             this.lstAllergies.TabIndex = 22;
+            this.lstAllergies.SelectedIndexChanged += new System.EventHandler(this.lstAllergies_SelectedIndexChanged);
             // 
             // lblAllergyDetailsEdit
             // 
@@ -1506,24 +1543,25 @@
             this.lblAllergiesAdd.TabIndex = 21;
             this.lblAllergiesAdd.TabStop = true;
             this.lblAllergiesAdd.Text = "Add";
+            this.lblAllergiesAdd.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblAllergiesAdd_LinkClicked);
             // 
-            // txtNote
+            // txtAllergyNote
             // 
-            this.txtNote.Enabled = false;
-            this.txtNote.Location = new System.Drawing.Point(73, 67);
-            this.txtNote.Multiline = true;
-            this.txtNote.Name = "txtNote";
-            this.txtNote.Size = new System.Drawing.Size(131, 128);
-            this.txtNote.TabIndex = 7;
+            this.txtAllergyNote.Enabled = false;
+            this.txtAllergyNote.Location = new System.Drawing.Point(73, 67);
+            this.txtAllergyNote.Multiline = true;
+            this.txtAllergyNote.Name = "txtAllergyNote";
+            this.txtAllergyNote.Size = new System.Drawing.Size(131, 128);
+            this.txtAllergyNote.TabIndex = 7;
             // 
             // lblAllergies
             // 
             this.lblAllergies.AutoSize = true;
             this.lblAllergies.Location = new System.Drawing.Point(211, 18);
             this.lblAllergies.Name = "lblAllergies";
-            this.lblAllergies.Size = new System.Drawing.Size(49, 13);
+            this.lblAllergies.Size = new System.Drawing.Size(55, 13);
             this.lblAllergies.TabIndex = 6;
-            this.lblAllergies.Text = "Allergies:";
+            this.lblAllergies.Text = "Allergy ID:";
             // 
             // lblNote
             // 
@@ -1607,10 +1645,10 @@
             this.grpPrimaryCare.Controls.Add(this.txtPrimaryCity);
             this.grpPrimaryCare.Controls.Add(this.lblPrimaryHomePhone);
             this.grpPrimaryCare.Controls.Add(this.lblPrimaryWorkPhone);
-            this.grpPrimaryCare.Controls.Add(this.txtPrimarySuburb);
+            this.grpPrimaryCare.Controls.Add(this.txtPrimaryState);
             this.grpPrimaryCare.Controls.Add(this.txtPrimaryMobilePhone);
             this.grpPrimaryCare.Controls.Add(this.txtPrimaryWorkPhone);
-            this.grpPrimaryCare.Controls.Add(this.lblPrimarySuburb);
+            this.grpPrimaryCare.Controls.Add(this.lblPrimaryState);
             this.grpPrimaryCare.Controls.Add(this.txtPrimaryAddress);
             this.grpPrimaryCare.Controls.Add(this.lblPrimaryMobilePhone);
             this.grpPrimaryCare.Location = new System.Drawing.Point(488, 314);
@@ -1743,7 +1781,7 @@
             // lblPrimaryCity
             // 
             this.lblPrimaryCity.AutoSize = true;
-            this.lblPrimaryCity.Location = new System.Drawing.Point(10, 144);
+            this.lblPrimaryCity.Location = new System.Drawing.Point(10, 118);
             this.lblPrimaryCity.Name = "lblPrimaryCity";
             this.lblPrimaryCity.Size = new System.Drawing.Size(27, 13);
             this.lblPrimaryCity.TabIndex = 38;
@@ -1768,7 +1806,7 @@
             // txtPrimaryCity
             // 
             this.txtPrimaryCity.Enabled = false;
-            this.txtPrimaryCity.Location = new System.Drawing.Point(97, 141);
+            this.txtPrimaryCity.Location = new System.Drawing.Point(97, 115);
             this.txtPrimaryCity.Name = "txtPrimaryCity";
             this.txtPrimaryCity.Size = new System.Drawing.Size(178, 20);
             this.txtPrimaryCity.TabIndex = 37;
@@ -1791,13 +1829,13 @@
             this.lblPrimaryWorkPhone.TabIndex = 44;
             this.lblPrimaryWorkPhone.Text = "Work Phone:";
             // 
-            // txtPrimarySuburb
+            // txtPrimaryState
             // 
-            this.txtPrimarySuburb.Enabled = false;
-            this.txtPrimarySuburb.Location = new System.Drawing.Point(97, 115);
-            this.txtPrimarySuburb.Name = "txtPrimarySuburb";
-            this.txtPrimarySuburb.Size = new System.Drawing.Size(178, 20);
-            this.txtPrimarySuburb.TabIndex = 36;
+            this.txtPrimaryState.Enabled = false;
+            this.txtPrimaryState.Location = new System.Drawing.Point(97, 141);
+            this.txtPrimaryState.Name = "txtPrimaryState";
+            this.txtPrimaryState.Size = new System.Drawing.Size(178, 20);
+            this.txtPrimaryState.TabIndex = 36;
             // 
             // txtPrimaryMobilePhone
             // 
@@ -1815,14 +1853,14 @@
             this.txtPrimaryWorkPhone.Size = new System.Drawing.Size(178, 20);
             this.txtPrimaryWorkPhone.TabIndex = 43;
             // 
-            // lblPrimarySuburb
+            // lblPrimaryState
             // 
-            this.lblPrimarySuburb.AutoSize = true;
-            this.lblPrimarySuburb.Location = new System.Drawing.Point(10, 120);
-            this.lblPrimarySuburb.Name = "lblPrimarySuburb";
-            this.lblPrimarySuburb.Size = new System.Drawing.Size(44, 13);
-            this.lblPrimarySuburb.TabIndex = 35;
-            this.lblPrimarySuburb.Text = "Suburb:";
+            this.lblPrimaryState.AutoSize = true;
+            this.lblPrimaryState.Location = new System.Drawing.Point(10, 146);
+            this.lblPrimaryState.Name = "lblPrimaryState";
+            this.lblPrimaryState.Size = new System.Drawing.Size(35, 13);
+            this.lblPrimaryState.TabIndex = 35;
+            this.lblPrimaryState.Text = "State:";
             // 
             // txtPrimaryAddress
             // 
@@ -2117,8 +2155,8 @@
             this.grpContactDetails.Controls.Add(this.txtHomePhone);
             this.grpContactDetails.Controls.Add(this.lblCity);
             this.grpContactDetails.Controls.Add(this.txtCity);
-            this.grpContactDetails.Controls.Add(this.txtSuburb);
-            this.grpContactDetails.Controls.Add(this.lblSuburb);
+            this.grpContactDetails.Controls.Add(this.txtState);
+            this.grpContactDetails.Controls.Add(this.lblState);
             this.grpContactDetails.Controls.Add(this.txtAddress);
             this.grpContactDetails.Controls.Add(this.lblAddress);
             this.grpContactDetails.Location = new System.Drawing.Point(8, 350);
@@ -2267,7 +2305,7 @@
             // lblCity
             // 
             this.lblCity.AutoSize = true;
-            this.lblCity.Location = new System.Drawing.Point(10, 94);
+            this.lblCity.Location = new System.Drawing.Point(10, 68);
             this.lblCity.Name = "lblCity";
             this.lblCity.Size = new System.Drawing.Size(27, 13);
             this.lblCity.TabIndex = 20;
@@ -2276,27 +2314,27 @@
             // txtCity
             // 
             this.txtCity.Enabled = false;
-            this.txtCity.Location = new System.Drawing.Point(97, 91);
+            this.txtCity.Location = new System.Drawing.Point(97, 65);
             this.txtCity.Name = "txtCity";
             this.txtCity.Size = new System.Drawing.Size(178, 20);
             this.txtCity.TabIndex = 19;
             // 
-            // txtSuburb
+            // txtState
             // 
-            this.txtSuburb.Enabled = false;
-            this.txtSuburb.Location = new System.Drawing.Point(97, 65);
-            this.txtSuburb.Name = "txtSuburb";
-            this.txtSuburb.Size = new System.Drawing.Size(178, 20);
-            this.txtSuburb.TabIndex = 18;
+            this.txtState.Enabled = false;
+            this.txtState.Location = new System.Drawing.Point(97, 91);
+            this.txtState.Name = "txtState";
+            this.txtState.Size = new System.Drawing.Size(178, 20);
+            this.txtState.TabIndex = 18;
             // 
-            // lblSuburb
+            // lblState
             // 
-            this.lblSuburb.AutoSize = true;
-            this.lblSuburb.Location = new System.Drawing.Point(10, 70);
-            this.lblSuburb.Name = "lblSuburb";
-            this.lblSuburb.Size = new System.Drawing.Size(44, 13);
-            this.lblSuburb.TabIndex = 2;
-            this.lblSuburb.Text = "Suburb:";
+            this.lblState.AutoSize = true;
+            this.lblState.Location = new System.Drawing.Point(10, 96);
+            this.lblState.Name = "lblState";
+            this.lblState.Size = new System.Drawing.Size(35, 13);
+            this.lblState.TabIndex = 2;
+            this.lblState.Text = "State:";
             // 
             // txtAddress
             // 
@@ -2482,6 +2520,13 @@
             // 
             this.cboTitle.Enabled = false;
             this.cboTitle.FormattingEnabled = true;
+            this.cboTitle.Items.AddRange(new object[] {
+            "Mr.",
+            "Mrs.",
+            "Ms.",
+            "Miss",
+            "Dr.",
+            "Good ol\'"});
             this.cboTitle.Location = new System.Drawing.Point(97, 43);
             this.cboTitle.Name = "cboTitle";
             this.cboTitle.Size = new System.Drawing.Size(73, 21);
@@ -2627,12 +2672,6 @@
             this.tabTabControl.Size = new System.Drawing.Size(981, 635);
             this.tabTabControl.TabIndex = 0;
             // 
-            // imageList1
-            // 
-            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            // 
             // tabTest
             // 
             this.tabTest.Controls.Add(this.dataGridView1);
@@ -2651,34 +2690,11 @@
             this.pATIENTIDDataGridViewTextBoxColumn,
             this.LAST_NAME,
             this.FIRST_NAME});
-            this.dataGridView1.DataSource = this.pATIENTTBLBindingSource;
+            this.dataGridView1.DataSource = this.pERDETAILSTBLBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(7, 3);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(961, 597);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // pchrDataSet
-            // 
-            this.pchrDataSet.DataSetName = "pchrDataSet";
-            this.pchrDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // aLLERGYTBLBindingSource
-            // 
-            this.aLLERGYTBLBindingSource.DataMember = "ALLERGY_TBL";
-            this.aLLERGYTBLBindingSource.DataSource = this.pchrDataSet;
-            // 
-            // aLLERGY_TBLTableAdapter
-            // 
-            this.aLLERGY_TBLTableAdapter.ClearBeforeFill = true;
-            // 
-            // pATIENTTBLBindingSource
-            // 
-            this.pATIENTTBLBindingSource.DataMember = "PATIENT_TBL";
-            this.pATIENTTBLBindingSource.DataSource = this.pchrDataSet;
-            // 
-            // pATIENT_TBLTableAdapter
-            // 
-            this.pATIENT_TBLTableAdapter.ClearBeforeFill = true;
             // 
             // pATIENTIDDataGridViewTextBoxColumn
             // 
@@ -2697,6 +2713,44 @@
             this.FIRST_NAME.DataPropertyName = "FIRST_NAME";
             this.FIRST_NAME.HeaderText = "FIRST_NAME";
             this.FIRST_NAME.Name = "FIRST_NAME";
+            // 
+            // pERDETAILSTBLBindingSource
+            // 
+            this.pERDETAILSTBLBindingSource.DataMember = "PER_DETAILS_TBL";
+            this.pERDETAILSTBLBindingSource.DataSource = this.pchrDataSet;
+            // 
+            // pchrDataSet
+            // 
+            this.pchrDataSet.DataSetName = "pchrDataSet";
+            this.pchrDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // pATIENTTBLBindingSource
+            // 
+            this.pATIENTTBLBindingSource.DataMember = "PATIENT_TBL";
+            this.pATIENTTBLBindingSource.DataSource = this.pchrDataSet;
+            // 
+            // imageList1
+            // 
+            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            // 
+            // aLLERGYTBLBindingSource
+            // 
+            this.aLLERGYTBLBindingSource.DataMember = "ALLERGY_TBL";
+            this.aLLERGYTBLBindingSource.DataSource = this.pchrDataSet;
+            // 
+            // aLLERGY_TBLTableAdapter
+            // 
+            this.aLLERGY_TBLTableAdapter.ClearBeforeFill = true;
+            // 
+            // pATIENT_TBLTableAdapter
+            // 
+            this.pATIENT_TBLTableAdapter.ClearBeforeFill = true;
+            // 
+            // pER_DETAILS_TBLTableAdapter
+            // 
+            this.pER_DETAILS_TBLTableAdapter.ClearBeforeFill = true;
             // 
             // frmPersonalDetails
             // 
@@ -2745,9 +2799,10 @@
             this.tabTabControl.ResumeLayout(false);
             this.tabTest.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pERDETAILSTBLBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pchrDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aLLERGYTBLBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pATIENTTBLBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aLLERGYTBLBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2783,7 +2838,7 @@
         private System.Windows.Forms.ListBox lstAllergies;
         private System.Windows.Forms.LinkLabel lblAllergyDetailsEdit;
         private System.Windows.Forms.LinkLabel lblAllergiesAdd;
-        private System.Windows.Forms.TextBox txtNote;
+        private System.Windows.Forms.TextBox txtAllergyNote;
         private System.Windows.Forms.Label lblAllergies;
         private System.Windows.Forms.Label lblNote;
         private System.Windows.Forms.Label lblOnset;
@@ -2811,10 +2866,10 @@
         private System.Windows.Forms.TextBox txtPrimaryCity;
         private System.Windows.Forms.Label lblPrimaryHomePhone;
         private System.Windows.Forms.Label lblPrimaryWorkPhone;
-        private System.Windows.Forms.TextBox txtPrimarySuburb;
+        private System.Windows.Forms.TextBox txtPrimaryState;
         private System.Windows.Forms.TextBox txtPrimaryMobilePhone;
         private System.Windows.Forms.TextBox txtPrimaryWorkPhone;
-        private System.Windows.Forms.Label lblPrimarySuburb;
+        private System.Windows.Forms.Label lblPrimaryState;
         private System.Windows.Forms.TextBox txtPrimaryAddress;
         private System.Windows.Forms.Label lblPrimaryMobilePhone;
         private System.Windows.Forms.GroupBox grpEmergencyContactDetails;
@@ -2861,8 +2916,8 @@
         private System.Windows.Forms.TextBox txtHomePhone;
         private System.Windows.Forms.Label lblCity;
         private System.Windows.Forms.TextBox txtCity;
-        private System.Windows.Forms.TextBox txtSuburb;
-        private System.Windows.Forms.Label lblSuburb;
+        private System.Windows.Forms.TextBox txtState;
+        private System.Windows.Forms.Label lblState;
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.Label lblAddress;
         private System.Windows.Forms.GroupBox grpPersonalDetails;
@@ -2987,5 +3042,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn pATIENTIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn LAST_NAME;
         private System.Windows.Forms.DataGridViewTextBoxColumn FIRST_NAME;
+        private System.Windows.Forms.BindingSource pERDETAILSTBLBindingSource;
+        private pchrDataSetTableAdapters.PER_DETAILS_TBLTableAdapter pER_DETAILS_TBLTableAdapter;
+        private System.Windows.Forms.Label lblLbs;
+        private System.Windows.Forms.Label lblInches;
     }
 }

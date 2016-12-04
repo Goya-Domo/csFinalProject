@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Data.SqlTypes;
 
 namespace csFinalProject
 {
@@ -111,6 +112,48 @@ namespace csFinalProject
             DisableAllControls(grpPersonalMedicalDetails);
         }
 
+        //Add Allergy
+        private void lblAllergiesAdd_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
+
+        private void lstAllergies_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //
+            //Fill the Allergy Details controls from the list box
+            string allergen = lstAllergies.Text;
+            SqlConnection connection = pchrDB.getConnection();
+            connection.Open();
+            MessageBox.Show(lstAllergies.Text);
+            SqlCommand fillAllergyDetails = new SqlCommand();
+            string cmd = "SELECT * "
+                + "FROM ALLERGY_TBL "
+                + "WHERE ALLERGY_TBL.ALLERGY_ID = " + allergen
+                + " AND ALLERGY_TBL.PATIENT_ID = " + User.P_ID;
+
+            fillAllergyDetails.Connection = connection;
+            fillAllergyDetails.CommandText = cmd;
+
+            try
+            {
+                SqlDataReader reader = fillAllergyDetails.ExecuteReader(CommandBehavior.Default);
+                while (reader.Read())
+                {
+                    txtAllergicTo.Text = reader["ALLERGEN"].ToString();
+                    dtpOnset.Value = (DateTime)reader["ONSET_DATE"];
+                    txtAllergyNote.Text = reader["NOTE"].ToString();
+                    //lstAllergies.Items.Add(reader["ALLERGEN"].ToString());
+                }
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error in Allergy Details");
+            }
+            connection.Close();
+        }
+
         //Edit Allergy Details
         private void lblAllergyDetailsEdit_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -204,48 +247,255 @@ namespace csFinalProject
 
         private void frmPersonalDetails_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'pchrDataSet.PER_DETAILS_TBL' table. You can move, or remove it, as needed.
+            this.pER_DETAILS_TBLTableAdapter.Fill(this.pchrDataSet.PER_DETAILS_TBL);
             // TODO: This line of code loads data into the 'pchrDataSet.PATIENT_TBL' table. You can move, or remove it, as needed.
             this.pATIENT_TBLTableAdapter.Fill(this.pchrDataSet.PATIENT_TBL);
             // TODO: This line of code loads data into the 'pchrDataSet.ALLERGY_TBL' table. You can move, or remove it, as needed.
             this.aLLERGY_TBLTableAdapter.Fill(this.pchrDataSet.ALLERGY_TBL);
 
+            //Create and open connection
             SqlConnection connection = pchrDB.getConnection();
-
-            //Testing
-           // MessageBox.Show(User.P_ID);
-
-            //Fill the password group box
-            SqlCommand fillPersonalDetails = new SqlCommand();
-            string cmd = "SELECT PATIENT_TBL.PATIENT_ID, UserList.UserName "
-                + "FROM PATIENT_TBL "
-                + "JOIN UserList "
-                + "ON UserList.PATIENT_ID = PATIENT_TBL.PATIENT_ID "
-                + "WHERE PATIENT_TBL.PATIENT_ID = " + User.P_ID;
-
-            fillPersonalDetails.Connection = connection;
-            fillPersonalDetails.CommandText = cmd;
-
             connection.Open();
+
+            //
+            //Tab 1
+            //
+            //Fill the Username field text box
+            SqlCommand fillUserName = new SqlCommand();
+            string cmd = "SELECT UserList.UserName "
+                        + "FROM UserList "
+                        + "WHERE UserList.PATIENT_ID = " + User.P_ID;
+            fillUserName.Connection = connection;
+            fillUserName.CommandText = cmd;
+
             try
             {
-                SqlDataReader reader = fillPersonalDetails.ExecuteReader(CommandBehavior.CloseConnection);
+                SqlDataReader reader = fillUserName.ExecuteReader(CommandBehavior.Default);
                 if (reader.Read())
                 {
                     txtUserName.Text = reader["UserName"].ToString();
-                    txtIdentityNumber.Text = reader["PATIENT_ID"].ToString();                    
                 }
 
                 reader.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
-                //regSuccess = false;
+                //Login Details message
+                MessageBox.Show(ex.Message, "Error in the login details");
             }
-            finally
+
+            //
+            //Fill the Personal Details and Contact Details group boxs
+            SqlCommand fillPersonalDetails = new SqlCommand();
+            cmd = "SELECT PATIENT_TBL.*, PER_DETAILS_TBL.GENDER_ISMALE "
+                + "FROM PATIENT_TBL "
+                + "JOIN PER_DETAILS_TBL "
+                + "ON PATIENT_TBL.PATIENT_ID = PER_DETAILS_TBL.PATIENT_ID "
+                + "WHERE PATIENT_TBL.PATIENT_ID = " + User.P_ID;
+
+            fillPersonalDetails.Connection = connection;
+            fillPersonalDetails.CommandText = cmd;
+
+            try
             {
-                connection.Close();
+                SqlDataReader reader = fillPersonalDetails.ExecuteReader(CommandBehavior.Default);
+                if (reader.Read())
+                {
+                    txtIdentityNumber.Text = reader["PATIENT_ID"].ToString();
+                    if ((bool)reader["GENDER_ISMALE"])
+                    {
+                        rdoMale.Checked = true;
+                    }
+                    else
+                    {
+                        rdoFemale.Checked = true;
+                    }
+                    //Used sentinel value from the registration form here
+                    int titleColumn = 11;
+                    if (reader.GetByte(titleColumn) != 255)
+                    {
+                        cboTitle.SelectedIndex = reader.GetByte(titleColumn);
+                    }
+                    txtInitials.Text = reader["MID_INITIAL"].ToString();
+                    txtLastName.Text = reader["LAST_NAME"].ToString();
+                    txtFirstName.Text = reader["FIRST_NAME"].ToString();
+                    dtpDob.Value = (DateTime)reader["DATE_OF_BIRTH"];
+                    txtAddress.Text = reader["ADDRESS_STREET"].ToString();
+                    txtCity.Text = reader["ADDRESS_CITY"].ToString();
+                    txtState.Text = reader["ADDRESS_STATE"].ToString();
+                    txtHomePhone.Text = reader["PHONE_HOME"].ToString();
+                    txtMobilePhone.Text = reader["PHONE_MOBILE"].ToString();
+                    //txtFax.Text = reader["PHONE_FAX"].ToString();
+                    //txtEmail.Text = reader["EMAIL"].ToString();
+                }
+                reader.Close();
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error in Personal Details");
+            }
+
+            //////////////////////////////////////////////////////////////////////////////////////
+            //Fill the Emergency Contact Details
+            //No such fields in the database??????????
+            //
+            /*SqlCommand fillEmergencyContactDetails = new SqlCommand();
+            cmd = "Select THE STUFF"
+
+            fillEmergencyContactDetails.Connection = connection;
+            fillEmergencyContactDetails.CommandText = cmd;
+
+            try
+            {
+                SqlDataReader reader = fillPersonalDetails.ExecuteReader(CommandBehavior.Default);
+                if (reader.Read())
+                {
+                    //Fill the stuff
+                }
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error in Emergency Contact Details");
+            }*/
+            ////////////////////////////////////////////////////////////////////////////////////
+
+            //
+            //Fill the Primary Care Provider Details group boxs
+            SqlCommand fillPrimaryDetails = new SqlCommand();
+            cmd = "SELECT * "
+                + "FROM PRIMARY_CARE_TBL "
+                + "WHERE PRIMARY_CARE_TBL.PRIMARY_ID = " + User.P_ID;
+
+            fillPrimaryDetails.Connection = connection;
+            fillPrimaryDetails.CommandText = cmd;
+
+            try
+            {
+                SqlDataReader reader = fillPrimaryDetails.ExecuteReader(CommandBehavior.Default);
+                if (reader.Read())
+                {
+                    string firstName = reader["NAME_FIRST"].ToString();
+                    string lastName = reader["NAME_LAST"].ToString();
+                    txtPrimaryName.Text = firstName + " " + lastName;
+                    txtPrimarySpecialty.Text = reader["SPECIALTY"].ToString();
+                    //txtPrimaryAddress.Text = "NO SUCH FIELD IN DATABASE";
+                    //txtPrimaryCity.Text = "NO SUCH FIELD IN DATABASE";
+                    //txtPrimaryState.Text = "NO SUCH FIELD IN DATABASE";
+                    //txtPrimaryHomePhone.Text = "NO SUCH FIELD IN DATABASE";
+                    txtPrimaryMobilePhone.Text = reader["PHONE_MOBILE"].ToString();
+                }
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error in Primary Care Provider Details");
+            }
+
+            //
+            //End tab 1
+
+            //
+            //tab 2
+
+            //
+            //Fill the Personal Medical Details group boxs
+            SqlCommand fillPersonalMedicalDetails = new SqlCommand();
+            cmd = "SELECT * "
+                + "FROM PER_DETAILS_TBL "
+                + "WHERE PER_DETAILS_TBL.PATIENT_ID = " + User.P_ID;
+
+            fillPersonalMedicalDetails.Connection = connection;
+            fillPersonalMedicalDetails.CommandText = cmd;
+
+            try
+            {
+                SqlDataReader reader = fillPersonalMedicalDetails.ExecuteReader(CommandBehavior.Default);
+                if (reader.Read())
+                {
+                    //TODO
+                    //Rework this mess
+                    //Had to do some wonky ass shit here
+                    int index = 0;
+                    for (int i = cboBloodGroup.Items.Count - 1; i >= 0; i--)
+                    {
+                        cboBloodGroup.SelectedIndex = i;
+                        //For some reason the blood types are stored with a shit ton of white spaces
+                        //at the end so I trim that shit off and compare
+                        if (reader["BLOOD_TYPE"].ToString().Trim() == cboBloodGroup.Text)
+                        {
+                            index = i;
+                        }
+                    }
+                    cboBloodGroup.SelectedIndex = index;
+                    if ((bool)reader["ORGAN_DONOR"] == true)
+                    {
+                        chkOrganDonor.Checked = true;
+                    }
+                    else
+                    {
+                        chkOrganDonor.Checked = false;
+                    }
+
+                    //Hate to use magic numbers but 3 is the hiv column in the database...
+                    //Need to check for null because null is the unkown radio button
+                    if (reader.IsDBNull(3))
+                    {
+                        rdoHIVUnknown.Checked = true;
+                    }
+                    else
+                    {
+                        if ((bool)reader["HIV_STATUS"] == true)
+                        {
+                            rdoHIVPositive.Checked = true;
+                        }
+                        else
+                        {
+                            rdoHIVNegative.Checked = true;
+                        }
+                    }
+                    txtHeight.Text = reader["HEIGHT_INCHES"].ToString();
+                    txtWeight.Text = reader["WEIGHT_LBS"].ToString();
+
+                }
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error in Personal Medical Details");
+            }
+
+            //
+            //Fill the Allergy Details group boxs
+            SqlCommand fillAllergyDetails = new SqlCommand();
+            cmd = "SELECT * "
+                + "FROM ALLERGY_TBL "
+                + "WHERE ALLERGY_TBL.PATIENT_ID = " + User.P_ID;
+
+            fillAllergyDetails.Connection = connection;
+            fillAllergyDetails.CommandText = cmd;
+
+            try
+            {
+                SqlDataReader reader = fillAllergyDetails.ExecuteReader(CommandBehavior.Default);
+                while (reader.Read())
+                {
+                    lstAllergies.Items.Add(reader["ALLERGY_ID"].ToString());
+                }
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error in Allergy Details");
+            }
+
+
+
+            //Close the connection
+            connection.Close();
         }
+
+
     }
 }
