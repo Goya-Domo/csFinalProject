@@ -21,10 +21,11 @@ namespace csFinalProject
         public static char? MID_INITIAL { get; set; }
 
         public static string PATIENT_ID { get; set; }
-        public static BloodType BLOOD_TYPE { get; set; }
-        public static bool HIV_STATUS { get; set; }
-        public static int HEIGHT_INCHES { get; set; }
-        public static int WEIGHT_LBS { get; set; }
+        public static BloodType? BLOOD_TYPE { get; set; }
+        public static bool ORGAN_DONOR { get; set; }
+        public static bool? HIV_STATUS { get; set; }
+        public static int? HEIGHT_INCHES { get; set; }
+        public static int? WEIGHT_LBS { get; set; }
         public static bool? GENDER_ISMALE { get; set; }
         
         public static string PC_NAME_LAST { get; set; }

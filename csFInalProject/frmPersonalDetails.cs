@@ -262,19 +262,39 @@ namespace csFinalProject
         //Edit Contact Details
         private void lblEditContactDetails_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            EnableAllControls(grpContactDetails);
+            if (EnableAllControls(grpContactDetails))
+            {
+                User.ADDRESS_STREET = txtAddress.Text;
+                User.ADDRESS_STATE = txtState.Text;
+                User.ADDRESS_CITY = txtCity.Text;
+                User.PHONE_HOME = txtHomePhone.Text;
+                User.PHONE_MOBILE = txtMobilePhone.Text;
+                
+                //Fax
+                //Email
+                //Zip                
+            }
         }
 
         //Cancel Contact Details
         private void lblCancelContactDetails_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             DisableAllControls(grpContactDetails);
+
+            txtAddress.Text = User.ADDRESS_STREET ?? "";
+            txtCity.Text = User.ADDRESS_CITY ?? "";
+            txtState.Text = User.ADDRESS_STATE ?? "";
+            txtHomePhone.Text = User.PHONE_HOME ?? "";
+            txtMobilePhone.Text = User.PC_PHONE_MOBILE ?? "";
         }
 
         //Edit Emergency Contact Details
         private void lblEmergencyContactDetailsEdit_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            EnableAllControls(grpEmergencyContactDetails);
+            if (EnableAllControls(grpEmergencyContactDetails))
+            {
+                //Do emergency stuff
+            }
         }
 
         //Cancel Emergency Contact Details
@@ -286,13 +306,24 @@ namespace csFinalProject
         //Edit Primary Provider Details
         private void lblPrimaryEdit_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            EnableAllControls(grpPrimaryCare);
+            if (EnableAllControls(grpPrimaryCare))
+            {
+                User.PC_NAME_FIRST = txtPrimaryName.Text;
+                User.PC_SPECIALTY = txtPrimarySpecialty.Text;
+                User.PC_PHONE_MOBILE = txtPrimaryMobilePhone.Text;
+                User.PC_PHONE_OFFICE = txtPrimaryWorkPhone.Text;                
+            }
         }
 
         //Cancel Primary Provider Details
         private void lblPrimaryCancel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             DisableAllControls(grpPrimaryCare);
+
+            txtPrimaryName.Text = User.PC_NAME_FIRST ?? "";
+            txtPrimarySpecialty.Text = User.PC_SPECIALTY ?? "";
+            txtPrimaryMobilePhone.Text = User.PC_PHONE_MOBILE ?? "";
+            txtPrimaryWorkPhone.Text = User.PC_PHONE_OFFICE ?? "";
         }
         
         //
@@ -301,9 +332,18 @@ namespace csFinalProject
         //Edit Personal Medical Details
         private void lblPersonalMedicalDetailsEdit_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            EnableAllControls(grpPersonalMedicalDetails);
+            if (EnableAllControls(grpPersonalMedicalDetails))
+            {
+                int height;
+                int weight;
+                User.BLOOD_TYPE = (cboBloodGroup.SelectedIndex == -1) ? null : (BloodType?)cboBloodGroup.SelectedIndex;
+                User.ORGAN_DONOR = chkOrganDonor.Checked;
+                User.HIV_STATUS = (rdoHIVUnknown.Checked) ? null : (bool?)rdoHIVPositive.Checked;
+                User.HEIGHT_INCHES = (int.TryParse(txtHeight.Text, out height)) ? (int?)height : null;
+                User.WEIGHT_LBS = (int.TryParse(txtWeight.Text, out weight)) ? (int?)weight : null;
+            }
         }
-
+        //stopping point
         //Cancel Personal Medical Details
         private void lblPersonalMedicalDetailsCancel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
