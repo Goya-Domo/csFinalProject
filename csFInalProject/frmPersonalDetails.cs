@@ -22,6 +22,36 @@ namespace csFinalProject
             InitializeComponent();
         }
 
+        private void frmPersonalDetails_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'pchrDataSet.PER_DETAILS_TBL' table. You can move, or remove it, as needed.
+            this.pER_DETAILS_TBLTableAdapter.Fill(this.pchrDataSet.PER_DETAILS_TBL);
+            // TODO: This line of code loads data into the 'pchrDataSet.PATIENT_TBL' table. You can move, or remove it, as needed.
+            this.pATIENT_TBLTableAdapter.Fill(this.pchrDataSet.PATIENT_TBL);
+            // TODO: This line of code loads data into the 'pchrDataSet.ALLERGY_TBL' table. You can move, or remove it, as needed.
+            this.aLLERGY_TBLTableAdapter.Fill(this.pchrDataSet.ALLERGY_TBL);
+
+            //
+            //Tab 1
+            fillUserName();
+            fillPersonalDetails();
+            fillPersonalMedicalDetails();
+            fillPrimaryDetails();
+            //
+            //End tab 1
+
+            //
+            //tab 2
+            fillAllergyDetails();
+            fillVaxDetails();
+            fillMedicationDetails();
+            fillTestResultDetails();
+            fillMedicalConditionDetails();
+            fillMedicalProcedureDetails();
+            //
+            //End tab 2
+        }
+
         //Change Password
         private void lblChangePassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -264,6 +294,7 @@ namespace csFinalProject
         {
             DisableAllControls(grpPrimaryCare);
         }
+        
         //
         //Tab 2:
         //
@@ -287,39 +318,8 @@ namespace csFinalProject
 
         private void lstAllergies_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (lstAllergies.SelectedIndex >= 0)
-            {
-                //
-                //Fill the Allergy Details controls from the list box
-                string allergen = lstAllergies.Text;
-                SqlConnection connection = pchrDB.getConnection();
-                connection.Open();
-                SqlCommand fillAllergyDetails = new SqlCommand();
-                string cmd = "SELECT * "
-                    + "FROM ALLERGY_TBL "
-                    + "WHERE ALLERGY_TBL.ALLERGY_ID = " + allergen
-                    + " AND ALLERGY_TBL.PATIENT_ID = " + User.PATIENT_ID;
-
-                fillAllergyDetails.Connection = connection;
-                fillAllergyDetails.CommandText = cmd;
-
-                try
-                {
-                    SqlDataReader reader = fillAllergyDetails.ExecuteReader(CommandBehavior.Default);
-                    while (reader.Read())
-                    {
-                        txtAllergicTo.Text = reader["ALLERGEN"].ToString();
-                        dtpOnset.Value = (DateTime)reader["ONSET_DATE"];
-                        txtAllergyNote.Text = reader["NOTE"].ToString();
-                    }
-                    reader.Close();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "Error in Allergy Details");
-                }
-                connection.Close();
-            }
+            populateAllergyDetailsControls();
+            
         }
         //Remove Selected Allergy
         private void lblAllergyDetailsRemoveSelected_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -352,9 +352,11 @@ namespace csFinalProject
                 }
                 connection.Close();
             }
+            dtpOnset.Value = DateTimePicker.MinimumDateTime;
+            txtAllergicTo.Clear();
+            txtAllergyNote.Clear();
             lstAllergies.Items.Clear();
             fillAllergyDetails();
-            DisableAllControls(grpAllergyDetails);
         }
 
         //Edit Allergy Details
@@ -496,35 +498,6 @@ namespace csFinalProject
             openBox = false;
         }
 
-        private void frmPersonalDetails_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'pchrDataSet.PER_DETAILS_TBL' table. You can move, or remove it, as needed.
-            this.pER_DETAILS_TBLTableAdapter.Fill(this.pchrDataSet.PER_DETAILS_TBL);
-            // TODO: This line of code loads data into the 'pchrDataSet.PATIENT_TBL' table. You can move, or remove it, as needed.
-            this.pATIENT_TBLTableAdapter.Fill(this.pchrDataSet.PATIENT_TBL);
-            // TODO: This line of code loads data into the 'pchrDataSet.ALLERGY_TBL' table. You can move, or remove it, as needed.
-            this.aLLERGY_TBLTableAdapter.Fill(this.pchrDataSet.ALLERGY_TBL);
-
-            //
-            //Tab 1
-            fillUserName();
-            fillPersonalDetails();
-            fillPersonalMedicalDetails();
-            fillPrimaryDetails();
-            //
-            //End tab 1
-
-            //
-            //tab 2
-            fillAllergyDetails();
-            fillVaxDetails();
-            fillMedicationDetails();
-            fillTestResultDetails();
-            fillMedicalConditionDetails();
-            fillMedicalProcedureDetails();
-            //
-            //End tab 2
-        }
         private void fillUserName()
         {
             //
@@ -810,34 +783,38 @@ namespace csFinalProject
         }
         private void populateAllergyDetailsControls()
         {
-            //
-            //Fill the Allergy Details group boxs
-            SqlCommand reFillAllergyDetails = new SqlCommand();
-            SqlConnection con = pchrDB.getConnection();
-            con.Open();
-            string cmd = "SELECT ALLERGY_ID "
-                + "FROM ALLERGY_TBL "
-                + "WHERE ALLERGY_TBL.PATIENT_ID = " + User.PATIENT_ID;
-
-            reFillAllergyDetails.Connection = con;
-            reFillAllergyDetails.CommandText = cmd;
-
-            reader = reFillAllergyDetails.ExecuteReader(CommandBehavior.Default);
-            try
+            if (lstAllergies.SelectedIndex >= 0)
             {
-                lstAllergies.ClearSelected();
-                while (reader.Read())
+                //
+                //Fill the Allergy Details controls from the list box
+                string allergen = lstAllergies.Text;
+                SqlConnection connection = pchrDB.getConnection();
+                connection.Open();
+                SqlCommand fillAllergyDetails = new SqlCommand();
+                string cmd = "SELECT * "
+                    + "FROM ALLERGY_TBL "
+                    + "WHERE ALLERGY_TBL.ALLERGY_ID = " + allergen
+                    + " AND ALLERGY_TBL.PATIENT_ID = " + User.PATIENT_ID;
+
+                fillAllergyDetails.Connection = connection;
+                fillAllergyDetails.CommandText = cmd;
+
+                try
                 {
-                    lstAllergies.Items.Add(reader["ALLERGY_ID"].ToString());
+                    SqlDataReader reader = fillAllergyDetails.ExecuteReader(CommandBehavior.Default);
+                    while (reader.Read())
+                    {
+                        txtAllergicTo.Text = reader["ALLERGEN"].ToString();
+                        dtpOnset.Value = (DateTime)reader["ONSET_DATE"];
+                        txtAllergyNote.Text = reader["NOTE"].ToString();
+                    }
+                    reader.Close();
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error in Allergy Details");
-            }
-            finally
-            {
-                reader.Close();
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error in Allergy Details");
+                }
+                connection.Close();
             }
         }
 
