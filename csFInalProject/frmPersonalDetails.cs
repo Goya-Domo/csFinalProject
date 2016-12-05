@@ -982,7 +982,7 @@ namespace csFinalProject
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error in Perscribed Medication Details");
+                MessageBox.Show(ex.Message, "Error in Test Result Details");
             }
             finally
             {
@@ -1022,7 +1022,7 @@ namespace csFinalProject
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message, "Error in Perscribed Medication Details");
+                    MessageBox.Show(ex.Message, "Error in Test Result Details");
                 }
                 connection.Close();
             }
@@ -1168,6 +1168,44 @@ namespace csFinalProject
                 }
                 connection.Close();
             }
+        }
+
+        private void lblImmunisationRemoveSelected_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            if (lstImmunisationList.SelectedIndex >= 0)
+            {
+                //
+                //Delete the allergy entry from the database
+                string vax = lstImmunisationList.Text;
+                SqlConnection connection = pchrDB.getConnection();
+                connection.Open();
+                SqlCommand deleteVax = new SqlCommand();
+                string cmd = "DELETE  "
+                    + "FROM IMMUNIZATION_TBL "
+                    + "WHERE IMMUNIZATION_TBL.IMMUNIZATION_ID = " + "@vax"
+                    + " AND IMMUNIZATION_TBL.PATIENT_ID = " + User.PATIENT_ID;
+
+                deleteVax.Parameters.AddWithValue("@vax", vax);
+                deleteVax.Connection = connection;
+                deleteVax.CommandText = cmd;
+
+
+                try
+                {
+                    //SqlDataReader reader = fillAllergyDetails.ExecuteReader(CommandBehavior.Default);
+                    deleteVax.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error in Immunization Details");
+                }
+                connection.Close();
+            }
+            dtpImmunisationDate.Value = DateTimePicker.MinimumDateTime;
+            txtImmunisation.Clear();
+            txtImmunisationNote.Clear();
+            lstImmunisationList.Items.Clear();
+            fillVaxDetails();
         }
     }
 }

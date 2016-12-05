@@ -1138,6 +1138,7 @@
             this.lblImmunisationRemoveSelected.TabIndex = 37;
             this.lblImmunisationRemoveSelected.TabStop = true;
             this.lblImmunisationRemoveSelected.Text = "Remove Selected";
+            this.lblImmunisationRemoveSelected.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblImmunisationRemoveSelected_LinkClicked);
             // 
             // lblImmunisationCancel
             // 
