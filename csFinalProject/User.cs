@@ -17,15 +17,15 @@ namespace csFinalProject
         public static string PHONE_HOME { get; set; }
         public static string PHONE_MOBILE { get; set; }
         public static string PRIMARY_ID { get; set; }
-        public static Title TITLE { get; set; }
-        public static char MID_INITIAL { get; set; }
+        public static Title? TITLE { get; set; }
+        public static char? MID_INITIAL { get; set; }
 
         public static string PATIENT_ID { get; set; }
         public static BloodType BLOOD_TYPE { get; set; }
         public static bool HIV_STATUS { get; set; }
         public static int HEIGHT_INCHES { get; set; }
         public static int WEIGHT_LBS { get; set; }
-        public static bool GENDER_ISMALE { get; set; }
+        public static bool? GENDER_ISMALE { get; set; }
         
         public static string PC_NAME_LAST { get; set; }
         public static string PC_NAME_FIRST { get; set; }

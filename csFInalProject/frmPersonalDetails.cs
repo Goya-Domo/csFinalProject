@@ -15,6 +15,8 @@ namespace csFinalProject
     public partial class frmPersonalDetails : Form
     {
         private SqlDataReader reader;
+        private bool openBox = false; //true if some groupBox is being edited
+
         public frmPersonalDetails()
         {
             InitializeComponent();
@@ -162,14 +164,69 @@ namespace csFinalProject
         //Edit Personal Details
         private void lblEditPersonalDetails_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            EnableAllControls(grpPersonalDetails);
+            if (EnableAllControls(grpPersonalDetails))
+            { 
+                if (cboTitle.SelectedIndex >= 0)
+                {
+                    User.TITLE = (Title)cboTitle.SelectedIndex;
+                }
+                else
+                {
+                    User.TITLE = null;
+                }
 
+                if (rdoMale.Checked || rdoFemale.Checked)
+                {
+                    User.GENDER_ISMALE = rdoMale.Checked;
+                }
+                else
+                {
+                    User.GENDER_ISMALE = null;
+                }
+
+                try
+                {
+                    User.MID_INITIAL = char.Parse(txtInitials.Text);
+                }
+                catch(Exception ex)
+                {
+                    User.MID_INITIAL = null;
+                }
+
+                User.LAST_NAME = txtLastName.Text;
+                User.FIRST_NAME = txtFirstName.Text;
+                User.DATE_OF_BIRTH = dtpDob.Value.Date;                
+            }
         }
 
         //Cancel Personal Details
         private void lblCancelPersonalDetails_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             DisableAllControls(grpPersonalDetails);
+
+            if (User.TITLE != null)
+            {
+                cboTitle.SelectedIndex = (int)User.TITLE;
+            }
+            else
+            {
+                cboTitle.SelectedIndex = -1;
+            }
+
+            if (User.GENDER_ISMALE != null)
+            {
+                rdoMale.Checked = (bool)User.GENDER_ISMALE;
+                rdoFemale.Checked = (bool)!User.GENDER_ISMALE;
+            }
+
+            if (User.MID_INITIAL != null)
+            {
+                txtInitials.Text = User.MID_INITIAL.ToString();
+            }
+
+            txtLastName.Text = User.LAST_NAME;
+            txtFirstName.Text = User.FIRST_NAME;
+            dtpDob.Value = User.DATE_OF_BIRTH;
         }
 
         //Edit Contact Details
@@ -405,20 +462,38 @@ namespace csFinalProject
         //End Tab 2
 
         //Enable and Disable Controls in a given Group Box except for list boxes:
-        private void EnableAllControls(GroupBox inGroup)
+        private bool EnableAllControls(GroupBox inGroup)
         {
-            foreach (Control control in inGroup.Controls)
+            bool success = false;
+            if (openBox)
             {
-                control.Enabled = true;
+                MessageBox.Show("Some data is currently being edited. Save or Cancel your pending changes.", "Changes pending");
             }
+            else
+            {
+                foreach (Control control in inGroup.Controls)
+                {
+                    control.Enabled = true;
+
+                    if (control.Text.Equals("Edit"))
+                    {
+                        control.Enabled = false;
+                    }
+                }
+                success = true;
+                openBox = true; 
+            }
+
+            return success;
         }
         private void DisableAllControls(GroupBox inGroup)
         {
             foreach (Control control in inGroup.Controls)
             {
-                if (control.Text != "Edit" && !(control is ListBox))
-                    control.Enabled = false;
+                control.Enabled = (control.Text.Equals("Edit") || (control is ListBox));                                
             }
+
+            openBox = false;
         }
 
         private void frmPersonalDetails_Load(object sender, EventArgs e)
