@@ -259,17 +259,17 @@
             this.pATIENTIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LAST_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FIRST_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pERDETAILSTBLBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pchrDataSet = new csFinalProject.pchrDataSet();
-            this.pATIENTTBLBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.aLLERGYTBLBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.aLLERGY_TBLTableAdapter = new csFinalProject.pchrDataSetTableAdapters.ALLERGY_TBLTableAdapter();
-            this.pATIENT_TBLTableAdapter = new csFinalProject.pchrDataSetTableAdapters.PATIENT_TBLTableAdapter();
-            this.pER_DETAILS_TBLTableAdapter = new csFinalProject.pchrDataSetTableAdapters.PER_DETAILS_TBLTableAdapter();
             this.ALLERGEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ONSET_DATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NOTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aLLERGYTBLBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pchrDataSet = new csFinalProject.pchrDataSet();
+            this.pERDETAILSTBLBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pATIENTTBLBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.aLLERGY_TBLTableAdapter = new csFinalProject.pchrDataSetTableAdapters.ALLERGY_TBLTableAdapter();
+            this.pATIENT_TBLTableAdapter = new csFinalProject.pchrDataSetTableAdapters.PATIENT_TBLTableAdapter();
+            this.pER_DETAILS_TBLTableAdapter = new csFinalProject.pchrDataSetTableAdapters.PER_DETAILS_TBLTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.picProfilePicture)).BeginInit();
             this.tabEPHR.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picUnderConstructionEMPHR)).BeginInit();
@@ -293,10 +293,10 @@
             this.tabTabControl.SuspendLayout();
             this.tabTest.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pERDETAILSTBLBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pchrDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pATIENTTBLBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aLLERGYTBLBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pchrDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pERDETAILSTBLBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pATIENTTBLBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // picProfilePicture
@@ -2615,6 +2615,7 @@
             this.lblCancel.TabIndex = 11;
             this.lblCancel.TabStop = true;
             this.lblCancel.Text = "Cancel";
+            this.lblCancel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblCancel_LinkClicked);
             // 
             // lblNewPassword
             // 
@@ -2724,44 +2725,6 @@
             this.FIRST_NAME.HeaderText = "FIRST_NAME";
             this.FIRST_NAME.Name = "FIRST_NAME";
             // 
-            // pERDETAILSTBLBindingSource
-            // 
-            this.pERDETAILSTBLBindingSource.DataMember = "PER_DETAILS_TBL";
-            this.pERDETAILSTBLBindingSource.DataSource = this.pchrDataSet;
-            // 
-            // pchrDataSet
-            // 
-            this.pchrDataSet.DataSetName = "pchrDataSet";
-            this.pchrDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // pATIENTTBLBindingSource
-            // 
-            this.pATIENTTBLBindingSource.DataMember = "PATIENT_TBL";
-            this.pATIENTTBLBindingSource.DataSource = this.pchrDataSet;
-            // 
-            // imageList1
-            // 
-            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            // 
-            // aLLERGYTBLBindingSource
-            // 
-            this.aLLERGYTBLBindingSource.DataMember = "ALLERGY_TBL";
-            this.aLLERGYTBLBindingSource.DataSource = this.pchrDataSet;
-            // 
-            // aLLERGY_TBLTableAdapter
-            // 
-            this.aLLERGY_TBLTableAdapter.ClearBeforeFill = true;
-            // 
-            // pATIENT_TBLTableAdapter
-            // 
-            this.pATIENT_TBLTableAdapter.ClearBeforeFill = true;
-            // 
-            // pER_DETAILS_TBLTableAdapter
-            // 
-            this.pER_DETAILS_TBLTableAdapter.ClearBeforeFill = true;
-            // 
             // ALLERGEN
             // 
             this.ALLERGEN.DataPropertyName = "ALLERGEN";
@@ -2779,6 +2742,44 @@
             this.NOTE.DataPropertyName = "NOTE";
             this.NOTE.HeaderText = "NOTE";
             this.NOTE.Name = "NOTE";
+            // 
+            // aLLERGYTBLBindingSource
+            // 
+            this.aLLERGYTBLBindingSource.DataMember = "ALLERGY_TBL";
+            this.aLLERGYTBLBindingSource.DataSource = this.pchrDataSet;
+            // 
+            // pchrDataSet
+            // 
+            this.pchrDataSet.DataSetName = "pchrDataSet";
+            this.pchrDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // pERDETAILSTBLBindingSource
+            // 
+            this.pERDETAILSTBLBindingSource.DataMember = "PER_DETAILS_TBL";
+            this.pERDETAILSTBLBindingSource.DataSource = this.pchrDataSet;
+            // 
+            // pATIENTTBLBindingSource
+            // 
+            this.pATIENTTBLBindingSource.DataMember = "PATIENT_TBL";
+            this.pATIENTTBLBindingSource.DataSource = this.pchrDataSet;
+            // 
+            // imageList1
+            // 
+            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            // 
+            // aLLERGY_TBLTableAdapter
+            // 
+            this.aLLERGY_TBLTableAdapter.ClearBeforeFill = true;
+            // 
+            // pATIENT_TBLTableAdapter
+            // 
+            this.pATIENT_TBLTableAdapter.ClearBeforeFill = true;
+            // 
+            // pER_DETAILS_TBLTableAdapter
+            // 
+            this.pER_DETAILS_TBLTableAdapter.ClearBeforeFill = true;
             // 
             // frmPersonalDetails
             // 
@@ -2827,10 +2828,10 @@
             this.tabTabControl.ResumeLayout(false);
             this.tabTest.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pERDETAILSTBLBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pchrDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pATIENTTBLBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.aLLERGYTBLBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pchrDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pERDETAILSTBLBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pATIENTTBLBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

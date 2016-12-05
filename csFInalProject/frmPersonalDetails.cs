@@ -23,12 +23,103 @@ namespace csFinalProject
         //Change Password
         private void lblChangePassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            //Using this flag to determine whether to show a "Success!" message box.
+            //Showing the MessageBox inside the code block where the operation takes place means 
+            //the passwords are just hanging out in memory while the MessageBox is open, so I exit the block ASAP after setting this flag.
+            bool operationSuccess = false;
             if (Validator.IsValidPassword(txtOldPassword.Text))
             {
-                //TODO Authenticate Old Password
                 if (Validator.IsValidPassword(txtNewPassword.Text))
                 {
-                    //TODO Set new password
+                    if (txtConfirmNewPassword.Text.Equals(txtNewPassword.Text))
+                    {
+                        SqlConnection connection = pchrDB.getConnection();
+                        SqlCommand authCommand = new SqlCommand();
+                        string authComText = "SELECT PassHash "
+                            + "FROM UserList "
+                            + "WHERE UserName = @UserName";
+                        authCommand.Parameters.AddWithValue("@UserName", txtUserName.Text.Trim());
+                        authCommand.CommandText = authComText;
+                        authCommand.Connection = connection;
+
+                        string currPassword = null;
+
+                        connection.Open();
+                        try
+                        {
+                            currPassword = authCommand.ExecuteScalar().ToString();
+                        }
+                        catch(Exception ex)
+                        {
+                            MessageBox.Show("Error: " + ex.Message, "Exception");
+                        }
+                        finally
+                        {
+                            connection.Close();
+                        }
+
+                        if (currPassword != null)
+                        {
+                            if (!currPassword.Equals(""))
+                            {
+                                if (pchrDB.getHashString(txtOldPassword.Text).Equals(currPassword))
+                                {
+                                    SqlCommand updatePassCommand = new SqlCommand();
+                                    string updateCom = "UPDATE UserList "
+                                        + "SET PassHash = @newPassHash "
+                                        + "WHERE UserName = @UserName";
+
+                                    updatePassCommand.Parameters.AddWithValue("@newPassHash", pchrDB.getHashString(txtNewPassword.Text.Trim()));
+                                    updatePassCommand.Parameters.AddWithValue("@UserName", txtUserName.Text.Trim());
+                                    updatePassCommand.CommandText = updateCom;
+                                    updatePassCommand.Connection = connection;
+
+                                    try
+                                    {
+                                        connection.Open();
+                                        if (updatePassCommand.ExecuteNonQuery() == 1)
+                                        {
+                                            operationSuccess = true;
+                                        }
+                                    }
+                                    catch(Exception ex)
+                                    {
+                                        MessageBox.Show("Error: " + ex.Message, "Exception");
+                                    }
+                                    finally
+                                    {
+                                        connection.Close();
+                                    }
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Old password not correct.", "Invalid password");
+                                    txtOldPassword.Text = "";
+                                    txtNewPassword.Text = "";
+                                    txtConfirmNewPassword.Text = "";
+                                    txtOldPassword.Focus();
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("User not found (1)");
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("User not found (2)");
+                        }
+
+                        connection.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Passwords don't match!", "Re-confirm new password");
+                        txtOldPassword.Text = "";
+                        txtNewPassword.Text = "";
+                        txtConfirmNewPassword.Text = "";
+                        txtOldPassword.Focus();
+                    }
                 }
                 else
                 {
@@ -47,7 +138,24 @@ namespace csFinalProject
                 txtConfirmNewPassword.Text = "";
                 txtOldPassword.Focus();
             }
+
+            txtOldPassword.Text = "";
+            txtNewPassword.Text = "";
+            txtConfirmNewPassword.Text = "";
+
+            if (operationSuccess)
+            {
+                MessageBox.Show("Password successfully changed", "Success!");
+            }
         }
+        //Cancel Password
+        private void lblCancel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            txtOldPassword.Text = "";
+            txtNewPassword.Text = "";
+            txtConfirmNewPassword.Text = "";
+        }
+
         //
         //Tab 1:
         //
