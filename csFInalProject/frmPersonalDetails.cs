@@ -87,6 +87,7 @@ namespace csFinalProject
         private void lblEditPersonalDetails_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             EnableAllControls(grpPersonalDetails);
+
         }
 
         //Cancel Personal Details
