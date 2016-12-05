@@ -301,6 +301,11 @@ namespace csFinalProject
         private void lblEmergencyContactDetailsCancel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             DisableAllControls(grpEmergencyContactDetails);
+            foreach (Control control in grpEmergencyContactDetails.Controls)
+            {
+                if (control is TextBox)
+                    control.Text = "";
+            }
         }
 
         //Edit Primary Provider Details
@@ -343,11 +348,21 @@ namespace csFinalProject
                 User.WEIGHT_LBS = (int.TryParse(txtWeight.Text, out weight)) ? (int?)weight : null;
             }
         }
-        //stopping point
+
         //Cancel Personal Medical Details
         private void lblPersonalMedicalDetailsCancel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             DisableAllControls(grpPersonalMedicalDetails);
+
+            cboBloodGroup.SelectedIndex = (User.BLOOD_TYPE == null) ? -1 : (int)User.BLOOD_TYPE;
+            chkOrganDonor.Checked = User.ORGAN_DONOR;
+
+            rdoHIVUnknown.Checked = (User.HIV_STATUS == null);
+            rdoHIVPositive.Checked = (bool)User.HIV_STATUS;
+            rdoHIVNegative.Checked = (User.HIV_STATUS != null && (bool)!User.HIV_STATUS);
+
+            txtHeight.Text = User.HEIGHT_INCHES == null ? "" : User.HEIGHT_INCHES.ToString();
+            txtWeight.Text = User.WEIGHT_LBS == null ? "" : User.WEIGHT_LBS.ToString();
         }
 
         //Add Allergy
@@ -359,7 +374,6 @@ namespace csFinalProject
         private void lstAllergies_SelectedIndexChanged(object sender, EventArgs e)
         {
             populateAllergyDetailsControls();
-            
         }
         //Remove Selected Allergy
         private void lblAllergyDetailsRemoveSelected_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -402,13 +416,46 @@ namespace csFinalProject
         //Edit Allergy Details
         private void lblAllergyDetailsEdit_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            EnableAllControls(grpAllergyDetails);
+            List<Allergy> allergies = new List<Allergy>();
+            if (EnableAllControls(grpAllergyDetails))
+            {
+                try
+                {
+                    int currIndex = lstAllergies.SelectedIndex;
+                    for (int ndx = 0; ndx < lstAllergies.Items.Count; ndx++)
+                    {
+                        Allergy newAllergy;
+                        lstAllergies.SelectedIndex = ndx;
+                        populateAllergyDetailsControls();
+
+                        newAllergy.ALLERGEN = txtAllergicTo.Text.Trim();
+                        newAllergy.ALLERGY_ID = lstAllergies.Text.Trim();
+                        newAllergy.ONSET_DATE = dtpOnset.Value.Date;
+                        newAllergy.NOTE = txtAllergyNote.Text.Trim();
+
+                        allergies.Add(newAllergy);
+                    }
+                    lstAllergies.SelectedIndex = currIndex;
+                    User.Allergies = allergies;
+                }
+                catch (Exception ex)
+                {
+                    User.Allergies = null;
+                }
+            }
         }
 
         //Cancel Allergy Details
         private void lblAllergyDetailsCancel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             DisableAllControls(grpAllergyDetails);
+            if (User.Allergies != null)
+            {
+                foreach (Allergy allergy in User.Allergies)
+                {
+                    //TODO allergies cancel
+                } 
+            }
         }
 
         //Fills the Immunisation Details Controls with the data in the database
@@ -420,13 +467,42 @@ namespace csFinalProject
         //Edit Immunisation Details
         private void lblImmunisationEdit_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            EnableAllControls(grpImmunisationDetails);
+            if (EnableAllControls(grpImmunisationDetails))
+            {
+                List<Immunization> immuns = new List<Immunization>();
+                int currIndex = lstImmunisationList.SelectedIndex;
+
+                try
+                {
+                    for (int ndx = 0; ndx < lstImmunisationList.Items.Count; ndx++)
+                    {
+                        Immunization imm;
+                        lstImmunisationList.SelectedIndex = ndx;
+                        populateVaxDetailsControls();
+
+                        imm.IMMUNIZATION_ID = lstImmunisationList.Text.Trim();
+                        imm.IMMUNIZATION = txtImmunisation.Text.Trim();
+                        imm.DATE = dtpImmunisationDate.Value.Date;
+                        imm.NOTE = txtImmunisationNote.Text.Trim();
+
+                        immuns.Add(imm);
+                    }
+
+                    User.Immunizations = immuns;
+                    lstImmunisationList.SelectedIndex = currIndex;
+                }
+                catch (Exception ex)
+                {
+                    User.Immunizations = null;
+                }
+            }
         }
 
         //Cancel Immunisation Details
         private void lblImmunisationCancel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             DisableAllControls(grpImmunisationDetails);
+            //TODO immuns cancel
         }
 
         //Fills the Perscribed Medication Controls with the data in the database
@@ -438,13 +514,41 @@ namespace csFinalProject
         //Edit Perscribed Medication Details
         private void lblPerscribedEdit_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            EnableAllControls(grpPerscribedMedicationDetails);
+            if (EnableAllControls(grpPerscribedMedicationDetails))
+            {
+                try
+                {
+                    List<Medication> meds = new List<Medication>();
+                    int currIndex = lstPerscribedMedicationList.SelectedIndex;
+                    for (int ndx = 0; ndx < lstMedicalProceduresList.Items.Count; ndx++)
+                    {
+                        Medication newMed;
+                        lstPerscribedMedicationList.SelectedIndex = ndx;
+                        populateMedicationDetailsControls();
+
+                        newMed.MED_ID = lstPerscribedMedicationList.Text.Trim();
+                        newMed.MEDICATION = txtPerscribedMedication.Text.Trim();
+                        newMed.CHRONIC = chkPerscribedChronic.Checked;
+                        newMed.NOTE = txtPerscribedNotes.Text.Trim();
+
+                        meds.Add(newMed);
+
+                    }
+                    lstPerscribedMedicationList.SelectedIndex = currIndex;
+                    User.Medications = meds;
+                }
+                catch (Exception ex)
+                {
+                    User.Medications = null;
+                }
+            }
         }
 
         //Cancel Perscribed Medication Details
         private void lblPerscribedCancel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             DisableAllControls(grpPerscribedMedicationDetails);
+            //TODO PREscribed cancel
         }
 
         //Fills the Test Result Controls with the data in the database
@@ -456,13 +560,42 @@ namespace csFinalProject
         //Edit Test Result Details
         private void lblTestResultEdit_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            EnableAllControls(grpTestResultDetails);
+            if (EnableAllControls(grpTestResultDetails))
+            {
+                List<Test> _tests = new List<Test>();
+                int currIndex = lstTestResultList.SelectedIndex;
+                try
+                {
+                    for (int ndx = 0; ndx < lstTestResultList.Items.Count; ndx++)
+                    {
+                        Test newTest;
+                        lstTestResultList.SelectedIndex = ndx;
+                        populateTestResultControls();
+
+                        newTest.TEST_ID = lstTestResultList.Text.Trim();
+                        newTest.TEST = txtTestResultTest.Text.Trim();
+                        newTest.RESULT = txtTestResultResult.Text.Trim();
+                        newTest.DATE = dtpTestResultDate.Value.Date;
+                        newTest.NOTE = txtTestResultNotes.Text.Trim();
+
+                        _tests.Add(newTest);
+                    }
+                    lstTestResultList.SelectedIndex = currIndex;
+                    User.Tests = _tests;
+                }
+                catch (Exception ex)
+                {
+                    User.Tests = null;
+                }
+            }
         }
 
         //Cancel Test Result Details
         private void lblTestResultCancel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             DisableAllControls(grpTestResultDetails);
+
+            //TODO cancel tests
         }
 
         //Fills the Medical Condition Controls with the data in the database
@@ -474,13 +607,43 @@ namespace csFinalProject
         //Edit Medical Condition Details
         private void lblMedicalConditionEdit_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            EnableAllControls(grpMedicalConditionDetails);
+            if (EnableAllControls(grpMedicalConditionDetails))
+            {
+                List<Condition> conditions = new List<Condition>();
+                int currIndex = lstMedicalConditionList.SelectedIndex;
+
+                try
+                {
+                    for (int ndx = 0; ndx < lstMedicalConditionList.Items.Count; ndx++)
+                    {
+                        Condition newCond;
+                        lstMedicalConditionList.SelectedIndex = ndx;
+                        populateMedicalConditionControls();
+
+                        newCond.CONDITION_ID = lstMedicalConditionList.Text.Trim();
+                        newCond.CONDITION = txtMedicalConditionCondition.Text.Trim();
+                        newCond.ONSET_DATE = dtpMedicalConditionOnset.Value.Date;
+                        newCond.ACUTE = rdoMedicalConditionAcute.Checked;
+                        newCond.CHRONIC = rdoMedicalConditionChronic.Checked;
+                        newCond.NOTE = txtMedicalConditionNotes.Text.Trim();
+
+                        conditions.Add(newCond);
+                    }
+                    lstMedicalConditionList.SelectedIndex = currIndex;
+                    User.Conditions = conditions;
+                }
+                catch (Exception ex)
+                {
+                    User.Conditions = null;
+                }
+            }
         }
 
         //Cancel Medical Condition Details
         private void lblMedicalConditionCancel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             DisableAllControls(grpMedicalConditionDetails);
+            //TODO Cancel med Conditions
         }
 
         //Fills the Medical Procedure Controls with the data in the database
@@ -492,13 +655,94 @@ namespace csFinalProject
         //Edit Medical Procedure Details
         private void lblMedicalProceduresEdit_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            EnableAllControls(grpMedicalProcedureDetails);
+            if (EnableAllControls(grpMedicalProcedureDetails))
+            {
+                List<Med_Proc> procs = new List<Med_Proc>();
+                int currIndex = lstMedicalProceduresList.SelectedIndex;
+
+                try
+                {
+                    for (int ndx = 0; ndx < lstMedicalProceduresList.Items.Count; ndx++)
+                    {
+                        Med_Proc newProc;
+                        lstMedicalProceduresList.SelectedIndex = ndx;
+                        populateMedicalProcedureControls();
+
+                        newProc.PROCEDURE_ID = lstMedicalProceduresList.Text.Trim();
+                        newProc.MED_PROCEDURE = txtMedicalProcedureProcedure.Text.Trim();
+                        newProc.DATE = dtpMedicalProcedureDate.Value.Date;
+                        newProc.DOCTOR = txtMedicalProcedurePerformedBy.Text.Trim();
+                        newProc.NOTE = txtMedicalProcedureNotes.Text.Trim();
+
+                        procs.Add(newProc);
+                    }
+                    lstMedicalProceduresList.SelectedIndex = currIndex;
+                    User.Med_Procs = procs;
+                }
+                catch (Exception ex)
+                {
+                    User.Med_Procs = null;
+                }
+            }
+        }
+
+        private SqlCommand UpdateBuilder(string table, List<string> columns, List<string> parameters, string key, string keyValue)
+        {
+            SqlCommand command = new SqlCommand();
+
+            string text = "UPDATE " + table + " SET ";
+            string values = "VALUES (";
+
+            for (int ndx = 0; ndx < columns.Count; ndx++)
+            {
+                int number;
+                DateTime date;
+                string thisParam = "@parameter" + ndx.ToString();
+                text += columns[ndx] + " = " + thisParam;
+                if (ndx != columns.Count - 1)
+                {
+                    text += ", ";
+                }
+                else
+                {
+                    text += " ";
+                }
+
+                if (parameters[ndx] == "false")
+                {
+                    command.Parameters.AddWithValue(thisParam, 0);
+                }
+                else if (parameters[ndx] == "true")
+                {
+                    command.Parameters.AddWithValue(thisParam, 1);
+                }
+                else if (int.TryParse(parameters[ndx], out number))
+                {
+                    command.Parameters.AddWithValue(thisParam, number);
+                }
+                else if (DateTime.TryParse(parameters[ndx], out date))
+                {
+                    command.Parameters.AddWithValue(thisParam, date);
+                }
+                else if (parameters[ndx] == null || parameters[ndx].Equals(""))
+                {
+                    command.Parameters.AddWithValue(thisParam, DBNull.Value);
+                }
+                else
+                {
+                    command.Parameters.AddWithValue(thisParam, parameters[ndx]);                
+                }
+            }
+            text += " WHERE " + key + " = " + keyValue;
+            command.CommandText = text;
+            return command;            
         }
 
         //Cancel Medical Procedure Details
         private void lblMedicalProceduresCancel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             DisableAllControls(grpMedicalProcedureDetails);
+            //TODO med procs cancel
         }
         //
         //End Tab 2
@@ -821,6 +1065,7 @@ namespace csFinalProject
             }
             connection.Close();
         }
+
         private void populateAllergyDetailsControls()
         {
             if (lstAllergies.SelectedIndex >= 0)
@@ -1246,6 +1491,140 @@ namespace csFinalProject
             txtImmunisationNote.Clear();
             lstImmunisationList.Items.Clear();
             fillVaxDetails();
+        }
+
+        private void lblSavePersonalDetails_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            List<string> columns = new List<string>();
+            List<string> parameters = new List<string>();
+
+            columns.Add("LAST_NAME");
+            columns.Add("FIRST_NAME");
+            columns.Add("DATE_Of_BIRTH");
+            columns.Add("MID_INITIAL");
+            if (cboTitle.SelectedIndex != -1)
+                columns.Add("TITLE");
+
+            parameters.Add(txtLastName.Text.Trim());
+            parameters.Add(txtFirstName.Text.Trim());
+            parameters.Add(dtpDob.Value.Date.ToString());
+            parameters.Add(txtInitials.Text.Trim());
+            if (cboTitle.SelectedIndex != -1)
+                parameters.Add(cboTitle.SelectedIndex.ToString());
+
+            SqlCommand command1 = UpdateBuilder("PATIENT_TBL", columns, parameters, "PATIENT_ID", txtIdentityNumber.Text.Trim());
+            ExecuteUpdate(command1);
+
+            columns = new List<string>();
+            parameters = new List<string>();
+
+            columns.Add("GENDER_ISMALE");
+            parameters.Add(rdoMale.Checked.ToString());
+
+            command1 = UpdateBuilder("PER_DETAILS_TBL", columns, parameters, "PATIENT_ID", txtIdentityNumber.Text.Trim());
+            ExecuteUpdate(command1);
+
+            DisableAllControls(grpPersonalDetails);
+        }
+
+        private void ExecuteUpdate(SqlCommand command)
+        {
+            SqlConnection connection = pchrDB.getConnection();
+            command.Connection = connection;
+
+            connection.Open();
+
+            try
+            {
+                if (command.ExecuteNonQuery() == 0)
+                {
+                    MessageBox.Show("Fail");
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, ex.Source);
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
+        private void lblSaveContactDetails_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            List<string> columns = new List<string>();
+            List<string> parameters = new List<string>();
+
+            columns.Add("ADDRESS_STREET");
+            columns.Add("ADDRESS_CITY");
+            columns.Add("ADDRESS_STATE");
+            columns.Add("ADDRESS_ZIP");
+            columns.Add("PHONE_HOME");
+            columns.Add("PHONE_MOBILE");
+
+            parameters.Add(txtAddress.Text);
+            parameters.Add(txtCity.Text);
+            parameters.Add(txtState.Text.Trim());
+            parameters.Add(txtPostalCode.Text.Trim());
+            parameters.Add(txtHomePhone.Text.Trim());
+            parameters.Add(txtMobilePhone.Text.Trim());
+
+            SqlCommand command = UpdateBuilder("PATIENT_TBL", columns, parameters, "PATIENT_ID", txtIdentityNumber.Text.Trim());
+            ExecuteUpdate(command);
+
+            DisableAllControls(grpContactDetails);
+        }
+
+        private void lblPrimarySave_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            List<string> columns = new List<string>();
+            List<string> parameters = new List<string>();
+
+            columns.Add("NAME_LAST");
+            columns.Add("SPECIALTY");
+            columns.Add("PHONE_OFFICE");
+            columns.Add("PHONE_MOBILE");
+
+            parameters.Add(txtPrimaryName.Text);
+            parameters.Add(txtPrimarySpecialty.Text);
+            parameters.Add(txtPrimaryWorkPhone.Text.Trim());
+            parameters.Add(txtMobilePhone.Text.Trim());
+
+            SqlCommand command = UpdateBuilder("PRIMARY_CARE_TBL", columns, parameters, "PRIMARY_ID", txtIdentityNumber.Text.Trim());
+            ExecuteUpdate(command);
+
+            DisableAllControls(grpPrimaryCare);
+        }
+
+        private void lblPersonalMedicalDetailsSave_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            List<string> columns = new List<string>();
+            List<string> parameters = new List<string>();
+            
+            columns.Add("BLOOD_TYPE");
+            columns.Add("ORGAN_DONOR");
+            columns.Add("HIV_STATUS");
+            columns.Add("HEIGHT_INCHES");
+            columns.Add("WEIGHT_LBS");
+
+            if (cboBloodGroup.SelectedIndex != -1)
+                parameters.Add(cboBloodGroup.SelectedIndex.ToString());
+            else
+                parameters.Add("");
+            parameters.Add(chkOrganDonor.Checked.ToString());
+            if (rdoHIVUnknown.Checked)
+                parameters.Add("");
+            else
+                parameters.Add(rdoHIVPositive.Checked.ToString());
+            parameters.Add(txtHeight.Text.Trim());
+            parameters.Add(txtWeight.Text.Trim());
+
+            SqlCommand command = UpdateBuilder("PER_DETAILS_TBL", columns, parameters, "PATIENT_ID", txtIdentityNumber.Text.Trim());
+            ExecuteUpdate(command);
+
+            DisableAllControls(grpPersonalMedicalDetails);
         }
     }
 }

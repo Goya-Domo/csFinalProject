@@ -43,59 +43,59 @@ namespace csFinalProject
         public static List<Test> Tests;
     }
 
-    struct Allergy
+    public struct Allergy
     {
-        string ALLERGY_ID;
-        string ALLERGEN;
-        DateTime ONSET_DATE;
-        string NOTE;
+        public string ALLERGY_ID;
+        public string ALLERGEN;
+        public DateTime ONSET_DATE;
+        public string NOTE;
     }
 
-    struct Condition
+    public struct Condition
     {
-        string CONDITION_ID;
-        string CONDITION;
-        DateTime ONSET_DATE;
-        bool ACUTE;
-        bool CHRONIC;
-        string NOTE;
+        public string CONDITION_ID;
+        public string CONDITION;
+        public DateTime ONSET_DATE;
+        public bool ACUTE;
+        public bool CHRONIC;
+        public string NOTE;
     }
 
-    struct Immunization
+    public struct Immunization
     {
-        string IMMUNIZATION_ID;
-        string IMMUNIZATION;
-        DateTime DATE;
-        string NOTE;
+        public string IMMUNIZATION_ID;
+        public string IMMUNIZATION;
+        public DateTime DATE;
+        public string NOTE;
     }
 
-    struct Med_Proc
+    public struct Med_Proc
     {
-        string PROCEDURE_ID;
-        string MED_PROCEDURE;
-        DateTime DATE;
-        string DOCTOR;
-        string NOTE;
+        public string PROCEDURE_ID;
+        public string MED_PROCEDURE;
+        public DateTime DATE;
+        public string DOCTOR;
+        public string NOTE;
     }
 
-    struct Medication
+    public struct Medication
     {
-        string MED_ID;
-        string MEDICATION;
-        bool CHRONIC;
-        string NOTE;
+        public string MED_ID;
+        public string MEDICATION;
+        public bool CHRONIC;
+        public string NOTE;
     }
 
-    struct Test
+    public struct Test
     {
-        string TEST_ID;
-        string TEST;
-        string RESULT;
-        DateTime DATE;
-        string NOTE;
+        public string TEST_ID;
+        public string TEST;
+        public string RESULT;
+        public DateTime DATE;
+        public string NOTE;
     }
 
-    enum BloodType
+    public enum BloodType
     {
         OP,
         ON,
@@ -107,7 +107,7 @@ namespace csFinalProject
         ABN
     }
 
-    enum Title
+    public enum Title
     {
         MR,
         MRS,

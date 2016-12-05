@@ -1370,6 +1370,7 @@
             this.lblPersonalMedicalDetailsSave.TabIndex = 24;
             this.lblPersonalMedicalDetailsSave.TabStop = true;
             this.lblPersonalMedicalDetailsSave.Text = "Save";
+            this.lblPersonalMedicalDetailsSave.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblPersonalMedicalDetailsSave_LinkClicked);
             // 
             // rdoHIVUnknown
             // 
@@ -1713,6 +1714,7 @@
             this.lblPrimarySave.TabIndex = 16;
             this.lblPrimarySave.TabStop = true;
             this.lblPrimarySave.Text = "Save";
+            this.lblPrimarySave.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblPrimarySave_LinkClicked);
             // 
             // lblPrimaryEdit
             // 
@@ -2205,6 +2207,7 @@
             this.lblSaveContactDetails.TabIndex = 19;
             this.lblSaveContactDetails.TabStop = true;
             this.lblSaveContactDetails.Text = "Save";
+            this.lblSaveContactDetails.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblSaveContactDetails_LinkClicked);
             // 
             // lblEditContactDetails
             // 
@@ -2411,6 +2414,7 @@
             this.lblSavePersonalDetails.TabIndex = 16;
             this.lblSavePersonalDetails.TabStop = true;
             this.lblSavePersonalDetails.Text = "Save";
+            this.lblSavePersonalDetails.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblSavePersonalDetails_LinkClicked);
             // 
             // lblEditPersonalDetails
             // 
