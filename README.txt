@@ -1,5 +1,9 @@
 Greg and Marshall final project README
 
+Handles:
+Greg - Dogzilla3
+Marshall - Goya-Domo
+
 HOW TO USE THE PROGRAM:
 
 ///NOTE: User name and password for smithjohn provided to test functionality///
