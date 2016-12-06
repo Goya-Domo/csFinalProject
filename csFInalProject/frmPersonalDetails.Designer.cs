@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPersonalDetails));
             this.ttpToolTips = new System.Windows.Forms.ToolTip(this.components);
             this.picProfilePicture = new System.Windows.Forms.PictureBox();
             this.txtUserName = new System.Windows.Forms.TextBox();
@@ -88,7 +89,7 @@
             this.dtpTestResultDate = new System.Windows.Forms.DateTimePicker();
             this.lblTestResultResult = new System.Windows.Forms.Label();
             this.lblTestResultDate = new System.Windows.Forms.Label();
-            this.grpPerscribedMedicationDetails = new System.Windows.Forms.GroupBox();
+            this.grpPrescribedMedicationDetails = new System.Windows.Forms.GroupBox();
             this.lblPerscribedCancel = new System.Windows.Forms.LinkLabel();
             this.lblPerscribedSelected = new System.Windows.Forms.LinkLabel();
             this.lstPerscribedMedicationList = new System.Windows.Forms.ListBox();
@@ -279,7 +280,7 @@
             this.grpMedicalProcedureDetails.SuspendLayout();
             this.grpMedicalConditionDetails.SuspendLayout();
             this.grpTestResultDetails.SuspendLayout();
-            this.grpPerscribedMedicationDetails.SuspendLayout();
+            this.grpPrescribedMedicationDetails.SuspendLayout();
             this.grpImmunisationDetails.SuspendLayout();
             this.grpPersonalMedicalDetails.SuspendLayout();
             this.grpAllergyDetails.SuspendLayout();
@@ -358,7 +359,7 @@
             // picUnderConstructionEMPHR
             // 
             this.picUnderConstructionEMPHR.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.picUnderConstructionEMPHR.Image = global::csFinalProject.Properties.Resources.UnderConstruction;
+            this.picUnderConstructionEMPHR.Image = ((System.Drawing.Image)(resources.GetObject("picUnderConstructionEMPHR.Image")));
             this.picUnderConstructionEMPHR.InitialImage = null;
             this.picUnderConstructionEMPHR.Location = new System.Drawing.Point(7, 3);
             this.picUnderConstructionEMPHR.Name = "picUnderConstructionEMPHR";
@@ -380,7 +381,7 @@
             // picUnderConstructionCPHR
             // 
             this.picUnderConstructionCPHR.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.picUnderConstructionCPHR.Image = global::csFinalProject.Properties.Resources.UnderConstruction;
+            this.picUnderConstructionCPHR.Image = ((System.Drawing.Image)(resources.GetObject("picUnderConstructionCPHR.Image")));
             this.picUnderConstructionCPHR.InitialImage = null;
             this.picUnderConstructionCPHR.Location = new System.Drawing.Point(8, 4);
             this.picUnderConstructionCPHR.Name = "picUnderConstructionCPHR";
@@ -394,7 +395,7 @@
             this.tabMedicalDetails.Controls.Add(this.grpMedicalProcedureDetails);
             this.tabMedicalDetails.Controls.Add(this.grpMedicalConditionDetails);
             this.tabMedicalDetails.Controls.Add(this.grpTestResultDetails);
-            this.tabMedicalDetails.Controls.Add(this.grpPerscribedMedicationDetails);
+            this.tabMedicalDetails.Controls.Add(this.grpPrescribedMedicationDetails);
             this.tabMedicalDetails.Controls.Add(this.grpImmunisationDetails);
             this.tabMedicalDetails.Controls.Add(this.grpPersonalMedicalDetails);
             this.tabMedicalDetails.Controls.Add(this.grpAllergyDetails);
@@ -461,6 +462,7 @@
             this.lblMedicalProceduresRemoveSelected.TabIndex = 40;
             this.lblMedicalProceduresRemoveSelected.TabStop = true;
             this.lblMedicalProceduresRemoveSelected.Text = "Remove Selected";
+            this.lblMedicalProceduresRemoveSelected.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblMedicalProceduresRemoveSelected_LinkClicked);
             // 
             // txtMedicalProcedurePerformedBy
             // 
@@ -499,6 +501,7 @@
             this.lblMedicalProceduresSave.TabIndex = 42;
             this.lblMedicalProceduresSave.TabStop = true;
             this.lblMedicalProceduresSave.Text = "Save";
+            this.lblMedicalProceduresSave.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblMedicalProceduresSave_LinkClicked);
             // 
             // lblMedicalProcedureDate
             // 
@@ -549,6 +552,7 @@
             this.lblMedicalProcedureAdd.TabIndex = 44;
             this.lblMedicalProcedureAdd.TabStop = true;
             this.lblMedicalProcedureAdd.Text = "Add";
+            this.lblMedicalProcedureAdd.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblMedicalProcedureAdd_LinkClicked);
             // 
             // lblMedicalProcedureNotes
             // 
@@ -637,6 +641,7 @@
             this.lblMedicalConditionsRemoveSelected.TabIndex = 34;
             this.lblMedicalConditionsRemoveSelected.TabStop = true;
             this.lblMedicalConditionsRemoveSelected.Text = "Remove Selected";
+            this.lblMedicalConditionsRemoveSelected.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblMedicalConditionsRemoveSelected_LinkClicked);
             // 
             // rdoMedicalConditionAcute
             // 
@@ -669,6 +674,7 @@
             this.lblMedicalConditionAdd.TabIndex = 35;
             this.lblMedicalConditionAdd.TabStop = true;
             this.lblMedicalConditionAdd.Text = "Add";
+            this.lblMedicalConditionAdd.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblMedicalConditionAdd_LinkClicked);
             // 
             // lblMedicalConditionSave
             // 
@@ -680,6 +686,7 @@
             this.lblMedicalConditionSave.TabIndex = 36;
             this.lblMedicalConditionSave.TabStop = true;
             this.lblMedicalConditionSave.Text = "Save";
+            this.lblMedicalConditionSave.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblMedicalConditionSave_LinkClicked);
             // 
             // lblMedicalConditionCondition
             // 
@@ -804,6 +811,7 @@
             this.lblTestResultAdd.TabIndex = 26;
             this.lblTestResultAdd.TabStop = true;
             this.lblTestResultAdd.Text = "Add";
+            this.lblTestResultAdd.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblTestResultAdd_LinkClicked);
             // 
             // lblTestResultRemoveSelected
             // 
@@ -815,6 +823,7 @@
             this.lblTestResultRemoveSelected.TabIndex = 28;
             this.lblTestResultRemoveSelected.TabStop = true;
             this.lblTestResultRemoveSelected.Text = "Remove Selected";
+            this.lblTestResultRemoveSelected.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblTestResultRemoveSelected_LinkClicked);
             // 
             // txtTestResultResult
             // 
@@ -852,6 +861,7 @@
             this.lblTestResultSave.TabIndex = 30;
             this.lblTestResultSave.TabStop = true;
             this.lblTestResultSave.Text = "Save";
+            this.lblTestResultSave.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblTestResultSave_LinkClicked);
             // 
             // lblTestResultTest
             // 
@@ -931,29 +941,29 @@
             this.lblTestResultDate.TabIndex = 11;
             this.lblTestResultDate.Text = "Date:";
             // 
-            // grpPerscribedMedicationDetails
+            // grpPrescribedMedicationDetails
             // 
-            this.grpPerscribedMedicationDetails.Controls.Add(this.lblPerscribedCancel);
-            this.grpPerscribedMedicationDetails.Controls.Add(this.lblPerscribedSelected);
-            this.grpPerscribedMedicationDetails.Controls.Add(this.lstPerscribedMedicationList);
-            this.grpPerscribedMedicationDetails.Controls.Add(this.lblPerscribedSave);
-            this.grpPerscribedMedicationDetails.Controls.Add(this.lblPerscribedMedicationList);
-            this.grpPerscribedMedicationDetails.Controls.Add(this.lblPerscribedEdit);
-            this.grpPerscribedMedicationDetails.Controls.Add(this.lblPerscribedMedicationAdd);
-            this.grpPerscribedMedicationDetails.Controls.Add(this.txtPerscribedNotes);
-            this.grpPerscribedMedicationDetails.Controls.Add(this.lblPerscribedNotes);
-            this.grpPerscribedMedicationDetails.Controls.Add(this.chkPerscribedChronic);
-            this.grpPerscribedMedicationDetails.Controls.Add(this.lblPerscribedChronic);
-            this.grpPerscribedMedicationDetails.Controls.Add(this.lblDatePerscribed);
-            this.grpPerscribedMedicationDetails.Controls.Add(this.dtpDatePerscribed);
-            this.grpPerscribedMedicationDetails.Controls.Add(this.txtPerscribedMedication);
-            this.grpPerscribedMedicationDetails.Controls.Add(this.lblPerscribedMedication);
-            this.grpPerscribedMedicationDetails.Location = new System.Drawing.Point(8, 241);
-            this.grpPerscribedMedicationDetails.Name = "grpPerscribedMedicationDetails";
-            this.grpPerscribedMedicationDetails.Size = new System.Drawing.Size(233, 359);
-            this.grpPerscribedMedicationDetails.TabIndex = 23;
-            this.grpPerscribedMedicationDetails.TabStop = false;
-            this.grpPerscribedMedicationDetails.Text = "Perscribed Medication Details";
+            this.grpPrescribedMedicationDetails.Controls.Add(this.lblPerscribedCancel);
+            this.grpPrescribedMedicationDetails.Controls.Add(this.lblPerscribedSelected);
+            this.grpPrescribedMedicationDetails.Controls.Add(this.lstPerscribedMedicationList);
+            this.grpPrescribedMedicationDetails.Controls.Add(this.lblPerscribedSave);
+            this.grpPrescribedMedicationDetails.Controls.Add(this.lblPerscribedMedicationList);
+            this.grpPrescribedMedicationDetails.Controls.Add(this.lblPerscribedEdit);
+            this.grpPrescribedMedicationDetails.Controls.Add(this.lblPerscribedMedicationAdd);
+            this.grpPrescribedMedicationDetails.Controls.Add(this.txtPerscribedNotes);
+            this.grpPrescribedMedicationDetails.Controls.Add(this.lblPerscribedNotes);
+            this.grpPrescribedMedicationDetails.Controls.Add(this.chkPerscribedChronic);
+            this.grpPrescribedMedicationDetails.Controls.Add(this.lblPerscribedChronic);
+            this.grpPrescribedMedicationDetails.Controls.Add(this.lblDatePerscribed);
+            this.grpPrescribedMedicationDetails.Controls.Add(this.dtpDatePerscribed);
+            this.grpPrescribedMedicationDetails.Controls.Add(this.txtPerscribedMedication);
+            this.grpPrescribedMedicationDetails.Controls.Add(this.lblPerscribedMedication);
+            this.grpPrescribedMedicationDetails.Location = new System.Drawing.Point(8, 241);
+            this.grpPrescribedMedicationDetails.Name = "grpPrescribedMedicationDetails";
+            this.grpPrescribedMedicationDetails.Size = new System.Drawing.Size(233, 359);
+            this.grpPrescribedMedicationDetails.TabIndex = 23;
+            this.grpPrescribedMedicationDetails.TabStop = false;
+            this.grpPrescribedMedicationDetails.Text = "Perscribed Medication Details";
             // 
             // lblPerscribedCancel
             // 
@@ -977,6 +987,7 @@
             this.lblPerscribedSelected.TabIndex = 25;
             this.lblPerscribedSelected.TabStop = true;
             this.lblPerscribedSelected.Text = "Remove Selected";
+            this.lblPerscribedSelected.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblPerscribedSelected_LinkClicked);
             // 
             // lstPerscribedMedicationList
             // 
@@ -997,6 +1008,7 @@
             this.lblPerscribedSave.TabIndex = 26;
             this.lblPerscribedSave.TabStop = true;
             this.lblPerscribedSave.Text = "Save";
+            this.lblPerscribedSave.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblPerscribedSave_LinkClicked);
             // 
             // lblPerscribedMedicationList
             // 
@@ -1029,6 +1041,7 @@
             this.lblPerscribedMedicationAdd.TabIndex = 25;
             this.lblPerscribedMedicationAdd.TabStop = true;
             this.lblPerscribedMedicationAdd.Text = "Add";
+            this.lblPerscribedMedicationAdd.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblPerscribedMedicationAdd_LinkClicked);
             // 
             // txtPerscribedNotes
             // 
@@ -1077,7 +1090,7 @@
             this.lblDatePerscribed.Name = "lblDatePerscribed";
             this.lblDatePerscribed.Size = new System.Drawing.Size(60, 13);
             this.lblDatePerscribed.TabIndex = 3;
-            this.lblDatePerscribed.Text = "Perscribed:";
+            this.lblDatePerscribed.Text = "Prescribed:";
             // 
             // dtpDatePerscribed
             // 
@@ -1172,6 +1185,7 @@
             this.lblImmunisationSave.TabIndex = 34;
             this.lblImmunisationSave.TabStop = true;
             this.lblImmunisationSave.Text = "Save";
+            this.lblImmunisationSave.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblImmunisationSave_LinkClicked);
             // 
             // txtImmunisation
             // 
@@ -1230,6 +1244,7 @@
             this.lblImmunisationAdd.TabIndex = 33;
             this.lblImmunisationAdd.TabStop = true;
             this.lblImmunisationAdd.Text = "Add";
+            this.lblImmunisationAdd.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblImmunisationAdd_LinkClicked);
             // 
             // lblImmunisationNote
             // 
@@ -1521,6 +1536,7 @@
             this.lblAllergyDetailsSave.TabIndex = 22;
             this.lblAllergyDetailsSave.TabStop = true;
             this.lblAllergyDetailsSave.Text = "Save";
+            this.lblAllergyDetailsSave.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblAllergyDetailsSave_LinkClicked);
             // 
             // lstAllergies
             // 
@@ -2558,6 +2574,7 @@
             this.txtIdentityNumber.Enabled = false;
             this.txtIdentityNumber.Location = new System.Drawing.Point(97, 17);
             this.txtIdentityNumber.Name = "txtIdentityNumber";
+            this.txtIdentityNumber.ReadOnly = true;
             this.txtIdentityNumber.Size = new System.Drawing.Size(210, 20);
             this.txtIdentityNumber.TabIndex = 1;
             // 
@@ -2808,8 +2825,8 @@
             this.grpMedicalConditionDetails.PerformLayout();
             this.grpTestResultDetails.ResumeLayout(false);
             this.grpTestResultDetails.PerformLayout();
-            this.grpPerscribedMedicationDetails.ResumeLayout(false);
-            this.grpPerscribedMedicationDetails.PerformLayout();
+            this.grpPrescribedMedicationDetails.ResumeLayout(false);
+            this.grpPrescribedMedicationDetails.PerformLayout();
             this.grpImmunisationDetails.ResumeLayout(false);
             this.grpImmunisationDetails.PerformLayout();
             this.grpPersonalMedicalDetails.ResumeLayout(false);
@@ -2991,7 +3008,7 @@
         private System.Windows.Forms.GroupBox grpMedicalProcedureDetails;
         private System.Windows.Forms.GroupBox grpMedicalConditionDetails;
         private System.Windows.Forms.GroupBox grpTestResultDetails;
-        private System.Windows.Forms.GroupBox grpPerscribedMedicationDetails;
+        private System.Windows.Forms.GroupBox grpPrescribedMedicationDetails;
         private System.Windows.Forms.Label lblPerscribedChronic;
         private System.Windows.Forms.Label lblDatePerscribed;
         private System.Windows.Forms.DateTimePicker dtpDatePerscribed;
