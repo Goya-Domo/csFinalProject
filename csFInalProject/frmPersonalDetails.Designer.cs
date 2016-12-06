@@ -29,13 +29,98 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPersonalDetails));
             this.ttpToolTips = new System.Windows.Forms.ToolTip(this.components);
             this.picProfilePicture = new System.Windows.Forms.PictureBox();
             this.txtUserName = new System.Windows.Forms.TextBox();
             this.txtNewPassword = new System.Windows.Forms.TextBox();
             this.txtConfirmNewPassword = new System.Windows.Forms.TextBox();
             this.txtOldPassword = new System.Windows.Forms.TextBox();
+            this.lblPerscribedCancel = new System.Windows.Forms.LinkLabel();
+            this.lblPerscribedSelected = new System.Windows.Forms.LinkLabel();
+            this.lblPerscribedSave = new System.Windows.Forms.LinkLabel();
+            this.lblPerscribedEdit = new System.Windows.Forms.LinkLabel();
+            this.lblPerscribedMedicationAdd = new System.Windows.Forms.LinkLabel();
+            this.txtPerscribedNotes = new System.Windows.Forms.TextBox();
+            this.chkPerscribedChronic = new System.Windows.Forms.CheckBox();
+            this.dtpDatePerscribed = new System.Windows.Forms.DateTimePicker();
+            this.txtPerscribedMedication = new System.Windows.Forms.TextBox();
+            this.lblImmunisationRemoveSelected = new System.Windows.Forms.LinkLabel();
+            this.lblImmunisationCancel = new System.Windows.Forms.LinkLabel();
+            this.lblImmunisationSave = new System.Windows.Forms.LinkLabel();
+            this.txtImmunisation = new System.Windows.Forms.TextBox();
+            this.lstImmunisationList = new System.Windows.Forms.ListBox();
+            this.dtpImmunisationDate = new System.Windows.Forms.DateTimePicker();
+            this.lblImmunisationEdit = new System.Windows.Forms.LinkLabel();
+            this.lblImmunisationAdd = new System.Windows.Forms.LinkLabel();
+            this.txtImmunisationNote = new System.Windows.Forms.TextBox();
+            this.txtWeight = new System.Windows.Forms.TextBox();
+            this.lblPersonalMedicalDetailsCancel = new System.Windows.Forms.LinkLabel();
+            this.lblPersonalMedicalDetailsEdit = new System.Windows.Forms.LinkLabel();
+            this.txtHeight = new System.Windows.Forms.TextBox();
+            this.lblPersonalMedicalDetailsSave = new System.Windows.Forms.LinkLabel();
+            this.rdoHIVUnknown = new System.Windows.Forms.RadioButton();
+            this.rdoHIVNegative = new System.Windows.Forms.RadioButton();
+            this.rdoHIVPositive = new System.Windows.Forms.RadioButton();
+            this.lblHivStatus = new System.Windows.Forms.Label();
+            this.chkOrganDonor = new System.Windows.Forms.CheckBox();
+            this.cboBloodGroup = new System.Windows.Forms.ComboBox();
+            this.lblAllergyDetailsRemoveSelected = new System.Windows.Forms.LinkLabel();
+            this.lblAllergyDetailsCancel = new System.Windows.Forms.LinkLabel();
+            this.lblAllergyDetailsSave = new System.Windows.Forms.LinkLabel();
+            this.lstAllergies = new System.Windows.Forms.ListBox();
+            this.lblAllergyDetailsEdit = new System.Windows.Forms.LinkLabel();
+            this.lblAllergiesAdd = new System.Windows.Forms.LinkLabel();
+            this.txtAllergyNote = new System.Windows.Forms.TextBox();
+            this.dtpOnset = new System.Windows.Forms.DateTimePicker();
+            this.txtAllergicTo = new System.Windows.Forms.TextBox();
+            this.txtPrimarySpecialty = new System.Windows.Forms.TextBox();
+            this.lblPrimaryCancel = new System.Windows.Forms.LinkLabel();
+            this.txtPrimaryPostalCode = new System.Windows.Forms.TextBox();
+            this.lblPrimarySave = new System.Windows.Forms.LinkLabel();
+            this.lblPrimaryEdit = new System.Windows.Forms.LinkLabel();
+            this.txtPrimaryName = new System.Windows.Forms.TextBox();
+            this.txtPrimaryEmail = new System.Windows.Forms.TextBox();
+            this.txtPrimaryHomePhone = new System.Windows.Forms.TextBox();
+            this.txtPrimaryFaxNumber = new System.Windows.Forms.TextBox();
+            this.txtPrimaryCity = new System.Windows.Forms.TextBox();
+            this.txtPrimaryState = new System.Windows.Forms.TextBox();
+            this.txtPrimaryMobilePhone = new System.Windows.Forms.TextBox();
+            this.txtPrimaryWorkPhone = new System.Windows.Forms.TextBox();
+            this.txtPrimaryAddress = new System.Windows.Forms.TextBox();
+            this.txtEmergencyRelationship = new System.Windows.Forms.TextBox();
+            this.lblEmergencyContactDetailsCancel = new System.Windows.Forms.LinkLabel();
+            this.txtEmergencyPostalCode = new System.Windows.Forms.TextBox();
+            this.lblEmergencyContactDetailsSave = new System.Windows.Forms.LinkLabel();
+            this.lblEmergencyContactDetailsEdit = new System.Windows.Forms.LinkLabel();
+            this.txtNextOfKin = new System.Windows.Forms.TextBox();
+            this.txtEmergencyEmail = new System.Windows.Forms.TextBox();
+            this.txtEmergencyHomePhone = new System.Windows.Forms.TextBox();
+            this.txtEmergencyFax = new System.Windows.Forms.TextBox();
+            this.txtEmergencyCity = new System.Windows.Forms.TextBox();
+            this.txtEmergencySuburb = new System.Windows.Forms.TextBox();
+            this.txtEmergencyMobilePhone = new System.Windows.Forms.TextBox();
+            this.txtEmergencyWorkPhone = new System.Windows.Forms.TextBox();
+            this.txtEmergencyAddress = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtFax = new System.Windows.Forms.TextBox();
+            this.txtWorkPhone = new System.Windows.Forms.TextBox();
+            this.txtMobilePhone = new System.Windows.Forms.TextBox();
+            this.txtHomePhone = new System.Windows.Forms.TextBox();
+            this.txtCity = new System.Windows.Forms.TextBox();
+            this.txtState = new System.Windows.Forms.TextBox();
+            this.txtAddress = new System.Windows.Forms.TextBox();
+            this.lblCancelPersonalDetails = new System.Windows.Forms.LinkLabel();
+            this.lblSavePersonalDetails = new System.Windows.Forms.LinkLabel();
+            this.lblEditPersonalDetails = new System.Windows.Forms.LinkLabel();
+            this.dtpDob = new System.Windows.Forms.DateTimePicker();
+            this.txtFirstName = new System.Windows.Forms.TextBox();
+            this.txtLastName = new System.Windows.Forms.TextBox();
+            this.rdoFemale = new System.Windows.Forms.RadioButton();
+            this.rdoMale = new System.Windows.Forms.RadioButton();
+            this.txtIdentityNumber = new System.Windows.Forms.TextBox();
+            this.lblCancel = new System.Windows.Forms.LinkLabel();
+            this.lblChangePassword = new System.Windows.Forms.LinkLabel();
+            this.lblProfilePic = new System.Windows.Forms.LinkLabel();
             this.tabEPHR = new System.Windows.Forms.TabPage();
             this.picUnderConstructionEMPHR = new System.Windows.Forms.PictureBox();
             this.tabCPHR = new System.Windows.Forms.TabPage();
@@ -89,120 +174,54 @@
             this.dtpTestResultDate = new System.Windows.Forms.DateTimePicker();
             this.lblTestResultResult = new System.Windows.Forms.Label();
             this.lblTestResultDate = new System.Windows.Forms.Label();
-            this.grpPrescribedMedicationDetails = new System.Windows.Forms.GroupBox();
-            this.lblPerscribedCancel = new System.Windows.Forms.LinkLabel();
-            this.lblPerscribedSelected = new System.Windows.Forms.LinkLabel();
+            this.grpPerscribedMedicationDetails = new System.Windows.Forms.GroupBox();
             this.lstPerscribedMedicationList = new System.Windows.Forms.ListBox();
-            this.lblPerscribedSave = new System.Windows.Forms.LinkLabel();
             this.lblPerscribedMedicationList = new System.Windows.Forms.Label();
-            this.lblPerscribedEdit = new System.Windows.Forms.LinkLabel();
-            this.lblPerscribedMedicationAdd = new System.Windows.Forms.LinkLabel();
-            this.txtPerscribedNotes = new System.Windows.Forms.TextBox();
             this.lblPerscribedNotes = new System.Windows.Forms.Label();
-            this.chkPerscribedChronic = new System.Windows.Forms.CheckBox();
             this.lblPerscribedChronic = new System.Windows.Forms.Label();
             this.lblDatePerscribed = new System.Windows.Forms.Label();
-            this.dtpDatePerscribed = new System.Windows.Forms.DateTimePicker();
-            this.txtPerscribedMedication = new System.Windows.Forms.TextBox();
             this.lblPerscribedMedication = new System.Windows.Forms.Label();
             this.grpImmunisationDetails = new System.Windows.Forms.GroupBox();
-            this.lblImmunisationRemoveSelected = new System.Windows.Forms.LinkLabel();
-            this.lblImmunisationCancel = new System.Windows.Forms.LinkLabel();
             this.lblImmunisation = new System.Windows.Forms.Label();
-            this.lblImmunisationSave = new System.Windows.Forms.LinkLabel();
-            this.txtImmunisation = new System.Windows.Forms.TextBox();
-            this.lstImmunisationList = new System.Windows.Forms.ListBox();
-            this.dtpImmunisationDate = new System.Windows.Forms.DateTimePicker();
-            this.lblImmunisationEdit = new System.Windows.Forms.LinkLabel();
             this.lblImmunisationDate = new System.Windows.Forms.Label();
-            this.lblImmunisationAdd = new System.Windows.Forms.LinkLabel();
             this.lblImmunisationNote = new System.Windows.Forms.Label();
-            this.txtImmunisationNote = new System.Windows.Forms.TextBox();
             this.lblImmunisationList = new System.Windows.Forms.Label();
             this.grpPersonalMedicalDetails = new System.Windows.Forms.GroupBox();
             this.lblLbs = new System.Windows.Forms.Label();
             this.lblInches = new System.Windows.Forms.Label();
             this.lblWeight = new System.Windows.Forms.Label();
             this.lblHeight = new System.Windows.Forms.Label();
-            this.txtWeight = new System.Windows.Forms.TextBox();
-            this.lblPersonalMedicalDetailsCancel = new System.Windows.Forms.LinkLabel();
-            this.lblPersonalMedicalDetailsEdit = new System.Windows.Forms.LinkLabel();
-            this.txtHeight = new System.Windows.Forms.TextBox();
-            this.lblPersonalMedicalDetailsSave = new System.Windows.Forms.LinkLabel();
-            this.rdoHIVUnknown = new System.Windows.Forms.RadioButton();
-            this.rdoHIVNegative = new System.Windows.Forms.RadioButton();
-            this.rdoHIVPositive = new System.Windows.Forms.RadioButton();
-            this.lblHivStatus = new System.Windows.Forms.Label();
             this.lblOrganDonor = new System.Windows.Forms.Label();
-            this.chkOrganDonor = new System.Windows.Forms.CheckBox();
-            this.cboBloodGroup = new System.Windows.Forms.ComboBox();
             this.lblBloodGroup = new System.Windows.Forms.Label();
             this.grpAllergyDetails = new System.Windows.Forms.GroupBox();
-            this.lblAllergyDetailsRemoveSelected = new System.Windows.Forms.LinkLabel();
-            this.lblAllergyDetailsCancel = new System.Windows.Forms.LinkLabel();
-            this.lblAllergyDetailsSave = new System.Windows.Forms.LinkLabel();
-            this.lstAllergies = new System.Windows.Forms.ListBox();
-            this.lblAllergyDetailsEdit = new System.Windows.Forms.LinkLabel();
-            this.lblAllergiesAdd = new System.Windows.Forms.LinkLabel();
-            this.txtAllergyNote = new System.Windows.Forms.TextBox();
             this.lblAllergies = new System.Windows.Forms.Label();
             this.lblNote = new System.Windows.Forms.Label();
             this.lblOnset = new System.Windows.Forms.Label();
-            this.dtpOnset = new System.Windows.Forms.DateTimePicker();
-            this.txtAllergicTo = new System.Windows.Forms.TextBox();
             this.lblAllergicTo = new System.Windows.Forms.Label();
             this.tabPersonalDetails = new System.Windows.Forms.TabPage();
             this.grpPrimaryCare = new System.Windows.Forms.GroupBox();
             this.lblPrimaryPostalCode = new System.Windows.Forms.Label();
-            this.txtPrimarySpecialty = new System.Windows.Forms.TextBox();
-            this.lblPrimaryCancel = new System.Windows.Forms.LinkLabel();
-            this.txtPrimaryPostalCode = new System.Windows.Forms.TextBox();
-            this.lblPrimarySave = new System.Windows.Forms.LinkLabel();
-            this.lblPrimaryEdit = new System.Windows.Forms.LinkLabel();
             this.lblPrimaryEmail = new System.Windows.Forms.Label();
             this.lblPrimarySpecialty = new System.Windows.Forms.Label();
-            this.txtPrimaryName = new System.Windows.Forms.TextBox();
-            this.txtPrimaryEmail = new System.Windows.Forms.TextBox();
             this.lblPrimaryName = new System.Windows.Forms.Label();
             this.lblPrimaryAddress = new System.Windows.Forms.Label();
             this.lblPrimaryFaxNumber = new System.Windows.Forms.Label();
             this.lblPrimaryCity = new System.Windows.Forms.Label();
-            this.txtPrimaryHomePhone = new System.Windows.Forms.TextBox();
-            this.txtPrimaryFaxNumber = new System.Windows.Forms.TextBox();
-            this.txtPrimaryCity = new System.Windows.Forms.TextBox();
             this.lblPrimaryHomePhone = new System.Windows.Forms.Label();
             this.lblPrimaryWorkPhone = new System.Windows.Forms.Label();
-            this.txtPrimaryState = new System.Windows.Forms.TextBox();
-            this.txtPrimaryMobilePhone = new System.Windows.Forms.TextBox();
-            this.txtPrimaryWorkPhone = new System.Windows.Forms.TextBox();
             this.lblPrimaryState = new System.Windows.Forms.Label();
-            this.txtPrimaryAddress = new System.Windows.Forms.TextBox();
             this.lblPrimaryMobilePhone = new System.Windows.Forms.Label();
             this.grpEmergencyContactDetails = new System.Windows.Forms.GroupBox();
             this.lblEmergencyPostalCode = new System.Windows.Forms.Label();
-            this.txtEmergencyRelationship = new System.Windows.Forms.TextBox();
-            this.lblEmergencyContactDetailsCancel = new System.Windows.Forms.LinkLabel();
-            this.txtEmergencyPostalCode = new System.Windows.Forms.TextBox();
-            this.lblEmergencyContactDetailsSave = new System.Windows.Forms.LinkLabel();
-            this.lblEmergencyContactDetailsEdit = new System.Windows.Forms.LinkLabel();
             this.lblEmergencyEmail = new System.Windows.Forms.Label();
             this.lblRelationship = new System.Windows.Forms.Label();
-            this.txtNextOfKin = new System.Windows.Forms.TextBox();
-            this.txtEmergencyEmail = new System.Windows.Forms.TextBox();
             this.lblNextOfKin = new System.Windows.Forms.Label();
             this.lblEmergencyAddress = new System.Windows.Forms.Label();
             this.lblEmergencyFaxPhone = new System.Windows.Forms.Label();
             this.lblEmergencyCity = new System.Windows.Forms.Label();
-            this.txtEmergencyHomePhone = new System.Windows.Forms.TextBox();
-            this.txtEmergencyFax = new System.Windows.Forms.TextBox();
-            this.txtEmergencyCity = new System.Windows.Forms.TextBox();
             this.lblEmergencyHomePhone = new System.Windows.Forms.Label();
             this.lblEmergencyWorkPhone = new System.Windows.Forms.Label();
-            this.txtEmergencySuburb = new System.Windows.Forms.TextBox();
-            this.txtEmergencyMobilePhone = new System.Windows.Forms.TextBox();
-            this.txtEmergencyWorkPhone = new System.Windows.Forms.TextBox();
             this.lblEmergencySuburb = new System.Windows.Forms.Label();
-            this.txtEmergencyAddress = new System.Windows.Forms.TextBox();
             this.lblEmergencyMobilePhone = new System.Windows.Forms.Label();
             this.grpContactDetails = new System.Windows.Forms.GroupBox();
             this.lblCancelContactDetails = new System.Windows.Forms.LinkLabel();
@@ -211,58 +230,30 @@
             this.lblEditContactDetails = new System.Windows.Forms.LinkLabel();
             this.txtPostalCode = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
-            this.txtEmail = new System.Windows.Forms.TextBox();
             this.lblFaxNumber = new System.Windows.Forms.Label();
-            this.txtFax = new System.Windows.Forms.TextBox();
             this.lblWorkPhone = new System.Windows.Forms.Label();
-            this.txtWorkPhone = new System.Windows.Forms.TextBox();
             this.lblMobile = new System.Windows.Forms.Label();
-            this.txtMobilePhone = new System.Windows.Forms.TextBox();
             this.lblHomePhone = new System.Windows.Forms.Label();
-            this.txtHomePhone = new System.Windows.Forms.TextBox();
             this.lblCity = new System.Windows.Forms.Label();
-            this.txtCity = new System.Windows.Forms.TextBox();
-            this.txtState = new System.Windows.Forms.TextBox();
             this.lblState = new System.Windows.Forms.Label();
-            this.txtAddress = new System.Windows.Forms.TextBox();
             this.lblAddress = new System.Windows.Forms.Label();
             this.grpPersonalDetails = new System.Windows.Forms.GroupBox();
-            this.lblCancelPersonalDetails = new System.Windows.Forms.LinkLabel();
-            this.lblSavePersonalDetails = new System.Windows.Forms.LinkLabel();
-            this.lblEditPersonalDetails = new System.Windows.Forms.LinkLabel();
-            this.dtpDob = new System.Windows.Forms.DateTimePicker();
             this.lblDob = new System.Windows.Forms.Label();
-            this.txtFirstName = new System.Windows.Forms.TextBox();
-            this.txtLastName = new System.Windows.Forms.TextBox();
             this.lblFirstName = new System.Windows.Forms.Label();
             this.lblLastName = new System.Windows.Forms.Label();
-            this.rdoFemale = new System.Windows.Forms.RadioButton();
-            this.rdoMale = new System.Windows.Forms.RadioButton();
             this.lblGender = new System.Windows.Forms.Label();
             this.txtInitials = new System.Windows.Forms.TextBox();
             this.lblInitials = new System.Windows.Forms.Label();
             this.cboTitle = new System.Windows.Forms.ComboBox();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.txtIdentityNumber = new System.Windows.Forms.TextBox();
             this.lblIdentityNumber = new System.Windows.Forms.Label();
             this.grpLogin = new System.Windows.Forms.GroupBox();
             this.grpChangePassword = new System.Windows.Forms.GroupBox();
             this.lblConfirmNewPassword = new System.Windows.Forms.Label();
-            this.lblCancel = new System.Windows.Forms.LinkLabel();
             this.lblNewPassword = new System.Windows.Forms.Label();
             this.lblOldPassword = new System.Windows.Forms.Label();
-            this.lblChangePassword = new System.Windows.Forms.LinkLabel();
             this.lblUsername = new System.Windows.Forms.Label();
-            this.lblProfilePic = new System.Windows.Forms.LinkLabel();
             this.tabTabControl = new System.Windows.Forms.TabControl();
-            this.tabTest = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.pATIENTIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LAST_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FIRST_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ALLERGEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ONSET_DATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NOTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.aLLERGYTBLBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pchrDataSet = new csFinalProject.pchrDataSet();
             this.pERDETAILSTBLBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -271,6 +262,7 @@
             this.aLLERGY_TBLTableAdapter = new csFinalProject.pchrDataSetTableAdapters.ALLERGY_TBLTableAdapter();
             this.pATIENT_TBLTableAdapter = new csFinalProject.pchrDataSetTableAdapters.PATIENT_TBLTableAdapter();
             this.pER_DETAILS_TBLTableAdapter = new csFinalProject.pchrDataSetTableAdapters.PER_DETAILS_TBLTableAdapter();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             ((System.ComponentModel.ISupportInitialize)(this.picProfilePicture)).BeginInit();
             this.tabEPHR.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picUnderConstructionEMPHR)).BeginInit();
@@ -280,7 +272,7 @@
             this.grpMedicalProcedureDetails.SuspendLayout();
             this.grpMedicalConditionDetails.SuspendLayout();
             this.grpTestResultDetails.SuspendLayout();
-            this.grpPrescribedMedicationDetails.SuspendLayout();
+            this.grpPerscribedMedicationDetails.SuspendLayout();
             this.grpImmunisationDetails.SuspendLayout();
             this.grpPersonalMedicalDetails.SuspendLayout();
             this.grpAllergyDetails.SuspendLayout();
@@ -292,8 +284,6 @@
             this.grpLogin.SuspendLayout();
             this.grpChangePassword.SuspendLayout();
             this.tabTabControl.SuspendLayout();
-            this.tabTest.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aLLERGYTBLBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pchrDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pERDETAILSTBLBindingSource)).BeginInit();
@@ -346,6 +336,995 @@
             this.txtOldPassword.TabIndex = 6;
             this.ttpToolTips.SetToolTip(this.txtOldPassword, "Enter your old password");
             // 
+            // lblPerscribedCancel
+            // 
+            this.lblPerscribedCancel.AutoSize = true;
+            this.lblPerscribedCancel.Enabled = false;
+            this.helpProvider1.SetHelpString(this.lblPerscribedCancel, "This cancels the changes to the prescribed medication details");
+            this.lblPerscribedCancel.Location = new System.Drawing.Point(183, 338);
+            this.lblPerscribedCancel.Name = "lblPerscribedCancel";
+            this.helpProvider1.SetShowHelp(this.lblPerscribedCancel, true);
+            this.lblPerscribedCancel.Size = new System.Drawing.Size(40, 13);
+            this.lblPerscribedCancel.TabIndex = 27;
+            this.lblPerscribedCancel.TabStop = true;
+            this.lblPerscribedCancel.Text = "Cancel";
+            this.ttpToolTips.SetToolTip(this.lblPerscribedCancel, "Click here to cancel the changes made to the prescribed medication details");
+            this.lblPerscribedCancel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblPerscribedCancel_LinkClicked);
+            // 
+            // lblPerscribedSelected
+            // 
+            this.lblPerscribedSelected.AutoSize = true;
+            this.lblPerscribedSelected.Enabled = false;
+            this.helpProvider1.SetHelpString(this.lblPerscribedSelected, "THIS CANNOT BE UNDONE!");
+            this.lblPerscribedSelected.Location = new System.Drawing.Point(131, 194);
+            this.lblPerscribedSelected.Name = "lblPerscribedSelected";
+            this.helpProvider1.SetShowHelp(this.lblPerscribedSelected, true);
+            this.lblPerscribedSelected.Size = new System.Drawing.Size(92, 13);
+            this.lblPerscribedSelected.TabIndex = 25;
+            this.lblPerscribedSelected.TabStop = true;
+            this.lblPerscribedSelected.Text = "Remove Selected";
+            this.ttpToolTips.SetToolTip(this.lblPerscribedSelected, "Removes the selected perscribed medication from the database. THIS CANNOT BE UNDO" +
+        "NE!");
+            // 
+            // lblPerscribedSave
+            // 
+            this.lblPerscribedSave.AutoSize = true;
+            this.lblPerscribedSave.Enabled = false;
+            this.helpProvider1.SetHelpString(this.lblPerscribedSave, "This saves the changes to the prescribed medication details");
+            this.lblPerscribedSave.Location = new System.Drawing.Point(145, 338);
+            this.lblPerscribedSave.Name = "lblPerscribedSave";
+            this.helpProvider1.SetShowHelp(this.lblPerscribedSave, true);
+            this.lblPerscribedSave.Size = new System.Drawing.Size(32, 13);
+            this.lblPerscribedSave.TabIndex = 26;
+            this.lblPerscribedSave.TabStop = true;
+            this.lblPerscribedSave.Text = "Save";
+            this.ttpToolTips.SetToolTip(this.lblPerscribedSave, "Click here to save the changes made to the prescribed medication details");
+            // 
+            // lblPerscribedEdit
+            // 
+            this.lblPerscribedEdit.AutoSize = true;
+            this.helpProvider1.SetHelpString(this.lblPerscribedEdit, "This allows you to edit the fields in the prescribed details");
+            this.lblPerscribedEdit.Location = new System.Drawing.Point(114, 338);
+            this.lblPerscribedEdit.Name = "lblPerscribedEdit";
+            this.helpProvider1.SetShowHelp(this.lblPerscribedEdit, true);
+            this.lblPerscribedEdit.Size = new System.Drawing.Size(25, 13);
+            this.lblPerscribedEdit.TabIndex = 25;
+            this.lblPerscribedEdit.TabStop = true;
+            this.lblPerscribedEdit.Text = "Edit";
+            this.ttpToolTips.SetToolTip(this.lblPerscribedEdit, "Click here to edit the fields in the prescribed medication details");
+            this.lblPerscribedEdit.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblPerscribedEdit_LinkClicked);
+            // 
+            // lblPerscribedMedicationAdd
+            // 
+            this.lblPerscribedMedicationAdd.AutoSize = true;
+            this.lblPerscribedMedicationAdd.Enabled = false;
+            this.helpProvider1.SetHelpString(this.lblPerscribedMedicationAdd, "This adds the values in the above fields to the database as a new medication with" +
+        " a unique ID");
+            this.lblPerscribedMedicationAdd.Location = new System.Drawing.Point(197, 174);
+            this.lblPerscribedMedicationAdd.Name = "lblPerscribedMedicationAdd";
+            this.helpProvider1.SetShowHelp(this.lblPerscribedMedicationAdd, true);
+            this.lblPerscribedMedicationAdd.Size = new System.Drawing.Size(26, 13);
+            this.lblPerscribedMedicationAdd.TabIndex = 25;
+            this.lblPerscribedMedicationAdd.TabStop = true;
+            this.lblPerscribedMedicationAdd.Text = "Add";
+            this.ttpToolTips.SetToolTip(this.lblPerscribedMedicationAdd, "Adds the medication in the above fields to the database");
+            // 
+            // txtPerscribedNotes
+            // 
+            this.txtPerscribedNotes.Enabled = false;
+            this.txtPerscribedNotes.Location = new System.Drawing.Point(76, 105);
+            this.txtPerscribedNotes.Multiline = true;
+            this.txtPerscribedNotes.Name = "txtPerscribedNotes";
+            this.txtPerscribedNotes.Size = new System.Drawing.Size(149, 63);
+            this.txtPerscribedNotes.TabIndex = 7;
+            this.ttpToolTips.SetToolTip(this.txtPerscribedNotes, "The doctors note on the medication");
+            // 
+            // chkPerscribedChronic
+            // 
+            this.chkPerscribedChronic.AutoSize = true;
+            this.chkPerscribedChronic.Enabled = false;
+            this.chkPerscribedChronic.Location = new System.Drawing.Point(76, 74);
+            this.chkPerscribedChronic.Name = "chkPerscribedChronic";
+            this.chkPerscribedChronic.Size = new System.Drawing.Size(15, 14);
+            this.chkPerscribedChronic.TabIndex = 5;
+            this.ttpToolTips.SetToolTip(this.chkPerscribedChronic, "Is this condition chronic?");
+            this.chkPerscribedChronic.UseVisualStyleBackColor = true;
+            // 
+            // dtpDatePerscribed
+            // 
+            this.dtpDatePerscribed.Enabled = false;
+            this.dtpDatePerscribed.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDatePerscribed.Location = new System.Drawing.Point(76, 47);
+            this.dtpDatePerscribed.Name = "dtpDatePerscribed";
+            this.dtpDatePerscribed.Size = new System.Drawing.Size(149, 20);
+            this.dtpDatePerscribed.TabIndex = 2;
+            this.ttpToolTips.SetToolTip(this.dtpDatePerscribed, "This is the date perscribed");
+            // 
+            // txtPerscribedMedication
+            // 
+            this.txtPerscribedMedication.Enabled = false;
+            this.txtPerscribedMedication.Location = new System.Drawing.Point(76, 20);
+            this.txtPerscribedMedication.Name = "txtPerscribedMedication";
+            this.txtPerscribedMedication.Size = new System.Drawing.Size(149, 20);
+            this.txtPerscribedMedication.TabIndex = 1;
+            this.ttpToolTips.SetToolTip(this.txtPerscribedMedication, "This is your medication");
+            // 
+            // lblImmunisationRemoveSelected
+            // 
+            this.lblImmunisationRemoveSelected.AutoSize = true;
+            this.lblImmunisationRemoveSelected.Enabled = false;
+            this.helpProvider1.SetHelpString(this.lblImmunisationRemoveSelected, "THIS CANNOT BE UNDONE!");
+            this.lblImmunisationRemoveSelected.Location = new System.Drawing.Point(279, 20);
+            this.lblImmunisationRemoveSelected.Name = "lblImmunisationRemoveSelected";
+            this.helpProvider1.SetShowHelp(this.lblImmunisationRemoveSelected, true);
+            this.lblImmunisationRemoveSelected.Size = new System.Drawing.Size(92, 13);
+            this.lblImmunisationRemoveSelected.TabIndex = 37;
+            this.lblImmunisationRemoveSelected.TabStop = true;
+            this.lblImmunisationRemoveSelected.Text = "Remove Selected";
+            this.ttpToolTips.SetToolTip(this.lblImmunisationRemoveSelected, "Removes the selected immunisation from the database. THIS CANNOT BE UNDONE!");
+            this.lblImmunisationRemoveSelected.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblImmunisationRemoveSelected_LinkClicked);
+            // 
+            // lblImmunisationCancel
+            // 
+            this.lblImmunisationCancel.AutoSize = true;
+            this.lblImmunisationCancel.Enabled = false;
+            this.helpProvider1.SetHelpString(this.lblImmunisationCancel, "This cancels the changes to the immunisation details");
+            this.lblImmunisationCancel.Location = new System.Drawing.Point(331, 204);
+            this.lblImmunisationCancel.Name = "lblImmunisationCancel";
+            this.helpProvider1.SetShowHelp(this.lblImmunisationCancel, true);
+            this.lblImmunisationCancel.Size = new System.Drawing.Size(40, 13);
+            this.lblImmunisationCancel.TabIndex = 36;
+            this.lblImmunisationCancel.TabStop = true;
+            this.lblImmunisationCancel.Text = "Cancel";
+            this.ttpToolTips.SetToolTip(this.lblImmunisationCancel, "Click here to cancel the changes made to the immunisation details");
+            this.lblImmunisationCancel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblImmunisationCancel_LinkClicked);
+            // 
+            // lblImmunisationSave
+            // 
+            this.lblImmunisationSave.AutoSize = true;
+            this.lblImmunisationSave.Enabled = false;
+            this.helpProvider1.SetHelpString(this.lblImmunisationSave, "This saves the changes to the immunisation details");
+            this.lblImmunisationSave.Location = new System.Drawing.Point(293, 204);
+            this.lblImmunisationSave.Name = "lblImmunisationSave";
+            this.helpProvider1.SetShowHelp(this.lblImmunisationSave, true);
+            this.lblImmunisationSave.Size = new System.Drawing.Size(32, 13);
+            this.lblImmunisationSave.TabIndex = 34;
+            this.lblImmunisationSave.TabStop = true;
+            this.lblImmunisationSave.Text = "Save";
+            this.ttpToolTips.SetToolTip(this.lblImmunisationSave, "Click here to save the changes made to the immunisation details");
+            // 
+            // txtImmunisation
+            // 
+            this.txtImmunisation.Enabled = false;
+            this.helpProvider1.SetHelpString(this.txtImmunisation, "This is your immunisation");
+            this.txtImmunisation.Location = new System.Drawing.Point(83, 17);
+            this.txtImmunisation.Name = "txtImmunisation";
+            this.helpProvider1.SetShowHelp(this.txtImmunisation, true);
+            this.txtImmunisation.Size = new System.Drawing.Size(106, 20);
+            this.txtImmunisation.TabIndex = 26;
+            this.ttpToolTips.SetToolTip(this.txtImmunisation, "This is your immunisation");
+            // 
+            // lstImmunisationList
+            // 
+            this.lstImmunisationList.FormattingEnabled = true;
+            this.helpProvider1.SetHelpString(this.lstImmunisationList, "This is a list of all your immunisations by ID");
+            this.lstImmunisationList.Location = new System.Drawing.Point(205, 36);
+            this.lstImmunisationList.Name = "lstImmunisationList";
+            this.helpProvider1.SetShowHelp(this.lstImmunisationList, true);
+            this.lstImmunisationList.Size = new System.Drawing.Size(166, 160);
+            this.lstImmunisationList.TabIndex = 35;
+            this.ttpToolTips.SetToolTip(this.lstImmunisationList, "This is a list of all your immunisations");
+            this.lstImmunisationList.SelectedIndexChanged += new System.EventHandler(this.lstImmunisationList_SelectedIndexChanged);
+            // 
+            // dtpImmunisationDate
+            // 
+            this.dtpImmunisationDate.Enabled = false;
+            this.dtpImmunisationDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpImmunisationDate.Location = new System.Drawing.Point(72, 43);
+            this.dtpImmunisationDate.Name = "dtpImmunisationDate";
+            this.dtpImmunisationDate.Size = new System.Drawing.Size(117, 20);
+            this.dtpImmunisationDate.TabIndex = 27;
+            this.ttpToolTips.SetToolTip(this.dtpImmunisationDate, "This is the date of your immunisation");
+            // 
+            // lblImmunisationEdit
+            // 
+            this.lblImmunisationEdit.AutoSize = true;
+            this.helpProvider1.SetHelpString(this.lblImmunisationEdit, "This allows you to edit the fields in the immunisation details");
+            this.lblImmunisationEdit.Location = new System.Drawing.Point(262, 204);
+            this.lblImmunisationEdit.Name = "lblImmunisationEdit";
+            this.helpProvider1.SetShowHelp(this.lblImmunisationEdit, true);
+            this.lblImmunisationEdit.Size = new System.Drawing.Size(25, 13);
+            this.lblImmunisationEdit.TabIndex = 32;
+            this.lblImmunisationEdit.TabStop = true;
+            this.lblImmunisationEdit.Text = "Edit";
+            this.ttpToolTips.SetToolTip(this.lblImmunisationEdit, "Click here to edit the fields in the immunisation details");
+            this.lblImmunisationEdit.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblImmunisationEdit_LinkClicked);
+            // 
+            // lblImmunisationAdd
+            // 
+            this.lblImmunisationAdd.AutoSize = true;
+            this.lblImmunisationAdd.Enabled = false;
+            this.helpProvider1.SetHelpString(this.lblImmunisationAdd, "This adds the values in the above fields to the database as a new immunisation wi" +
+        "th a unique ID");
+            this.lblImmunisationAdd.Location = new System.Drawing.Point(163, 204);
+            this.lblImmunisationAdd.Name = "lblImmunisationAdd";
+            this.helpProvider1.SetShowHelp(this.lblImmunisationAdd, true);
+            this.lblImmunisationAdd.Size = new System.Drawing.Size(26, 13);
+            this.lblImmunisationAdd.TabIndex = 33;
+            this.lblImmunisationAdd.TabStop = true;
+            this.lblImmunisationAdd.Text = "Add";
+            this.ttpToolTips.SetToolTip(this.lblImmunisationAdd, "This adds the immunisation to the database");
+            // 
+            // txtImmunisationNote
+            // 
+            this.txtImmunisationNote.Enabled = false;
+            this.txtImmunisationNote.Location = new System.Drawing.Point(72, 68);
+            this.txtImmunisationNote.Multiline = true;
+            this.txtImmunisationNote.Name = "txtImmunisationNote";
+            this.txtImmunisationNote.Size = new System.Drawing.Size(117, 128);
+            this.txtImmunisationNote.TabIndex = 31;
+            this.ttpToolTips.SetToolTip(this.txtImmunisationNote, "This is the doctors note on the immunisation");
+            // 
+            // txtWeight
+            // 
+            this.txtWeight.Enabled = false;
+            this.helpProvider1.SetHelpString(this.txtWeight, "Enter your weight in pounds");
+            this.txtWeight.Location = new System.Drawing.Point(54, 178);
+            this.txtWeight.Name = "txtWeight";
+            this.helpProvider1.SetShowHelp(this.txtWeight, true);
+            this.txtWeight.Size = new System.Drawing.Size(71, 20);
+            this.txtWeight.TabIndex = 9;
+            this.ttpToolTips.SetToolTip(this.txtWeight, "This is your weight in pounds");
+            // 
+            // lblPersonalMedicalDetailsCancel
+            // 
+            this.lblPersonalMedicalDetailsCancel.AutoSize = true;
+            this.lblPersonalMedicalDetailsCancel.Enabled = false;
+            this.helpProvider1.SetHelpString(this.lblPersonalMedicalDetailsCancel, "This allows you to cancel the changes made to the personal medical details");
+            this.lblPersonalMedicalDetailsCancel.Location = new System.Drawing.Point(101, 204);
+            this.lblPersonalMedicalDetailsCancel.Name = "lblPersonalMedicalDetailsCancel";
+            this.helpProvider1.SetShowHelp(this.lblPersonalMedicalDetailsCancel, true);
+            this.lblPersonalMedicalDetailsCancel.Size = new System.Drawing.Size(40, 13);
+            this.lblPersonalMedicalDetailsCancel.TabIndex = 25;
+            this.lblPersonalMedicalDetailsCancel.TabStop = true;
+            this.lblPersonalMedicalDetailsCancel.Text = "Cancel";
+            this.ttpToolTips.SetToolTip(this.lblPersonalMedicalDetailsCancel, "Cancel changes to personal medical details");
+            this.lblPersonalMedicalDetailsCancel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblPersonalMedicalDetailsCancel_LinkClicked);
+            // 
+            // lblPersonalMedicalDetailsEdit
+            // 
+            this.lblPersonalMedicalDetailsEdit.AutoSize = true;
+            this.helpProvider1.SetHelpString(this.lblPersonalMedicalDetailsEdit, "This allows you to edit the personal medical details");
+            this.lblPersonalMedicalDetailsEdit.Location = new System.Drawing.Point(32, 204);
+            this.lblPersonalMedicalDetailsEdit.Name = "lblPersonalMedicalDetailsEdit";
+            this.helpProvider1.SetShowHelp(this.lblPersonalMedicalDetailsEdit, true);
+            this.lblPersonalMedicalDetailsEdit.Size = new System.Drawing.Size(25, 13);
+            this.lblPersonalMedicalDetailsEdit.TabIndex = 23;
+            this.lblPersonalMedicalDetailsEdit.TabStop = true;
+            this.lblPersonalMedicalDetailsEdit.Text = "Edit";
+            this.ttpToolTips.SetToolTip(this.lblPersonalMedicalDetailsEdit, "Click here to edit your personal details");
+            this.lblPersonalMedicalDetailsEdit.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblPersonalMedicalDetailsEdit_LinkClicked);
+            // 
+            // txtHeight
+            // 
+            this.txtHeight.Enabled = false;
+            this.helpProvider1.SetHelpString(this.txtHeight, "Enter your height in inches");
+            this.txtHeight.Location = new System.Drawing.Point(54, 152);
+            this.txtHeight.Name = "txtHeight";
+            this.helpProvider1.SetShowHelp(this.txtHeight, true);
+            this.txtHeight.Size = new System.Drawing.Size(71, 20);
+            this.txtHeight.TabIndex = 8;
+            this.ttpToolTips.SetToolTip(this.txtHeight, "This is your height in inches");
+            // 
+            // lblPersonalMedicalDetailsSave
+            // 
+            this.lblPersonalMedicalDetailsSave.AutoSize = true;
+            this.lblPersonalMedicalDetailsSave.Enabled = false;
+            this.helpProvider1.SetHelpString(this.lblPersonalMedicalDetailsSave, "This allows you to save the changes made to the  personal medical details");
+            this.lblPersonalMedicalDetailsSave.Location = new System.Drawing.Point(63, 204);
+            this.lblPersonalMedicalDetailsSave.Name = "lblPersonalMedicalDetailsSave";
+            this.helpProvider1.SetShowHelp(this.lblPersonalMedicalDetailsSave, true);
+            this.lblPersonalMedicalDetailsSave.Size = new System.Drawing.Size(32, 13);
+            this.lblPersonalMedicalDetailsSave.TabIndex = 24;
+            this.lblPersonalMedicalDetailsSave.TabStop = true;
+            this.lblPersonalMedicalDetailsSave.Text = "Save";
+            this.ttpToolTips.SetToolTip(this.lblPersonalMedicalDetailsSave, "Saves the changes to the personal medical details");
+            this.lblPersonalMedicalDetailsSave.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblPersonalMedicalDetailsSave_LinkClicked);
+            // 
+            // rdoHIVUnknown
+            // 
+            this.rdoHIVUnknown.AutoSize = true;
+            this.rdoHIVUnknown.Enabled = false;
+            this.helpProvider1.SetHelpString(this.rdoHIVUnknown, "Click on the radio buttons that describe your HIV status");
+            this.rdoHIVUnknown.Location = new System.Drawing.Point(40, 129);
+            this.rdoHIVUnknown.Name = "rdoHIVUnknown";
+            this.helpProvider1.SetShowHelp(this.rdoHIVUnknown, true);
+            this.rdoHIVUnknown.Size = new System.Drawing.Size(71, 17);
+            this.rdoHIVUnknown.TabIndex = 7;
+            this.rdoHIVUnknown.TabStop = true;
+            this.rdoHIVUnknown.Text = "Unknown";
+            this.ttpToolTips.SetToolTip(this.rdoHIVUnknown, "Your HIV status is unknown");
+            this.rdoHIVUnknown.UseVisualStyleBackColor = true;
+            // 
+            // rdoHIVNegative
+            // 
+            this.rdoHIVNegative.AutoSize = true;
+            this.rdoHIVNegative.Enabled = false;
+            this.helpProvider1.SetHelpString(this.rdoHIVNegative, "Click on the radio buttons that describe your HIV status");
+            this.rdoHIVNegative.Location = new System.Drawing.Point(40, 106);
+            this.rdoHIVNegative.Name = "rdoHIVNegative";
+            this.helpProvider1.SetShowHelp(this.rdoHIVNegative, true);
+            this.rdoHIVNegative.Size = new System.Drawing.Size(68, 17);
+            this.rdoHIVNegative.TabIndex = 6;
+            this.rdoHIVNegative.TabStop = true;
+            this.rdoHIVNegative.Text = "Negative";
+            this.ttpToolTips.SetToolTip(this.rdoHIVNegative, "You are HIV negative");
+            this.rdoHIVNegative.UseVisualStyleBackColor = true;
+            // 
+            // rdoHIVPositive
+            // 
+            this.rdoHIVPositive.AutoSize = true;
+            this.rdoHIVPositive.Enabled = false;
+            this.helpProvider1.SetHelpString(this.rdoHIVPositive, "Click on the radio buttons that describe your HIV status");
+            this.rdoHIVPositive.Location = new System.Drawing.Point(40, 83);
+            this.rdoHIVPositive.Name = "rdoHIVPositive";
+            this.helpProvider1.SetShowHelp(this.rdoHIVPositive, true);
+            this.rdoHIVPositive.Size = new System.Drawing.Size(62, 17);
+            this.rdoHIVPositive.TabIndex = 5;
+            this.rdoHIVPositive.TabStop = true;
+            this.rdoHIVPositive.Text = "Positive";
+            this.ttpToolTips.SetToolTip(this.rdoHIVPositive, "You are HIV positive");
+            this.rdoHIVPositive.UseVisualStyleBackColor = true;
+            // 
+            // lblHivStatus
+            // 
+            this.lblHivStatus.AutoSize = true;
+            this.helpProvider1.SetHelpString(this.lblHivStatus, "Click on the radio buttons that describe your HIV status");
+            this.lblHivStatus.Location = new System.Drawing.Point(7, 67);
+            this.lblHivStatus.Name = "lblHivStatus";
+            this.helpProvider1.SetShowHelp(this.lblHivStatus, true);
+            this.lblHivStatus.Size = new System.Drawing.Size(61, 13);
+            this.lblHivStatus.TabIndex = 4;
+            this.lblHivStatus.Text = "HIV Status:";
+            this.ttpToolTips.SetToolTip(this.lblHivStatus, "This is your HIV status");
+            // 
+            // chkOrganDonor
+            // 
+            this.chkOrganDonor.AutoSize = true;
+            this.chkOrganDonor.Enabled = false;
+            this.helpProvider1.SetHelpString(this.chkOrganDonor, "Click here if you are an organ donor");
+            this.chkOrganDonor.Location = new System.Drawing.Point(87, 44);
+            this.chkOrganDonor.Name = "chkOrganDonor";
+            this.helpProvider1.SetShowHelp(this.chkOrganDonor, true);
+            this.chkOrganDonor.Size = new System.Drawing.Size(15, 14);
+            this.chkOrganDonor.TabIndex = 2;
+            this.ttpToolTips.SetToolTip(this.chkOrganDonor, "This is your organ donor status");
+            this.chkOrganDonor.UseVisualStyleBackColor = true;
+            // 
+            // cboBloodGroup
+            // 
+            this.cboBloodGroup.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboBloodGroup.Enabled = false;
+            this.cboBloodGroup.FormattingEnabled = true;
+            this.helpProvider1.SetHelpString(this.cboBloodGroup, "Select a blood type from the drop down menu");
+            this.cboBloodGroup.Items.AddRange(new object[] {
+            "",
+            "O+",
+            "O-",
+            "A+",
+            "A-",
+            "B+",
+            "B-",
+            "AB+",
+            "AB-"});
+            this.cboBloodGroup.Location = new System.Drawing.Point(79, 17);
+            this.cboBloodGroup.Name = "cboBloodGroup";
+            this.helpProvider1.SetShowHelp(this.cboBloodGroup, true);
+            this.cboBloodGroup.Size = new System.Drawing.Size(87, 21);
+            this.cboBloodGroup.TabIndex = 1;
+            this.ttpToolTips.SetToolTip(this.cboBloodGroup, "This is your blood type");
+            // 
+            // lblAllergyDetailsRemoveSelected
+            // 
+            this.lblAllergyDetailsRemoveSelected.AutoSize = true;
+            this.lblAllergyDetailsRemoveSelected.Enabled = false;
+            this.helpProvider1.SetHelpString(this.lblAllergyDetailsRemoveSelected, "THIS CANNOT BE UNDONE!");
+            this.lblAllergyDetailsRemoveSelected.Location = new System.Drawing.Point(298, 19);
+            this.lblAllergyDetailsRemoveSelected.Name = "lblAllergyDetailsRemoveSelected";
+            this.helpProvider1.SetShowHelp(this.lblAllergyDetailsRemoveSelected, true);
+            this.lblAllergyDetailsRemoveSelected.Size = new System.Drawing.Size(92, 13);
+            this.lblAllergyDetailsRemoveSelected.TabIndex = 24;
+            this.lblAllergyDetailsRemoveSelected.TabStop = true;
+            this.lblAllergyDetailsRemoveSelected.Text = "Remove Selected";
+            this.ttpToolTips.SetToolTip(this.lblAllergyDetailsRemoveSelected, "This removes an allergy. THIS CANNOT BE UNDONE!");
+            this.lblAllergyDetailsRemoveSelected.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblAllergyDetailsRemoveSelected_LinkClicked);
+            // 
+            // lblAllergyDetailsCancel
+            // 
+            this.lblAllergyDetailsCancel.AutoSize = true;
+            this.lblAllergyDetailsCancel.Enabled = false;
+            this.helpProvider1.SetHelpString(this.lblAllergyDetailsCancel, "This cancels the changes to the allergy details");
+            this.lblAllergyDetailsCancel.Location = new System.Drawing.Point(336, 203);
+            this.lblAllergyDetailsCancel.Name = "lblAllergyDetailsCancel";
+            this.helpProvider1.SetShowHelp(this.lblAllergyDetailsCancel, true);
+            this.lblAllergyDetailsCancel.Size = new System.Drawing.Size(40, 13);
+            this.lblAllergyDetailsCancel.TabIndex = 23;
+            this.lblAllergyDetailsCancel.TabStop = true;
+            this.lblAllergyDetailsCancel.Text = "Cancel";
+            this.ttpToolTips.SetToolTip(this.lblAllergyDetailsCancel, "Click here to cancel the changes made to the allergy details");
+            this.lblAllergyDetailsCancel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblAllergyDetailsCancel_LinkClicked);
+            // 
+            // lblAllergyDetailsSave
+            // 
+            this.lblAllergyDetailsSave.AutoSize = true;
+            this.lblAllergyDetailsSave.Enabled = false;
+            this.helpProvider1.SetHelpString(this.lblAllergyDetailsSave, "This saves the changes to the allergy details");
+            this.lblAllergyDetailsSave.Location = new System.Drawing.Point(298, 203);
+            this.lblAllergyDetailsSave.Name = "lblAllergyDetailsSave";
+            this.helpProvider1.SetShowHelp(this.lblAllergyDetailsSave, true);
+            this.lblAllergyDetailsSave.Size = new System.Drawing.Size(32, 13);
+            this.lblAllergyDetailsSave.TabIndex = 22;
+            this.lblAllergyDetailsSave.TabStop = true;
+            this.lblAllergyDetailsSave.Text = "Save";
+            this.ttpToolTips.SetToolTip(this.lblAllergyDetailsSave, "Click here to save the changes made to the allergy details");
+            // 
+            // lstAllergies
+            // 
+            this.lstAllergies.FormattingEnabled = true;
+            this.helpProvider1.SetHelpString(this.lstAllergies, "This is a list of allergies by allergy by ID");
+            this.lstAllergies.Location = new System.Drawing.Point(214, 35);
+            this.lstAllergies.Name = "lstAllergies";
+            this.helpProvider1.SetShowHelp(this.lstAllergies, true);
+            this.lstAllergies.Size = new System.Drawing.Size(176, 160);
+            this.lstAllergies.TabIndex = 22;
+            this.ttpToolTips.SetToolTip(this.lstAllergies, "List of allergies");
+            this.lstAllergies.SelectedIndexChanged += new System.EventHandler(this.lstAllergies_SelectedIndexChanged);
+            // 
+            // lblAllergyDetailsEdit
+            // 
+            this.lblAllergyDetailsEdit.AutoSize = true;
+            this.helpProvider1.SetHelpString(this.lblAllergyDetailsEdit, "This allows you to edit the fields in the allergy details");
+            this.lblAllergyDetailsEdit.Location = new System.Drawing.Point(267, 203);
+            this.lblAllergyDetailsEdit.Name = "lblAllergyDetailsEdit";
+            this.helpProvider1.SetShowHelp(this.lblAllergyDetailsEdit, true);
+            this.lblAllergyDetailsEdit.Size = new System.Drawing.Size(25, 13);
+            this.lblAllergyDetailsEdit.TabIndex = 21;
+            this.lblAllergyDetailsEdit.TabStop = true;
+            this.lblAllergyDetailsEdit.Text = "Edit";
+            this.ttpToolTips.SetToolTip(this.lblAllergyDetailsEdit, "Click here to edit the fields in the allergy details");
+            this.lblAllergyDetailsEdit.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblAllergyDetailsEdit_LinkClicked);
+            // 
+            // lblAllergiesAdd
+            // 
+            this.lblAllergiesAdd.AutoSize = true;
+            this.lblAllergiesAdd.Enabled = false;
+            this.helpProvider1.SetHelpString(this.lblAllergiesAdd, "This adds the values in the above fields to the database as a new allergy with a " +
+        "unique ID");
+            this.lblAllergiesAdd.Location = new System.Drawing.Point(176, 203);
+            this.lblAllergiesAdd.Name = "lblAllergiesAdd";
+            this.helpProvider1.SetShowHelp(this.lblAllergiesAdd, true);
+            this.lblAllergiesAdd.Size = new System.Drawing.Size(26, 13);
+            this.lblAllergiesAdd.TabIndex = 21;
+            this.lblAllergiesAdd.TabStop = true;
+            this.lblAllergiesAdd.Text = "Add";
+            this.ttpToolTips.SetToolTip(this.lblAllergiesAdd, "Adds the allergy in the above fields to the database");
+            this.lblAllergiesAdd.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblAllergiesAdd_LinkClicked);
+            // 
+            // txtAllergyNote
+            // 
+            this.txtAllergyNote.Enabled = false;
+            this.txtAllergyNote.Location = new System.Drawing.Point(73, 67);
+            this.txtAllergyNote.Multiline = true;
+            this.txtAllergyNote.Name = "txtAllergyNote";
+            this.txtAllergyNote.Size = new System.Drawing.Size(131, 128);
+            this.txtAllergyNote.TabIndex = 7;
+            this.ttpToolTips.SetToolTip(this.txtAllergyNote, "These are the doctors notes on the allergy");
+            // 
+            // dtpOnset
+            // 
+            this.dtpOnset.Enabled = false;
+            this.dtpOnset.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpOnset.Location = new System.Drawing.Point(73, 42);
+            this.dtpOnset.Name = "dtpOnset";
+            this.dtpOnset.Size = new System.Drawing.Size(131, 20);
+            this.dtpOnset.TabIndex = 2;
+            this.ttpToolTips.SetToolTip(this.dtpOnset, "The onset of the allergy");
+            // 
+            // txtAllergicTo
+            // 
+            this.txtAllergicTo.Enabled = false;
+            this.helpProvider1.SetHelpString(this.txtAllergicTo, "This is your allergen");
+            this.txtAllergicTo.Location = new System.Drawing.Point(73, 16);
+            this.txtAllergicTo.Name = "txtAllergicTo";
+            this.helpProvider1.SetShowHelp(this.txtAllergicTo, true);
+            this.txtAllergicTo.Size = new System.Drawing.Size(131, 20);
+            this.txtAllergicTo.TabIndex = 1;
+            this.ttpToolTips.SetToolTip(this.txtAllergicTo, "This is your allergen");
+            // 
+            // txtPrimarySpecialty
+            // 
+            this.txtPrimarySpecialty.Enabled = false;
+            this.txtPrimarySpecialty.Location = new System.Drawing.Point(97, 43);
+            this.txtPrimarySpecialty.Name = "txtPrimarySpecialty";
+            this.txtPrimarySpecialty.Size = new System.Drawing.Size(178, 20);
+            this.txtPrimarySpecialty.TabIndex = 18;
+            this.ttpToolTips.SetToolTip(this.txtPrimarySpecialty, "This is your primary care doctors specialty");
+            // 
+            // lblPrimaryCancel
+            // 
+            this.lblPrimaryCancel.AutoSize = true;
+            this.lblPrimaryCancel.Enabled = false;
+            this.lblPrimaryCancel.Location = new System.Drawing.Point(421, 264);
+            this.lblPrimaryCancel.Name = "lblPrimaryCancel";
+            this.lblPrimaryCancel.Size = new System.Drawing.Size(40, 13);
+            this.lblPrimaryCancel.TabIndex = 17;
+            this.lblPrimaryCancel.TabStop = true;
+            this.lblPrimaryCancel.Text = "Cancel";
+            this.ttpToolTips.SetToolTip(this.lblPrimaryCancel, "Click here to cancel changes made to your primary care provider details");
+            this.lblPrimaryCancel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblPrimaryCancel_LinkClicked);
+            // 
+            // txtPrimaryPostalCode
+            // 
+            this.txtPrimaryPostalCode.Enabled = false;
+            this.txtPrimaryPostalCode.Location = new System.Drawing.Point(373, 69);
+            this.txtPrimaryPostalCode.Name = "txtPrimaryPostalCode";
+            this.txtPrimaryPostalCode.Size = new System.Drawing.Size(86, 20);
+            this.txtPrimaryPostalCode.TabIndex = 49;
+            this.ttpToolTips.SetToolTip(this.txtPrimaryPostalCode, "This is your primary care doctors postal code");
+            // 
+            // lblPrimarySave
+            // 
+            this.lblPrimarySave.AutoSize = true;
+            this.lblPrimarySave.Enabled = false;
+            this.lblPrimarySave.Location = new System.Drawing.Point(383, 264);
+            this.lblPrimarySave.Name = "lblPrimarySave";
+            this.lblPrimarySave.Size = new System.Drawing.Size(32, 13);
+            this.lblPrimarySave.TabIndex = 16;
+            this.lblPrimarySave.TabStop = true;
+            this.lblPrimarySave.Text = "Save";
+            this.ttpToolTips.SetToolTip(this.lblPrimarySave, "Click here to save changes made to your primary care provider details");
+            this.lblPrimarySave.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblPrimarySave_LinkClicked);
+            // 
+            // lblPrimaryEdit
+            // 
+            this.lblPrimaryEdit.AutoSize = true;
+            this.lblPrimaryEdit.Location = new System.Drawing.Point(352, 264);
+            this.lblPrimaryEdit.Name = "lblPrimaryEdit";
+            this.lblPrimaryEdit.Size = new System.Drawing.Size(25, 13);
+            this.lblPrimaryEdit.TabIndex = 15;
+            this.lblPrimaryEdit.TabStop = true;
+            this.lblPrimaryEdit.Text = "Edit";
+            this.ttpToolTips.SetToolTip(this.lblPrimaryEdit, "Click here to edit your primary care provider details");
+            this.lblPrimaryEdit.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblPrimaryEdit_LinkClicked);
+            // 
+            // txtPrimaryName
+            // 
+            this.txtPrimaryName.Enabled = false;
+            this.txtPrimaryName.Location = new System.Drawing.Point(97, 17);
+            this.txtPrimaryName.Name = "txtPrimaryName";
+            this.txtPrimaryName.Size = new System.Drawing.Size(362, 20);
+            this.txtPrimaryName.TabIndex = 1;
+            this.ttpToolTips.SetToolTip(this.txtPrimaryName, "This is your primary care doctor");
+            // 
+            // txtPrimaryEmail
+            // 
+            this.txtPrimaryEmail.Enabled = false;
+            this.txtPrimaryEmail.Location = new System.Drawing.Point(339, 93);
+            this.txtPrimaryEmail.Name = "txtPrimaryEmail";
+            this.txtPrimaryEmail.Size = new System.Drawing.Size(120, 20);
+            this.txtPrimaryEmail.TabIndex = 47;
+            this.ttpToolTips.SetToolTip(this.txtPrimaryEmail, "This is your primary care doctors email address");
+            // 
+            // txtPrimaryHomePhone
+            // 
+            this.txtPrimaryHomePhone.Enabled = false;
+            this.txtPrimaryHomePhone.Location = new System.Drawing.Point(97, 167);
+            this.txtPrimaryHomePhone.Name = "txtPrimaryHomePhone";
+            this.txtPrimaryHomePhone.Size = new System.Drawing.Size(178, 20);
+            this.txtPrimaryHomePhone.TabIndex = 39;
+            this.ttpToolTips.SetToolTip(this.txtPrimaryHomePhone, "This is your primary care doctors home phone");
+            // 
+            // txtPrimaryFaxNumber
+            // 
+            this.txtPrimaryFaxNumber.Enabled = false;
+            this.txtPrimaryFaxNumber.Location = new System.Drawing.Point(97, 245);
+            this.txtPrimaryFaxNumber.Name = "txtPrimaryFaxNumber";
+            this.txtPrimaryFaxNumber.Size = new System.Drawing.Size(178, 20);
+            this.txtPrimaryFaxNumber.TabIndex = 45;
+            this.ttpToolTips.SetToolTip(this.txtPrimaryFaxNumber, "This is your primary care doctors fax number");
+            // 
+            // txtPrimaryCity
+            // 
+            this.txtPrimaryCity.Enabled = false;
+            this.txtPrimaryCity.Location = new System.Drawing.Point(97, 115);
+            this.txtPrimaryCity.Name = "txtPrimaryCity";
+            this.txtPrimaryCity.Size = new System.Drawing.Size(178, 20);
+            this.txtPrimaryCity.TabIndex = 37;
+            this.ttpToolTips.SetToolTip(this.txtPrimaryCity, "This is your primary care doctors city");
+            // 
+            // txtPrimaryState
+            // 
+            this.txtPrimaryState.Enabled = false;
+            this.txtPrimaryState.Location = new System.Drawing.Point(97, 141);
+            this.txtPrimaryState.Name = "txtPrimaryState";
+            this.txtPrimaryState.Size = new System.Drawing.Size(178, 20);
+            this.txtPrimaryState.TabIndex = 36;
+            this.ttpToolTips.SetToolTip(this.txtPrimaryState, "This is your primary care doctors state");
+            // 
+            // txtPrimaryMobilePhone
+            // 
+            this.txtPrimaryMobilePhone.Enabled = false;
+            this.txtPrimaryMobilePhone.Location = new System.Drawing.Point(97, 193);
+            this.txtPrimaryMobilePhone.Name = "txtPrimaryMobilePhone";
+            this.txtPrimaryMobilePhone.Size = new System.Drawing.Size(178, 20);
+            this.txtPrimaryMobilePhone.TabIndex = 41;
+            this.ttpToolTips.SetToolTip(this.txtPrimaryMobilePhone, "This is your primary care doctors mobile phone");
+            // 
+            // txtPrimaryWorkPhone
+            // 
+            this.txtPrimaryWorkPhone.Enabled = false;
+            this.txtPrimaryWorkPhone.Location = new System.Drawing.Point(97, 219);
+            this.txtPrimaryWorkPhone.Name = "txtPrimaryWorkPhone";
+            this.txtPrimaryWorkPhone.Size = new System.Drawing.Size(178, 20);
+            this.txtPrimaryWorkPhone.TabIndex = 43;
+            this.ttpToolTips.SetToolTip(this.txtPrimaryWorkPhone, "This is your primary care doctors work phone");
+            // 
+            // txtPrimaryAddress
+            // 
+            this.txtPrimaryAddress.Enabled = false;
+            this.txtPrimaryAddress.Location = new System.Drawing.Point(97, 69);
+            this.txtPrimaryAddress.Multiline = true;
+            this.txtPrimaryAddress.Name = "txtPrimaryAddress";
+            this.txtPrimaryAddress.Size = new System.Drawing.Size(178, 40);
+            this.txtPrimaryAddress.TabIndex = 34;
+            this.ttpToolTips.SetToolTip(this.txtPrimaryAddress, "This is your primary care doctors home address");
+            // 
+            // txtEmergencyRelationship
+            // 
+            this.txtEmergencyRelationship.Enabled = false;
+            this.txtEmergencyRelationship.Location = new System.Drawing.Point(97, 43);
+            this.txtEmergencyRelationship.Name = "txtEmergencyRelationship";
+            this.txtEmergencyRelationship.Size = new System.Drawing.Size(178, 20);
+            this.txtEmergencyRelationship.TabIndex = 18;
+            this.ttpToolTips.SetToolTip(this.txtEmergencyRelationship, "The relationship of your next of kin");
+            // 
+            // lblEmergencyContactDetailsCancel
+            // 
+            this.lblEmergencyContactDetailsCancel.AutoSize = true;
+            this.lblEmergencyContactDetailsCancel.Enabled = false;
+            this.lblEmergencyContactDetailsCancel.Location = new System.Drawing.Point(421, 274);
+            this.lblEmergencyContactDetailsCancel.Name = "lblEmergencyContactDetailsCancel";
+            this.lblEmergencyContactDetailsCancel.Size = new System.Drawing.Size(40, 13);
+            this.lblEmergencyContactDetailsCancel.TabIndex = 17;
+            this.lblEmergencyContactDetailsCancel.TabStop = true;
+            this.lblEmergencyContactDetailsCancel.Text = "Cancel";
+            this.ttpToolTips.SetToolTip(this.lblEmergencyContactDetailsCancel, "Click here to cancel changes to the emergency contact details");
+            this.lblEmergencyContactDetailsCancel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblEmergencyContactDetailsCancel_LinkClicked);
+            // 
+            // txtEmergencyPostalCode
+            // 
+            this.txtEmergencyPostalCode.Enabled = false;
+            this.txtEmergencyPostalCode.Location = new System.Drawing.Point(373, 69);
+            this.txtEmergencyPostalCode.Name = "txtEmergencyPostalCode";
+            this.txtEmergencyPostalCode.Size = new System.Drawing.Size(86, 20);
+            this.txtEmergencyPostalCode.TabIndex = 49;
+            this.ttpToolTips.SetToolTip(this.txtEmergencyPostalCode, "Your next of kin\'s postal code");
+            // 
+            // lblEmergencyContactDetailsSave
+            // 
+            this.lblEmergencyContactDetailsSave.AutoSize = true;
+            this.lblEmergencyContactDetailsSave.Enabled = false;
+            this.lblEmergencyContactDetailsSave.Location = new System.Drawing.Point(383, 274);
+            this.lblEmergencyContactDetailsSave.Name = "lblEmergencyContactDetailsSave";
+            this.lblEmergencyContactDetailsSave.Size = new System.Drawing.Size(32, 13);
+            this.lblEmergencyContactDetailsSave.TabIndex = 16;
+            this.lblEmergencyContactDetailsSave.TabStop = true;
+            this.lblEmergencyContactDetailsSave.Text = "Save";
+            this.ttpToolTips.SetToolTip(this.lblEmergencyContactDetailsSave, "Click here to save changes to the emergency contact details");
+            // 
+            // lblEmergencyContactDetailsEdit
+            // 
+            this.lblEmergencyContactDetailsEdit.AutoSize = true;
+            this.lblEmergencyContactDetailsEdit.Location = new System.Drawing.Point(352, 274);
+            this.lblEmergencyContactDetailsEdit.Name = "lblEmergencyContactDetailsEdit";
+            this.lblEmergencyContactDetailsEdit.Size = new System.Drawing.Size(25, 13);
+            this.lblEmergencyContactDetailsEdit.TabIndex = 15;
+            this.lblEmergencyContactDetailsEdit.TabStop = true;
+            this.lblEmergencyContactDetailsEdit.Text = "Edit";
+            this.ttpToolTips.SetToolTip(this.lblEmergencyContactDetailsEdit, "Click here to edit the emeregency contact details");
+            this.lblEmergencyContactDetailsEdit.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblEmergencyContactDetailsEdit_LinkClicked);
+            // 
+            // txtNextOfKin
+            // 
+            this.txtNextOfKin.Enabled = false;
+            this.txtNextOfKin.Location = new System.Drawing.Point(97, 17);
+            this.txtNextOfKin.Name = "txtNextOfKin";
+            this.txtNextOfKin.Size = new System.Drawing.Size(362, 20);
+            this.txtNextOfKin.TabIndex = 1;
+            this.ttpToolTips.SetToolTip(this.txtNextOfKin, "This is your next of kin");
+            // 
+            // txtEmergencyEmail
+            // 
+            this.txtEmergencyEmail.Enabled = false;
+            this.txtEmergencyEmail.Location = new System.Drawing.Point(97, 271);
+            this.txtEmergencyEmail.Name = "txtEmergencyEmail";
+            this.txtEmergencyEmail.Size = new System.Drawing.Size(178, 20);
+            this.txtEmergencyEmail.TabIndex = 47;
+            this.ttpToolTips.SetToolTip(this.txtEmergencyEmail, "Your next of kin\'s email");
+            // 
+            // txtEmergencyHomePhone
+            // 
+            this.txtEmergencyHomePhone.Enabled = false;
+            this.txtEmergencyHomePhone.Location = new System.Drawing.Point(97, 167);
+            this.txtEmergencyHomePhone.Name = "txtEmergencyHomePhone";
+            this.txtEmergencyHomePhone.Size = new System.Drawing.Size(178, 20);
+            this.txtEmergencyHomePhone.TabIndex = 39;
+            this.ttpToolTips.SetToolTip(this.txtEmergencyHomePhone, "Your next of kin\'s home phone");
+            // 
+            // txtEmergencyFax
+            // 
+            this.txtEmergencyFax.Enabled = false;
+            this.txtEmergencyFax.Location = new System.Drawing.Point(97, 245);
+            this.txtEmergencyFax.Name = "txtEmergencyFax";
+            this.txtEmergencyFax.Size = new System.Drawing.Size(178, 20);
+            this.txtEmergencyFax.TabIndex = 45;
+            this.ttpToolTips.SetToolTip(this.txtEmergencyFax, "Your next of kin\'s fax number");
+            // 
+            // txtEmergencyCity
+            // 
+            this.txtEmergencyCity.Enabled = false;
+            this.txtEmergencyCity.Location = new System.Drawing.Point(97, 141);
+            this.txtEmergencyCity.Name = "txtEmergencyCity";
+            this.txtEmergencyCity.Size = new System.Drawing.Size(178, 20);
+            this.txtEmergencyCity.TabIndex = 37;
+            this.ttpToolTips.SetToolTip(this.txtEmergencyCity, "Your next of kin\'s city");
+            // 
+            // txtEmergencySuburb
+            // 
+            this.txtEmergencySuburb.Enabled = false;
+            this.txtEmergencySuburb.Location = new System.Drawing.Point(97, 115);
+            this.txtEmergencySuburb.Name = "txtEmergencySuburb";
+            this.txtEmergencySuburb.Size = new System.Drawing.Size(178, 20);
+            this.txtEmergencySuburb.TabIndex = 36;
+            this.ttpToolTips.SetToolTip(this.txtEmergencySuburb, "Your next of kin\'s suburb");
+            // 
+            // txtEmergencyMobilePhone
+            // 
+            this.txtEmergencyMobilePhone.Enabled = false;
+            this.txtEmergencyMobilePhone.Location = new System.Drawing.Point(97, 193);
+            this.txtEmergencyMobilePhone.Name = "txtEmergencyMobilePhone";
+            this.txtEmergencyMobilePhone.Size = new System.Drawing.Size(178, 20);
+            this.txtEmergencyMobilePhone.TabIndex = 41;
+            this.ttpToolTips.SetToolTip(this.txtEmergencyMobilePhone, "Your next of kin\'s mobile phone");
+            // 
+            // txtEmergencyWorkPhone
+            // 
+            this.txtEmergencyWorkPhone.Enabled = false;
+            this.txtEmergencyWorkPhone.Location = new System.Drawing.Point(97, 219);
+            this.txtEmergencyWorkPhone.Name = "txtEmergencyWorkPhone";
+            this.txtEmergencyWorkPhone.Size = new System.Drawing.Size(178, 20);
+            this.txtEmergencyWorkPhone.TabIndex = 43;
+            this.ttpToolTips.SetToolTip(this.txtEmergencyWorkPhone, "Your next of kin\'s work phone");
+            // 
+            // txtEmergencyAddress
+            // 
+            this.txtEmergencyAddress.Enabled = false;
+            this.txtEmergencyAddress.Location = new System.Drawing.Point(97, 69);
+            this.txtEmergencyAddress.Multiline = true;
+            this.txtEmergencyAddress.Name = "txtEmergencyAddress";
+            this.txtEmergencyAddress.Size = new System.Drawing.Size(178, 40);
+            this.txtEmergencyAddress.TabIndex = 34;
+            this.ttpToolTips.SetToolTip(this.txtEmergencyAddress, "Your next of kin\'s address");
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Enabled = false;
+            this.txtEmail.Location = new System.Drawing.Point(97, 221);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(178, 20);
+            this.txtEmail.TabIndex = 29;
+            this.ttpToolTips.SetToolTip(this.txtEmail, "This is your email");
+            // 
+            // txtFax
+            // 
+            this.txtFax.Enabled = false;
+            this.txtFax.Location = new System.Drawing.Point(97, 195);
+            this.txtFax.Name = "txtFax";
+            this.txtFax.Size = new System.Drawing.Size(178, 20);
+            this.txtFax.TabIndex = 27;
+            this.ttpToolTips.SetToolTip(this.txtFax, "This is your fax number");
+            // 
+            // txtWorkPhone
+            // 
+            this.txtWorkPhone.Enabled = false;
+            this.txtWorkPhone.Location = new System.Drawing.Point(97, 169);
+            this.txtWorkPhone.Name = "txtWorkPhone";
+            this.txtWorkPhone.Size = new System.Drawing.Size(178, 20);
+            this.txtWorkPhone.TabIndex = 25;
+            this.ttpToolTips.SetToolTip(this.txtWorkPhone, "This is your work phone");
+            // 
+            // txtMobilePhone
+            // 
+            this.txtMobilePhone.Enabled = false;
+            this.txtMobilePhone.Location = new System.Drawing.Point(97, 143);
+            this.txtMobilePhone.Name = "txtMobilePhone";
+            this.txtMobilePhone.Size = new System.Drawing.Size(178, 20);
+            this.txtMobilePhone.TabIndex = 23;
+            this.ttpToolTips.SetToolTip(this.txtMobilePhone, "This is your mobile phone");
+            // 
+            // txtHomePhone
+            // 
+            this.txtHomePhone.Enabled = false;
+            this.txtHomePhone.Location = new System.Drawing.Point(97, 117);
+            this.txtHomePhone.Name = "txtHomePhone";
+            this.txtHomePhone.Size = new System.Drawing.Size(178, 20);
+            this.txtHomePhone.TabIndex = 21;
+            this.ttpToolTips.SetToolTip(this.txtHomePhone, "This is your home phone");
+            // 
+            // txtCity
+            // 
+            this.txtCity.Enabled = false;
+            this.txtCity.Location = new System.Drawing.Point(97, 65);
+            this.txtCity.Name = "txtCity";
+            this.txtCity.Size = new System.Drawing.Size(178, 20);
+            this.txtCity.TabIndex = 19;
+            this.ttpToolTips.SetToolTip(this.txtCity, "This is your city");
+            // 
+            // txtState
+            // 
+            this.txtState.Enabled = false;
+            this.txtState.Location = new System.Drawing.Point(97, 91);
+            this.txtState.Name = "txtState";
+            this.txtState.Size = new System.Drawing.Size(178, 20);
+            this.txtState.TabIndex = 18;
+            this.ttpToolTips.SetToolTip(this.txtState, "This is your state");
+            // 
+            // txtAddress
+            // 
+            this.txtAddress.Enabled = false;
+            this.txtAddress.Location = new System.Drawing.Point(97, 19);
+            this.txtAddress.Multiline = true;
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(178, 40);
+            this.txtAddress.TabIndex = 1;
+            this.ttpToolTips.SetToolTip(this.txtAddress, "This is your address");
+            // 
+            // lblCancelPersonalDetails
+            // 
+            this.lblCancelPersonalDetails.AutoSize = true;
+            this.lblCancelPersonalDetails.Enabled = false;
+            this.lblCancelPersonalDetails.Location = new System.Drawing.Point(419, 126);
+            this.lblCancelPersonalDetails.Name = "lblCancelPersonalDetails";
+            this.lblCancelPersonalDetails.Size = new System.Drawing.Size(40, 13);
+            this.lblCancelPersonalDetails.TabIndex = 17;
+            this.lblCancelPersonalDetails.TabStop = true;
+            this.lblCancelPersonalDetails.Text = "Cancel";
+            this.ttpToolTips.SetToolTip(this.lblCancelPersonalDetails, "Click this to cancel changes to personal details");
+            this.lblCancelPersonalDetails.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblCancelPersonalDetails_LinkClicked);
+            // 
+            // lblSavePersonalDetails
+            // 
+            this.lblSavePersonalDetails.AutoSize = true;
+            this.lblSavePersonalDetails.Enabled = false;
+            this.lblSavePersonalDetails.Location = new System.Drawing.Point(381, 126);
+            this.lblSavePersonalDetails.Name = "lblSavePersonalDetails";
+            this.lblSavePersonalDetails.Size = new System.Drawing.Size(32, 13);
+            this.lblSavePersonalDetails.TabIndex = 16;
+            this.lblSavePersonalDetails.TabStop = true;
+            this.lblSavePersonalDetails.Text = "Save";
+            this.ttpToolTips.SetToolTip(this.lblSavePersonalDetails, "Click here to save changes to the personal ");
+            this.lblSavePersonalDetails.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblSavePersonalDetails_LinkClicked);
+            // 
+            // lblEditPersonalDetails
+            // 
+            this.lblEditPersonalDetails.AutoSize = true;
+            this.lblEditPersonalDetails.Location = new System.Drawing.Point(350, 126);
+            this.lblEditPersonalDetails.Name = "lblEditPersonalDetails";
+            this.lblEditPersonalDetails.Size = new System.Drawing.Size(25, 13);
+            this.lblEditPersonalDetails.TabIndex = 15;
+            this.lblEditPersonalDetails.TabStop = true;
+            this.lblEditPersonalDetails.Text = "Edit";
+            this.ttpToolTips.SetToolTip(this.lblEditPersonalDetails, "Click this to edit your personal details");
+            this.lblEditPersonalDetails.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblEditPersonalDetails_LinkClicked);
+            // 
+            // dtpDob
+            // 
+            this.dtpDob.Enabled = false;
+            this.dtpDob.Location = new System.Drawing.Point(97, 122);
+            this.dtpDob.Name = "dtpDob";
+            this.dtpDob.Size = new System.Drawing.Size(200, 20);
+            this.dtpDob.TabIndex = 14;
+            this.ttpToolTips.SetToolTip(this.dtpDob, "Click here to select your date of birth");
+            // 
+            // txtFirstName
+            // 
+            this.txtFirstName.Enabled = false;
+            this.txtFirstName.Location = new System.Drawing.Point(97, 96);
+            this.txtFirstName.Name = "txtFirstName";
+            this.txtFirstName.Size = new System.Drawing.Size(362, 20);
+            this.txtFirstName.TabIndex = 12;
+            this.ttpToolTips.SetToolTip(this.txtFirstName, "This is your first name");
+            // 
+            // txtLastName
+            // 
+            this.txtLastName.Enabled = false;
+            this.txtLastName.Location = new System.Drawing.Point(97, 70);
+            this.txtLastName.Name = "txtLastName";
+            this.txtLastName.Size = new System.Drawing.Size(362, 20);
+            this.txtLastName.TabIndex = 11;
+            this.ttpToolTips.SetToolTip(this.txtLastName, "This is your last name");
+            // 
+            // rdoFemale
+            // 
+            this.rdoFemale.AutoSize = true;
+            this.rdoFemale.Enabled = false;
+            this.rdoFemale.Location = new System.Drawing.Point(390, 43);
+            this.rdoFemale.Name = "rdoFemale";
+            this.rdoFemale.Size = new System.Drawing.Size(59, 17);
+            this.rdoFemale.TabIndex = 8;
+            this.rdoFemale.TabStop = true;
+            this.rdoFemale.Text = "Female";
+            this.ttpToolTips.SetToolTip(this.rdoFemale, "Check if you are female");
+            this.rdoFemale.UseVisualStyleBackColor = true;
+            // 
+            // rdoMale
+            // 
+            this.rdoMale.AutoSize = true;
+            this.rdoMale.Enabled = false;
+            this.rdoMale.Location = new System.Drawing.Point(390, 20);
+            this.rdoMale.Name = "rdoMale";
+            this.rdoMale.Size = new System.Drawing.Size(48, 17);
+            this.rdoMale.TabIndex = 7;
+            this.rdoMale.TabStop = true;
+            this.rdoMale.Text = "Male";
+            this.ttpToolTips.SetToolTip(this.rdoMale, "Check if you are male");
+            this.rdoMale.UseVisualStyleBackColor = true;
+            // 
+            // txtIdentityNumber
+            // 
+            this.txtIdentityNumber.Enabled = false;
+            this.txtIdentityNumber.Location = new System.Drawing.Point(97, 17);
+            this.txtIdentityNumber.Name = "txtIdentityNumber";
+            this.txtIdentityNumber.ReadOnly = true;
+            this.txtIdentityNumber.Size = new System.Drawing.Size(210, 20);
+            this.txtIdentityNumber.TabIndex = 1;
+            this.ttpToolTips.SetToolTip(this.txtIdentityNumber, "This is your identity number");
+            // 
+            // lblCancel
+            // 
+            this.lblCancel.AutoSize = true;
+            this.lblCancel.Location = new System.Drawing.Point(237, 108);
+            this.lblCancel.Name = "lblCancel";
+            this.lblCancel.Size = new System.Drawing.Size(40, 13);
+            this.lblCancel.TabIndex = 11;
+            this.lblCancel.TabStop = true;
+            this.lblCancel.Text = "Cancel";
+            this.ttpToolTips.SetToolTip(this.lblCancel, "Click here to cancel password change");
+            this.lblCancel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblCancel_LinkClicked);
+            // 
+            // lblChangePassword
+            // 
+            this.lblChangePassword.AutoSize = true;
+            this.lblChangePassword.Location = new System.Drawing.Point(138, 108);
+            this.lblChangePassword.Name = "lblChangePassword";
+            this.lblChangePassword.Size = new System.Drawing.Size(93, 13);
+            this.lblChangePassword.TabIndex = 10;
+            this.lblChangePassword.TabStop = true;
+            this.lblChangePassword.Text = "Change Password";
+            this.ttpToolTips.SetToolTip(this.lblChangePassword, "Click here to change password");
+            this.lblChangePassword.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblChangePassword_LinkClicked);
+            // 
+            // lblProfilePic
+            // 
+            this.lblProfilePic.AutoSize = true;
+            this.lblProfilePic.Location = new System.Drawing.Point(34, 173);
+            this.lblProfilePic.Name = "lblProfilePic";
+            this.lblProfilePic.Size = new System.Drawing.Size(112, 13);
+            this.lblProfilePic.TabIndex = 1;
+            this.lblProfilePic.TabStop = true;
+            this.lblProfilePic.Text = "Change Profile Picture";
+            this.ttpToolTips.SetToolTip(this.lblProfilePic, "Click here to change your profile pic");
+            // 
             // tabEPHR
             // 
             this.tabEPHR.Controls.Add(this.picUnderConstructionEMPHR);
@@ -359,7 +1338,7 @@
             // picUnderConstructionEMPHR
             // 
             this.picUnderConstructionEMPHR.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.picUnderConstructionEMPHR.Image = ((System.Drawing.Image)(resources.GetObject("picUnderConstructionEMPHR.Image")));
+            this.picUnderConstructionEMPHR.Image = global::csFinalProject.Properties.Resources.UnderConstruction;
             this.picUnderConstructionEMPHR.InitialImage = null;
             this.picUnderConstructionEMPHR.Location = new System.Drawing.Point(7, 3);
             this.picUnderConstructionEMPHR.Name = "picUnderConstructionEMPHR";
@@ -381,7 +1360,7 @@
             // picUnderConstructionCPHR
             // 
             this.picUnderConstructionCPHR.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.picUnderConstructionCPHR.Image = ((System.Drawing.Image)(resources.GetObject("picUnderConstructionCPHR.Image")));
+            this.picUnderConstructionCPHR.Image = global::csFinalProject.Properties.Resources.UnderConstruction;
             this.picUnderConstructionCPHR.InitialImage = null;
             this.picUnderConstructionCPHR.Location = new System.Drawing.Point(8, 4);
             this.picUnderConstructionCPHR.Name = "picUnderConstructionCPHR";
@@ -395,7 +1374,7 @@
             this.tabMedicalDetails.Controls.Add(this.grpMedicalProcedureDetails);
             this.tabMedicalDetails.Controls.Add(this.grpMedicalConditionDetails);
             this.tabMedicalDetails.Controls.Add(this.grpTestResultDetails);
-            this.tabMedicalDetails.Controls.Add(this.grpPrescribedMedicationDetails);
+            this.tabMedicalDetails.Controls.Add(this.grpPerscribedMedicationDetails);
             this.tabMedicalDetails.Controls.Add(this.grpImmunisationDetails);
             this.tabMedicalDetails.Controls.Add(this.grpPersonalMedicalDetails);
             this.tabMedicalDetails.Controls.Add(this.grpAllergyDetails);
@@ -405,6 +1384,7 @@
             this.tabMedicalDetails.Size = new System.Drawing.Size(973, 606);
             this.tabMedicalDetails.TabIndex = 1;
             this.tabMedicalDetails.Text = "Medical Details";
+            this.tabMedicalDetails.ToolTipText = "Click here to view your medical details";
             this.tabMedicalDetails.UseVisualStyleBackColor = true;
             // 
             // grpMedicalProcedureDetails
@@ -435,12 +1415,15 @@
             // 
             this.lblMedicalProceduresCancel.AutoSize = true;
             this.lblMedicalProceduresCancel.Enabled = false;
+            this.helpProvider1.SetHelpString(this.lblMedicalProceduresCancel, "This cancels the changes to the medical procedure details");
             this.lblMedicalProceduresCancel.Location = new System.Drawing.Point(182, 338);
             this.lblMedicalProceduresCancel.Name = "lblMedicalProceduresCancel";
+            this.helpProvider1.SetShowHelp(this.lblMedicalProceduresCancel, true);
             this.lblMedicalProceduresCancel.Size = new System.Drawing.Size(40, 13);
             this.lblMedicalProceduresCancel.TabIndex = 44;
             this.lblMedicalProceduresCancel.TabStop = true;
             this.lblMedicalProceduresCancel.Text = "Cancel";
+            this.ttpToolTips.SetToolTip(this.lblMedicalProceduresCancel, "Click here to cancel the changes made to the medical procedure details");
             this.lblMedicalProceduresCancel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblMedicalProceduresCancel_LinkClicked);
             // 
             // dtpMedicalProcedureDate
@@ -451,18 +1434,21 @@
             this.dtpMedicalProcedureDate.Name = "dtpMedicalProcedureDate";
             this.dtpMedicalProcedureDate.Size = new System.Drawing.Size(149, 20);
             this.dtpMedicalProcedureDate.TabIndex = 27;
+            this.ttpToolTips.SetToolTip(this.dtpMedicalProcedureDate, "This is the date that the procedure was performed");
             // 
             // lblMedicalProceduresRemoveSelected
             // 
             this.lblMedicalProceduresRemoveSelected.AutoSize = true;
             this.lblMedicalProceduresRemoveSelected.Enabled = false;
+            this.helpProvider1.SetHelpString(this.lblMedicalProceduresRemoveSelected, "THIS CANNOT BE UNDONE!");
             this.lblMedicalProceduresRemoveSelected.Location = new System.Drawing.Point(130, 194);
             this.lblMedicalProceduresRemoveSelected.Name = "lblMedicalProceduresRemoveSelected";
+            this.helpProvider1.SetShowHelp(this.lblMedicalProceduresRemoveSelected, true);
             this.lblMedicalProceduresRemoveSelected.Size = new System.Drawing.Size(92, 13);
             this.lblMedicalProceduresRemoveSelected.TabIndex = 40;
             this.lblMedicalProceduresRemoveSelected.TabStop = true;
             this.lblMedicalProceduresRemoveSelected.Text = "Remove Selected";
-            this.lblMedicalProceduresRemoveSelected.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblMedicalProceduresRemoveSelected_LinkClicked);
+            this.ttpToolTips.SetToolTip(this.lblMedicalProceduresRemoveSelected, "Removes the selected medical procedure from the database. THIS CANNOT BE UNDONE!");
             // 
             // txtMedicalProcedurePerformedBy
             // 
@@ -471,14 +1457,18 @@
             this.txtMedicalProcedurePerformedBy.Name = "txtMedicalProcedurePerformedBy";
             this.txtMedicalProcedurePerformedBy.Size = new System.Drawing.Size(139, 20);
             this.txtMedicalProcedurePerformedBy.TabIndex = 47;
+            this.ttpToolTips.SetToolTip(this.txtMedicalProcedurePerformedBy, "This is the doctor that performed the procedure");
             // 
             // lstMedicalProceduresList
             // 
             this.lstMedicalProceduresList.FormattingEnabled = true;
+            this.helpProvider1.SetHelpString(this.lstMedicalProceduresList, "This is a list of all your medical procedure by ID");
             this.lstMedicalProceduresList.Location = new System.Drawing.Point(9, 210);
             this.lstMedicalProceduresList.Name = "lstMedicalProceduresList";
+            this.helpProvider1.SetShowHelp(this.lstMedicalProceduresList, true);
             this.lstMedicalProceduresList.Size = new System.Drawing.Size(213, 121);
             this.lstMedicalProceduresList.TabIndex = 45;
+            this.ttpToolTips.SetToolTip(this.lstMedicalProceduresList, "This is a list of all your medical procedure");
             this.lstMedicalProceduresList.SelectedIndexChanged += new System.EventHandler(this.lstMedicalProceduresList_SelectedIndexChanged);
             // 
             // lblMedicalProcedureProcedure
@@ -495,13 +1485,15 @@
             // 
             this.lblMedicalProceduresSave.AutoSize = true;
             this.lblMedicalProceduresSave.Enabled = false;
+            this.helpProvider1.SetHelpString(this.lblMedicalProceduresSave, "This saves the changes to the medical procedure details");
             this.lblMedicalProceduresSave.Location = new System.Drawing.Point(144, 338);
             this.lblMedicalProceduresSave.Name = "lblMedicalProceduresSave";
+            this.helpProvider1.SetShowHelp(this.lblMedicalProceduresSave, true);
             this.lblMedicalProceduresSave.Size = new System.Drawing.Size(32, 13);
             this.lblMedicalProceduresSave.TabIndex = 42;
             this.lblMedicalProceduresSave.TabStop = true;
             this.lblMedicalProceduresSave.Text = "Save";
-            this.lblMedicalProceduresSave.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblMedicalProceduresSave_LinkClicked);
+            this.ttpToolTips.SetToolTip(this.lblMedicalProceduresSave, "Click here to save the changes made to the medical procedure details");
             // 
             // lblMedicalProcedureDate
             // 
@@ -526,12 +1518,15 @@
             // lblMedicalProceduresEdit
             // 
             this.lblMedicalProceduresEdit.AutoSize = true;
+            this.helpProvider1.SetHelpString(this.lblMedicalProceduresEdit, "This allows you to edit the fields in the medical procedure details");
             this.lblMedicalProceduresEdit.Location = new System.Drawing.Point(113, 338);
             this.lblMedicalProceduresEdit.Name = "lblMedicalProceduresEdit";
+            this.helpProvider1.SetShowHelp(this.lblMedicalProceduresEdit, true);
             this.lblMedicalProceduresEdit.Size = new System.Drawing.Size(25, 13);
             this.lblMedicalProceduresEdit.TabIndex = 41;
             this.lblMedicalProceduresEdit.TabStop = true;
             this.lblMedicalProceduresEdit.Text = "Edit";
+            this.ttpToolTips.SetToolTip(this.lblMedicalProceduresEdit, "Click here to edit the fields in the medical procedure details");
             this.lblMedicalProceduresEdit.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblMedicalProceduresEdit_LinkClicked);
             // 
             // txtMedicalProcedureProcedure
@@ -541,18 +1536,22 @@
             this.txtMedicalProcedureProcedure.Name = "txtMedicalProcedureProcedure";
             this.txtMedicalProcedureProcedure.Size = new System.Drawing.Size(149, 20);
             this.txtMedicalProcedureProcedure.TabIndex = 39;
+            this.ttpToolTips.SetToolTip(this.txtMedicalProcedureProcedure, "This is the medical procedure");
             // 
             // lblMedicalProcedureAdd
             // 
             this.lblMedicalProcedureAdd.AutoSize = true;
             this.lblMedicalProcedureAdd.Enabled = false;
+            this.helpProvider1.SetHelpString(this.lblMedicalProcedureAdd, "This adds the values in the above fields to the database as a new medical procedu" +
+        "re with a unique ID");
             this.lblMedicalProcedureAdd.Location = new System.Drawing.Point(198, 174);
             this.lblMedicalProcedureAdd.Name = "lblMedicalProcedureAdd";
+            this.helpProvider1.SetShowHelp(this.lblMedicalProcedureAdd, true);
             this.lblMedicalProcedureAdd.Size = new System.Drawing.Size(26, 13);
             this.lblMedicalProcedureAdd.TabIndex = 44;
             this.lblMedicalProcedureAdd.TabStop = true;
             this.lblMedicalProcedureAdd.Text = "Add";
-            this.lblMedicalProcedureAdd.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblMedicalProcedureAdd_LinkClicked);
+            this.ttpToolTips.SetToolTip(this.lblMedicalProcedureAdd, "Adds the medical procedure in the above fields to the database");
             // 
             // lblMedicalProcedureNotes
             // 
@@ -582,6 +1581,7 @@
             this.txtMedicalProcedureNotes.Name = "txtMedicalProcedureNotes";
             this.txtMedicalProcedureNotes.Size = new System.Drawing.Size(149, 63);
             this.txtMedicalProcedureNotes.TabIndex = 43;
+            this.ttpToolTips.SetToolTip(this.txtMedicalProcedureNotes, "This is the doctors notes on the procedure");
             // 
             // grpMedicalConditionDetails
             // 
@@ -611,12 +1611,15 @@
             // 
             this.lblMedicalConditionCancel.AutoSize = true;
             this.lblMedicalConditionCancel.Enabled = false;
+            this.helpProvider1.SetHelpString(this.lblMedicalConditionCancel, "This cancels the changes to the medical condtion details");
             this.lblMedicalConditionCancel.Location = new System.Drawing.Point(183, 338);
             this.lblMedicalConditionCancel.Name = "lblMedicalConditionCancel";
+            this.helpProvider1.SetShowHelp(this.lblMedicalConditionCancel, true);
             this.lblMedicalConditionCancel.Size = new System.Drawing.Size(40, 13);
             this.lblMedicalConditionCancel.TabIndex = 38;
             this.lblMedicalConditionCancel.TabStop = true;
             this.lblMedicalConditionCancel.Text = "Cancel";
+            this.ttpToolTips.SetToolTip(this.lblMedicalConditionCancel, "Click here to cancel the changes made to the medical condition details");
             this.lblMedicalConditionCancel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblMedicalConditionCancel_LinkClicked);
             // 
             // rdoMedicalConditionChronic
@@ -629,19 +1632,22 @@
             this.rdoMedicalConditionChronic.TabIndex = 37;
             this.rdoMedicalConditionChronic.TabStop = true;
             this.rdoMedicalConditionChronic.Text = "Chronic";
+            this.ttpToolTips.SetToolTip(this.rdoMedicalConditionChronic, "Is the condition chronic");
             this.rdoMedicalConditionChronic.UseVisualStyleBackColor = true;
             // 
             // lblMedicalConditionsRemoveSelected
             // 
             this.lblMedicalConditionsRemoveSelected.AutoSize = true;
             this.lblMedicalConditionsRemoveSelected.Enabled = false;
+            this.helpProvider1.SetHelpString(this.lblMedicalConditionsRemoveSelected, "THIS CANNOT BE UNDONE!");
             this.lblMedicalConditionsRemoveSelected.Location = new System.Drawing.Point(131, 194);
             this.lblMedicalConditionsRemoveSelected.Name = "lblMedicalConditionsRemoveSelected";
+            this.helpProvider1.SetShowHelp(this.lblMedicalConditionsRemoveSelected, true);
             this.lblMedicalConditionsRemoveSelected.Size = new System.Drawing.Size(92, 13);
             this.lblMedicalConditionsRemoveSelected.TabIndex = 34;
             this.lblMedicalConditionsRemoveSelected.TabStop = true;
             this.lblMedicalConditionsRemoveSelected.Text = "Remove Selected";
-            this.lblMedicalConditionsRemoveSelected.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblMedicalConditionsRemoveSelected_LinkClicked);
+            this.ttpToolTips.SetToolTip(this.lblMedicalConditionsRemoveSelected, "Removes the selected medical conditon from the database. THIS CANNOT BE UNDONE!");
             // 
             // rdoMedicalConditionAcute
             // 
@@ -653,40 +1659,49 @@
             this.rdoMedicalConditionAcute.TabIndex = 36;
             this.rdoMedicalConditionAcute.TabStop = true;
             this.rdoMedicalConditionAcute.Text = "Acute";
+            this.ttpToolTips.SetToolTip(this.rdoMedicalConditionAcute, "Is the condition acute");
             this.rdoMedicalConditionAcute.UseVisualStyleBackColor = true;
             // 
             // lstMedicalConditionList
             // 
             this.lstMedicalConditionList.FormattingEnabled = true;
+            this.helpProvider1.SetHelpString(this.lstMedicalConditionList, "This is a list of all your medical conditon by ID");
             this.lstMedicalConditionList.Location = new System.Drawing.Point(10, 210);
             this.lstMedicalConditionList.Name = "lstMedicalConditionList";
+            this.helpProvider1.SetShowHelp(this.lstMedicalConditionList, true);
             this.lstMedicalConditionList.Size = new System.Drawing.Size(213, 121);
             this.lstMedicalConditionList.TabIndex = 39;
+            this.ttpToolTips.SetToolTip(this.lstMedicalConditionList, "This is a list of all your medical condtion");
             this.lstMedicalConditionList.SelectedIndexChanged += new System.EventHandler(this.lstMedicalConditionList_SelectedIndexChanged);
             // 
             // lblMedicalConditionAdd
             // 
             this.lblMedicalConditionAdd.AutoSize = true;
             this.lblMedicalConditionAdd.Enabled = false;
+            this.helpProvider1.SetHelpString(this.lblMedicalConditionAdd, "This adds the values in the above fields to the database as a new medical conditi" +
+        "on with a unique ID");
             this.lblMedicalConditionAdd.Location = new System.Drawing.Point(199, 173);
             this.lblMedicalConditionAdd.Name = "lblMedicalConditionAdd";
+            this.helpProvider1.SetShowHelp(this.lblMedicalConditionAdd, true);
             this.lblMedicalConditionAdd.Size = new System.Drawing.Size(26, 13);
             this.lblMedicalConditionAdd.TabIndex = 35;
             this.lblMedicalConditionAdd.TabStop = true;
             this.lblMedicalConditionAdd.Text = "Add";
-            this.lblMedicalConditionAdd.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblMedicalConditionAdd_LinkClicked);
+            this.ttpToolTips.SetToolTip(this.lblMedicalConditionAdd, "Adds the medical conditon in the above fields to the database");
             // 
             // lblMedicalConditionSave
             // 
             this.lblMedicalConditionSave.AutoSize = true;
             this.lblMedicalConditionSave.Enabled = false;
+            this.helpProvider1.SetHelpString(this.lblMedicalConditionSave, "This saves the changes to the medical condtion details");
             this.lblMedicalConditionSave.Location = new System.Drawing.Point(145, 338);
             this.lblMedicalConditionSave.Name = "lblMedicalConditionSave";
+            this.helpProvider1.SetShowHelp(this.lblMedicalConditionSave, true);
             this.lblMedicalConditionSave.Size = new System.Drawing.Size(32, 13);
             this.lblMedicalConditionSave.TabIndex = 36;
             this.lblMedicalConditionSave.TabStop = true;
             this.lblMedicalConditionSave.Text = "Save";
-            this.lblMedicalConditionSave.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblMedicalConditionSave_LinkClicked);
+            this.ttpToolTips.SetToolTip(this.lblMedicalConditionSave, "Click here to save the changes made to the medical condition details");
             // 
             // lblMedicalConditionCondition
             // 
@@ -711,12 +1726,15 @@
             // lblMedicalConditionEdit
             // 
             this.lblMedicalConditionEdit.AutoSize = true;
+            this.helpProvider1.SetHelpString(this.lblMedicalConditionEdit, "This allows you to edit the fields in the medical condtion details");
             this.lblMedicalConditionEdit.Location = new System.Drawing.Point(114, 338);
             this.lblMedicalConditionEdit.Name = "lblMedicalConditionEdit";
+            this.helpProvider1.SetShowHelp(this.lblMedicalConditionEdit, true);
             this.lblMedicalConditionEdit.Size = new System.Drawing.Size(25, 13);
             this.lblMedicalConditionEdit.TabIndex = 35;
             this.lblMedicalConditionEdit.TabStop = true;
             this.lblMedicalConditionEdit.Text = "Edit";
+            this.ttpToolTips.SetToolTip(this.lblMedicalConditionEdit, "Click here to edit the fields in the medical condtion details");
             this.lblMedicalConditionEdit.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblMedicalConditionEdit_LinkClicked);
             // 
             // lblMedicalConditionOnset
@@ -737,6 +1755,7 @@
             this.txtMedicalConditionNotes.Name = "txtMedicalConditionNotes";
             this.txtMedicalConditionNotes.Size = new System.Drawing.Size(149, 63);
             this.txtMedicalConditionNotes.TabIndex = 33;
+            this.ttpToolTips.SetToolTip(this.txtMedicalConditionNotes, "This is the doctors note on the medical condtion");
             // 
             // dtpMedicalConditionOnset
             // 
@@ -746,6 +1765,7 @@
             this.dtpMedicalConditionOnset.Name = "dtpMedicalConditionOnset";
             this.dtpMedicalConditionOnset.Size = new System.Drawing.Size(149, 20);
             this.dtpMedicalConditionOnset.TabIndex = 29;
+            this.ttpToolTips.SetToolTip(this.dtpMedicalConditionOnset, "This is the date of onset of the medical condtion");
             // 
             // lblMedicalConditionNotes
             // 
@@ -764,6 +1784,7 @@
             this.txtMedicalConditionCondition.Name = "txtMedicalConditionCondition";
             this.txtMedicalConditionCondition.Size = new System.Drawing.Size(149, 20);
             this.txtMedicalConditionCondition.TabIndex = 28;
+            this.ttpToolTips.SetToolTip(this.txtMedicalConditionCondition, "This is your medical condition");
             // 
             // grpTestResultDetails
             // 
@@ -793,37 +1814,45 @@
             // 
             this.lblTestResultCancel.AutoSize = true;
             this.lblTestResultCancel.Enabled = false;
+            this.helpProvider1.SetHelpString(this.lblTestResultCancel, "This cancels the changes to the test result details");
             this.lblTestResultCancel.Location = new System.Drawing.Point(182, 338);
             this.lblTestResultCancel.Name = "lblTestResultCancel";
+            this.helpProvider1.SetShowHelp(this.lblTestResultCancel, true);
             this.lblTestResultCancel.Size = new System.Drawing.Size(40, 13);
             this.lblTestResultCancel.TabIndex = 32;
             this.lblTestResultCancel.TabStop = true;
             this.lblTestResultCancel.Text = "Cancel";
+            this.ttpToolTips.SetToolTip(this.lblTestResultCancel, "Click here to cancel the changes made to the test result details");
             this.lblTestResultCancel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblTestResultCancel_LinkClicked);
             // 
             // lblTestResultAdd
             // 
             this.lblTestResultAdd.AutoSize = true;
             this.lblTestResultAdd.Enabled = false;
+            this.helpProvider1.SetHelpString(this.lblTestResultAdd, "This adds the values in the above fields to the database as a new test result wit" +
+        "h a unique ID");
             this.lblTestResultAdd.Location = new System.Drawing.Point(198, 174);
             this.lblTestResultAdd.Name = "lblTestResultAdd";
+            this.helpProvider1.SetShowHelp(this.lblTestResultAdd, true);
             this.lblTestResultAdd.Size = new System.Drawing.Size(26, 13);
             this.lblTestResultAdd.TabIndex = 26;
             this.lblTestResultAdd.TabStop = true;
             this.lblTestResultAdd.Text = "Add";
-            this.lblTestResultAdd.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblTestResultAdd_LinkClicked);
+            this.ttpToolTips.SetToolTip(this.lblTestResultAdd, "Adds the test result in the above fields to the database");
             // 
             // lblTestResultRemoveSelected
             // 
             this.lblTestResultRemoveSelected.AutoSize = true;
             this.lblTestResultRemoveSelected.Enabled = false;
+            this.helpProvider1.SetHelpString(this.lblTestResultRemoveSelected, "THIS CANNOT BE UNDONE!");
             this.lblTestResultRemoveSelected.Location = new System.Drawing.Point(130, 194);
             this.lblTestResultRemoveSelected.Name = "lblTestResultRemoveSelected";
+            this.helpProvider1.SetShowHelp(this.lblTestResultRemoveSelected, true);
             this.lblTestResultRemoveSelected.Size = new System.Drawing.Size(92, 13);
             this.lblTestResultRemoveSelected.TabIndex = 28;
             this.lblTestResultRemoveSelected.TabStop = true;
             this.lblTestResultRemoveSelected.Text = "Remove Selected";
-            this.lblTestResultRemoveSelected.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblTestResultRemoveSelected_LinkClicked);
+            this.ttpToolTips.SetToolTip(this.lblTestResultRemoveSelected, "Removes the selected test result from the database. THIS CANNOT BE UNDONE!");
             // 
             // txtTestResultResult
             // 
@@ -832,14 +1861,18 @@
             this.txtTestResultResult.Name = "txtTestResultResult";
             this.txtTestResultResult.Size = new System.Drawing.Size(149, 20);
             this.txtTestResultResult.TabIndex = 16;
+            this.ttpToolTips.SetToolTip(this.txtTestResultResult, "This is the result of the test");
             // 
             // lstTestResultList
             // 
             this.lstTestResultList.FormattingEnabled = true;
+            this.helpProvider1.SetHelpString(this.lstTestResultList, "This is a list of all your test results by ID");
             this.lstTestResultList.Location = new System.Drawing.Point(9, 210);
             this.lstTestResultList.Name = "lstTestResultList";
+            this.helpProvider1.SetShowHelp(this.lstTestResultList, true);
             this.lstTestResultList.Size = new System.Drawing.Size(213, 121);
             this.lstTestResultList.TabIndex = 33;
+            this.ttpToolTips.SetToolTip(this.lstTestResultList, "This is a list of all your test results");
             this.lstTestResultList.SelectedIndexChanged += new System.EventHandler(this.lstTestResultList_SelectedIndexChanged);
             // 
             // txtTestResultNotes
@@ -850,18 +1883,21 @@
             this.txtTestResultNotes.Name = "txtTestResultNotes";
             this.txtTestResultNotes.Size = new System.Drawing.Size(149, 63);
             this.txtTestResultNotes.TabIndex = 15;
+            this.ttpToolTips.SetToolTip(this.txtTestResultNotes, "This is the doctors note on the test result");
             // 
             // lblTestResultSave
             // 
             this.lblTestResultSave.AutoSize = true;
             this.lblTestResultSave.Enabled = false;
+            this.helpProvider1.SetHelpString(this.lblTestResultSave, "This saves the changes to the test result details");
             this.lblTestResultSave.Location = new System.Drawing.Point(144, 338);
             this.lblTestResultSave.Name = "lblTestResultSave";
+            this.helpProvider1.SetShowHelp(this.lblTestResultSave, true);
             this.lblTestResultSave.Size = new System.Drawing.Size(32, 13);
             this.lblTestResultSave.TabIndex = 30;
             this.lblTestResultSave.TabStop = true;
             this.lblTestResultSave.Text = "Save";
-            this.lblTestResultSave.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblTestResultSave_LinkClicked);
+            this.ttpToolTips.SetToolTip(this.lblTestResultSave, "Click here to save the changes made to the test result details");
             // 
             // lblTestResultTest
             // 
@@ -886,12 +1922,15 @@
             // lblTestResultEdit
             // 
             this.lblTestResultEdit.AutoSize = true;
+            this.helpProvider1.SetHelpString(this.lblTestResultEdit, "This allows you to edit the fields in the test result details");
             this.lblTestResultEdit.Location = new System.Drawing.Point(113, 338);
             this.lblTestResultEdit.Name = "lblTestResultEdit";
+            this.helpProvider1.SetShowHelp(this.lblTestResultEdit, true);
             this.lblTestResultEdit.Size = new System.Drawing.Size(25, 13);
             this.lblTestResultEdit.TabIndex = 29;
             this.lblTestResultEdit.TabStop = true;
             this.lblTestResultEdit.Text = "Edit";
+            this.ttpToolTips.SetToolTip(this.lblTestResultEdit, "Click here to edit the fields in the test result details");
             this.lblTestResultEdit.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblTestResultEdit_LinkClicked);
             // 
             // lblTestResultNotes
@@ -911,6 +1950,7 @@
             this.txtTestResultTest.Name = "txtTestResultTest";
             this.txtTestResultTest.Size = new System.Drawing.Size(149, 20);
             this.txtTestResultTest.TabIndex = 9;
+            this.ttpToolTips.SetToolTip(this.txtTestResultTest, "This is your test");
             // 
             // dtpTestResultDate
             // 
@@ -920,6 +1960,7 @@
             this.dtpTestResultDate.Name = "dtpTestResultDate";
             this.dtpTestResultDate.Size = new System.Drawing.Size(149, 20);
             this.dtpTestResultDate.TabIndex = 10;
+            this.ttpToolTips.SetToolTip(this.dtpTestResultDate, "This is the date of the test");
             // 
             // lblTestResultResult
             // 
@@ -941,74 +1982,41 @@
             this.lblTestResultDate.TabIndex = 11;
             this.lblTestResultDate.Text = "Date:";
             // 
-            // grpPrescribedMedicationDetails
+            // grpPerscribedMedicationDetails
             // 
-            this.grpPrescribedMedicationDetails.Controls.Add(this.lblPerscribedCancel);
-            this.grpPrescribedMedicationDetails.Controls.Add(this.lblPerscribedSelected);
-            this.grpPrescribedMedicationDetails.Controls.Add(this.lstPerscribedMedicationList);
-            this.grpPrescribedMedicationDetails.Controls.Add(this.lblPerscribedSave);
-            this.grpPrescribedMedicationDetails.Controls.Add(this.lblPerscribedMedicationList);
-            this.grpPrescribedMedicationDetails.Controls.Add(this.lblPerscribedEdit);
-            this.grpPrescribedMedicationDetails.Controls.Add(this.lblPerscribedMedicationAdd);
-            this.grpPrescribedMedicationDetails.Controls.Add(this.txtPerscribedNotes);
-            this.grpPrescribedMedicationDetails.Controls.Add(this.lblPerscribedNotes);
-            this.grpPrescribedMedicationDetails.Controls.Add(this.chkPerscribedChronic);
-            this.grpPrescribedMedicationDetails.Controls.Add(this.lblPerscribedChronic);
-            this.grpPrescribedMedicationDetails.Controls.Add(this.lblDatePerscribed);
-            this.grpPrescribedMedicationDetails.Controls.Add(this.dtpDatePerscribed);
-            this.grpPrescribedMedicationDetails.Controls.Add(this.txtPerscribedMedication);
-            this.grpPrescribedMedicationDetails.Controls.Add(this.lblPerscribedMedication);
-            this.grpPrescribedMedicationDetails.Location = new System.Drawing.Point(8, 241);
-            this.grpPrescribedMedicationDetails.Name = "grpPrescribedMedicationDetails";
-            this.grpPrescribedMedicationDetails.Size = new System.Drawing.Size(233, 359);
-            this.grpPrescribedMedicationDetails.TabIndex = 23;
-            this.grpPrescribedMedicationDetails.TabStop = false;
-            this.grpPrescribedMedicationDetails.Text = "Perscribed Medication Details";
-            // 
-            // lblPerscribedCancel
-            // 
-            this.lblPerscribedCancel.AutoSize = true;
-            this.lblPerscribedCancel.Enabled = false;
-            this.lblPerscribedCancel.Location = new System.Drawing.Point(183, 338);
-            this.lblPerscribedCancel.Name = "lblPerscribedCancel";
-            this.lblPerscribedCancel.Size = new System.Drawing.Size(40, 13);
-            this.lblPerscribedCancel.TabIndex = 27;
-            this.lblPerscribedCancel.TabStop = true;
-            this.lblPerscribedCancel.Text = "Cancel";
-            this.lblPerscribedCancel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblPerscribedCancel_LinkClicked);
-            // 
-            // lblPerscribedSelected
-            // 
-            this.lblPerscribedSelected.AutoSize = true;
-            this.lblPerscribedSelected.Enabled = false;
-            this.lblPerscribedSelected.Location = new System.Drawing.Point(131, 194);
-            this.lblPerscribedSelected.Name = "lblPerscribedSelected";
-            this.lblPerscribedSelected.Size = new System.Drawing.Size(92, 13);
-            this.lblPerscribedSelected.TabIndex = 25;
-            this.lblPerscribedSelected.TabStop = true;
-            this.lblPerscribedSelected.Text = "Remove Selected";
-            this.lblPerscribedSelected.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblPerscribedSelected_LinkClicked);
+            this.grpPerscribedMedicationDetails.Controls.Add(this.lblPerscribedCancel);
+            this.grpPerscribedMedicationDetails.Controls.Add(this.lblPerscribedSelected);
+            this.grpPerscribedMedicationDetails.Controls.Add(this.lstPerscribedMedicationList);
+            this.grpPerscribedMedicationDetails.Controls.Add(this.lblPerscribedSave);
+            this.grpPerscribedMedicationDetails.Controls.Add(this.lblPerscribedMedicationList);
+            this.grpPerscribedMedicationDetails.Controls.Add(this.lblPerscribedEdit);
+            this.grpPerscribedMedicationDetails.Controls.Add(this.lblPerscribedMedicationAdd);
+            this.grpPerscribedMedicationDetails.Controls.Add(this.txtPerscribedNotes);
+            this.grpPerscribedMedicationDetails.Controls.Add(this.lblPerscribedNotes);
+            this.grpPerscribedMedicationDetails.Controls.Add(this.chkPerscribedChronic);
+            this.grpPerscribedMedicationDetails.Controls.Add(this.lblPerscribedChronic);
+            this.grpPerscribedMedicationDetails.Controls.Add(this.lblDatePerscribed);
+            this.grpPerscribedMedicationDetails.Controls.Add(this.dtpDatePerscribed);
+            this.grpPerscribedMedicationDetails.Controls.Add(this.txtPerscribedMedication);
+            this.grpPerscribedMedicationDetails.Controls.Add(this.lblPerscribedMedication);
+            this.grpPerscribedMedicationDetails.Location = new System.Drawing.Point(8, 241);
+            this.grpPerscribedMedicationDetails.Name = "grpPerscribedMedicationDetails";
+            this.grpPerscribedMedicationDetails.Size = new System.Drawing.Size(233, 359);
+            this.grpPerscribedMedicationDetails.TabIndex = 23;
+            this.grpPerscribedMedicationDetails.TabStop = false;
+            this.grpPerscribedMedicationDetails.Text = "Perscribed Medication Details";
             // 
             // lstPerscribedMedicationList
             // 
             this.lstPerscribedMedicationList.FormattingEnabled = true;
+            this.helpProvider1.SetHelpString(this.lstPerscribedMedicationList, "This is a list of all your medications by ID");
             this.lstPerscribedMedicationList.Location = new System.Drawing.Point(10, 210);
             this.lstPerscribedMedicationList.Name = "lstPerscribedMedicationList";
+            this.helpProvider1.SetShowHelp(this.lstPerscribedMedicationList, true);
             this.lstPerscribedMedicationList.Size = new System.Drawing.Size(213, 121);
             this.lstPerscribedMedicationList.TabIndex = 27;
+            this.ttpToolTips.SetToolTip(this.lstPerscribedMedicationList, "This is a list of all your medications");
             this.lstPerscribedMedicationList.SelectedIndexChanged += new System.EventHandler(this.lstPerscribedMedicationList_SelectedIndexChanged);
-            // 
-            // lblPerscribedSave
-            // 
-            this.lblPerscribedSave.AutoSize = true;
-            this.lblPerscribedSave.Enabled = false;
-            this.lblPerscribedSave.Location = new System.Drawing.Point(145, 338);
-            this.lblPerscribedSave.Name = "lblPerscribedSave";
-            this.lblPerscribedSave.Size = new System.Drawing.Size(32, 13);
-            this.lblPerscribedSave.TabIndex = 26;
-            this.lblPerscribedSave.TabStop = true;
-            this.lblPerscribedSave.Text = "Save";
-            this.lblPerscribedSave.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblPerscribedSave_LinkClicked);
             // 
             // lblPerscribedMedicationList
             // 
@@ -1020,38 +2028,6 @@
             this.lblPerscribedMedicationList.TabIndex = 26;
             this.lblPerscribedMedicationList.Text = "Medication:";
             // 
-            // lblPerscribedEdit
-            // 
-            this.lblPerscribedEdit.AutoSize = true;
-            this.lblPerscribedEdit.Location = new System.Drawing.Point(114, 338);
-            this.lblPerscribedEdit.Name = "lblPerscribedEdit";
-            this.lblPerscribedEdit.Size = new System.Drawing.Size(25, 13);
-            this.lblPerscribedEdit.TabIndex = 25;
-            this.lblPerscribedEdit.TabStop = true;
-            this.lblPerscribedEdit.Text = "Edit";
-            this.lblPerscribedEdit.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblPerscribedEdit_LinkClicked);
-            // 
-            // lblPerscribedMedicationAdd
-            // 
-            this.lblPerscribedMedicationAdd.AutoSize = true;
-            this.lblPerscribedMedicationAdd.Enabled = false;
-            this.lblPerscribedMedicationAdd.Location = new System.Drawing.Point(197, 174);
-            this.lblPerscribedMedicationAdd.Name = "lblPerscribedMedicationAdd";
-            this.lblPerscribedMedicationAdd.Size = new System.Drawing.Size(26, 13);
-            this.lblPerscribedMedicationAdd.TabIndex = 25;
-            this.lblPerscribedMedicationAdd.TabStop = true;
-            this.lblPerscribedMedicationAdd.Text = "Add";
-            this.lblPerscribedMedicationAdd.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblPerscribedMedicationAdd_LinkClicked);
-            // 
-            // txtPerscribedNotes
-            // 
-            this.txtPerscribedNotes.Enabled = false;
-            this.txtPerscribedNotes.Location = new System.Drawing.Point(76, 105);
-            this.txtPerscribedNotes.Multiline = true;
-            this.txtPerscribedNotes.Name = "txtPerscribedNotes";
-            this.txtPerscribedNotes.Size = new System.Drawing.Size(149, 63);
-            this.txtPerscribedNotes.TabIndex = 7;
-            // 
             // lblPerscribedNotes
             // 
             this.lblPerscribedNotes.AutoSize = true;
@@ -1061,16 +2037,6 @@
             this.lblPerscribedNotes.Size = new System.Drawing.Size(38, 13);
             this.lblPerscribedNotes.TabIndex = 6;
             this.lblPerscribedNotes.Text = "Notes:";
-            // 
-            // chkPerscribedChronic
-            // 
-            this.chkPerscribedChronic.AutoSize = true;
-            this.chkPerscribedChronic.Enabled = false;
-            this.chkPerscribedChronic.Location = new System.Drawing.Point(76, 74);
-            this.chkPerscribedChronic.Name = "chkPerscribedChronic";
-            this.chkPerscribedChronic.Size = new System.Drawing.Size(15, 14);
-            this.chkPerscribedChronic.TabIndex = 5;
-            this.chkPerscribedChronic.UseVisualStyleBackColor = true;
             // 
             // lblPerscribedChronic
             // 
@@ -1090,24 +2056,7 @@
             this.lblDatePerscribed.Name = "lblDatePerscribed";
             this.lblDatePerscribed.Size = new System.Drawing.Size(60, 13);
             this.lblDatePerscribed.TabIndex = 3;
-            this.lblDatePerscribed.Text = "Prescribed:";
-            // 
-            // dtpDatePerscribed
-            // 
-            this.dtpDatePerscribed.Enabled = false;
-            this.dtpDatePerscribed.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDatePerscribed.Location = new System.Drawing.Point(76, 47);
-            this.dtpDatePerscribed.Name = "dtpDatePerscribed";
-            this.dtpDatePerscribed.Size = new System.Drawing.Size(149, 20);
-            this.dtpDatePerscribed.TabIndex = 2;
-            // 
-            // txtPerscribedMedication
-            // 
-            this.txtPerscribedMedication.Enabled = false;
-            this.txtPerscribedMedication.Location = new System.Drawing.Point(76, 20);
-            this.txtPerscribedMedication.Name = "txtPerscribedMedication";
-            this.txtPerscribedMedication.Size = new System.Drawing.Size(149, 20);
-            this.txtPerscribedMedication.TabIndex = 1;
+            this.lblDatePerscribed.Text = "Perscribed:";
             // 
             // lblPerscribedMedication
             // 
@@ -1141,30 +2090,6 @@
             this.grpImmunisationDetails.TabStop = false;
             this.grpImmunisationDetails.Text = "Immunisation Details";
             // 
-            // lblImmunisationRemoveSelected
-            // 
-            this.lblImmunisationRemoveSelected.AutoSize = true;
-            this.lblImmunisationRemoveSelected.Enabled = false;
-            this.lblImmunisationRemoveSelected.Location = new System.Drawing.Point(279, 20);
-            this.lblImmunisationRemoveSelected.Name = "lblImmunisationRemoveSelected";
-            this.lblImmunisationRemoveSelected.Size = new System.Drawing.Size(92, 13);
-            this.lblImmunisationRemoveSelected.TabIndex = 37;
-            this.lblImmunisationRemoveSelected.TabStop = true;
-            this.lblImmunisationRemoveSelected.Text = "Remove Selected";
-            this.lblImmunisationRemoveSelected.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblImmunisationRemoveSelected_LinkClicked);
-            // 
-            // lblImmunisationCancel
-            // 
-            this.lblImmunisationCancel.AutoSize = true;
-            this.lblImmunisationCancel.Enabled = false;
-            this.lblImmunisationCancel.Location = new System.Drawing.Point(331, 204);
-            this.lblImmunisationCancel.Name = "lblImmunisationCancel";
-            this.lblImmunisationCancel.Size = new System.Drawing.Size(40, 13);
-            this.lblImmunisationCancel.TabIndex = 36;
-            this.lblImmunisationCancel.TabStop = true;
-            this.lblImmunisationCancel.Text = "Cancel";
-            this.lblImmunisationCancel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblImmunisationCancel_LinkClicked);
-            // 
             // lblImmunisation
             // 
             this.lblImmunisation.AutoSize = true;
@@ -1174,55 +2099,6 @@
             this.lblImmunisation.Size = new System.Drawing.Size(71, 13);
             this.lblImmunisation.TabIndex = 25;
             this.lblImmunisation.Text = "Immunisation:";
-            // 
-            // lblImmunisationSave
-            // 
-            this.lblImmunisationSave.AutoSize = true;
-            this.lblImmunisationSave.Enabled = false;
-            this.lblImmunisationSave.Location = new System.Drawing.Point(293, 204);
-            this.lblImmunisationSave.Name = "lblImmunisationSave";
-            this.lblImmunisationSave.Size = new System.Drawing.Size(32, 13);
-            this.lblImmunisationSave.TabIndex = 34;
-            this.lblImmunisationSave.TabStop = true;
-            this.lblImmunisationSave.Text = "Save";
-            this.lblImmunisationSave.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblImmunisationSave_LinkClicked);
-            // 
-            // txtImmunisation
-            // 
-            this.txtImmunisation.Enabled = false;
-            this.txtImmunisation.Location = new System.Drawing.Point(83, 17);
-            this.txtImmunisation.Name = "txtImmunisation";
-            this.txtImmunisation.Size = new System.Drawing.Size(106, 20);
-            this.txtImmunisation.TabIndex = 26;
-            // 
-            // lstImmunisationList
-            // 
-            this.lstImmunisationList.FormattingEnabled = true;
-            this.lstImmunisationList.Location = new System.Drawing.Point(205, 36);
-            this.lstImmunisationList.Name = "lstImmunisationList";
-            this.lstImmunisationList.Size = new System.Drawing.Size(166, 160);
-            this.lstImmunisationList.TabIndex = 35;
-            this.lstImmunisationList.SelectedIndexChanged += new System.EventHandler(this.lstImmunisationList_SelectedIndexChanged);
-            // 
-            // dtpImmunisationDate
-            // 
-            this.dtpImmunisationDate.Enabled = false;
-            this.dtpImmunisationDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpImmunisationDate.Location = new System.Drawing.Point(72, 43);
-            this.dtpImmunisationDate.Name = "dtpImmunisationDate";
-            this.dtpImmunisationDate.Size = new System.Drawing.Size(117, 20);
-            this.dtpImmunisationDate.TabIndex = 27;
-            // 
-            // lblImmunisationEdit
-            // 
-            this.lblImmunisationEdit.AutoSize = true;
-            this.lblImmunisationEdit.Location = new System.Drawing.Point(262, 204);
-            this.lblImmunisationEdit.Name = "lblImmunisationEdit";
-            this.lblImmunisationEdit.Size = new System.Drawing.Size(25, 13);
-            this.lblImmunisationEdit.TabIndex = 32;
-            this.lblImmunisationEdit.TabStop = true;
-            this.lblImmunisationEdit.Text = "Edit";
-            this.lblImmunisationEdit.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblImmunisationEdit_LinkClicked);
             // 
             // lblImmunisationDate
             // 
@@ -1234,18 +2110,6 @@
             this.lblImmunisationDate.TabIndex = 28;
             this.lblImmunisationDate.Text = "Date:";
             // 
-            // lblImmunisationAdd
-            // 
-            this.lblImmunisationAdd.AutoSize = true;
-            this.lblImmunisationAdd.Enabled = false;
-            this.lblImmunisationAdd.Location = new System.Drawing.Point(163, 204);
-            this.lblImmunisationAdd.Name = "lblImmunisationAdd";
-            this.lblImmunisationAdd.Size = new System.Drawing.Size(26, 13);
-            this.lblImmunisationAdd.TabIndex = 33;
-            this.lblImmunisationAdd.TabStop = true;
-            this.lblImmunisationAdd.Text = "Add";
-            this.lblImmunisationAdd.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblImmunisationAdd_LinkClicked);
-            // 
             // lblImmunisationNote
             // 
             this.lblImmunisationNote.AutoSize = true;
@@ -1255,15 +2119,6 @@
             this.lblImmunisationNote.Size = new System.Drawing.Size(33, 13);
             this.lblImmunisationNote.TabIndex = 29;
             this.lblImmunisationNote.Text = "Note:";
-            // 
-            // txtImmunisationNote
-            // 
-            this.txtImmunisationNote.Enabled = false;
-            this.txtImmunisationNote.Location = new System.Drawing.Point(72, 68);
-            this.txtImmunisationNote.Multiline = true;
-            this.txtImmunisationNote.Name = "txtImmunisationNote";
-            this.txtImmunisationNote.Size = new System.Drawing.Size(117, 128);
-            this.txtImmunisationNote.TabIndex = 31;
             // 
             // lblImmunisationList
             // 
@@ -1336,102 +2191,6 @@
             this.lblHeight.TabIndex = 10;
             this.lblHeight.Text = "Height:";
             // 
-            // txtWeight
-            // 
-            this.txtWeight.Enabled = false;
-            this.txtWeight.Location = new System.Drawing.Point(54, 178);
-            this.txtWeight.Name = "txtWeight";
-            this.txtWeight.Size = new System.Drawing.Size(71, 20);
-            this.txtWeight.TabIndex = 9;
-            // 
-            // lblPersonalMedicalDetailsCancel
-            // 
-            this.lblPersonalMedicalDetailsCancel.AutoSize = true;
-            this.lblPersonalMedicalDetailsCancel.Enabled = false;
-            this.lblPersonalMedicalDetailsCancel.Location = new System.Drawing.Point(101, 204);
-            this.lblPersonalMedicalDetailsCancel.Name = "lblPersonalMedicalDetailsCancel";
-            this.lblPersonalMedicalDetailsCancel.Size = new System.Drawing.Size(40, 13);
-            this.lblPersonalMedicalDetailsCancel.TabIndex = 25;
-            this.lblPersonalMedicalDetailsCancel.TabStop = true;
-            this.lblPersonalMedicalDetailsCancel.Text = "Cancel";
-            this.lblPersonalMedicalDetailsCancel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblPersonalMedicalDetailsCancel_LinkClicked);
-            // 
-            // lblPersonalMedicalDetailsEdit
-            // 
-            this.lblPersonalMedicalDetailsEdit.AutoSize = true;
-            this.lblPersonalMedicalDetailsEdit.Location = new System.Drawing.Point(32, 204);
-            this.lblPersonalMedicalDetailsEdit.Name = "lblPersonalMedicalDetailsEdit";
-            this.lblPersonalMedicalDetailsEdit.Size = new System.Drawing.Size(25, 13);
-            this.lblPersonalMedicalDetailsEdit.TabIndex = 23;
-            this.lblPersonalMedicalDetailsEdit.TabStop = true;
-            this.lblPersonalMedicalDetailsEdit.Text = "Edit";
-            this.lblPersonalMedicalDetailsEdit.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblPersonalMedicalDetailsEdit_LinkClicked);
-            // 
-            // txtHeight
-            // 
-            this.txtHeight.Enabled = false;
-            this.txtHeight.Location = new System.Drawing.Point(54, 152);
-            this.txtHeight.Name = "txtHeight";
-            this.txtHeight.Size = new System.Drawing.Size(71, 20);
-            this.txtHeight.TabIndex = 8;
-            // 
-            // lblPersonalMedicalDetailsSave
-            // 
-            this.lblPersonalMedicalDetailsSave.AutoSize = true;
-            this.lblPersonalMedicalDetailsSave.Enabled = false;
-            this.lblPersonalMedicalDetailsSave.Location = new System.Drawing.Point(63, 204);
-            this.lblPersonalMedicalDetailsSave.Name = "lblPersonalMedicalDetailsSave";
-            this.lblPersonalMedicalDetailsSave.Size = new System.Drawing.Size(32, 13);
-            this.lblPersonalMedicalDetailsSave.TabIndex = 24;
-            this.lblPersonalMedicalDetailsSave.TabStop = true;
-            this.lblPersonalMedicalDetailsSave.Text = "Save";
-            this.lblPersonalMedicalDetailsSave.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblPersonalMedicalDetailsSave_LinkClicked);
-            // 
-            // rdoHIVUnknown
-            // 
-            this.rdoHIVUnknown.AutoSize = true;
-            this.rdoHIVUnknown.Enabled = false;
-            this.rdoHIVUnknown.Location = new System.Drawing.Point(40, 129);
-            this.rdoHIVUnknown.Name = "rdoHIVUnknown";
-            this.rdoHIVUnknown.Size = new System.Drawing.Size(71, 17);
-            this.rdoHIVUnknown.TabIndex = 7;
-            this.rdoHIVUnknown.TabStop = true;
-            this.rdoHIVUnknown.Text = "Unknown";
-            this.rdoHIVUnknown.UseVisualStyleBackColor = true;
-            // 
-            // rdoHIVNegative
-            // 
-            this.rdoHIVNegative.AutoSize = true;
-            this.rdoHIVNegative.Enabled = false;
-            this.rdoHIVNegative.Location = new System.Drawing.Point(40, 106);
-            this.rdoHIVNegative.Name = "rdoHIVNegative";
-            this.rdoHIVNegative.Size = new System.Drawing.Size(68, 17);
-            this.rdoHIVNegative.TabIndex = 6;
-            this.rdoHIVNegative.TabStop = true;
-            this.rdoHIVNegative.Text = "Negative";
-            this.rdoHIVNegative.UseVisualStyleBackColor = true;
-            // 
-            // rdoHIVPositive
-            // 
-            this.rdoHIVPositive.AutoSize = true;
-            this.rdoHIVPositive.Enabled = false;
-            this.rdoHIVPositive.Location = new System.Drawing.Point(40, 83);
-            this.rdoHIVPositive.Name = "rdoHIVPositive";
-            this.rdoHIVPositive.Size = new System.Drawing.Size(62, 17);
-            this.rdoHIVPositive.TabIndex = 5;
-            this.rdoHIVPositive.TabStop = true;
-            this.rdoHIVPositive.Text = "Positive";
-            this.rdoHIVPositive.UseVisualStyleBackColor = true;
-            // 
-            // lblHivStatus
-            // 
-            this.lblHivStatus.AutoSize = true;
-            this.lblHivStatus.Location = new System.Drawing.Point(7, 67);
-            this.lblHivStatus.Name = "lblHivStatus";
-            this.lblHivStatus.Size = new System.Drawing.Size(61, 13);
-            this.lblHivStatus.TabIndex = 4;
-            this.lblHivStatus.Text = "HIV Status:";
-            // 
             // lblOrganDonor
             // 
             this.lblOrganDonor.AutoSize = true;
@@ -1440,36 +2199,6 @@
             this.lblOrganDonor.Size = new System.Drawing.Size(71, 13);
             this.lblOrganDonor.TabIndex = 3;
             this.lblOrganDonor.Text = "Organ Donor:";
-            // 
-            // chkOrganDonor
-            // 
-            this.chkOrganDonor.AutoSize = true;
-            this.chkOrganDonor.Enabled = false;
-            this.chkOrganDonor.Location = new System.Drawing.Point(87, 44);
-            this.chkOrganDonor.Name = "chkOrganDonor";
-            this.chkOrganDonor.Size = new System.Drawing.Size(15, 14);
-            this.chkOrganDonor.TabIndex = 2;
-            this.chkOrganDonor.UseVisualStyleBackColor = true;
-            // 
-            // cboBloodGroup
-            // 
-            this.cboBloodGroup.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboBloodGroup.Enabled = false;
-            this.cboBloodGroup.FormattingEnabled = true;
-            this.cboBloodGroup.Items.AddRange(new object[] {
-            "",
-            "O+",
-            "O-",
-            "A+",
-            "A-",
-            "B+",
-            "B-",
-            "AB+",
-            "AB-"});
-            this.cboBloodGroup.Location = new System.Drawing.Point(79, 17);
-            this.cboBloodGroup.Name = "cboBloodGroup";
-            this.cboBloodGroup.Size = new System.Drawing.Size(87, 21);
-            this.cboBloodGroup.TabIndex = 1;
             // 
             // lblBloodGroup
             // 
@@ -1502,83 +2231,6 @@
             this.grpAllergyDetails.TabStop = false;
             this.grpAllergyDetails.Text = "Allergy Details";
             // 
-            // lblAllergyDetailsRemoveSelected
-            // 
-            this.lblAllergyDetailsRemoveSelected.AutoSize = true;
-            this.lblAllergyDetailsRemoveSelected.Enabled = false;
-            this.lblAllergyDetailsRemoveSelected.Location = new System.Drawing.Point(298, 19);
-            this.lblAllergyDetailsRemoveSelected.Name = "lblAllergyDetailsRemoveSelected";
-            this.lblAllergyDetailsRemoveSelected.Size = new System.Drawing.Size(92, 13);
-            this.lblAllergyDetailsRemoveSelected.TabIndex = 24;
-            this.lblAllergyDetailsRemoveSelected.TabStop = true;
-            this.lblAllergyDetailsRemoveSelected.Text = "Remove Selected";
-            this.lblAllergyDetailsRemoveSelected.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblAllergyDetailsRemoveSelected_LinkClicked);
-            // 
-            // lblAllergyDetailsCancel
-            // 
-            this.lblAllergyDetailsCancel.AutoSize = true;
-            this.lblAllergyDetailsCancel.Enabled = false;
-            this.lblAllergyDetailsCancel.Location = new System.Drawing.Point(336, 203);
-            this.lblAllergyDetailsCancel.Name = "lblAllergyDetailsCancel";
-            this.lblAllergyDetailsCancel.Size = new System.Drawing.Size(40, 13);
-            this.lblAllergyDetailsCancel.TabIndex = 23;
-            this.lblAllergyDetailsCancel.TabStop = true;
-            this.lblAllergyDetailsCancel.Text = "Cancel";
-            this.lblAllergyDetailsCancel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblAllergyDetailsCancel_LinkClicked);
-            // 
-            // lblAllergyDetailsSave
-            // 
-            this.lblAllergyDetailsSave.AutoSize = true;
-            this.lblAllergyDetailsSave.Enabled = false;
-            this.lblAllergyDetailsSave.Location = new System.Drawing.Point(298, 203);
-            this.lblAllergyDetailsSave.Name = "lblAllergyDetailsSave";
-            this.lblAllergyDetailsSave.Size = new System.Drawing.Size(32, 13);
-            this.lblAllergyDetailsSave.TabIndex = 22;
-            this.lblAllergyDetailsSave.TabStop = true;
-            this.lblAllergyDetailsSave.Text = "Save";
-            this.lblAllergyDetailsSave.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblAllergyDetailsSave_LinkClicked);
-            // 
-            // lstAllergies
-            // 
-            this.lstAllergies.FormattingEnabled = true;
-            this.lstAllergies.Location = new System.Drawing.Point(214, 35);
-            this.lstAllergies.Name = "lstAllergies";
-            this.lstAllergies.Size = new System.Drawing.Size(176, 160);
-            this.lstAllergies.TabIndex = 22;
-            this.lstAllergies.SelectedIndexChanged += new System.EventHandler(this.lstAllergies_SelectedIndexChanged);
-            // 
-            // lblAllergyDetailsEdit
-            // 
-            this.lblAllergyDetailsEdit.AutoSize = true;
-            this.lblAllergyDetailsEdit.Location = new System.Drawing.Point(267, 203);
-            this.lblAllergyDetailsEdit.Name = "lblAllergyDetailsEdit";
-            this.lblAllergyDetailsEdit.Size = new System.Drawing.Size(25, 13);
-            this.lblAllergyDetailsEdit.TabIndex = 21;
-            this.lblAllergyDetailsEdit.TabStop = true;
-            this.lblAllergyDetailsEdit.Text = "Edit";
-            this.lblAllergyDetailsEdit.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblAllergyDetailsEdit_LinkClicked);
-            // 
-            // lblAllergiesAdd
-            // 
-            this.lblAllergiesAdd.AutoSize = true;
-            this.lblAllergiesAdd.Enabled = false;
-            this.lblAllergiesAdd.Location = new System.Drawing.Point(176, 203);
-            this.lblAllergiesAdd.Name = "lblAllergiesAdd";
-            this.lblAllergiesAdd.Size = new System.Drawing.Size(26, 13);
-            this.lblAllergiesAdd.TabIndex = 21;
-            this.lblAllergiesAdd.TabStop = true;
-            this.lblAllergiesAdd.Text = "Add";
-            this.lblAllergiesAdd.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblAllergiesAdd_LinkClicked);
-            // 
-            // txtAllergyNote
-            // 
-            this.txtAllergyNote.Enabled = false;
-            this.txtAllergyNote.Location = new System.Drawing.Point(73, 67);
-            this.txtAllergyNote.Multiline = true;
-            this.txtAllergyNote.Name = "txtAllergyNote";
-            this.txtAllergyNote.Size = new System.Drawing.Size(131, 128);
-            this.txtAllergyNote.TabIndex = 7;
-            // 
             // lblAllergies
             // 
             this.lblAllergies.AutoSize = true;
@@ -1606,23 +2258,6 @@
             this.lblOnset.TabIndex = 3;
             this.lblOnset.Text = "Onset:";
             // 
-            // dtpOnset
-            // 
-            this.dtpOnset.Enabled = false;
-            this.dtpOnset.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpOnset.Location = new System.Drawing.Point(73, 42);
-            this.dtpOnset.Name = "dtpOnset";
-            this.dtpOnset.Size = new System.Drawing.Size(131, 20);
-            this.dtpOnset.TabIndex = 2;
-            // 
-            // txtAllergicTo
-            // 
-            this.txtAllergicTo.Enabled = false;
-            this.txtAllergicTo.Location = new System.Drawing.Point(73, 16);
-            this.txtAllergicTo.Name = "txtAllergicTo";
-            this.txtAllergicTo.Size = new System.Drawing.Size(131, 20);
-            this.txtAllergicTo.TabIndex = 1;
-            // 
             // lblAllergicTo
             // 
             this.lblAllergicTo.AutoSize = true;
@@ -1647,6 +2282,7 @@
             this.tabPersonalDetails.Size = new System.Drawing.Size(973, 606);
             this.tabPersonalDetails.TabIndex = 0;
             this.tabPersonalDetails.Text = "Personal Details";
+            this.tabPersonalDetails.ToolTipText = "Click here to view your personal details";
             this.tabPersonalDetails.UseVisualStyleBackColor = true;
             // 
             // grpPrimaryCare
@@ -1692,57 +2328,6 @@
             this.lblPrimaryPostalCode.TabIndex = 50;
             this.lblPrimaryPostalCode.Text = "Postal Code:";
             // 
-            // txtPrimarySpecialty
-            // 
-            this.txtPrimarySpecialty.Enabled = false;
-            this.txtPrimarySpecialty.Location = new System.Drawing.Point(97, 43);
-            this.txtPrimarySpecialty.Name = "txtPrimarySpecialty";
-            this.txtPrimarySpecialty.Size = new System.Drawing.Size(178, 20);
-            this.txtPrimarySpecialty.TabIndex = 18;
-            // 
-            // lblPrimaryCancel
-            // 
-            this.lblPrimaryCancel.AutoSize = true;
-            this.lblPrimaryCancel.Enabled = false;
-            this.lblPrimaryCancel.Location = new System.Drawing.Point(421, 264);
-            this.lblPrimaryCancel.Name = "lblPrimaryCancel";
-            this.lblPrimaryCancel.Size = new System.Drawing.Size(40, 13);
-            this.lblPrimaryCancel.TabIndex = 17;
-            this.lblPrimaryCancel.TabStop = true;
-            this.lblPrimaryCancel.Text = "Cancel";
-            this.lblPrimaryCancel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblPrimaryCancel_LinkClicked);
-            // 
-            // txtPrimaryPostalCode
-            // 
-            this.txtPrimaryPostalCode.Enabled = false;
-            this.txtPrimaryPostalCode.Location = new System.Drawing.Point(373, 69);
-            this.txtPrimaryPostalCode.Name = "txtPrimaryPostalCode";
-            this.txtPrimaryPostalCode.Size = new System.Drawing.Size(86, 20);
-            this.txtPrimaryPostalCode.TabIndex = 49;
-            // 
-            // lblPrimarySave
-            // 
-            this.lblPrimarySave.AutoSize = true;
-            this.lblPrimarySave.Enabled = false;
-            this.lblPrimarySave.Location = new System.Drawing.Point(383, 264);
-            this.lblPrimarySave.Name = "lblPrimarySave";
-            this.lblPrimarySave.Size = new System.Drawing.Size(32, 13);
-            this.lblPrimarySave.TabIndex = 16;
-            this.lblPrimarySave.TabStop = true;
-            this.lblPrimarySave.Text = "Save";
-            this.lblPrimarySave.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblPrimarySave_LinkClicked);
-            // 
-            // lblPrimaryEdit
-            // 
-            this.lblPrimaryEdit.AutoSize = true;
-            this.lblPrimaryEdit.Location = new System.Drawing.Point(352, 264);
-            this.lblPrimaryEdit.Name = "lblPrimaryEdit";
-            this.lblPrimaryEdit.Size = new System.Drawing.Size(25, 13);
-            this.lblPrimaryEdit.TabIndex = 15;
-            this.lblPrimaryEdit.TabStop = true;
-            this.lblPrimaryEdit.Text = "Edit";
-            this.lblPrimaryEdit.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblPrimaryEdit_LinkClicked);
-            // 
             // lblPrimaryEmail
             // 
             this.lblPrimaryEmail.AutoSize = true;
@@ -1760,22 +2345,6 @@
             this.lblPrimarySpecialty.Size = new System.Drawing.Size(53, 13);
             this.lblPrimarySpecialty.TabIndex = 2;
             this.lblPrimarySpecialty.Text = "Specialty:";
-            // 
-            // txtPrimaryName
-            // 
-            this.txtPrimaryName.Enabled = false;
-            this.txtPrimaryName.Location = new System.Drawing.Point(97, 17);
-            this.txtPrimaryName.Name = "txtPrimaryName";
-            this.txtPrimaryName.Size = new System.Drawing.Size(362, 20);
-            this.txtPrimaryName.TabIndex = 1;
-            // 
-            // txtPrimaryEmail
-            // 
-            this.txtPrimaryEmail.Enabled = false;
-            this.txtPrimaryEmail.Location = new System.Drawing.Point(339, 93);
-            this.txtPrimaryEmail.Name = "txtPrimaryEmail";
-            this.txtPrimaryEmail.Size = new System.Drawing.Size(120, 20);
-            this.txtPrimaryEmail.TabIndex = 47;
             // 
             // lblPrimaryName
             // 
@@ -1813,30 +2382,6 @@
             this.lblPrimaryCity.TabIndex = 38;
             this.lblPrimaryCity.Text = "City:";
             // 
-            // txtPrimaryHomePhone
-            // 
-            this.txtPrimaryHomePhone.Enabled = false;
-            this.txtPrimaryHomePhone.Location = new System.Drawing.Point(97, 167);
-            this.txtPrimaryHomePhone.Name = "txtPrimaryHomePhone";
-            this.txtPrimaryHomePhone.Size = new System.Drawing.Size(178, 20);
-            this.txtPrimaryHomePhone.TabIndex = 39;
-            // 
-            // txtPrimaryFaxNumber
-            // 
-            this.txtPrimaryFaxNumber.Enabled = false;
-            this.txtPrimaryFaxNumber.Location = new System.Drawing.Point(97, 245);
-            this.txtPrimaryFaxNumber.Name = "txtPrimaryFaxNumber";
-            this.txtPrimaryFaxNumber.Size = new System.Drawing.Size(178, 20);
-            this.txtPrimaryFaxNumber.TabIndex = 45;
-            // 
-            // txtPrimaryCity
-            // 
-            this.txtPrimaryCity.Enabled = false;
-            this.txtPrimaryCity.Location = new System.Drawing.Point(97, 115);
-            this.txtPrimaryCity.Name = "txtPrimaryCity";
-            this.txtPrimaryCity.Size = new System.Drawing.Size(178, 20);
-            this.txtPrimaryCity.TabIndex = 37;
-            // 
             // lblPrimaryHomePhone
             // 
             this.lblPrimaryHomePhone.AutoSize = true;
@@ -1855,30 +2400,6 @@
             this.lblPrimaryWorkPhone.TabIndex = 44;
             this.lblPrimaryWorkPhone.Text = "Work Phone:";
             // 
-            // txtPrimaryState
-            // 
-            this.txtPrimaryState.Enabled = false;
-            this.txtPrimaryState.Location = new System.Drawing.Point(97, 141);
-            this.txtPrimaryState.Name = "txtPrimaryState";
-            this.txtPrimaryState.Size = new System.Drawing.Size(178, 20);
-            this.txtPrimaryState.TabIndex = 36;
-            // 
-            // txtPrimaryMobilePhone
-            // 
-            this.txtPrimaryMobilePhone.Enabled = false;
-            this.txtPrimaryMobilePhone.Location = new System.Drawing.Point(97, 193);
-            this.txtPrimaryMobilePhone.Name = "txtPrimaryMobilePhone";
-            this.txtPrimaryMobilePhone.Size = new System.Drawing.Size(178, 20);
-            this.txtPrimaryMobilePhone.TabIndex = 41;
-            // 
-            // txtPrimaryWorkPhone
-            // 
-            this.txtPrimaryWorkPhone.Enabled = false;
-            this.txtPrimaryWorkPhone.Location = new System.Drawing.Point(97, 219);
-            this.txtPrimaryWorkPhone.Name = "txtPrimaryWorkPhone";
-            this.txtPrimaryWorkPhone.Size = new System.Drawing.Size(178, 20);
-            this.txtPrimaryWorkPhone.TabIndex = 43;
-            // 
             // lblPrimaryState
             // 
             this.lblPrimaryState.AutoSize = true;
@@ -1887,15 +2408,6 @@
             this.lblPrimaryState.Size = new System.Drawing.Size(35, 13);
             this.lblPrimaryState.TabIndex = 35;
             this.lblPrimaryState.Text = "State:";
-            // 
-            // txtPrimaryAddress
-            // 
-            this.txtPrimaryAddress.Enabled = false;
-            this.txtPrimaryAddress.Location = new System.Drawing.Point(97, 69);
-            this.txtPrimaryAddress.Multiline = true;
-            this.txtPrimaryAddress.Name = "txtPrimaryAddress";
-            this.txtPrimaryAddress.Size = new System.Drawing.Size(178, 40);
-            this.txtPrimaryAddress.TabIndex = 34;
             // 
             // lblPrimaryMobilePhone
             // 
@@ -1949,56 +2461,6 @@
             this.lblEmergencyPostalCode.TabIndex = 50;
             this.lblEmergencyPostalCode.Text = "Postal Code:";
             // 
-            // txtEmergencyRelationship
-            // 
-            this.txtEmergencyRelationship.Enabled = false;
-            this.txtEmergencyRelationship.Location = new System.Drawing.Point(97, 43);
-            this.txtEmergencyRelationship.Name = "txtEmergencyRelationship";
-            this.txtEmergencyRelationship.Size = new System.Drawing.Size(178, 20);
-            this.txtEmergencyRelationship.TabIndex = 18;
-            // 
-            // lblEmergencyContactDetailsCancel
-            // 
-            this.lblEmergencyContactDetailsCancel.AutoSize = true;
-            this.lblEmergencyContactDetailsCancel.Enabled = false;
-            this.lblEmergencyContactDetailsCancel.Location = new System.Drawing.Point(421, 274);
-            this.lblEmergencyContactDetailsCancel.Name = "lblEmergencyContactDetailsCancel";
-            this.lblEmergencyContactDetailsCancel.Size = new System.Drawing.Size(40, 13);
-            this.lblEmergencyContactDetailsCancel.TabIndex = 17;
-            this.lblEmergencyContactDetailsCancel.TabStop = true;
-            this.lblEmergencyContactDetailsCancel.Text = "Cancel";
-            this.lblEmergencyContactDetailsCancel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblEmergencyContactDetailsCancel_LinkClicked);
-            // 
-            // txtEmergencyPostalCode
-            // 
-            this.txtEmergencyPostalCode.Enabled = false;
-            this.txtEmergencyPostalCode.Location = new System.Drawing.Point(373, 69);
-            this.txtEmergencyPostalCode.Name = "txtEmergencyPostalCode";
-            this.txtEmergencyPostalCode.Size = new System.Drawing.Size(86, 20);
-            this.txtEmergencyPostalCode.TabIndex = 49;
-            // 
-            // lblEmergencyContactDetailsSave
-            // 
-            this.lblEmergencyContactDetailsSave.AutoSize = true;
-            this.lblEmergencyContactDetailsSave.Enabled = false;
-            this.lblEmergencyContactDetailsSave.Location = new System.Drawing.Point(383, 274);
-            this.lblEmergencyContactDetailsSave.Name = "lblEmergencyContactDetailsSave";
-            this.lblEmergencyContactDetailsSave.Size = new System.Drawing.Size(32, 13);
-            this.lblEmergencyContactDetailsSave.TabIndex = 16;
-            this.lblEmergencyContactDetailsSave.TabStop = true;
-            this.lblEmergencyContactDetailsSave.Text = "Save";
-            // 
-            // lblEmergencyContactDetailsEdit
-            // 
-            this.lblEmergencyContactDetailsEdit.AutoSize = true;
-            this.lblEmergencyContactDetailsEdit.Location = new System.Drawing.Point(352, 274);
-            this.lblEmergencyContactDetailsEdit.Name = "lblEmergencyContactDetailsEdit";
-            this.lblEmergencyContactDetailsEdit.Size = new System.Drawing.Size(25, 13);
-            this.lblEmergencyContactDetailsEdit.TabIndex = 15;
-            this.lblEmergencyContactDetailsEdit.TabStop = true;
-            this.lblEmergencyContactDetailsEdit.Text = "Edit";
-            this.lblEmergencyContactDetailsEdit.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblEmergencyContactDetailsEdit_LinkClicked);
-            // 
             // lblEmergencyEmail
             // 
             this.lblEmergencyEmail.AutoSize = true;
@@ -2016,22 +2478,6 @@
             this.lblRelationship.Size = new System.Drawing.Size(65, 13);
             this.lblRelationship.TabIndex = 2;
             this.lblRelationship.Text = "Relationship";
-            // 
-            // txtNextOfKin
-            // 
-            this.txtNextOfKin.Enabled = false;
-            this.txtNextOfKin.Location = new System.Drawing.Point(97, 17);
-            this.txtNextOfKin.Name = "txtNextOfKin";
-            this.txtNextOfKin.Size = new System.Drawing.Size(362, 20);
-            this.txtNextOfKin.TabIndex = 1;
-            // 
-            // txtEmergencyEmail
-            // 
-            this.txtEmergencyEmail.Enabled = false;
-            this.txtEmergencyEmail.Location = new System.Drawing.Point(97, 271);
-            this.txtEmergencyEmail.Name = "txtEmergencyEmail";
-            this.txtEmergencyEmail.Size = new System.Drawing.Size(178, 20);
-            this.txtEmergencyEmail.TabIndex = 47;
             // 
             // lblNextOfKin
             // 
@@ -2069,30 +2515,6 @@
             this.lblEmergencyCity.TabIndex = 38;
             this.lblEmergencyCity.Text = "City:";
             // 
-            // txtEmergencyHomePhone
-            // 
-            this.txtEmergencyHomePhone.Enabled = false;
-            this.txtEmergencyHomePhone.Location = new System.Drawing.Point(97, 167);
-            this.txtEmergencyHomePhone.Name = "txtEmergencyHomePhone";
-            this.txtEmergencyHomePhone.Size = new System.Drawing.Size(178, 20);
-            this.txtEmergencyHomePhone.TabIndex = 39;
-            // 
-            // txtEmergencyFax
-            // 
-            this.txtEmergencyFax.Enabled = false;
-            this.txtEmergencyFax.Location = new System.Drawing.Point(97, 245);
-            this.txtEmergencyFax.Name = "txtEmergencyFax";
-            this.txtEmergencyFax.Size = new System.Drawing.Size(178, 20);
-            this.txtEmergencyFax.TabIndex = 45;
-            // 
-            // txtEmergencyCity
-            // 
-            this.txtEmergencyCity.Enabled = false;
-            this.txtEmergencyCity.Location = new System.Drawing.Point(97, 141);
-            this.txtEmergencyCity.Name = "txtEmergencyCity";
-            this.txtEmergencyCity.Size = new System.Drawing.Size(178, 20);
-            this.txtEmergencyCity.TabIndex = 37;
-            // 
             // lblEmergencyHomePhone
             // 
             this.lblEmergencyHomePhone.AutoSize = true;
@@ -2111,30 +2533,6 @@
             this.lblEmergencyWorkPhone.TabIndex = 44;
             this.lblEmergencyWorkPhone.Text = "Work Phone:";
             // 
-            // txtEmergencySuburb
-            // 
-            this.txtEmergencySuburb.Enabled = false;
-            this.txtEmergencySuburb.Location = new System.Drawing.Point(97, 115);
-            this.txtEmergencySuburb.Name = "txtEmergencySuburb";
-            this.txtEmergencySuburb.Size = new System.Drawing.Size(178, 20);
-            this.txtEmergencySuburb.TabIndex = 36;
-            // 
-            // txtEmergencyMobilePhone
-            // 
-            this.txtEmergencyMobilePhone.Enabled = false;
-            this.txtEmergencyMobilePhone.Location = new System.Drawing.Point(97, 193);
-            this.txtEmergencyMobilePhone.Name = "txtEmergencyMobilePhone";
-            this.txtEmergencyMobilePhone.Size = new System.Drawing.Size(178, 20);
-            this.txtEmergencyMobilePhone.TabIndex = 41;
-            // 
-            // txtEmergencyWorkPhone
-            // 
-            this.txtEmergencyWorkPhone.Enabled = false;
-            this.txtEmergencyWorkPhone.Location = new System.Drawing.Point(97, 219);
-            this.txtEmergencyWorkPhone.Name = "txtEmergencyWorkPhone";
-            this.txtEmergencyWorkPhone.Size = new System.Drawing.Size(178, 20);
-            this.txtEmergencyWorkPhone.TabIndex = 43;
-            // 
             // lblEmergencySuburb
             // 
             this.lblEmergencySuburb.AutoSize = true;
@@ -2143,15 +2541,6 @@
             this.lblEmergencySuburb.Size = new System.Drawing.Size(44, 13);
             this.lblEmergencySuburb.TabIndex = 35;
             this.lblEmergencySuburb.Text = "Suburb:";
-            // 
-            // txtEmergencyAddress
-            // 
-            this.txtEmergencyAddress.Enabled = false;
-            this.txtEmergencyAddress.Location = new System.Drawing.Point(97, 69);
-            this.txtEmergencyAddress.Multiline = true;
-            this.txtEmergencyAddress.Name = "txtEmergencyAddress";
-            this.txtEmergencyAddress.Size = new System.Drawing.Size(178, 40);
-            this.txtEmergencyAddress.TabIndex = 34;
             // 
             // lblEmergencyMobilePhone
             // 
@@ -2253,14 +2642,6 @@
             this.lblEmail.TabIndex = 30;
             this.lblEmail.Text = "Email:";
             // 
-            // txtEmail
-            // 
-            this.txtEmail.Enabled = false;
-            this.txtEmail.Location = new System.Drawing.Point(97, 221);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(178, 20);
-            this.txtEmail.TabIndex = 29;
-            // 
             // lblFaxNumber
             // 
             this.lblFaxNumber.AutoSize = true;
@@ -2269,14 +2650,6 @@
             this.lblFaxNumber.Size = new System.Drawing.Size(67, 13);
             this.lblFaxNumber.TabIndex = 28;
             this.lblFaxNumber.Text = "Fax Number:";
-            // 
-            // txtFax
-            // 
-            this.txtFax.Enabled = false;
-            this.txtFax.Location = new System.Drawing.Point(97, 195);
-            this.txtFax.Name = "txtFax";
-            this.txtFax.Size = new System.Drawing.Size(178, 20);
-            this.txtFax.TabIndex = 27;
             // 
             // lblWorkPhone
             // 
@@ -2287,14 +2660,6 @@
             this.lblWorkPhone.TabIndex = 26;
             this.lblWorkPhone.Text = "Work Phone:";
             // 
-            // txtWorkPhone
-            // 
-            this.txtWorkPhone.Enabled = false;
-            this.txtWorkPhone.Location = new System.Drawing.Point(97, 169);
-            this.txtWorkPhone.Name = "txtWorkPhone";
-            this.txtWorkPhone.Size = new System.Drawing.Size(178, 20);
-            this.txtWorkPhone.TabIndex = 25;
-            // 
             // lblMobile
             // 
             this.lblMobile.AutoSize = true;
@@ -2303,14 +2668,6 @@
             this.lblMobile.Size = new System.Drawing.Size(75, 13);
             this.lblMobile.TabIndex = 24;
             this.lblMobile.Text = "Moblie Phone:";
-            // 
-            // txtMobilePhone
-            // 
-            this.txtMobilePhone.Enabled = false;
-            this.txtMobilePhone.Location = new System.Drawing.Point(97, 143);
-            this.txtMobilePhone.Name = "txtMobilePhone";
-            this.txtMobilePhone.Size = new System.Drawing.Size(178, 20);
-            this.txtMobilePhone.TabIndex = 23;
             // 
             // lblHomePhone
             // 
@@ -2321,14 +2678,6 @@
             this.lblHomePhone.TabIndex = 22;
             this.lblHomePhone.Text = "Home Phone:";
             // 
-            // txtHomePhone
-            // 
-            this.txtHomePhone.Enabled = false;
-            this.txtHomePhone.Location = new System.Drawing.Point(97, 117);
-            this.txtHomePhone.Name = "txtHomePhone";
-            this.txtHomePhone.Size = new System.Drawing.Size(178, 20);
-            this.txtHomePhone.TabIndex = 21;
-            // 
             // lblCity
             // 
             this.lblCity.AutoSize = true;
@@ -2338,22 +2687,6 @@
             this.lblCity.TabIndex = 20;
             this.lblCity.Text = "City:";
             // 
-            // txtCity
-            // 
-            this.txtCity.Enabled = false;
-            this.txtCity.Location = new System.Drawing.Point(97, 65);
-            this.txtCity.Name = "txtCity";
-            this.txtCity.Size = new System.Drawing.Size(178, 20);
-            this.txtCity.TabIndex = 19;
-            // 
-            // txtState
-            // 
-            this.txtState.Enabled = false;
-            this.txtState.Location = new System.Drawing.Point(97, 91);
-            this.txtState.Name = "txtState";
-            this.txtState.Size = new System.Drawing.Size(178, 20);
-            this.txtState.TabIndex = 18;
-            // 
             // lblState
             // 
             this.lblState.AutoSize = true;
@@ -2362,15 +2695,6 @@
             this.lblState.Size = new System.Drawing.Size(35, 13);
             this.lblState.TabIndex = 2;
             this.lblState.Text = "State:";
-            // 
-            // txtAddress
-            // 
-            this.txtAddress.Enabled = false;
-            this.txtAddress.Location = new System.Drawing.Point(97, 19);
-            this.txtAddress.Multiline = true;
-            this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(178, 40);
-            this.txtAddress.TabIndex = 1;
             // 
             // lblAddress
             // 
@@ -2408,49 +2732,6 @@
             this.grpPersonalDetails.TabStop = false;
             this.grpPersonalDetails.Text = "Personal Details";
             // 
-            // lblCancelPersonalDetails
-            // 
-            this.lblCancelPersonalDetails.AutoSize = true;
-            this.lblCancelPersonalDetails.Enabled = false;
-            this.lblCancelPersonalDetails.Location = new System.Drawing.Point(419, 126);
-            this.lblCancelPersonalDetails.Name = "lblCancelPersonalDetails";
-            this.lblCancelPersonalDetails.Size = new System.Drawing.Size(40, 13);
-            this.lblCancelPersonalDetails.TabIndex = 17;
-            this.lblCancelPersonalDetails.TabStop = true;
-            this.lblCancelPersonalDetails.Text = "Cancel";
-            this.lblCancelPersonalDetails.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblCancelPersonalDetails_LinkClicked);
-            // 
-            // lblSavePersonalDetails
-            // 
-            this.lblSavePersonalDetails.AutoSize = true;
-            this.lblSavePersonalDetails.Enabled = false;
-            this.lblSavePersonalDetails.Location = new System.Drawing.Point(381, 126);
-            this.lblSavePersonalDetails.Name = "lblSavePersonalDetails";
-            this.lblSavePersonalDetails.Size = new System.Drawing.Size(32, 13);
-            this.lblSavePersonalDetails.TabIndex = 16;
-            this.lblSavePersonalDetails.TabStop = true;
-            this.lblSavePersonalDetails.Text = "Save";
-            this.lblSavePersonalDetails.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblSavePersonalDetails_LinkClicked);
-            // 
-            // lblEditPersonalDetails
-            // 
-            this.lblEditPersonalDetails.AutoSize = true;
-            this.lblEditPersonalDetails.Location = new System.Drawing.Point(350, 126);
-            this.lblEditPersonalDetails.Name = "lblEditPersonalDetails";
-            this.lblEditPersonalDetails.Size = new System.Drawing.Size(25, 13);
-            this.lblEditPersonalDetails.TabIndex = 15;
-            this.lblEditPersonalDetails.TabStop = true;
-            this.lblEditPersonalDetails.Text = "Edit";
-            this.lblEditPersonalDetails.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblEditPersonalDetails_LinkClicked);
-            // 
-            // dtpDob
-            // 
-            this.dtpDob.Enabled = false;
-            this.dtpDob.Location = new System.Drawing.Point(97, 122);
-            this.dtpDob.Name = "dtpDob";
-            this.dtpDob.Size = new System.Drawing.Size(200, 20);
-            this.dtpDob.TabIndex = 14;
-            // 
             // lblDob
             // 
             this.lblDob.AutoSize = true;
@@ -2459,22 +2740,6 @@
             this.lblDob.Size = new System.Drawing.Size(69, 13);
             this.lblDob.TabIndex = 13;
             this.lblDob.Text = "Date of Birth:";
-            // 
-            // txtFirstName
-            // 
-            this.txtFirstName.Enabled = false;
-            this.txtFirstName.Location = new System.Drawing.Point(97, 96);
-            this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(362, 20);
-            this.txtFirstName.TabIndex = 12;
-            // 
-            // txtLastName
-            // 
-            this.txtLastName.Enabled = false;
-            this.txtLastName.Location = new System.Drawing.Point(97, 70);
-            this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(362, 20);
-            this.txtLastName.TabIndex = 11;
             // 
             // lblFirstName
             // 
@@ -2493,30 +2758,6 @@
             this.lblLastName.Size = new System.Drawing.Size(61, 13);
             this.lblLastName.TabIndex = 9;
             this.lblLastName.Text = "Last Name:";
-            // 
-            // rdoFemale
-            // 
-            this.rdoFemale.AutoSize = true;
-            this.rdoFemale.Enabled = false;
-            this.rdoFemale.Location = new System.Drawing.Point(390, 43);
-            this.rdoFemale.Name = "rdoFemale";
-            this.rdoFemale.Size = new System.Drawing.Size(59, 17);
-            this.rdoFemale.TabIndex = 8;
-            this.rdoFemale.TabStop = true;
-            this.rdoFemale.Text = "Female";
-            this.rdoFemale.UseVisualStyleBackColor = true;
-            // 
-            // rdoMale
-            // 
-            this.rdoMale.AutoSize = true;
-            this.rdoMale.Enabled = false;
-            this.rdoMale.Location = new System.Drawing.Point(390, 20);
-            this.rdoMale.Name = "rdoMale";
-            this.rdoMale.Size = new System.Drawing.Size(48, 17);
-            this.rdoMale.TabIndex = 7;
-            this.rdoMale.TabStop = true;
-            this.rdoMale.Text = "Male";
-            this.rdoMale.UseVisualStyleBackColor = true;
             // 
             // lblGender
             // 
@@ -2569,15 +2810,6 @@
             this.lblTitle.TabIndex = 2;
             this.lblTitle.Text = "Title:";
             // 
-            // txtIdentityNumber
-            // 
-            this.txtIdentityNumber.Enabled = false;
-            this.txtIdentityNumber.Location = new System.Drawing.Point(97, 17);
-            this.txtIdentityNumber.Name = "txtIdentityNumber";
-            this.txtIdentityNumber.ReadOnly = true;
-            this.txtIdentityNumber.Size = new System.Drawing.Size(210, 20);
-            this.txtIdentityNumber.TabIndex = 1;
-            // 
             // lblIdentityNumber
             // 
             this.lblIdentityNumber.AutoSize = true;
@@ -2628,17 +2860,6 @@
             this.lblConfirmNewPassword.TabIndex = 8;
             this.lblConfirmNewPassword.Text = "Confirm New Password:";
             // 
-            // lblCancel
-            // 
-            this.lblCancel.AutoSize = true;
-            this.lblCancel.Location = new System.Drawing.Point(237, 108);
-            this.lblCancel.Name = "lblCancel";
-            this.lblCancel.Size = new System.Drawing.Size(40, 13);
-            this.lblCancel.TabIndex = 11;
-            this.lblCancel.TabStop = true;
-            this.lblCancel.Text = "Cancel";
-            this.lblCancel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblCancel_LinkClicked);
-            // 
             // lblNewPassword
             // 
             this.lblNewPassword.AutoSize = true;
@@ -2657,17 +2878,6 @@
             this.lblOldPassword.TabIndex = 3;
             this.lblOldPassword.Text = "Old Password:";
             // 
-            // lblChangePassword
-            // 
-            this.lblChangePassword.AutoSize = true;
-            this.lblChangePassword.Location = new System.Drawing.Point(138, 108);
-            this.lblChangePassword.Name = "lblChangePassword";
-            this.lblChangePassword.Size = new System.Drawing.Size(93, 13);
-            this.lblChangePassword.TabIndex = 10;
-            this.lblChangePassword.TabStop = true;
-            this.lblChangePassword.Text = "Change Password";
-            this.lblChangePassword.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblChangePassword_LinkClicked);
-            // 
             // lblUsername
             // 
             this.lblUsername.AutoSize = true;
@@ -2677,16 +2887,6 @@
             this.lblUsername.TabIndex = 0;
             this.lblUsername.Text = "Username:";
             // 
-            // lblProfilePic
-            // 
-            this.lblProfilePic.AutoSize = true;
-            this.lblProfilePic.Location = new System.Drawing.Point(34, 173);
-            this.lblProfilePic.Name = "lblProfilePic";
-            this.lblProfilePic.Size = new System.Drawing.Size(112, 13);
-            this.lblProfilePic.TabIndex = 1;
-            this.lblProfilePic.TabStop = true;
-            this.lblProfilePic.Text = "Change Profile Picture";
-            // 
             // tabTabControl
             // 
             this.tabTabControl.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
@@ -2694,76 +2894,12 @@
             this.tabTabControl.Controls.Add(this.tabMedicalDetails);
             this.tabTabControl.Controls.Add(this.tabCPHR);
             this.tabTabControl.Controls.Add(this.tabEPHR);
-            this.tabTabControl.Controls.Add(this.tabTest);
             this.tabTabControl.HotTrack = true;
             this.tabTabControl.Location = new System.Drawing.Point(1, 2);
             this.tabTabControl.Name = "tabTabControl";
             this.tabTabControl.SelectedIndex = 0;
             this.tabTabControl.Size = new System.Drawing.Size(981, 635);
             this.tabTabControl.TabIndex = 0;
-            // 
-            // tabTest
-            // 
-            this.tabTest.Controls.Add(this.dataGridView1);
-            this.tabTest.Location = new System.Drawing.Point(4, 25);
-            this.tabTest.Name = "tabTest";
-            this.tabTest.Size = new System.Drawing.Size(973, 606);
-            this.tabTest.TabIndex = 4;
-            this.tabTest.Text = "Test Page";
-            this.tabTest.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.pATIENTIDDataGridViewTextBoxColumn,
-            this.LAST_NAME,
-            this.FIRST_NAME,
-            this.ALLERGEN,
-            this.ONSET_DATE,
-            this.NOTE});
-            this.dataGridView1.DataSource = this.aLLERGYTBLBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(7, 3);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(961, 597);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // pATIENTIDDataGridViewTextBoxColumn
-            // 
-            this.pATIENTIDDataGridViewTextBoxColumn.DataPropertyName = "PATIENT_ID";
-            this.pATIENTIDDataGridViewTextBoxColumn.HeaderText = "PATIENT_ID";
-            this.pATIENTIDDataGridViewTextBoxColumn.Name = "pATIENTIDDataGridViewTextBoxColumn";
-            // 
-            // LAST_NAME
-            // 
-            this.LAST_NAME.DataPropertyName = "LAST_NAME";
-            this.LAST_NAME.HeaderText = "LAST_NAME";
-            this.LAST_NAME.Name = "LAST_NAME";
-            // 
-            // FIRST_NAME
-            // 
-            this.FIRST_NAME.DataPropertyName = "FIRST_NAME";
-            this.FIRST_NAME.HeaderText = "FIRST_NAME";
-            this.FIRST_NAME.Name = "FIRST_NAME";
-            // 
-            // ALLERGEN
-            // 
-            this.ALLERGEN.DataPropertyName = "ALLERGEN";
-            this.ALLERGEN.HeaderText = "ALLERGEN";
-            this.ALLERGEN.Name = "ALLERGEN";
-            // 
-            // ONSET_DATE
-            // 
-            this.ONSET_DATE.DataPropertyName = "ONSET_DATE";
-            this.ONSET_DATE.HeaderText = "ONSET_DATE";
-            this.ONSET_DATE.Name = "ONSET_DATE";
-            // 
-            // NOTE
-            // 
-            this.NOTE.DataPropertyName = "NOTE";
-            this.NOTE.HeaderText = "NOTE";
-            this.NOTE.Name = "NOTE";
             // 
             // aLLERGYTBLBindingSource
             // 
@@ -2825,8 +2961,8 @@
             this.grpMedicalConditionDetails.PerformLayout();
             this.grpTestResultDetails.ResumeLayout(false);
             this.grpTestResultDetails.PerformLayout();
-            this.grpPrescribedMedicationDetails.ResumeLayout(false);
-            this.grpPrescribedMedicationDetails.PerformLayout();
+            this.grpPerscribedMedicationDetails.ResumeLayout(false);
+            this.grpPerscribedMedicationDetails.PerformLayout();
             this.grpImmunisationDetails.ResumeLayout(false);
             this.grpImmunisationDetails.PerformLayout();
             this.grpPersonalMedicalDetails.ResumeLayout(false);
@@ -2848,8 +2984,6 @@
             this.grpChangePassword.ResumeLayout(false);
             this.grpChangePassword.PerformLayout();
             this.tabTabControl.ResumeLayout(false);
-            this.tabTest.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.aLLERGYTBLBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pchrDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pERDETAILSTBLBindingSource)).EndInit();
@@ -3008,7 +3142,7 @@
         private System.Windows.Forms.GroupBox grpMedicalProcedureDetails;
         private System.Windows.Forms.GroupBox grpMedicalConditionDetails;
         private System.Windows.Forms.GroupBox grpTestResultDetails;
-        private System.Windows.Forms.GroupBox grpPrescribedMedicationDetails;
+        private System.Windows.Forms.GroupBox grpPerscribedMedicationDetails;
         private System.Windows.Forms.Label lblPerscribedChronic;
         private System.Windows.Forms.Label lblDatePerscribed;
         private System.Windows.Forms.DateTimePicker dtpDatePerscribed;
@@ -3083,22 +3217,15 @@
         private System.Windows.Forms.TextBox txtPerscribedNotes;
         private System.Windows.Forms.Label lblPerscribedNotes;
         private System.Windows.Forms.CheckBox chkPerscribedChronic;
-        private System.Windows.Forms.TabPage tabTest;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private pchrDataSet pchrDataSet;
         private System.Windows.Forms.BindingSource aLLERGYTBLBindingSource;
         private pchrDataSetTableAdapters.ALLERGY_TBLTableAdapter aLLERGY_TBLTableAdapter;
         private System.Windows.Forms.BindingSource pATIENTTBLBindingSource;
         private pchrDataSetTableAdapters.PATIENT_TBLTableAdapter pATIENT_TBLTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pATIENTIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LAST_NAME;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FIRST_NAME;
         private System.Windows.Forms.BindingSource pERDETAILSTBLBindingSource;
         private pchrDataSetTableAdapters.PER_DETAILS_TBLTableAdapter pER_DETAILS_TBLTableAdapter;
         private System.Windows.Forms.Label lblLbs;
         private System.Windows.Forms.Label lblInches;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ALLERGEN;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ONSET_DATE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NOTE;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }
