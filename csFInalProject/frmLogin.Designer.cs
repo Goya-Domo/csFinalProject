@@ -37,7 +37,6 @@
             this.btnExit = new System.Windows.Forms.Button();
             this.btnRegister = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.button1 = new System.Windows.Forms.Button();
             this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.SuspendLayout();
             // 
@@ -131,16 +130,6 @@
             this.btnRegister.UseVisualStyleBackColor = true;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(96, 83);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 76);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "temp Personal Details Form";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // frmLogin
             // 
             this.AcceptButton = this.btnLogin;
@@ -148,7 +137,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnExit;
             this.ClientSize = new System.Drawing.Size(399, 171);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnLogin);
@@ -177,7 +165,6 @@
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnRegister;
         private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }
