@@ -368,7 +368,38 @@ namespace csFinalProject
         //Add Allergy
         private void lblAllergiesAdd_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            SqlCommand command = new SqlCommand();
+            SqlConnection connection = pchrDB.getConnection();
 
+
+            Random rng = new Random();
+
+            string comText = "INSERT INTO ALLERGY_TBL (PATIENT_ID, ALLERGY_ID, ALLERGEN, ONSET_DATE, NOTE) VALUES (@PID, @AID, @ALL, @ONSET, @NOTE)";
+            command.CommandText = comText;
+            command.Parameters.AddWithValue("@PID", User.PATIENT_ID);
+            command.Parameters.AddWithValue("@AID", rng.Next().ToString());
+            command.Parameters.AddWithValue("@ALL", txtAllergicTo.Text);
+            command.Parameters.AddWithValue("@ONSET", dtpOnset.Value.Date);
+            command.Parameters.AddWithValue("@NOTE", txtAllergyNote.Text);
+            command.Connection = connection;
+
+            connection.Open();
+            try
+            {
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, ex.Source);
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            lstAllergies.Items.Clear();
+            fillAllergyDetails();
+            populateAllergyDetailsControls();
         }
 
         private void lstAllergies_SelectedIndexChanged(object sender, EventArgs e)
@@ -380,37 +411,42 @@ namespace csFinalProject
         {
             if (lstAllergies.SelectedIndex >= 0)
             {
-                //
-                //Delete the allergy entry from the database
-                string allergen = lstAllergies.Text;
-                SqlConnection connection = pchrDB.getConnection();
-                connection.Open();
-                SqlCommand fillAllergyDetails = new SqlCommand();
-                string cmdd = "DELETE  "
-                    + "FROM ALLERGY_TBL "
-                    + "WHERE ALLERGY_TBL.ALLERGY_ID = " + "@allergen"
-                    + " AND ALLERGY_TBL.PATIENT_ID = " + User.PATIENT_ID;
-
-                fillAllergyDetails.Parameters.AddWithValue("@allergen", allergen);
-                fillAllergyDetails.Connection = connection;
-                fillAllergyDetails.CommandText = cmdd;
-
-                try
+                if (MessageBox.Show("Are you sure you want to delete? This can not be undone!", "Confirm Delete", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    //SqlDataReader reader = fillAllergyDetails.ExecuteReader(CommandBehavior.Default);
-                    fillAllergyDetails.ExecuteNonQuery();
+                    //
+                    //Delete the allergy entry from the database
+                    string allergen = lstAllergies.Text;
+                    SqlConnection connection = pchrDB.getConnection();
+                    connection.Open();
+                    SqlCommand fillAllergyCom = new SqlCommand();
+                    string cmdd = "DELETE  "
+                        + "FROM ALLERGY_TBL "
+                        + "WHERE ALLERGY_TBL.ALLERGY_ID = " + "@allergen"
+                        + " AND ALLERGY_TBL.PATIENT_ID = " + User.PATIENT_ID;
+
+                    fillAllergyCom.Parameters.AddWithValue("@allergen", allergen);
+                    fillAllergyCom.Connection = connection;
+                    fillAllergyCom.CommandText = cmdd;
+
+                    try
+                    {
+                        //SqlDataReader reader = fillAllergyDetails.ExecuteReader(CommandBehavior.Default);
+                        fillAllergyCom.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Error in Allergy Details");
+                    }
+                    connection.Close();
+
+                    dtpOnset.Value = DateTimePicker.MinimumDateTime;
+                    txtAllergicTo.Clear();
+                    txtAllergyNote.Clear();
+                    lstAllergies.Items.Clear();
+                    fillAllergyDetails();
+                    DisableAllControls(grpAllergyDetails);
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "Error in Allergy Details");
-                }
-                connection.Close();
             }
-            dtpOnset.Value = DateTimePicker.MinimumDateTime;
-            txtAllergicTo.Clear();
-            txtAllergyNote.Clear();
-            lstAllergies.Items.Clear();
-            fillAllergyDetails();
         }
 
         //Edit Allergy Details
@@ -449,13 +485,6 @@ namespace csFinalProject
         private void lblAllergyDetailsCancel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             DisableAllControls(grpAllergyDetails);
-            if (User.Allergies != null)
-            {
-                foreach (Allergy allergy in User.Allergies)
-                {
-                    //TODO allergies cancel
-                } 
-            }
         }
 
         //Fills the Immunisation Details Controls with the data in the database
@@ -501,8 +530,20 @@ namespace csFinalProject
         //Cancel Immunisation Details
         private void lblImmunisationCancel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            lstImmunisationList.Items.Clear();
+            txtImmunisation.Text = "";
+            txtImmunisationNote.Text = "";
             DisableAllControls(grpImmunisationDetails);
-            //TODO immuns cancel
+            if (User.Immunizations != null)
+            {
+                foreach (Immunization imm in User.Immunizations)
+                {
+                    lstImmunisationList.Items.Add(imm.IMMUNIZATION_ID);
+                }
+            }
+
+            lstImmunisationList.Items.Clear();
+            fillVaxDetails();
         }
 
         //Fills the Perscribed Medication Controls with the data in the database
@@ -514,7 +555,7 @@ namespace csFinalProject
         //Edit Perscribed Medication Details
         private void lblPerscribedEdit_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            if (EnableAllControls(grpPerscribedMedicationDetails))
+            if (EnableAllControls(grpPrescribedMedicationDetails))
             {
                 try
                 {
@@ -547,8 +588,19 @@ namespace csFinalProject
         //Cancel Perscribed Medication Details
         private void lblPerscribedCancel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            DisableAllControls(grpPerscribedMedicationDetails);
-            //TODO PREscribed cancel
+            DisableAllControls(grpPrescribedMedicationDetails);
+
+            lstPerscribedMedicationList.Items.Clear();
+            txtPerscribedMedication.Text = "";
+            txtPerscribedNotes.Text = "";
+            DisableAllControls(grpPrescribedMedicationDetails);
+            if (User.Medications != null)
+            {
+                foreach (Medication med in User.Medications)
+                {
+                    lstPerscribedMedicationList.Items.Add(med.MED_ID);
+                }
+            }
         }
 
         //Fills the Test Result Controls with the data in the database
@@ -595,7 +647,16 @@ namespace csFinalProject
         {
             DisableAllControls(grpTestResultDetails);
 
-            //TODO cancel tests
+            lstTestResultList.Items.Clear();
+            txtTestResultResult.Text = "";
+            txtTestResultNotes.Text = "";
+            if (User.Tests != null)
+            {
+                foreach (Test test in User.Tests)
+                {
+                    lstTestResultList.Items.Add(test.TEST_ID);
+                }
+            }
         }
 
         //Fills the Medical Condition Controls with the data in the database
@@ -643,7 +704,17 @@ namespace csFinalProject
         private void lblMedicalConditionCancel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             DisableAllControls(grpMedicalConditionDetails);
-            //TODO Cancel med Conditions
+
+            lstMedicalConditionList.Items.Clear();
+            txtMedicalConditionCondition.Text = "";
+            txtMedicalConditionNotes.Text = "";
+            if (User.Conditions != null)
+            {
+                foreach (Condition cond in User.Conditions)
+                {
+                    lstMedicalConditionList.Items.Add(cond.CONDITION_ID);
+                }
+            }
         }
 
         //Fills the Medical Procedure Controls with the data in the database
@@ -742,7 +813,19 @@ namespace csFinalProject
         private void lblMedicalProceduresCancel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             DisableAllControls(grpMedicalProcedureDetails);
-            //TODO med procs cancel
+
+            lstMedicalProceduresList.Items.Clear();
+            txtMedicalProcedureProcedure.Text = "";
+            txtMedicalProcedurePerformedBy.Text = "";
+            txtMedicalProcedureNotes.Text = "";
+
+            if (User.Med_Procs != null)
+            {
+                foreach (Med_Proc proc in User.Med_Procs)
+                {
+                    lstMedicalProceduresList.Items.Add(proc.PROCEDURE_ID);
+                }
+            }
         }
         //
         //End Tab 2
@@ -1459,38 +1542,43 @@ namespace csFinalProject
         {
             if (lstImmunisationList.SelectedIndex >= 0)
             {
-                //
-                //Delete the allergy entry from the database
-                string vax = lstImmunisationList.Text;
-                SqlConnection connection = pchrDB.getConnection();
-                connection.Open();
-                SqlCommand deleteVax = new SqlCommand();
-                string cmd = "DELETE  "
-                    + "FROM IMMUNIZATION_TBL "
-                    + "WHERE IMMUNIZATION_TBL.IMMUNIZATION_ID = " + "@vax"
-                    + " AND IMMUNIZATION_TBL.PATIENT_ID = " + User.PATIENT_ID;
-
-                deleteVax.Parameters.AddWithValue("@vax", vax);
-                deleteVax.Connection = connection;
-                deleteVax.CommandText = cmd;
-
-
-                try
+                if (MessageBox.Show("Are you sure you want to delete? This can not be undone!", "Confirm Delete", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    //SqlDataReader reader = fillAllergyDetails.ExecuteReader(CommandBehavior.Default);
-                    deleteVax.ExecuteNonQuery();
+                    //
+                    //Delete the allergy entry from the database
+                    string vax = lstImmunisationList.Text;
+                    SqlConnection connection = pchrDB.getConnection();
+                    connection.Open();
+                    SqlCommand deleteVax = new SqlCommand();
+                    string cmd = "DELETE  "
+                        + "FROM IMMUNIZATION_TBL "
+                        + "WHERE IMMUNIZATION_TBL.IMMUNIZATION_ID = " + "@vax"
+                        + " AND IMMUNIZATION_TBL.PATIENT_ID = " + User.PATIENT_ID;
+
+                    deleteVax.Parameters.AddWithValue("@vax", vax);
+                    deleteVax.Connection = connection;
+                    deleteVax.CommandText = cmd;
+
+
+                    try
+                    {
+                        //SqlDataReader reader = fillAllergyDetails.ExecuteReader(CommandBehavior.Default);
+                        deleteVax.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Error in Immunization Details");
+                    }
+                    connection.Close();
+
+                    dtpImmunisationDate.Value = DateTimePicker.MinimumDateTime;
+                    txtImmunisation.Clear();
+                    txtImmunisationNote.Clear();
+                    lstImmunisationList.Items.Clear();
+                    fillVaxDetails();
+                    DisableAllControls(grpImmunisationDetails); 
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "Error in Immunization Details");
-                }
-                connection.Close();
             }
-            dtpImmunisationDate.Value = DateTimePicker.MinimumDateTime;
-            txtImmunisation.Clear();
-            txtImmunisationNote.Clear();
-            lstImmunisationList.Items.Clear();
-            fillVaxDetails();
         }
 
         private void lblSavePersonalDetails_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -1625,6 +1713,567 @@ namespace csFinalProject
             ExecuteUpdate(command);
 
             DisableAllControls(grpPersonalMedicalDetails);
+        }
+
+        private void lblAllergyDetailsSave_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            DisableAllControls(grpAllergyDetails);
+            List<Allergy> allergies = new List<Allergy>();
+            try
+            {
+                int currIndex = lstAllergies.SelectedIndex;
+                for (int ndx = 0; ndx < lstAllergies.Items.Count; ndx++)
+                {
+                    Allergy newAllergy;
+                    lstAllergies.SelectedIndex = ndx;
+                    populateAllergyDetailsControls();
+
+                    newAllergy.ALLERGEN = txtAllergicTo.Text.Trim();
+                    newAllergy.ALLERGY_ID = lstAllergies.Text.Trim();
+                    newAllergy.ONSET_DATE = dtpOnset.Value.Date;
+                    newAllergy.NOTE = txtAllergyNote.Text.Trim();
+
+                    allergies.Add(newAllergy);
+                }
+                lstAllergies.SelectedIndex = currIndex;
+                User.Allergies = allergies;
+            }
+            catch (Exception ex)
+            {
+                User.Allergies = null;
+            }
+        }
+
+        private void lblImmunisationAdd_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            SqlCommand command = new SqlCommand();
+            SqlConnection connection = pchrDB.getConnection();
+
+
+            Random rng = new Random();
+
+            string comText = "INSERT INTO IMMUNIZATION_TBL (PATIENT_ID, IMMUNIZATION_ID, IMMUNIZATION, DATE, NOTE) VALUES (@PID, @IID, @IMM, @DATE, @NOTE)";
+            command.CommandText = comText;
+            command.Parameters.AddWithValue("@PID", User.PATIENT_ID);
+            command.Parameters.AddWithValue("@IID", rng.Next().ToString());
+            command.Parameters.AddWithValue("@IMM", txtImmunisation.Text);
+            command.Parameters.AddWithValue("@DATE", dtpImmunisationDate.Value.Date);
+            command.Parameters.AddWithValue("@NOTE", txtImmunisationNote.Text);
+            command.Connection = connection;
+
+            connection.Open();
+            try
+            {
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, ex.Source);
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            lstImmunisationList.Items.Clear();
+            fillVaxDetails();
+            populateVaxDetailsControls();
+        }
+
+        private void lblPerscribedMedicationAdd_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            SqlCommand command = new SqlCommand();
+            SqlConnection connection = pchrDB.getConnection();
+
+
+            Random rng = new Random();
+
+            string comText = "INSERT INTO MEDICATION_TBL (PATIENT_ID, MED_ID, MEDICATION, DATE, CHRONIC, NOTE) VALUES (@PID, @IID, @IMM, @DATE, @CHRONIC, @NOTE)";
+            command.CommandText = comText;
+            command.Parameters.AddWithValue("@PID", User.PATIENT_ID);
+            command.Parameters.AddWithValue("@IID", rng.Next().ToString());
+            command.Parameters.AddWithValue("@IMM", txtPerscribedMedication.Text);
+            command.Parameters.AddWithValue("@DATE", dtpDatePerscribed.Value.Date);
+            command.Parameters.AddWithValue("@CHRONIC", (chkPerscribedChronic.Checked) ? 1 : 0);
+            command.Parameters.AddWithValue("@NOTE", txtPerscribedNotes.Text);
+            command.Connection = connection;
+
+            connection.Open();
+            try
+            {
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, ex.Source);
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            lstPerscribedMedicationList.Items.Clear();
+            fillMedicationDetails();
+            populateMedicationDetailsControls();
+        }
+
+        private void lblImmunisationSave_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            DisableAllControls(grpImmunisationDetails);
+
+            List<Immunization> immuns = new List<Immunization>();
+            int currIndex = lstImmunisationList.SelectedIndex;
+
+            try
+            {
+                for (int ndx = 0; ndx < lstImmunisationList.Items.Count; ndx++)
+                {
+                    Immunization imm;
+                    lstImmunisationList.SelectedIndex = ndx;
+                    populateVaxDetailsControls();
+
+                    imm.IMMUNIZATION_ID = lstImmunisationList.Text.Trim();
+                    imm.IMMUNIZATION = txtImmunisation.Text.Trim();
+                    imm.DATE = dtpImmunisationDate.Value.Date;
+                    imm.NOTE = txtImmunisationNote.Text.Trim();
+
+                    immuns.Add(imm);
+                }
+
+                User.Immunizations = immuns;
+                lstImmunisationList.SelectedIndex = currIndex;
+            }
+            catch (Exception ex)
+            {
+                User.Immunizations = null;
+            }
+        }
+
+        private void lblPerscribedSave_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            DisableAllControls(grpPrescribedMedicationDetails);
+            try
+            {
+                List<Medication> meds = new List<Medication>();
+                int currIndex = lstPerscribedMedicationList.SelectedIndex;
+                for (int ndx = 0; ndx < lstMedicalProceduresList.Items.Count; ndx++)
+                {
+                    Medication newMed;
+                    lstPerscribedMedicationList.SelectedIndex = ndx;
+                    populateMedicationDetailsControls();
+
+                    newMed.MED_ID = lstPerscribedMedicationList.Text.Trim();
+                    newMed.MEDICATION = txtPerscribedMedication.Text.Trim();
+                    newMed.CHRONIC = chkPerscribedChronic.Checked;
+                    newMed.NOTE = txtPerscribedNotes.Text.Trim();
+
+                    meds.Add(newMed);
+
+                }
+                lstPerscribedMedicationList.SelectedIndex = currIndex;
+                User.Medications = meds;
+            }
+            catch (Exception ex)
+            {
+                User.Medications = null;
+            }
+        }
+
+        private void lblTestResultAdd_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            SqlCommand command = new SqlCommand();
+            SqlConnection connection = pchrDB.getConnection();
+
+
+            Random rng = new Random();
+
+            string comText = "INSERT INTO TEST_TBL (PATIENT_ID, TEST_ID, TEST, RESULT, DATE, NOTE) VALUES (@PID, @ID, @NAM, @RES, @DATE, @NOTE)";
+            command.CommandText = comText;
+            command.Parameters.AddWithValue("@PID", User.PATIENT_ID);
+            command.Parameters.AddWithValue("@ID", rng.Next().ToString());
+            command.Parameters.AddWithValue("@NAM", txtTestResultTest.Text);
+            command.Parameters.AddWithValue("@RES", txtTestResultResult.Text);
+            command.Parameters.AddWithValue("@DATE", dtpTestResultDate.Value.Date);
+            command.Parameters.AddWithValue("@NOTE", txtTestResultNotes.Text);
+            command.Connection = connection;
+
+            connection.Open();
+            try
+            {
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, ex.Source);
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            lstTestResultList.Items.Clear();
+            fillTestResultDetails();
+            populateTestResultControls();
+        }
+
+        private void lblTestResultSave_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            DisableAllControls(grpTestResultDetails);
+            List<Test> _tests = new List<Test>();
+            int currIndex = lstTestResultList.SelectedIndex;
+            try
+            {
+                for (int ndx = 0; ndx < lstTestResultList.Items.Count; ndx++)
+                {
+                    Test newTest;
+                    lstTestResultList.SelectedIndex = ndx;
+                    populateTestResultControls();
+
+                    newTest.TEST_ID = lstTestResultList.Text.Trim();
+                    newTest.TEST = txtTestResultTest.Text.Trim();
+                    newTest.RESULT = txtTestResultResult.Text.Trim();
+                    newTest.DATE = dtpTestResultDate.Value.Date;
+                    newTest.NOTE = txtTestResultNotes.Text.Trim();
+
+                    _tests.Add(newTest);
+                }
+                lstTestResultList.SelectedIndex = currIndex;
+                User.Tests = _tests;
+            }
+            catch (Exception ex)
+            {
+                User.Tests = null;
+            }
+        }
+
+        private void lblMedicalConditionAdd_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            SqlCommand command = new SqlCommand();
+            SqlConnection connection = pchrDB.getConnection();
+
+
+            Random rng = new Random();
+
+            string comText = "INSERT INTO CONDITION (PATIENT_ID, CONDITION_ID, CONDITION, ONSET_DATE, ACUTE, CHRONIC, NOTE) VALUES (@PID, @ID, @NAM, @DATE, @ACU, @CHRO, @NOTE)";
+            command.CommandText = comText;
+            command.Parameters.AddWithValue("@PID", User.PATIENT_ID);
+            command.Parameters.AddWithValue("@ID", rng.Next().ToString());
+            command.Parameters.AddWithValue("@NAM", txtMedicalConditionCondition.Text);
+            command.Parameters.AddWithValue("@DATE", dtpMedicalConditionOnset.Value.Date);
+            command.Parameters.AddWithValue("@ACU", (rdoMedicalConditionAcute.Checked) ? 1 : 0);
+            command.Parameters.AddWithValue("@CHRO", (rdoMedicalConditionChronic.Checked) ? 1 : 0);
+            command.Parameters.AddWithValue("@NOTE", txtMedicalConditionNotes.Text);
+            command.Connection = connection;
+
+            connection.Open();
+            try
+            {
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, ex.Source);
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            lstMedicalConditionList.Items.Clear();
+            fillMedicalConditionDetails();
+            populateMedicalConditionControls();
+        }
+
+        private void lblMedicalConditionSave_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            DisableAllControls(grpMedicalConditionDetails);
+
+            List<Condition> conditions = new List<Condition>();
+            int currIndex = lstMedicalConditionList.SelectedIndex;
+
+            try
+            {
+                for (int ndx = 0; ndx < lstMedicalConditionList.Items.Count; ndx++)
+                {
+                    Condition newCond;
+                    lstMedicalConditionList.SelectedIndex = ndx;
+                    populateMedicalConditionControls();
+
+                    newCond.CONDITION_ID = lstMedicalConditionList.Text.Trim();
+                    newCond.CONDITION = txtMedicalConditionCondition.Text.Trim();
+                    newCond.ONSET_DATE = dtpMedicalConditionOnset.Value.Date;
+                    newCond.ACUTE = rdoMedicalConditionAcute.Checked;
+                    newCond.CHRONIC = rdoMedicalConditionChronic.Checked;
+                    newCond.NOTE = txtMedicalConditionNotes.Text.Trim();
+
+                    conditions.Add(newCond);
+                }
+                lstMedicalConditionList.SelectedIndex = currIndex;
+                User.Conditions = conditions;
+            }
+            catch (Exception ex)
+            {
+                User.Conditions = null;
+            }
+        }
+
+        private void lblMedicalProcedureAdd_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            SqlCommand command = new SqlCommand();
+            SqlConnection connection = pchrDB.getConnection();
+
+
+            Random rng = new Random();
+
+            string comText = "INSERT INTO MED_PROC_TBL (PATIENT_ID, PROCEDURE_ID, MED_PROCEDURE, DATE, DOCTOR, NOTE) VALUES (@PID, @ID, @NAM, @DATE, @DOC, @NOTE)";
+            command.CommandText = comText;
+            command.Parameters.AddWithValue("@PID", User.PATIENT_ID);
+            command.Parameters.AddWithValue("@ID", rng.Next().ToString());
+            command.Parameters.AddWithValue("@NAM", txtMedicalProcedureProcedure.Text);
+            command.Parameters.AddWithValue("@DATE", dtpMedicalProcedureDate.Value.Date);
+            command.Parameters.AddWithValue("@DOC", txtMedicalProcedurePerformedBy.Text);
+            command.Parameters.AddWithValue("@NOTE", txtMedicalProcedureNotes.Text);
+            command.Connection = connection;
+
+            connection.Open();
+            try
+            {
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, ex.Source);
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            lstMedicalProceduresList.Items.Clear();
+            fillMedicalProcedureDetails();
+            populateMedicalProcedureControls();
+        }
+
+        private void lblMedicalProceduresSave_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            DisableAllControls(grpMedicalProcedureDetails);
+
+            List<Med_Proc> procs = new List<Med_Proc>();
+            int currIndex = lstMedicalProceduresList.SelectedIndex;
+
+            try
+            {
+                for (int ndx = 0; ndx < lstMedicalProceduresList.Items.Count; ndx++)
+                {
+                    Med_Proc newProc;
+                    lstMedicalProceduresList.SelectedIndex = ndx;
+                    populateMedicalProcedureControls();
+
+                    newProc.PROCEDURE_ID = lstMedicalProceduresList.Text.Trim();
+                    newProc.MED_PROCEDURE = txtMedicalProcedureProcedure.Text.Trim();
+                    newProc.DATE = dtpMedicalProcedureDate.Value.Date;
+                    newProc.DOCTOR = txtMedicalProcedurePerformedBy.Text.Trim();
+                    newProc.NOTE = txtMedicalProcedureNotes.Text.Trim();
+
+                    procs.Add(newProc);
+                }
+                lstMedicalProceduresList.SelectedIndex = currIndex;
+                User.Med_Procs = procs;
+            }
+            catch (Exception ex)
+            {
+                User.Med_Procs = null;
+            }
+        }
+
+        private void lblPerscribedSelected_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            if (lstPerscribedMedicationList.SelectedIndex >= 0)
+            {
+                if (MessageBox.Show("Are you sure you want to delete? This can not be undone!", "Confirm Delete", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    //
+                    //Delete the allergy entry from the database
+                    string id = lstPerscribedMedicationList.Text;
+                    SqlConnection connection = pchrDB.getConnection();
+                    connection.Open();
+                    SqlCommand delCommand = new SqlCommand();
+                    string cmd = "DELETE  "
+                        + "FROM MEDICATION_TBL "
+                        + "WHERE MEDICATION_TBL.MED_ID = " + "@ID"
+                        + " AND MEDICATION_TBL.PATIENT_ID = " + User.PATIENT_ID;
+
+                    delCommand.Parameters.AddWithValue("@ID", id);
+                    delCommand.Connection = connection;
+                    delCommand.CommandText = cmd;
+
+
+                    try
+                    {
+                        //SqlDataReader reader = fillAllergyDetails.ExecuteReader(CommandBehavior.Default);
+                        delCommand.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, ex.Source);
+                    }
+                    connection.Close();
+
+                    dtpDatePerscribed.Value = DateTimePicker.MinimumDateTime;
+                    foreach (Control control in grpPrescribedMedicationDetails.Controls)
+                    {
+                        if (control is TextBox)
+                            ((TextBox)control).Clear();
+                        else if (control is ListBox)
+                            ((ListBox)control).Items.Clear();
+                    }
+                    fillMedicationDetails();
+                    DisableAllControls(grpPrescribedMedicationDetails);
+                }
+            }
+        }
+
+        private void lblTestResultRemoveSelected_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            if (lstTestResultList.SelectedIndex >= 0)
+            {
+                if (MessageBox.Show("Are you sure you want to delete? This can not be undone!", "Confirm Delete", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    //
+                    //Delete the allergy entry from the database
+                    string id = lstTestResultList.Text;
+                    SqlConnection connection = pchrDB.getConnection();
+                    connection.Open();
+                    SqlCommand delCommand = new SqlCommand();
+                    string cmd = "DELETE  "
+                        + "FROM TEST_TBL "
+                        + "WHERE TEST_TBL.TEST_ID = " + "@ID"
+                        + " AND TEST_TBL.PATIENT_ID = " + User.PATIENT_ID;
+
+                    delCommand.Parameters.AddWithValue("@ID", id);
+                    delCommand.Connection = connection;
+                    delCommand.CommandText = cmd;
+
+
+                    try
+                    {
+                        //SqlDataReader reader = fillAllergyDetails.ExecuteReader(CommandBehavior.Default);
+                        delCommand.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, ex.Source);
+                    }
+                    connection.Close();
+
+                    dtpTestResultDate.Value = DateTimePicker.MinimumDateTime;
+                    foreach (Control control in grpTestResultDetails.Controls)
+                    {
+                        if (control is TextBox)
+                            ((TextBox)control).Clear();
+                        else if (control is ListBox)
+                            ((ListBox)control).Items.Clear();
+                    }
+
+                    DisableAllControls(grpTestResultDetails);
+                    fillTestResultDetails();
+                }
+            }
+        }
+
+        private void lblMedicalConditionsRemoveSelected_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            if (lstMedicalConditionList.SelectedIndex >= 0)
+            {
+                if (MessageBox.Show("Are you sure you want to delete? This can not be undone!", "Confirm Delete", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    //
+                    //Delete the allergy entry from the database
+                    string id = lstMedicalConditionList.Text;
+                    SqlConnection connection = pchrDB.getConnection();
+                    connection.Open();
+                    SqlCommand delCommand = new SqlCommand();
+                    string cmd = "DELETE  "
+                        + "FROM CONDITION "
+                        + "WHERE CONDITION.CONDITION_ID = " + "@ID"
+                        + " AND CONDITION.PATIENT_ID = " + User.PATIENT_ID;
+
+                    delCommand.Parameters.AddWithValue("@ID", id);
+                    delCommand.Connection = connection;
+                    delCommand.CommandText = cmd;
+
+
+                    try
+                    {
+                        //SqlDataReader reader = fillAllergyDetails.ExecuteReader(CommandBehavior.Default);
+                        delCommand.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, ex.Source);
+                    }
+                    connection.Close();
+
+                    dtpMedicalConditionOnset.Value = DateTimePicker.MinimumDateTime;
+                    foreach (Control control in grpMedicalConditionDetails.Controls)
+                    {
+                        if (control is TextBox)
+                            ((TextBox)control).Clear();
+                        else if (control is ListBox)
+                            ((ListBox)control).Items.Clear();
+                    }
+                    fillMedicalConditionDetails();
+
+                    DisableAllControls(grpMedicalConditionDetails);
+                }
+            }
+        }
+
+        private void lblMedicalProceduresRemoveSelected_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            if (lstMedicalProceduresList.SelectedIndex >= 0)
+            {
+                if (MessageBox.Show("Are you sure you want to delete? This can not be undone!", "Confirm Delete", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    //
+                    //Delete the allergy entry from the database
+                    string id = lstMedicalProceduresList.Text;
+                    SqlConnection connection = pchrDB.getConnection();
+                    connection.Open();
+                    SqlCommand delCommand = new SqlCommand();
+                    string cmd = "DELETE  "
+                        + "FROM MED_PROC_TBL "
+                        + "WHERE MED_PROC_TBL.PROCEDURE_ID = " + "@ID"
+                        + " AND MED_PROC_TBL.PATIENT_ID = " + User.PATIENT_ID;
+
+                    delCommand.Parameters.AddWithValue("@ID", id);
+                    delCommand.Connection = connection;
+                    delCommand.CommandText = cmd;
+
+
+                    try
+                    {
+                        //SqlDataReader reader = fillAllergyDetails.ExecuteReader(CommandBehavior.Default);
+                        delCommand.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, ex.Source);
+                    }
+                    connection.Close();
+
+                    dtpMedicalProcedureDate.Value = DateTimePicker.MinimumDateTime;
+                    foreach (Control control in grpMedicalProcedureDetails.Controls)
+                    {
+                        if (control is TextBox)
+                            ((TextBox)control).Clear();
+                        else if (control is ListBox)
+                            ((ListBox)control).Items.Clear();
+                    }
+                    fillMedicalProcedureDetails();
+                    DisableAllControls(grpMedicalProcedureDetails);
+                }
+            }
         }
     }
 }

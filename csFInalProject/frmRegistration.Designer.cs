@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.grpLoginDetails = new System.Windows.Forms.GroupBox();
             this.lblConfirmStatus = new System.Windows.Forms.Label();
             this.lblPasswordStatus = new System.Windows.Forms.Label();
@@ -58,8 +57,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnRegister = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.grpLoginDetails.SuspendLayout();
             this.grpPersonalDetails.SuspendLayout();
             this.SuspendLayout();
@@ -142,17 +139,12 @@
             // 
             // txtPassword
             // 
-            this.helpProvider1.SetHelpString(this.txtPassword, "Passwords: \n - Must be at least 6 characters long\n - Can contain any combination " +
-        "of letters, numbers, or special characters\n - Specials allowed: ! @ # $ % ^ & * " +
-        "( )");
             this.txtPassword.Location = new System.Drawing.Point(132, 55);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '●';
-            this.helpProvider1.SetShowHelp(this.txtPassword, true);
             this.txtPassword.Size = new System.Drawing.Size(154, 22);
             this.txtPassword.TabIndex = 3;
-            this.toolTip1.SetToolTip(this.txtPassword, "Enter a password (F1 for details)");
             this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             this.txtPassword.Enter += new System.EventHandler(this.txtPassword_Enter);
             this.txtPassword.Leave += new System.EventHandler(this.txtPassword_Leave);
@@ -160,45 +152,32 @@
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
-            this.helpProvider1.SetHelpString(this.lblPassword, "Passwords: \n - Must be at least 6 characters long\n - Can contain any combination " +
-        "of letters, numbers, or special characters\n - Specials allowed: ! @ # $ % ^ & * " +
-        "( )");
             this.lblPassword.Location = new System.Drawing.Point(51, 58);
             this.lblPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPassword.Name = "lblPassword";
-            this.helpProvider1.SetShowHelp(this.lblPassword, true);
             this.lblPassword.Size = new System.Drawing.Size(68, 16);
             this.lblPassword.TabIndex = 2;
             this.lblPassword.Text = "Password";
-            this.toolTip1.SetToolTip(this.lblPassword, "Enter a password (F1 for details)");
             // 
             // txtUsername
             // 
-            this.helpProvider1.SetHelpString(this.txtUsername, "Usernames can contain numbers, letters, and underscores\nand must not start with a" +
-        "n underscore");
             this.txtUsername.Location = new System.Drawing.Point(132, 25);
             this.txtUsername.Margin = new System.Windows.Forms.Padding(4);
             this.txtUsername.Name = "txtUsername";
-            this.helpProvider1.SetShowHelp(this.txtUsername, true);
             this.txtUsername.Size = new System.Drawing.Size(154, 22);
             this.txtUsername.TabIndex = 1;
-            this.toolTip1.SetToolTip(this.txtUsername, "Enter a user name(F1 for details) ");
             this.txtUsername.Enter += new System.EventHandler(this.txtUsername_Enter);
             this.txtUsername.Leave += new System.EventHandler(this.txtUsername_Leave);
             // 
             // lblUsername
             // 
             this.lblUsername.AutoSize = true;
-            this.helpProvider1.SetHelpString(this.lblUsername, "Usernames can contain numbers, letters, and underscores\nand must not start with a" +
-        "n underscore");
             this.lblUsername.Location = new System.Drawing.Point(48, 28);
             this.lblUsername.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUsername.Name = "lblUsername";
-            this.helpProvider1.SetShowHelp(this.lblUsername, true);
             this.lblUsername.Size = new System.Drawing.Size(71, 16);
             this.lblUsername.TabIndex = 0;
             this.lblUsername.Text = "Username";
-            this.toolTip1.SetToolTip(this.lblUsername, "Enter a user name(F1 for details) ");
             // 
             // label1
             // 
@@ -338,6 +317,7 @@
             // 
             // cboTitle
             // 
+            this.cboTitle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboTitle.FormattingEnabled = true;
             this.cboTitle.Items.AddRange(new object[] {
             "Mr.",
@@ -385,7 +365,6 @@
             this.btnRegister.Size = new System.Drawing.Size(159, 29);
             this.btnRegister.TabIndex = 3;
             this.btnRegister.Text = "Register";
-            this.toolTip1.SetToolTip(this.btnRegister, "Click here to complete your registration");
             this.btnRegister.UseVisualStyleBackColor = true;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
@@ -459,7 +438,5 @@
         private System.Windows.Forms.Label lblConfirmStatus;
         private System.Windows.Forms.Label lblPasswordStatus;
         private System.Windows.Forms.Label lblUsernameStatus;
-        private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }
