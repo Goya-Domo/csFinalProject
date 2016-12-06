@@ -317,6 +317,7 @@
             // 
             // cboTitle
             // 
+            this.cboTitle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboTitle.FormattingEnabled = true;
             this.cboTitle.Items.AddRange(new object[] {
             "Mr.",
